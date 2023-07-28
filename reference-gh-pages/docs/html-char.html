@@ -1,0 +1,4017 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>tongtong-blog | tongtong-blog</title><meta name="author" content="tongtong"><meta name="copyright" content="tongtong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="tongtong-blog"><meta name="application-name" content="tongtong-blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="tongtong-blog"><meta property="og:url" content="http://example.com/reference-gh-pages/docs/html-char.html"><meta property="og:site_name" content="tongtong-blog"><meta property="og:description" content="HTML 字符实体备忘清单  &amp;amp;#x26;  html-char cheatsheet &amp;amp;#x26;  Quick Reference                   Quick Reference    搜索⌘K编辑              HTML 字符实体备忘清单 此备忘清单是"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://tu.hanxi.fun/images/t01e66d486b8e826270.jpg"><meta property="article:author" content="tongtong"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://tu.hanxi.fun/images/t01e66d486b8e826270.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/reference-gh-pages/docs/html-char"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  friends_vue_info: {"apiurl":"https://friend.hanxi.fun/"},
+  navMusic: true,
+  changeMainColorPost: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tongtong-blog',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-23 22:06:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/about-tag.css"><link rel="stylesheet" href="/css/welcome.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://tu.hanxi.fun/images/thumb-174881.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+    Pace.restart()
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://zhang-tongtong123.gitee.io/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" href="https://account.aliyun.com/" title="阿里云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E9%98%BF%E9%87%8C%E4%BA%91.ico" alt="阿里云"/><span class="back-menu-item-text">阿里云</span></a><a class="back-menu-item" href="https://chat.hanxi.fun/" title="ChatAI" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/chat.svg" alt="ChatAI"/><span class="back-menu-item-text">ChatAI</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">常用</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qiniu.com/" title="七牛云图床" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E4%B8%83%E7%89%9B%E4%BA%91.ico" alt="七牛云图床"/><span class="back-menu-item-text">七牛云图床</span></a><a class="back-menu-item" href="https://smms.app/" title="smms" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E8%AF%84%E8%AE%BA.ico" alt="smms"/><span class="back-menu-item-text">smms</span></a><a class="back-menu-item" href="https://webconverters.net/cn/" title="免费图片转换" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2.ico" alt="免费图片转换"/><span class="back-menu-item-text">免费图片转换</span></a><a class="back-menu-item" href="https://www.iconfont.cn/" title="阿里矢量图标" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/iconfont%E5%9B%BE%E6%A0%87_%E6%AD%A3%E5%B0%84%E5%9B%BE.ico" alt="阿里矢量图标"/><span class="back-menu-item-text">阿里矢量图标</span></a><a class="back-menu-item" href="https://vercel.com/" title="vercel" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/logo-vercel.ico" alt="vercel"/><span class="back-menu-item-text">vercel</span></a><a class="back-menu-item" href="https://www.dogecloud.com/" title="多吉云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%A4%9A%E5%90%89%E4%BA%91.ico" alt="多吉云"/><span class="back-menu-item-text">多吉云</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">tongtong-blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://tu.hanxi.fun/images/weixin123456.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/weixin123456.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://tu.hanxi.fun/images/chitu_301.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/chitu_301.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="page-site-info"><h1 id="site-title">tongtong-blog</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><!doctype html>
+<html lang="en" data-color-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>HTML 字符实体备忘清单
+ &#x26;  html-char cheatsheet &#x26;  Quick Reference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta description="此备忘清单是 HTML 实体及其编号和名称的完整列表。还包括可以用 HTML 表示的 ASCII 字符的完整列表。
+
+HTML 字符实体引用，为开发人员分享快速参考备忘单。">
+<meta keywords="html-char,reference,Quick,Reference,cheatsheet,cheat,sheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%221em%22%20width%3D%221em%22%3E%20%3Cpath%20d%3D%22m21.66%2010.44-.98%204.18c-.84%203.61-2.5%205.07-5.62%204.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2%201.17-2.42%203.16-3.07%206.5-2.28l1.67.39c4.19.98%205.47%203.05%204.49%207.23Z%22%20fill%3D%22%23c9d1d9%22%2F%3E%20%3Cpath%20d%3D%22M15.06%2019.39c-.62.42-1.4.77-2.35%201.08l-1.58.52c-3.97%201.28-6.06.21-7.35-3.76L2.5%2013.28c-1.28-3.97-.22-6.07%203.75-7.35l1.58-.52c.41-.13.8-.24%201.17-.31-.3.61-.54%201.35-.74%202.2l-.98%204.19c-.98%204.18.31%206.24%204.48%207.23l1.68.4c.58.14%201.12.23%201.62.27Zm2.43-8.88c-.06%200-.12-.01-.19-.02l-4.85-1.23a.75.75%200%200%201%20.37-1.45l4.85%201.23a.748.748%200%200%201-.18%201.47Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3Cpath%20d%3D%22M14.56%2013.89c-.06%200-.12-.01-.19-.02l-2.91-.74a.75.75%200%200%201%20.37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3C%2Fsvg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/katex.css">
+</head>
+<body><nav class="header-nav"><div class="max-container"><a href="../index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+  <path d="m21.66 10.44-.98 4.18c-.84 3.61-2.5 5.07-5.62 4.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2 1.17-2.42 3.16-3.07 6.5-2.28l1.67.39c4.19.98 5.47 3.05 4.49 7.23Z" fill="#c9d1d9"></path>
+  <path d="M15.06 19.39c-.62.42-1.4.77-2.35 1.08l-1.58.52c-3.97 1.28-6.06.21-7.35-3.76L2.5 13.28c-1.28-3.97-.22-6.07 3.75-7.35l1.58-.52c.41-.13.8-.24 1.17-.31-.3.61-.54 1.35-.74 2.2l-.98 4.19c-.98 4.18.31 6.24 4.48 7.23l1.68.4c.58.14 1.12.23 1.62.27Zm2.43-8.88c-.06 0-.12-.01-.19-.02l-4.85-1.23a.75.75 0 0 1 .37-1.45l4.85 1.23a.748.748 0 0 1-.18 1.47Z" fill="#228e6c"></path>
+  <path d="M14.56 13.89c-.06 0-.12-.01-.19-.02l-2.91-.74a.75.75 0 0 1 .37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z" fill="#228e6c"></path>
+</svg>
+<span class="title">Quick Reference</span></a><div class="menu"><a href="javascript:void(0);" class="searchbtn" id="searchbtn"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><span>搜索</span><span>⌘K</span></a><a href="https://github.com/jaywcjlove/reference/blob/main/docs/html-char.md" class="" target="__blank"><svg viewBox="0 0 36 36" fill="currentColor" height="1em" width="1em"><path d="m33 6.4-3.7-3.7a1.71 1.71 0 0 0-2.36 0L23.65 6H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V11.76l3-3a1.67 1.67 0 0 0 0-2.36ZM18.83 20.13l-4.19.93 1-4.15 9.55-9.57 3.23 3.23ZM29.5 9.43 26.27 6.2l1.85-1.85 3.23 3.23Z"></path><path fill="none" d="M0 0h36v36H0z"></path></svg><span>编辑</span></a><button id="darkMode" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="light" height="1em" width="1em">
+  <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="dark" height="1em" width="1em">
+  <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
+</svg>
+</button><script src="../js/dark.js?v=1.4.1"></script><a href="https://github.com/jaywcjlove/reference" class="" target="__blank"><svg viewBox="0 0 16 16" fill="currentColor" height="1em" width="1em"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></div></nav><div class="wrap h1body-exist max-container"><header class="wrap-header h1wrap"><h1 id="html-字符实体备忘清单"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em">
+  <path d="M107.946667 838.4l57.173333 23.893333v-385.28l-103.68 250.026667c-17.493333 43.52 3.413333 93.44 46.506667 111.36z m832-157.866667L728.32 169.813333a85.888 85.888 0 0 0-77.226667-52.48c-11.093333 0-22.613333 1.706667-33.706666 6.4L302.933333 253.866667a85.290667 85.290667 0 0 0-46.08 110.933333l211.626667 510.72a85.248 85.248 0 0 0 110.933333 46.08l314.026667-130.133333a85.077333 85.077333 0 0 0 46.506667-110.933334zM336.213333 373.333333c-23.466667 0-42.666667-19.2-42.666666-42.666666s19.2-42.666667 42.666666-42.666667 42.666667 19.2 42.666667 42.666667-19.2 42.666667-42.666667 42.666666z m-85.333333 469.333334c0 46.933333 38.4 85.333333 85.333333 85.333333h61.866667l-147.2-355.84v270.506667z"></path>
+</svg><a aria-hidden="true" tabindex="-1" href="#html-字符实体备忘清单"><span class="icon icon-link"></span></a>HTML 字符实体备忘清单</h1><div class="wrap-body">
+<p>此备忘清单是 HTML 实体及其编号和名称的完整列表。还包括可以用 HTML 表示的 ASCII 字符的完整列表。</p>
+</div></header><div class="menu-tocs"><div class="menu-btn"><svg aria-hidden="true" fill="currentColor" height="1em" width="1em" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+  <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+</svg></div><div class="menu-modal"><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#html-字符实体引用">HTML 字符实体引用</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-特殊字符">HTML 特殊字符</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-拉丁语">HTML 拉丁语</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-拉丁文扩展">HTML 拉丁文扩展</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-间距修饰符字母">HTML 间距修饰符字母</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-希腊语">HTML 希腊语</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-punctuation">HTML Punctuation</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-letter-like-symbols">HTML Letter-like Symbols</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-arrows">HTML Arrows</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-数学运算符">HTML 数学运算符</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-技术">HTML 技术</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#html-杂项">HTML 杂项</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#另见">另见</a></div></div><div class="h1wrap-body"><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="html-字符实体引用"><a aria-hidden="true" tabindex="-1" href="#html-字符实体引用"><span class="icon icon-link"></span></a>HTML 字符实体引用</h2><div class="wrap-body">
+<!--rehype:body-class=cols-1-->
+</div></div><div class="h2wrap-body cols-1"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-特殊字符"><a aria-hidden="true" tabindex="-1" href="#html-特殊字符"><span class="icon icon-link"></span></a>HTML 特殊字符</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;quot;</code></td><td>"</td><td><code>&#x26;#34;</code></td><td>引号</td><td>u+0022 ISOnum</td><td>\0022</td><td><a href="javascript:alert(&#x22;\42&#x22;)">\42</a></td></tr><tr><td><code>&#x26;num;</code></td><td>#</td><td><code>&#x26;#35;</code></td><td>数字符号</td><td>u+0023 ISOnum</td><td>\0023</td><td><a href="javascript:alert(&#x22;\43&#x22;)">\43</a></td></tr><tr><td><code>&#x26;dollar;</code></td><td>$</td><td><code>&#x26;#36;</code></td><td>美元符号</td><td>u+0024 ISOnum</td><td>\0024</td><td><a href="javascript:alert(&#x22;\44&#x22;)">\44</a></td></tr><tr><td><code>&#x26;percnt;</code></td><td>%</td><td><code>&#x26;#37;</code></td><td>百分号</td><td>u+0025 ISOnum</td><td>\0025</td><td><a href="javascript:alert(&#x22;\45&#x22;)">\45</a></td></tr><tr><td><code>&#x26;amp;</code></td><td>&#x26;</td><td><code>&#x26;#38;</code></td><td>和号</td><td>u+0026 ISOnum</td><td>\0026</td><td><a href="javascript:alert(&#x22;\46&#x22;)">\46</a></td></tr><tr><td><code>&#x26;apos;</code></td><td>'</td><td><code>&#x26;#39;</code></td><td>撇号</td><td>u+0027 ISOnum</td><td>\0027</td><td><a href="javascript:alert(&#x22;\47&#x22;)">\47</a></td></tr><tr><td><code>&#x26;lpar;</code></td><td>(</td><td><code>&#x26;#40;</code></td><td>左括号</td><td>u+0028 ISOnum</td><td>\0028</td><td><a href="javascript:alert(&#x22;\50&#x22;)">\50</a></td></tr><tr><td><code>&#x26;rpar;</code></td><td>)</td><td><code>&#x26;#41;</code></td><td>右括号</td><td>u+0029 ISOnum</td><td>\0029</td><td><a href="javascript:alert(&#x22;\51&#x22;)">\51</a></td></tr><tr><td><code>&#x26;ast;</code></td><td>*</td><td><code>&#x26;#42;</code></td><td>星号</td><td>u+002A ISOnum</td><td>\002a</td><td><a href="javascript:alert(&#x22;\52&#x22;)">\52</a></td></tr><tr><td><code>&#x26;plus;</code></td><td>+</td><td><code>&#x26;#43;</code></td><td>加号</td><td>u+002B ISOnum</td><td>\002b</td><td><a href="javascript:alert(&#x22;\53&#x22;)">\53</a></td></tr><tr><td><code>&#x26;comma;</code></td><td>,</td><td><code>&#x26;#44;</code></td><td>逗号</td><td>u+002C ISOnum</td><td>\002c</td><td><a href="javascript:alert(&#x22;\54&#x22;)">\54</a></td></tr><tr><td><code>&#x26;minus;</code></td><td>-</td><td><code>&#x26;#45;</code></td><td>连字符减号</td><td>u+002D ISOnum</td><td>\002d</td><td><a href="javascript:alert(&#x22;\55&#x22;)">\55</a></td></tr><tr><td><code>&#x26;period;</code></td><td>.</td><td><code>&#x26;#46;</code></td><td>句号</td><td>u+002E ISOnum</td><td>\002e</td><td><a href="javascript:alert(&#x22;\56&#x22;)">\56</a></td></tr><tr><td><code>&#x26;sol;</code></td><td>/</td><td><code>&#x26;#47;</code></td><td>固相线</td><td>u+002F ISOnum</td><td>\002f</td><td><a href="javascript:alert(&#x22;\57&#x22;)">\57</a></td></tr><tr><td><code>&#x26;colon;</code></td><td>:</td><td><code>&#x26;#58;</code></td><td>冒号</td><td>u+003A ISOnum</td><td>\003a</td><td><a href="javascript:alert(&#x22;\72&#x22;)">\72</a></td></tr><tr><td><code>&#x26;semi;</code></td><td>;</td><td><code>&#x26;#59;</code></td><td>分号</td><td>u+003B ISOnum</td><td>\003b</td><td><a href="javascript:alert(&#x22;\73&#x22;)">\73</a></td></tr><tr><td><code>&#x26;lt;</code></td><td>&#x3C;</td><td><code>&#x26;#60;</code></td><td>少于</td><td>u+003C ISOnum</td><td>\003c</td><td><a href="javascript:alert(&#x22;\74&#x22;)">\74</a></td></tr><tr><td><code>&#x26;equals;</code></td><td>=</td><td><code>&#x26;#61;</code></td><td>等于</td><td>u+003D ISOnum</td><td>\003d</td><td><a href="javascript:alert(&#x22;\75&#x22;)">\75</a></td></tr><tr><td><code>&#x26;gt;</code></td><td>></td><td><code>&#x26;#62;</code></td><td>大于号</td><td>u+003E ISOnum</td><td>\003e</td><td><a href="javascript:alert(&#x22;\76&#x22;)">\76</a></td></tr><tr><td><code>&#x26;quest;</code></td><td>?</td><td><code>&#x26;#63;</code></td><td>问号</td><td>u+003F ISOnum</td><td>\003f</td><td><a href="javascript:alert(&#x22;\77&#x22;)">\77</a></td></tr><tr><td><code>&#x26;commat;</code></td><td>@</td><td><code>&#x26;#64;</code></td><td>在标志处</td><td>u+0040 ISOnum</td><td>\0040</td><td><a href="javascript:alert(&#x22;\100&#x22;)">\100</a></td></tr><tr><td><code>&#x26;lsqb;</code></td><td>[</td><td><code>&#x26;#91;</code></td><td>左方括号</td><td>u+005B ISOnum</td><td>\005b</td><td><a href="javascript:alert(&#x22;\133&#x22;)">\133</a></td></tr><tr><td><code>&#x26;bsol;</code></td><td>\</td><td><code>&#x26;#92;</code></td><td>反斜杠</td><td>u+005C ISOnum</td><td>\005c</td><td><a href="javascript:alert(&#x22;\134&#x22;)">\134</a></td></tr><tr><td><code>&#x26;rsqb;</code></td><td>]</td><td><code>&#x26;#93;</code></td><td>右方括号</td><td>u+005D ISOnum</td><td>\005d</td><td><a href="javascript:alert(&#x22;\135&#x22;)">\135</a></td></tr><tr><td><code>&#x26;Hat;</code></td><td>^</td><td><code>&#x26;#94;</code></td><td>抑扬顿挫</td><td>u+005E ISOnum</td><td>\005e</td><td><a href="javascript:alert(&#x22;\136&#x22;)">\136</a></td></tr><tr><td><code>&#x26;lowbar;</code></td><td>_</td><td><code>&#x26;#95;</code></td><td>低线</td><td>u+005F ISOnum</td><td>\005f</td><td><a href="javascript:alert(&#x22;\137&#x22;)">\137</a></td></tr><tr><td><code>&#x26;grave;</code></td><td>`</td><td><code>&#x26;#96;</code></td><td>重音</td><td>u+0060 ISOnum</td><td>\0060</td><td><a href="javascript:alert(&#x22;\u0060&#x22;)">\u0060</a></td></tr><tr><td><code>&#x26;lcub;</code></td><td>{</td><td><code>&#x26;#123;</code></td><td>左大括号</td><td>u+007b ISOnum</td><td>\007b</td><td><a href="javascript:alert(&#x22;\173&#x22;)">\173</a></td></tr><tr><td><code>&#x26;verbar;</code></td><td>|</td><td><code>&#x26;#124;</code></td><td>竖线</td><td>u+007c ISOnum</td><td>\007c</td><td><a href="javascript:alert(&#x22;\174&#x22;)">\174</a></td></tr><tr><td><code>&#x26;rcub;</code></td><td>}</td><td><code>&#x26;#125;</code></td><td>右大括号</td><td>u+007d ISOnum</td><td>\007d</td><td><a href="javascript:alert(&#x22;\175&#x22;)">\175</a></td></tr><tr><td></td><td>~</td><td><code>&#x26;#126;</code></td><td>波浪号</td><td>u+007e ISOnum</td><td>\007e</td><td><a href="javascript:alert(&#x22;\176&#x22;)">\176</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-拉丁语"><a aria-hidden="true" tabindex="-1" href="#html-拉丁语"><span class="icon icon-link"></span></a>HTML 拉丁语</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;nbsp;</code></td><td></td><td><code>&#x26;#160;</code></td><td>no-break space</td><td>%A0</td><td>\00a0</td><td><a href="javascript:alert(&#x22;\240&#x22;)">\240</a></td></tr><tr><td><code>&#x26;iexcl;</code></td><td>¡</td><td><code>&#x26;#161;</code></td><td>inverted exclamation mark</td><td>%A1</td><td>\00a1</td><td><a href="javascript:alert(&#x22;\241&#x22;)">\241</a></td></tr><tr><td><code>&#x26;cent;</code></td><td>¢</td><td><code>&#x26;#162;</code></td><td>cent sign</td><td>%A2</td><td>\00a2</td><td><a href="javascript:alert(&#x22;\242&#x22;)">\242</a></td></tr><tr><td><code>&#x26;pound;</code></td><td>£</td><td><code>&#x26;#163;</code></td><td>pound sterling sign</td><td>%A3</td><td>\00a3</td><td><a href="javascript:alert(&#x22;\243&#x22;)">\243</a></td></tr><tr><td><code>&#x26;curren;</code></td><td>¤</td><td><code>&#x26;#164;</code></td><td>general currency sign</td><td>%A4</td><td>\00a4</td><td><a href="javascript:alert(&#x22;\244&#x22;)">\244</a></td></tr><tr><td><code>&#x26;yen;</code></td><td>¥</td><td><code>&#x26;#165;</code></td><td>yen sign</td><td>%A5</td><td>\00a5</td><td><a href="javascript:alert(&#x22;\245&#x22;)">\245</a></td></tr><tr><td><code>&#x26;#x20B9;</code></td><td>₹</td><td><code>&#x26;#x20B9;</code></td><td>Indian Rupee (INR) sign</td><td>U+20B9</td><td>\20B9</td><td><a href="javascript:alert(&#x22;\u20B9&#x22;)">\u20B9</a></td></tr><tr><td><code>&#x26;brvbar;</code></td><td>¦</td><td><code>&#x26;#166;</code></td><td>broken (vertical) bar</td><td>%A6</td><td>\00a6</td><td><a href="javascript:alert(&#x22;\246&#x22;)">\246</a></td></tr><tr><td><code>&#x26;sect;</code></td><td>§</td><td><code>&#x26;#167;</code></td><td>section sign</td><td>%A7</td><td>\00a7</td><td><a href="javascript:alert(&#x22;\247&#x22;)">\247</a></td></tr><tr><td><code>&#x26;uml;</code></td><td>¨</td><td><code>&#x26;#168;</code></td><td>umlaut (dieresis)</td><td>%A8</td><td>\00a8</td><td><a href="javascript:alert(&#x22;\250&#x22;)">\250</a></td></tr><tr><td><code>&#x26;copy;</code></td><td>©</td><td><code>&#x26;#169;</code></td><td>copyright sign</td><td>%A9</td><td>\00a9</td><td><a href="javascript:alert(&#x22;\251&#x22;)">\251</a></td></tr><tr><td><code>&#x26;ordf;</code></td><td>ª</td><td><code>&#x26;#170;</code></td><td>ordinal indicator, feminine</td><td>%AA</td><td>\00aa</td><td><a href="javascript:alert(&#x22;\252&#x22;)">\252</a></td></tr><tr><td><code>&#x26;laquo;</code></td><td>«</td><td><code>&#x26;#171;</code></td><td>angle quotation mark, left</td><td>%AB</td><td>\00ab</td><td><a href="javascript:alert(&#x22;\253&#x22;)">\253</a></td></tr><tr><td><code>&#x26;not;</code></td><td>¬</td><td><code>&#x26;#172;</code></td><td>not sign</td><td>%AC</td><td>\00ac</td><td><a href="javascript:alert(&#x22;\254&#x22;)">\254</a></td></tr><tr><td><code>&#x26;shy;</code></td><td>­</td><td><code>&#x26;#173;</code></td><td>soft hyphen</td><td>%AD</td><td>\00ad</td><td><a href="javascript:alert(&#x22;\255&#x22;)">\255</a></td></tr><tr><td><code>&#x26;reg;</code></td><td>®</td><td><code>&#x26;#174;</code></td><td>registered sign</td><td>%AE</td><td>\00ae</td><td><a href="javascript:alert(&#x22;\256&#x22;)">\256</a></td></tr><tr><td><code>&#x26;macr;</code></td><td>¯</td><td><code>&#x26;#175;</code></td><td>macron</td><td>%AF</td><td>\00af</td><td><a href="javascript:alert(&#x22;\257&#x22;)">\257</a></td></tr><tr><td><code>&#x26;deg;</code></td><td>°</td><td><code>&#x26;#176;</code></td><td>degree sign</td><td>%B0</td><td>\00b0</td><td><a href="javascript:alert(&#x22;\260&#x22;)">\260</a></td></tr><tr><td><code>&#x26;plusmn;</code></td><td>±</td><td><code>&#x26;#177;</code></td><td>plus-or-minus sign</td><td>%B1</td><td>\00b1</td><td><a href="javascript:alert(&#x22;\261&#x22;)">\261</a></td></tr><tr><td><code>&#x26;sup2;</code></td><td>²</td><td><code>&#x26;#178;</code></td><td>superscript two</td><td>%B2</td><td>\00b2</td><td><a href="javascript:alert(&#x22;\262&#x22;)">\262</a></td></tr><tr><td><code>&#x26;sup3;</code></td><td>³</td><td><code>&#x26;#179;</code></td><td>superscript three</td><td>%B3</td><td>\00b3</td><td><a href="javascript:alert(&#x22;\263&#x22;)">\263</a></td></tr><tr><td><code>&#x26;acute;</code></td><td>´</td><td><code>&#x26;#180;</code></td><td>acute accent</td><td>%B4</td><td>\00b4</td><td><a href="javascript:alert(&#x22;\264&#x22;)">\264</a></td></tr><tr><td><code>&#x26;micro;</code></td><td>µ</td><td><code>&#x26;#181;</code></td><td>micro sign</td><td>%B5</td><td>\00b5</td><td><a href="javascript:alert(&#x22;\265&#x22;)">\265</a></td></tr><tr><td><code>&#x26;para;</code></td><td>¶</td><td><code>&#x26;#182;</code></td><td>pilcrow (paragraph sign)</td><td>%B6</td><td>\00b6</td><td><a href="javascript:alert(&#x22;\266&#x22;)">\266</a></td></tr><tr><td><code>&#x26;middot;</code></td><td>·</td><td><code>&#x26;#183;</code></td><td>middle dot</td><td>%B7</td><td>\00b7</td><td><a href="javascript:alert(&#x22;\267&#x22;)">\267</a></td></tr><tr><td><code>&#x26;cedil;</code></td><td>¸</td><td><code>&#x26;#184;</code></td><td>cedilla</td><td>%B8</td><td>\00b8</td><td><a href="javascript:alert(&#x22;\270&#x22;)">\270</a></td></tr><tr><td><code>&#x26;sup1;</code></td><td>¹</td><td><code>&#x26;#185;</code></td><td>superscript one</td><td>%B9</td><td>\00b9</td><td><a href="javascript:alert(&#x22;\271&#x22;)">\271</a></td></tr><tr><td><code>&#x26;ordm;</code></td><td>º</td><td><code>&#x26;#186;</code></td><td>ordinal indicator, masculine</td><td>%BA</td><td>\00ba</td><td><a href="javascript:alert(&#x22;\272&#x22;)">\272</a></td></tr><tr><td><code>&#x26;raquo;</code></td><td>»</td><td><code>&#x26;#187;</code></td><td>angle quotation mark, right</td><td>%BB</td><td>\00bb</td><td><a href="javascript:alert(&#x22;\273&#x22;)">\273</a></td></tr><tr><td><code>&#x26;frac14;</code></td><td>¼</td><td><code>&#x26;#188;</code></td><td>fraction one-quarter</td><td>%BC</td><td>\00bc</td><td><a href="javascript:alert(&#x22;\274&#x22;)">\274</a></td></tr><tr><td><code>&#x26;frac12;</code></td><td>½</td><td><code>&#x26;#189;</code></td><td>fraction one-half</td><td>%BD</td><td>\00bd</td><td><a href="javascript:alert(&#x22;\275&#x22;)">\275</a></td></tr><tr><td><code>&#x26;frac34;</code></td><td>¾</td><td><code>&#x26;#190;</code></td><td>fraction three-quarters</td><td>%BE</td><td>\00be</td><td><a href="javascript:alert(&#x22;\276&#x22;)">\276</a></td></tr><tr><td><code>&#x26;iquest;</code></td><td>¿</td><td><code>&#x26;#191;</code></td><td>inverted question mark</td><td>%BF</td><td>\00bf</td><td><a href="javascript:alert(&#x22;\277&#x22;)">\277</a></td></tr><tr><td><code>&#x26;Agrave;</code></td><td>À</td><td><code>&#x26;#192;</code></td><td>capital A, grave accent</td><td>%C0</td><td>\00c0</td><td><a href="javascript:alert(&#x22;\300&#x22;)">\300</a></td></tr><tr><td><code>&#x26;Aacute;</code></td><td>Á</td><td><code>&#x26;#193;</code></td><td>capital A, acute accent</td><td>%C1</td><td>\00c1</td><td><a href="javascript:alert(&#x22;\301&#x22;)">\301</a></td></tr><tr><td><code>&#x26;Acirc;</code></td><td>Â</td><td><code>&#x26;#194 ;</code></td><td>capital A, circumflex accent</td><td>%C2</td><td>\00c2</td><td><a href="javascript:alert(&#x22;\302&#x22;)">\302</a></td></tr><tr><td><code>&#x26;Atilde;</code></td><td>Ã</td><td><code>&#x26;#195;</code></td><td>capital A, tilde</td><td>%C3</td><td>\00c3</td><td><a href="javascript:alert(&#x22;\303&#x22;)">\303</a></td></tr><tr><td><code>&#x26;Auml;</code></td><td>Ä</td><td><code>&#x26;#196;</code></td><td>capital A, dieresis or umlaut mark</td><td>%C4</td><td>\00c4</td><td><a href="javascript:alert(&#x22;\304&#x22;)">\304</a></td></tr><tr><td><code>&#x26;Aring;</code></td><td>Å</td><td><code>&#x26;#197;</code></td><td>capital A, ring</td><td>%C5</td><td>\00c5</td><td><a href="javascript:alert(&#x22;\305&#x22;)">\305</a></td></tr><tr><td><code>&#x26;AElig;</code></td><td>Æ</td><td><code>&#x26;#198;</code></td><td>capital AE diphthong (ligature)</td><td>%C6</td><td>\00c6</td><td><a href="javascript:alert(&#x22;\306&#x22;)">\306</a></td></tr><tr><td><code>&#x26;Ccedil;</code></td><td>Ç</td><td><code>&#x26;#199;</code></td><td>capital C, cedilla</td><td>%C7</td><td>\00c7</td><td><a href="javascript:alert(&#x22;\307&#x22;)">\307</a></td></tr><tr><td><code>&#x26;Egrave;</code></td><td>È</td><td><code>&#x26;#200;</code></td><td>capital E, grave accent</td><td>%C8</td><td>\00c8</td><td><a href="javascript:alert(&#x22;\310&#x22;)">\310</a></td></tr><tr><td><code>&#x26;Eacute;</code></td><td>É</td><td><code>&#x26;#201;</code></td><td>capital E, acute accent</td><td>%C9</td><td>\00c9</td><td><a href="javascript:alert(&#x22;\311&#x22;)">\311</a></td></tr><tr><td><code>&#x26;Ecirc;</code></td><td>Ê</td><td><code>&#x26;#202;</code></td><td>capital E, circumflex accent</td><td>%CA</td><td>\00ca</td><td><a href="javascript:alert(&#x22;\312&#x22;)">\312</a></td></tr><tr><td><code>&#x26;Euml;</code></td><td>Ë</td><td><code>&#x26;#203;</code></td><td>capital E, dieresis or umlaut mark</td><td>%CB</td><td>\00cb</td><td><a href="javascript:alert(&#x22;\313&#x22;)">\313</a></td></tr><tr><td><code>&#x26;Igrave;</code></td><td>Ì</td><td><code>&#x26;#204;</code></td><td>capital I, grave accent</td><td>%CC</td><td>\00cc</td><td><a href="javascript:alert(&#x22;\314&#x22;)">\314</a></td></tr><tr><td><code>&#x26;Iacute;</code></td><td>Í</td><td><code>&#x26;#205;</code></td><td>capital I, acute accent</td><td>%CD</td><td>\00cd</td><td><a href="javascript:alert(&#x22;\315&#x22;)">\315</a></td></tr><tr><td><code>&#x26;Icirc;</code></td><td>Î</td><td><code>&#x26;#206;</code></td><td>capital I, circumflex accent</td><td>%CE</td><td>\00ce</td><td><a href="javascript:alert(&#x22;\316&#x22;)">\316</a></td></tr><tr><td><code>&#x26;Iuml;</code></td><td>Ï</td><td><code>&#x26;#207;</code></td><td>capital I, dieresis or umlaut mark</td><td>%CF</td><td>\00cf</td><td><a href="javascript:alert(&#x22;\317&#x22;)">\317</a></td></tr><tr><td><code>&#x26;ETH;</code></td><td>Ð</td><td><code>&#x26;#208;</code></td><td>capital Eth, Icelandic</td><td>%D0</td><td>\00d0</td><td><a href="javascript:alert(&#x22;\320&#x22;)">\320</a></td></tr><tr><td><code>&#x26;Ntilde;</code></td><td>Ñ</td><td><code>&#x26;#209;</code></td><td>capital N, tilde</td><td>%D1</td><td>\00d1</td><td><a href="javascript:alert(&#x22;\321&#x22;)">\321</a></td></tr><tr><td><code>&#x26;Ograve;</code></td><td>Ò</td><td><code>&#x26;#210;</code></td><td>capital O, grave accent</td><td>%D2</td><td>\00d2</td><td><a href="javascript:alert(&#x22;\322&#x22;)">\322</a></td></tr><tr><td><code>&#x26;Oacute;</code></td><td>Ó</td><td><code>&#x26;#211;</code></td><td>capital O, acute accent</td><td>%D3</td><td>\00d3</td><td><a href="javascript:alert(&#x22;\323&#x22;)">\323</a></td></tr><tr><td><code>&#x26;Ocirc;</code></td><td>Ô</td><td><code>&#x26;#212;</code></td><td>capital O, circumflex accent</td><td>%D4</td><td>\00d4</td><td><a href="javascript:alert(&#x22;\324&#x22;)">\324</a></td></tr><tr><td><code>&#x26;Otilde;</code></td><td>Õ</td><td><code>&#x26;#213;</code></td><td>capital O, tilde</td><td>%D5</td><td>\00d5</td><td><a href="javascript:alert(&#x22;\325&#x22;)">\325</a></td></tr><tr><td><code>&#x26;Ouml;</code></td><td>Ö</td><td><code>&#x26;#214;</code></td><td>capital O, dieresis or umlaut mark</td><td>%D6</td><td>\00d6</td><td><a href="javascript:alert(&#x22;\326&#x22;)">\326</a></td></tr><tr><td><code>&#x26;times;</code></td><td>×</td><td><code>&#x26;#215;</code></td><td>multiply sign</td><td>%D7</td><td>\00d7</td><td><a href="javascript:alert(&#x22;\327&#x22;)">\327</a></td></tr><tr><td><code>&#x26;Oslash;</code></td><td>Ø</td><td><code>&#x26;#216;</code></td><td>capital O, slash</td><td>%D8</td><td>\00d8</td><td><a href="javascript:alert(&#x22;\330&#x22;)">\330</a></td></tr><tr><td><code>&#x26;Ugrave;</code></td><td>Ù</td><td><code>&#x26;#217;</code></td><td>capital U, grave accent</td><td>%D9</td><td>\00d9</td><td><a href="javascript:alert(&#x22;\331&#x22;)">\331</a></td></tr><tr><td><code>&#x26;Uacute;</code></td><td>Ú</td><td><code>&#x26;#218;</code></td><td>capital U, acute accent</td><td>%DA</td><td>\00da</td><td><a href="javascript:alert(&#x22;\332&#x22;)">\332</a></td></tr><tr><td><code>&#x26;Ucirc;</code></td><td>Û</td><td><code>&#x26;#219;</code></td><td>capital U, circumflex accent</td><td>%DB</td><td>\00db</td><td><a href="javascript:alert(&#x22;\333&#x22;)">\333</a></td></tr><tr><td><code>&#x26;Uuml;</code></td><td>Ü</td><td><code>&#x26;#220;</code></td><td>capital U, dieresis or umlaut mark</td><td>%DC</td><td>\00dc</td><td><a href="javascript:alert(&#x22;\334&#x22;)">\334</a></td></tr><tr><td><code>&#x26;Yacute;</code></td><td>Ý</td><td><code>&#x26;#221;</code></td><td>capital Y, acute accent</td><td>%DD</td><td>\00dd</td><td><a href="javascript:alert(&#x22;\335&#x22;)">\335</a></td></tr><tr><td><code>&#x26;THORN;</code></td><td>Þ</td><td><code>&#x26;#222;</code></td><td>capital THORN, Icelandic</td><td>%DE</td><td>\00de</td><td><a href="javascript:alert(&#x22;\336&#x22;)">\336</a></td></tr><tr><td><code>&#x26;szlig;</code></td><td>ß</td><td><code>&#x26;#223;</code></td><td>small sharp s, German (sz ligature)</td><td>%DF</td><td>\00df</td><td><a href="javascript:alert(&#x22;\337&#x22;)">\337</a></td></tr><tr><td><code>&#x26;agrave;</code></td><td>à</td><td><code>&#x26;#224;</code></td><td>small a, grave accent</td><td>%E0</td><td>\00e0</td><td><a href="javascript:alert(&#x22;\340&#x22;)">\340</a></td></tr><tr><td><code>&#x26;aacute;</code></td><td>á</td><td><code>&#x26;#225;</code></td><td>small a, acute accent</td><td>%E1</td><td>\00e1</td><td><a href="javascript:alert(&#x22;\341&#x22;)">\341</a></td></tr><tr><td><code>&#x26;acirc;</code></td><td>â</td><td><code>&#x26;#226;</code></td><td>small a, circumflex accent</td><td>%E2</td><td>\00e2</td><td><a href="javascript:alert(&#x22;\342&#x22;)">\342</a></td></tr><tr><td><code>&#x26;atilde;</code></td><td>ã</td><td><code>&#x26;#227;</code></td><td>small a, tilde</td><td>%E3</td><td>\00e3</td><td><a href="javascript:alert(&#x22;\343&#x22;)">\343</a></td></tr><tr><td><code>&#x26;auml;</code></td><td>ä</td><td><code>&#x26;#228;</code></td><td>small a, dieresis or umlaut mark</td><td>%E4</td><td>\00e4</td><td><a href="javascript:alert(&#x22;\344&#x22;)">\344</a></td></tr><tr><td><code>&#x26;aring;</code></td><td>å</td><td><code>&#x26;#229;</code></td><td>small a, ring</td><td>%E5</td><td>\00e5</td><td><a href="javascript:alert(&#x22;\345&#x22;)">\345</a></td></tr><tr><td><code>&#x26;aelig;</code></td><td>æ</td><td><code>&#x26;#230;</code></td><td>small ae diphthong (ligature)</td><td>%E6</td><td>\00e6</td><td><a href="javascript:alert(&#x22;\346&#x22;)">\346</a></td></tr><tr><td><code>&#x26;ccedil;</code></td><td>ç</td><td><code>&#x26;#231;</code></td><td>small c, cedilla</td><td>%E7</td><td>\00e7</td><td><a href="javascript:alert(&#x22;\347&#x22;)">\347</a></td></tr><tr><td><code>&#x26;egrave;</code></td><td>è</td><td><code>&#x26;#232;</code></td><td>small e, grave accent</td><td>%E8</td><td>\00e8</td><td><a href="javascript:alert(&#x22;\350&#x22;)">\350</a></td></tr><tr><td><code>&#x26;eacute;</code></td><td>é</td><td><code>&#x26;#233;</code></td><td>small e, acute accent</td><td>%E9</td><td>\00e9</td><td><a href="javascript:alert(&#x22;\351&#x22;)">\351</a></td></tr><tr><td><code>&#x26;ecirc;</code></td><td>ê</td><td><code>&#x26;#234;</code></td><td>small e, circumflex accent</td><td>%EA</td><td>\00ea</td><td><a href="javascript:alert(&#x22;\352&#x22;)">\352</a></td></tr><tr><td><code>&#x26;euml;</code></td><td>ë</td><td><code>&#x26;#235;</code></td><td>small e, dieresis or umlaut mark</td><td>%EB</td><td>\00eb</td><td><a href="javascript:alert(&#x22;\353&#x22;)">\353</a></td></tr><tr><td><code>&#x26;igrave;</code></td><td>ì</td><td><code>&#x26;#236;</code></td><td>small i, grave accent</td><td>%EC</td><td>\00ec</td><td><a href="javascript:alert(&#x22;\354&#x22;)">\354</a></td></tr><tr><td><code>&#x26;iacute;</code></td><td>í</td><td><code>&#x26;#237;</code></td><td>small i, acute accent</td><td>%ED</td><td>\00ed</td><td><a href="javascript:alert(&#x22;\355&#x22;)">\355</a></td></tr><tr><td><code>&#x26;icirc;</code></td><td>î</td><td><code>&#x26;#238;</code></td><td>small i, circumflex accent</td><td>%EE</td><td>\00ee</td><td><a href="javascript:alert(&#x22;\356&#x22;)">\356</a></td></tr><tr><td><code>&#x26;iuml;</code></td><td>ï</td><td><code>&#x26;#239;</code></td><td>small i, dieresis or umlaut mark</td><td>%EF</td><td>\00ef</td><td><a href="javascript:alert(&#x22;\357&#x22;)">\357</a></td></tr><tr><td><code>&#x26;eth;</code></td><td>ð</td><td><code>&#x26;#240;</code></td><td>small eth, Icelandic</td><td>%F0</td><td>\00f0</td><td><a href="javascript:alert(&#x22;\360&#x22;)">\360</a></td></tr><tr><td><code>&#x26;ntilde;</code></td><td>ñ</td><td><code>&#x26;#241;</code></td><td>small n, tilde</td><td>%F1</td><td>\00f1</td><td><a href="javascript:alert(&#x22;\361&#x22;)">\361</a></td></tr><tr><td><code>&#x26;ograve;</code></td><td>ò</td><td><code>&#x26;#242;</code></td><td>small o, grave accent</td><td>%F2</td><td>\00f2</td><td><a href="javascript:alert(&#x22;\362&#x22;)">\362</a></td></tr><tr><td><code>&#x26;oacute;</code></td><td>ó</td><td><code>&#x26;#243;</code></td><td>small o, acute accent</td><td>%F3</td><td>\00f3</td><td><a href="javascript:alert(&#x22;\363&#x22;)">\363</a></td></tr><tr><td><code>&#x26;ocirc;</code></td><td>ô</td><td><code>&#x26;#244;</code></td><td>small o, circumflex accent</td><td>%F4</td><td>\00f4</td><td><a href="javascript:alert(&#x22;\364&#x22;)">\364</a></td></tr><tr><td><code>&#x26;otilde;</code></td><td>õ</td><td><code>&#x26;#245;</code></td><td>small o, tilde</td><td>%F5</td><td>\00f5</td><td><a href="javascript:alert(&#x22;\365&#x22;)">\365</a></td></tr><tr><td><code>&#x26;ouml;</code></td><td>ö</td><td><code>&#x26;#246;</code></td><td>small o, dieresis or umlaut mark</td><td>%F6</td><td>\00f6</td><td><a href="javascript:alert(&#x22;\366&#x22;)">\366</a></td></tr><tr><td><code>&#x26;divide;</code></td><td>÷</td><td><code>&#x26;#247;</code></td><td>divide sign</td><td>%F7</td><td>\00f7</td><td><a href="javascript:alert(&#x22;\367&#x22;)">\367</a></td></tr><tr><td><code>&#x26;oslash;</code></td><td>ø</td><td><code>&#x26;#248;</code></td><td>small o, slash</td><td>%F8</td><td>\00f8</td><td><a href="javascript:alert(&#x22;\370&#x22;)">\370</a></td></tr><tr><td><code>&#x26;ugrave;</code></td><td>ù</td><td><code>&#x26;#249;</code></td><td>small u, grave accent</td><td>%F9</td><td>\00f9</td><td><a href="javascript:alert(&#x22;\371&#x22;)">\371</a></td></tr><tr><td><code>&#x26;uacute;</code></td><td>ú</td><td><code>&#x26;#250;</code></td><td>small u, acute accent</td><td>%FA</td><td>\00fa</td><td><a href="javascript:alert(&#x22;\372&#x22;)">\372</a></td></tr><tr><td><code>&#x26;ucirc;</code></td><td>û</td><td><code>&#x26;#251;</code></td><td>small u, circumflex accent</td><td>%FB</td><td>\00fb</td><td><a href="javascript:alert(&#x22;\373&#x22;)">\373</a></td></tr><tr><td><code>&#x26;uuml;</code></td><td>ü</td><td><code>&#x26;#252;</code></td><td>small u, dieresis or umlaut mark</td><td>%FC</td><td>\00fc</td><td><a href="javascript:alert(&#x22;\374&#x22;)">\374</a></td></tr><tr><td><code>&#x26;yacute;</code></td><td>ý</td><td><code>&#x26;#253;</code></td><td>small y, acute accent</td><td>%FD</td><td>\00fd</td><td><a href="javascript:alert(&#x22;\375&#x22;)">\375</a></td></tr><tr><td><code>&#x26;thorn;</code></td><td>þ</td><td><code>&#x26;#254;</code></td><td>small thorn, Icelandic</td><td>%FE</td><td>\00fe</td><td><a href="javascript:alert(&#x22;\376&#x22;)">\376</a></td></tr><tr><td><code>&#x26;yuml;</code></td><td>ÿ</td><td><code>&#x26;#255;</code></td><td>small y, dieresis or umlaut mark</td><td>%FF</td><td>\00ff</td><td><a href="javascript:alert(&#x22;\377&#x22;)">\377</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-拉丁文扩展"><a aria-hidden="true" tabindex="-1" href="#html-拉丁文扩展"><span class="icon icon-link"></span></a>HTML 拉丁文扩展</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;OElig;</code></td><td>Œ</td><td><code>&#x26;#338;</code></td><td>latin capital ligature oe</td><td>u+0152 ISOlat2</td><td>\0152</td><td><a href="javascript:alert(&#x22;\u0152&#x22;)">\u0152</a></td></tr><tr><td><code>&#x26;oelig;</code></td><td>œ</td><td><code>&#x26;#339;</code></td><td>latin small ligature oe</td><td>u+0153 ISOlat2</td><td>\0153</td><td><a href="javascript:alert(&#x22;\u0153&#x22;)">\u0153</a></td></tr><tr><td><code>&#x26;Scaron;</code></td><td>Š</td><td><code>&#x26;#352;</code></td><td>latin capital letter s with caron</td><td>u+0160 ISOlat2</td><td>\0160</td><td><a href="javascript:alert(&#x22;\u0160&#x22;)">\u0160</a></td></tr><tr><td><code>&#x26;scaron;</code></td><td>š</td><td><code>&#x26;#353;</code></td><td>latin small letter s with caron</td><td>u+0161 ISOlat2</td><td>\0161</td><td><a href="javascript:alert(&#x22;\u0161&#x22;)">\u0161</a></td></tr><tr><td><code>&#x26;Yuml;</code></td><td>Ÿ</td><td><code>&#x26;#376;</code></td><td>latin capital letter y with diaeresis</td><td>u+0178 ISOlat2</td><td>\0178</td><td><a href="javascript:alert(&#x22;\u0178&#x22;)">\u0178</a></td></tr><tr><td><code>&#x26;fnof;</code></td><td>ƒ</td><td><code>&#x26;#402;</code></td><td>latin small f with hook</td><td>u+0192 ISOtech</td><td>\0192</td><td><a href="javascript:alert(&#x22;\u0192&#x22;)">\u0192</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-间距修饰符字母"><a aria-hidden="true" tabindex="-1" href="#html-间距修饰符字母"><span class="icon icon-link"></span></a>HTML 间距修饰符字母</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>Description</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;circ;</code></td><td>ˆ</td><td></td><td>modifier letter circumflex accent</td><td>u+02C6 ISOpub</td><td>\02c6</td><td><a href="javascript:alert(&#x22;\u02c6&#x22;)">\u02c6</a></td></tr><tr><td><code>&#x26;tilde;</code></td><td>˜</td><td></td><td>small tilde</td><td>u+02DC ISOdia</td><td>\02dc</td><td><a href="javascript:alert(&#x22;\u02dc&#x22;)">\u02dc</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-希腊语"><a aria-hidden="true" tabindex="-1" href="#html-希腊语"><span class="icon icon-link"></span></a>HTML 希腊语</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;Alpha;</code></td><td>Α</td><td><code>&#x26;#913;</code></td><td>greek capital letter alpha</td><td>u+0391</td><td>\0391</td><td><a href="javascript:alert(&#x22;\u0391&#x22;)">\u0391</a></td></tr><tr><td><code>&#x26;Beta;</code></td><td>Β</td><td><code>&#x26;#914;</code></td><td>greek capital letter beta</td><td>u+0392</td><td>\0392</td><td><a href="javascript:alert(&#x22;\u0392&#x22;)">\u0392</a></td></tr><tr><td><code>&#x26;Gamma;</code></td><td>Γ</td><td><code>&#x26;#915;</code></td><td>greek capital letter gamma</td><td>u+0393 ISOgrk3</td><td>\0393</td><td><a href="javascript:alert(&#x22;\u0395&#x22;)">\u0395</a></td></tr><tr><td><code>&#x26;Delta;</code></td><td>Δ</td><td><code>&#x26;#916;</code></td><td>greek capital letter delta</td><td>u+0394 ISOgrk3</td><td>\0394</td><td><a href="javascript:alert(&#x22;\u0394&#x22;)">\u0394</a></td></tr><tr><td><code>&#x26;Epsilon;</code></td><td>Ε</td><td><code>&#x26;#917;</code></td><td>greek capital letter epsilon</td><td>u+0395</td><td>\0395</td><td><a href="javascript:alert(&#x22;\u0395&#x22;)">\u0395</a></td></tr><tr><td><code>&#x26;Zeta;</code></td><td>Ζ</td><td><code>&#x26;#918;</code></td><td>greek capital letter zeta</td><td>u+0396</td><td>\0396</td><td><a href="javascript:alert(&#x22;\u0396&#x22;)">\u0396</a></td></tr><tr><td><code>&#x26;Eta;</code></td><td>Η</td><td><code>&#x26;#919;</code></td><td>greek capital letter eta</td><td>u+0397</td><td>\0397</td><td><a href="javascript:alert(&#x22;\u0397&#x22;)">\u0397</a></td></tr><tr><td><code>&#x26;Theta;</code></td><td>Θ</td><td><code>&#x26;#920;</code></td><td>greek capital letter theta</td><td>u+0398 ISOgrk3</td><td>\0398</td><td><a href="javascript:alert(&#x22;\u0398&#x22;)">\u0398</a></td></tr><tr><td><code>&#x26;Iota;</code></td><td>Ι</td><td><code>&#x26;#921;</code></td><td>greek capital letter iota</td><td>u+0399</td><td>\0399</td><td><a href="javascript:alert(&#x22;\u0399&#x22;)">\u0399</a></td></tr><tr><td><code>&#x26;Kappa;</code></td><td>Κ</td><td><code>&#x26;#922;</code></td><td>greek capital letter kappa</td><td>u+039A</td><td>\039a</td><td><a href="javascript:alert(&#x22;\u039a&#x22;)">\u039a</a></td></tr><tr><td><code>&#x26;Lambda;</code></td><td>Λ</td><td><code>&#x26;#923;</code></td><td>greek capital letter lambda</td><td>u+039B ISOgrk3</td><td>\039b</td><td><a href="javascript:alert(&#x22;\u039b&#x22;)">\u039b</a></td></tr><tr><td><code>&#x26;Mu;</code></td><td>Μ</td><td><code>&#x26;#924;</code></td><td>greek capital letter mu</td><td>u+039C</td><td>\039c</td><td><a href="javascript:alert(&#x22;\u039c&#x22;)">\u039c</a></td></tr><tr><td><code>&#x26;Nu;</code></td><td>Ν</td><td><code>&#x26;#925;</code></td><td>greek capital letter nu</td><td>u+039D</td><td>\039d</td><td><a href="javascript:alert(&#x22;\u039D&#x22;)">\u039D</a></td></tr><tr><td><code>&#x26;Xi;</code></td><td>Ξ</td><td><code>&#x26;#926;</code></td><td>greek capital letter xi</td><td>u+039E ISOgrk3</td><td>\039e</td><td><a href="javascript:alert(&#x22;\u039e&#x22;)">\u039e</a></td></tr><tr><td><code>&#x26;Omicron;</code></td><td>Ο</td><td><code>&#x26;#927;</code></td><td>greek capital letter omicron</td><td>u+039F</td><td>\039f</td><td><a href="javascript:alert(&#x22;\u039f&#x22;)">\u039f</a></td></tr><tr><td><code>&#x26;Pi;</code></td><td>Π</td><td><code>&#x26;#928;</code></td><td>greek capital letter pi</td><td>u+03A0 ISOgrk3</td><td>\03a0</td><td><a href="javascript:alert(&#x22;\u03a0&#x22;)">\u03a0</a></td></tr><tr><td><code>&#x26;Rho;</code></td><td>Ρ</td><td><code>&#x26;#929;</code></td><td>greek capital letter rho</td><td>u+03A1</td><td>\03a1</td><td><a href="javascript:alert(&#x22;\u03a1&#x22;)">\u03a1</a></td></tr><tr><td><code>&#x26;Sigma;</code></td><td>Σ</td><td><code>&#x26;#931;</code></td><td>greek capital letter sigma</td><td>u+03A3 ISOgrk3</td><td>\03a3</td><td><a href="javascript:alert(&#x22;\u03A3&#x22;)">\u03A3</a></td></tr><tr><td><code>&#x26;Tau;</code></td><td>Τ</td><td><code>&#x26;#932;</code></td><td>greek capital letter tau</td><td>u+03A4</td><td>\03a4</td><td><a href="javascript:alert(&#x22;\u03A4&#x22;)">\u03A4</a></td></tr><tr><td><code>&#x26;Upsilon;</code></td><td>Υ</td><td><code>&#x26;#933;</code></td><td>greek capital letter upsilon</td><td>u+03A5 ISOgrk3</td><td>\03a5</td><td><a href="javascript:alert(&#x22;\u03A5&#x22;)">\u03A5</a></td></tr><tr><td><code>&#x26;Phi;</code></td><td>Φ</td><td><code>&#x26;#934;</code></td><td>greek capital letter phi</td><td>u+03A6 ISOgrk3</td><td>\03a6</td><td><a href="javascript:alert(&#x22;\u03A6&#x22;)">\u03A6</a></td></tr><tr><td><code>&#x26;Chi;</code></td><td>Χ</td><td><code>&#x26;#935;</code></td><td>greek capital letter chi</td><td>u+03A7</td><td>\03a7</td><td><a href="javascript:alert(&#x22;\u03A7&#x22;)">\u03A7</a></td></tr><tr><td><code>&#x26;Psi;</code></td><td>Ψ</td><td><code>&#x26;#936;</code></td><td>greek capital letter psi</td><td>u+03A8 ISOgrk3</td><td>\03a8</td><td><a href="javascript:alert(&#x22;\u03A8&#x22;)">\u03A8</a></td></tr><tr><td><code>&#x26;Omega;</code></td><td>Ω</td><td><code>&#x26;#937;</code></td><td>greek capital letter omega</td><td>u+03A9 ISOgrk3</td><td>\03a9</td><td><a href="javascript:alert(&#x22;\u03A9&#x22;)">\u03A9</a></td></tr><tr><td><code>&#x26;alpha;</code></td><td>α</td><td><code>&#x26;#945;</code></td><td>greek small letter alpha</td><td>u+03B1 ISOgrk3</td><td>\03b1</td><td><a href="javascript:alert(&#x22;\u03b1&#x22;)">\u03b1</a></td></tr><tr><td><code>&#x26;beta;</code></td><td>β</td><td><code>&#x26;#946;</code></td><td>greek small letter beta</td><td>u+03B2 ISOgrk3</td><td>\03b2</td><td><a href="javascript:alert(&#x22;\u03b2&#x22;)">\u03b2</a></td></tr><tr><td><code>&#x26;gamma;</code></td><td>γ</td><td><code>&#x26;#947;</code></td><td>greek small letter gamma</td><td>u+03B3 ISOgrk3</td><td>\03b3</td><td><a href="javascript:alert(&#x22;\u03b3&#x22;)">\u03b3</a></td></tr><tr><td><code>&#x26;delta;</code></td><td>δ</td><td><code>&#x26;#948;</code></td><td>greek small letter delta</td><td>u+03B4 ISOgrk3</td><td>\03b4</td><td><a href="javascript:alert(&#x22;\u03b4&#x22;)">\u03b4</a></td></tr><tr><td><code>&#x26;epsilon;</code></td><td>ε</td><td><code>&#x26;#949;</code></td><td>greek small letter epsilon</td><td>u+03B5 ISOgrk3</td><td>\03b5</td><td><a href="javascript:alert(&#x22;\u03b5&#x22;)">\u03b5</a></td></tr><tr><td><code>&#x26;zeta;</code></td><td>ζ</td><td><code>&#x26;#950;</code></td><td>greek small letter zeta</td><td>u+03B6 ISOgrk3</td><td>\03b6</td><td><a href="javascript:alert(&#x22;\u03b6&#x22;)">\u03b6</a></td></tr><tr><td><code>&#x26;eta;</code></td><td>η</td><td><code>&#x26;#951;</code></td><td>greek small letter eta</td><td>u+03B7 ISOgrk3</td><td>\03b7</td><td><a href="javascript:alert(&#x22;\u03b7&#x22;)">\u03b7</a></td></tr><tr><td><code>&#x26;theta;</code></td><td>θ</td><td><code>&#x26;#952;</code></td><td>greek small letter theta</td><td>u+03B8 ISOgrk3</td><td>\03b8</td><td><a href="javascript:alert(&#x22;\u03b8&#x22;)">\u03b8</a></td></tr><tr><td><code>&#x26;iota;</code></td><td>ι</td><td><code>&#x26;#953;</code></td><td>greek small letter iota</td><td>u+03B9 ISOgrk3</td><td>\03b9</td><td><a href="javascript:alert(&#x22;\u03b9&#x22;)">\u03b9</a></td></tr><tr><td><code>&#x26;kappa;</code></td><td>κ</td><td><code>&#x26;#954;</code></td><td>greek small letter kappa</td><td>u+03BA ISOgrk3</td><td>\03ba</td><td><a href="javascript:alert(&#x22;\u03ba&#x22;)">\u03ba</a></td></tr><tr><td><code>&#x26;lambda;</code></td><td>λ</td><td><code>&#x26;#955;</code></td><td>greek small letter lambda</td><td>u+03BB ISOgrk3</td><td>\03bb</td><td><a href="javascript:alert(&#x22;\u03bb&#x22;)">\u03bb</a></td></tr><tr><td><code>&#x26;mu;</code></td><td>μ</td><td><code>&#x26;#956;</code></td><td>greek small letter mu</td><td>u+03BC ISOgrk3</td><td>\03bc</td><td><a href="javascript:alert(&#x22;\u03bc&#x22;)">\u03bc</a></td></tr><tr><td><code>&#x26;nu;</code></td><td>ν</td><td><code>&#x26;#957;</code></td><td>greek small letter nu</td><td>u+03BD ISOgrk3</td><td>\03bd</td><td><a href="javascript:alert(&#x22;\u03bd&#x22;)">\u03bd</a></td></tr><tr><td><code>&#x26;xi;</code></td><td>ξ</td><td><code>&#x26;#958;</code></td><td>greek small letter xi</td><td>u+03BE ISOgrk3</td><td>\03be</td><td><a href="javascript:alert(&#x22;\u03be&#x22;)">\u03be</a></td></tr><tr><td><code>&#x26;omicron;</code></td><td>ο</td><td><code>&#x26;#959;</code></td><td>greek small letter omicron</td><td>u+03BF NEW</td><td>\03bf</td><td><a href="javascript:alert(&#x22;\u03bf&#x22;)">\u03bf</a></td></tr><tr><td><code>&#x26;pi;</code></td><td>π</td><td><code>&#x26;#960;</code></td><td>greek small letter pi</td><td>u+03C0 ISOgrk3</td><td>\03c0</td><td><a href="javascript:alert(&#x22;\u03c0&#x22;)">\u03c0</a></td></tr><tr><td><code>&#x26;rho;</code></td><td>ρ</td><td><code>&#x26;#961;</code></td><td>greek small letter rho</td><td>u+03C1 ISOgrk3</td><td>\03c1</td><td><a href="javascript:alert(&#x22;\u03c1&#x22;)">\u03c1</a></td></tr><tr><td><code>&#x26;sigmaf;</code></td><td>ς</td><td><code>&#x26;#962;</code></td><td>greek small letter final sigma</td><td>u+03C2 ISOgrk3</td><td>\03C2</td><td><a href="javascript:alert(&#x22;\u03c2&#x22;)">\u03c2</a></td></tr><tr><td><code>&#x26;sigma;</code></td><td>σ</td><td><code>&#x26;#963;</code></td><td>greek small letter sigma</td><td>u+03C3 ISOgrk3</td><td>\03C3</td><td><a href="javascript:alert(&#x22;\u03c3&#x22;)">\u03c3</a></td></tr><tr><td><code>&#x26;tau;</code></td><td>τ</td><td><code>&#x26;#964;</code></td><td>greek small letter tau</td><td>u+03C4 ISOgrk3</td><td>\03C4</td><td><a href="javascript:alert(&#x22;\u03c4&#x22;)">\u03c4</a></td></tr><tr><td><code>&#x26;upsilon;</code></td><td>υ</td><td><code>&#x26;#965;</code></td><td>greek small letter upsilon</td><td>u+03C5 ISOgrk3</td><td>\03C5</td><td><a href="javascript:alert(&#x22;\u03c5&#x22;)">\u03c5</a></td></tr><tr><td><code>&#x26;phi;</code></td><td>φ</td><td><code>&#x26;#966;</code></td><td>greek small letter phi</td><td>u+03C6 ISOgrk3</td><td>\03C6</td><td><a href="javascript:alert(&#x22;\03c6&#x22;)">\03c6</a></td></tr><tr><td><code>&#x26;chi;</code></td><td>χ</td><td><code>&#x26;#967;</code></td><td>greek small letter chi</td><td>u+03C7 ISOgrk3</td><td>\03C7</td><td><a href="javascript:alert(&#x22;\u03c7&#x22;)">\u03c7</a></td></tr><tr><td><code>&#x26;psi;</code></td><td>ψ</td><td><code>&#x26;#968;</code></td><td>greek small letter psi</td><td>u+03C8 ISOgrk3</td><td>\03C8</td><td><a href="javascript:alert(&#x22;\u03c8&#x22;)">\u03c8</a></td></tr><tr><td><code>&#x26;omega;</code></td><td>ω</td><td><code>&#x26;#969;</code></td><td>greek small letter omega</td><td>u+03C9 ISOgrk3</td><td>\03C9</td><td><a href="javascript:alert(&#x22;\u03c9&#x22;)">\u03c9</a></td></tr><tr><td><code>&#x26;thetasym;</code></td><td>ϑ</td><td><code>&#x26;#977;</code></td><td>greek small letter theta symbol</td><td>u+03D1 NEW</td><td>\03D1</td><td><a href="javascript:alert(&#x22;\u03D1&#x22;)">\u03D1</a></td></tr><tr><td><code>&#x26;upsih;</code></td><td>ϒ</td><td><code>&#x26;#978;</code></td><td>greek upsilon with hook symbol</td><td>u+03D2 NEW</td><td>\03D2</td><td><a href="javascript:alert(&#x22;\u03D2&#x22;)">\u03D2</a></td></tr><tr><td><code>&#x26;piv;</code></td><td>ϖ</td><td><code>&#x26;#982;</code></td><td>greek pi symbol</td><td>u+03D6 ISOgrk3</td><td>\03D6</td><td><a href="javascript:alert(&#x22;\u03D6&#x22;)">\u03D6</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-punctuation"><a aria-hidden="true" tabindex="-1" href="#html-punctuation"><span class="icon icon-link"></span></a>HTML Punctuation</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;ensp;</code></td><td> </td><td><code>&#x26;#8194;</code></td><td>en space</td><td>u+2002 ISOpub</td><td>\2002</td><td><a href="javascript:alert(&#x22;\u2002&#x22;)">\u2002</a></td></tr><tr><td><code>&#x26;emsp;</code></td><td> </td><td><code>&#x26;#8195;</code></td><td>em space</td><td>u+2003 ISOpub</td><td>\2003</td><td><a href="javascript:alert(&#x22;\u2003&#x22;)">\u2003</a></td></tr><tr><td><code>&#x26;thinsp;</code></td><td> </td><td><code>&#x26;#8201;</code></td><td>thin space</td><td>u+2009 ISOpub</td><td>\2009</td><td><a href="javascript:alert(&#x22;\u2009&#x22;)">\u2009</a></td></tr><tr><td><code>&#x26;zwnj;</code></td><td>‌</td><td><code>&#x26;#8204;</code></td><td>zero width non-joiner</td><td>u+200C NEW RFC 2070</td><td>\200C</td><td><a href="javascript:alert(&#x22;\u200C&#x22;)">\u200C</a></td></tr><tr><td><code>&#x26;zwj;</code></td><td>‍</td><td><code>&#x26;#8205;</code></td><td>zero width joiner</td><td>u+200D NEW RFC 2070</td><td>\200D</td><td><a href="javascript:alert(&#x22;\u200d&#x22;)">\u200d</a></td></tr><tr><td><code>&#x26;lrm;</code></td><td>‎</td><td><code>&#x26;#8206;</code></td><td>left-to-right mark</td><td>u+200E NEW RFC 2070</td><td>\200E</td><td><a href="javascript:alert(&#x22;\u200e&#x22;)">\u200e</a></td></tr><tr><td><code>&#x26;rlm;</code></td><td>‏</td><td><code>&#x26;#8207;</code></td><td>right-to-left mark</td><td>u+200F NEW RFC 2070</td><td>\200F</td><td><a href="javascript:alert(&#x22;\u200f&#x22;)">\u200f</a></td></tr><tr><td><code>&#x26;ndash;</code></td><td>–</td><td><code>&#x26;#8211;</code></td><td>en dash</td><td>u+2013 ISOpub</td><td>\2013</td><td><a href="javascript:alert(&#x22;\u2013&#x22;)">\u2013</a></td></tr><tr><td><code>&#x26;mdash;</code></td><td>—</td><td><code>&#x26;#8212;</code></td><td>em dash</td><td>u+2014 ISOpub</td><td>\2014</td><td><a href="javascript:alert(&#x22;\u2014&#x22;)">\u2014</a></td></tr><tr><td><code>&#x26;lsquo;</code></td><td>‘</td><td><code>&#x26;#8216;</code></td><td>left single quotation mark</td><td>u+2018 ISOnum</td><td>\2018</td><td><a href="javascript:alert(&#x22;\u2018&#x22;)">\u2018</a></td></tr><tr><td><code>&#x26;rsquo;</code></td><td>’</td><td><code>&#x26;#8217;</code></td><td>right single quotation mark</td><td>u+2019 ISOnum</td><td>\2019</td><td><a href="javascript:alert(&#x22;\u2019&#x22;)">\u2019</a></td></tr><tr><td><code>&#x26;sbquo;</code></td><td>‚</td><td><code>&#x26;#8218;</code></td><td>single low-9 quotation mark</td><td>u+201A NEW</td><td>\201A</td><td><a href="javascript:alert(&#x22;\u201a&#x22;)">\u201a</a></td></tr><tr><td><code>&#x26;ldquo;</code></td><td>“</td><td><code>&#x26;#8220;</code></td><td>left double quotation mark</td><td>u+201C ISOnum</td><td>\201C</td><td><a href="javascript:alert(&#x22;\u201c&#x22;)">\u201c</a></td></tr><tr><td><code>&#x26;rdquo;</code></td><td>”</td><td><code>&#x26;#8221;</code></td><td>right double quotation mark</td><td>u+201D ISOnum</td><td>\201D</td><td><a href="javascript:alert(&#x22;\u201d&#x22;)">\u201d</a></td></tr><tr><td><code>&#x26;bdquo;</code></td><td>„</td><td><code>&#x26;#8222;</code></td><td>double low-9 quotation mark</td><td>u+201E NEW</td><td>\201E</td><td><a href="javascript:alert(&#x22;\u201e&#x22;)">\u201e</a></td></tr><tr><td><code>&#x26;dagger;</code></td><td>†</td><td><code>&#x26;#8224;</code></td><td>dagger</td><td>u+2020 ISOpub</td><td>\2020</td><td><a href="javascript:alert(&#x22;\u2020&#x22;)">\u2020</a></td></tr><tr><td><code>&#x26;Dagger;</code></td><td>‡</td><td><code>&#x26;#8225;</code></td><td>double dagger</td><td>u+2021 ISOpub</td><td>\2021</td><td><a href="javascript:alert(&#x22;\u2021&#x22;)">\u2021</a></td></tr><tr><td><code>&#x26;permil;</code></td><td>‰</td><td><code>&#x26;#8240;</code></td><td>per mille sign</td><td>u+2030 ISOtech</td><td>\2030</td><td><a href="javascript:alert(&#x22;\u2030&#x22;)">\u2030</a></td></tr><tr><td><code>&#x26;lsaquo;</code></td><td>‹</td><td><code>&#x26;#8249;</code></td><td>single left-pointing angle quotation mark</td><td>u+2039 ISO proposed</td><td>\2039</td><td><a href="javascript:alert(&#x22;\u2039&#x22;)">\u2039</a></td></tr><tr><td><code>&#x26;rsaquo;</code></td><td>›</td><td><code>&#x26;#8250;</code></td><td>single right-pointing angle quotation mark</td><td>u+203A ISO proposed</td><td>\203A</td><td><a href="javascript:alert(&#x22;\u203a&#x22;)">\u203a</a></td></tr><tr><td><code>&#x26;bull;</code></td><td>•</td><td><code>&#x26;#8226;</code></td><td>bullet, aka. black small circle</td><td>u+2022 ISOpub</td><td>\2022</td><td><a href="javascript:alert(&#x22;\u2219&#x22;)">\u2219</a></td></tr><tr><td><code>&#x26;hellip;</code></td><td>…</td><td><code>&#x26;#8230;</code></td><td>horizontal ellipsis, aka three dot leader</td><td>u+2026 ISOpub</td><td>\2026</td><td><a href="javascript:alert(&#x22;\u2026&#x22;)">\u2026</a></td></tr><tr><td><code>&#x26;prime;</code></td><td>′</td><td><code>&#x26;#8242;</code></td><td>prime, aka minutes, aka feet</td><td>u+2032 ISOtech</td><td>\2032</td><td><a href="javascript:alert(&#x22;\u2032&#x22;)">\u2032</a></td></tr><tr><td><code>&#x26;Prime;</code></td><td>″</td><td><code>&#x26;#8243;</code></td><td>double prime, aka seconds, aka inches</td><td>u+2033 ISOtech</td><td>\2033</td><td><a href="javascript:alert(&#x22;\u2033&#x22;)">\u2033</a></td></tr><tr><td><code>&#x26;oline;</code></td><td>‾</td><td><code>&#x26;#8254;</code></td><td>overline, aka spacing overscore</td><td>u+203E NEW</td><td>\203E</td><td><a href="javascript:alert(&#x22;\u203e&#x22;)">\u203e</a></td></tr><tr><td><code>&#x26;frasl;</code></td><td>⁄</td><td><code>&#x26;#8260;</code></td><td>fraction slash</td><td>u+2044 NEW</td><td>\2044</td><td><a href="javascript:alert(&#x22;\u8260&#x22;)">\u8260</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-letter-like-symbols"><a aria-hidden="true" tabindex="-1" href="#html-letter-like-symbols"><span class="icon icon-link"></span></a>HTML Letter-like Symbols</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;weierp;</code></td><td>℘</td><td><code>&#x26;#8472;</code></td><td>script capital P, aka power set, aka Weierstrass p</td><td>u+2118 ISOamso</td><td>\2118</td><td><a href="javascript:alert(&#x22;\u2118&#x22;)">\u2118</a></td></tr><tr><td><code>&#x26;image;</code></td><td>ℑ</td><td><code>&#x26;#8465;</code></td><td>blackletter capital I, aka imaginary part</td><td>u+2111 ISOamso</td><td>\2111</td><td><a href="javascript:alert(&#x22;\u2111&#x22;)">\u2111</a></td></tr><tr><td><code>&#x26;real;</code></td><td>ℜ</td><td><code>&#x26;#8476;</code></td><td>blackletter capital R, aka real part symbol</td><td>u+211C ISOamso</td><td>\211C</td><td><a href="javascript:alert(&#x22;\u211c&#x22;)">\u211c</a></td></tr><tr><td><code>&#x26;trade;</code></td><td>™</td><td><code>&#x26;#8482;</code></td><td>trade mark sign</td><td>u+2122 ISOnum</td><td>\2122</td><td><a href="javascript:alert(&#x22;\u2122&#x22;)">\u2122</a></td></tr><tr><td><code>&#x26;alefsym;</code></td><td>ℵ</td><td><code>&#x26;#8501;</code></td><td>alef symbol</td><td>u+2135 NEW</td><td>\2135</td><td><a href="javascript:alert(&#x22;\u&#x22;)">\u</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-arrows"><a aria-hidden="true" tabindex="-1" href="#html-arrows"><span class="icon icon-link"></span></a>HTML Arrows</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;larr;</code></td><td>←</td><td><code>&#x26;#8592;</code></td><td>leftwards arrow</td><td>u+2190 ISOnum</td><td>\2190</td><td><a href="javascript:alert(&#x22;\u2190&#x22;)">\u2190</a></td></tr><tr><td><code>&#x26;uarr;</code></td><td>↑</td><td><code>&#x26;#8593;</code></td><td>upwards arrow</td><td>u+2191 ISOnum</td><td>\2191</td><td><a href="javascript:alert(&#x22;\u2191&#x22;)">\u2191</a></td></tr><tr><td><code>&#x26;rarr;</code></td><td>→</td><td><code>&#x26;#8594;</code></td><td>rightwards arrow</td><td>u+2192 ISOnum</td><td>\2192</td><td><a href="javascript:alert(&#x22;\u2192&#x22;)">\u2192</a></td></tr><tr><td><code>&#x26;darr;</code></td><td>↓</td><td><code>&#x26;#8595;</code></td><td>downwards arrow</td><td>u+2193 ISOnum</td><td>\2193</td><td><a href="javascript:alert(&#x22;\u2193&#x22;)">\u2193</a></td></tr><tr><td><code>&#x26;harr;</code></td><td>↔</td><td><code>&#x26;#8596;</code></td><td>left right arrow</td><td>u+2194 ISOamsa</td><td>\2194</td><td><a href="javascript:alert(&#x22;\u2194&#x22;)">\u2194</a></td></tr><tr><td><code>&#x26;crarr;</code></td><td>↵</td><td><code>&#x26;#8629;</code></td><td>downwards arrow with corner leftwards, aka carriage return</td><td>u+21B5 NEW</td><td>\21B5</td><td><a href="javascript:alert(&#x22;\u21b5&#x22;)">\u21b5</a></td></tr><tr><td><code>&#x26;lArr;</code></td><td>⇐</td><td><code>&#x26;#8656;</code></td><td>leftwards double arrow can be used for ‘is implied by’</td><td>u+21D0 ISOtech</td><td>\21D0</td><td><a href="javascript:alert(&#x22;\u21d0&#x22;)">\u21d0</a></td></tr><tr><td><code>&#x26;uArr;</code></td><td>⇑</td><td><code>&#x26;#8657;</code></td><td>upwards double arrow</td><td>u+21D1 ISOamsa</td><td>\21D1</td><td><a href="javascript:alert(&#x22;\u21d1&#x22;)">\u21d1</a></td></tr><tr><td><code>&#x26;rArr;</code></td><td>⇒</td><td><code>&#x26;#8658;</code></td><td>rightwards double arrow</td><td>u+21D2 ISOtech</td><td>\21D2</td><td><a href="javascript:alert(&#x22;\u21d2&#x22;)">\u21d2</a></td></tr><tr><td><code>&#x26;dArr;</code></td><td>⇓</td><td><code>&#x26;#8659;</code></td><td>downwards double arrow</td><td>u+21D3 ISOamsa</td><td>\21D3</td><td><a href="javascript:alert(&#x22;\ud1d3&#x22;)">\ud1d3</a></td></tr><tr><td><code>&#x26;hArr;</code></td><td>⇔</td><td><code>&#x26;#8660;</code></td><td>left right double arrow</td><td>u+21D4 ISOamsa</td><td>\21D4</td><td><a href="javascript:alert(&#x22;\u21d4&#x22;)">\u21d4</a></td></tr><tr><td></td><td>◄</td><td><code>&#x26;#9668;</code></td><td>black left pointing triangle</td><td>U+25C0</td><td>\25C0</td><td><a href="javascript:alert(&#x22;\u25c0&#x22;)">\u25c0</a></td></tr><tr><td></td><td>►</td><td><code>&#x26;#9658;</code></td><td>black right pointing triangle</td><td>u+25B6</td><td>\25b6</td><td><a href="javascript:alert(&#x22;\u25b6&#x22;)">\u25b6</a></td></tr><tr><td></td><td>▲</td><td><code>&#x26;#9650;</code></td><td>black up pointing triangle</td><td>u+25B2</td><td>\25b2</td><td><a href="javascript:alert(&#x22;\25b2&#x22;)">\25b2</a></td></tr><tr><td></td><td>▼</td><td><code>&#x26;#9660;</code></td><td>black down pointing triangle</td><td>u+25BC</td><td>\25bc</td><td><a href="javascript:alert(&#x22;\25bc&#x22;)">\25bc</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-数学运算符"><a aria-hidden="true" tabindex="-1" href="#html-数学运算符"><span class="icon icon-link"></span></a>HTML 数学运算符</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;forall;</code></td><td>∀</td><td><code>&#x26;#8704;</code></td><td>for all</td><td>u+2200 ISOtech</td><td>\2200</td><td><a href="javascript:alert(&#x22;\u2200&#x22;)">\u2200</a></td></tr><tr><td><code>&#x26;part;</code></td><td>∂</td><td><code>&#x26;#8706;</code></td><td>partial differential</td><td>u+2202 ISOtech</td><td>\2202</td><td><a href="javascript:alert(&#x22;\u2202&#x22;)">\u2202</a></td></tr><tr><td><code>&#x26;exist;</code></td><td>∃</td><td><code>&#x26;#8707;</code></td><td>there exists</td><td>u+2203 ISOtech</td><td>\2203</td><td><a href="javascript:alert(&#x22;\u2203&#x22;)">\u2203</a></td></tr><tr><td><code>&#x26;empty;</code></td><td>∅</td><td><code>&#x26;#8709;</code></td><td>empty set, aka null set, aka diameter</td><td>u+2205 ISOamso</td><td>\2205</td><td><a href="javascript:alert(&#x22;\u2205&#x22;)">\u2205</a></td></tr><tr><td><code>&#x26;nabla;</code></td><td>∇</td><td><code>&#x26;#8711;</code></td><td>nabla, aka bakad difference</td><td>u+2207 ISOtech</td><td>\2207</td><td><a href="javascript:alert(&#x22;\u2207&#x22;)">\u2207</a></td></tr><tr><td><code>&#x26;isin;</code></td><td>∈</td><td><code>&#x26;#8712;</code></td><td>element of</td><td>u+2208 ISOtech</td><td>\2208</td><td><a href="javascript:alert(&#x22;\u2208&#x22;)">\u2208</a></td></tr><tr><td><code>&#x26;notin;</code></td><td>∉</td><td><code>&#x26;#8713;</code></td><td>not an element of</td><td>u+2209 ISOtech</td><td>\2209</td><td><a href="javascript:alert(&#x22;\u2209&#x22;)">\u2209</a></td></tr><tr><td><code>&#x26;ni;</code></td><td>∋</td><td><code>&#x26;#8715;</code></td><td>contains as member</td><td>u+220B ISOtech</td><td>\220B</td><td><a href="javascript:alert(&#x22;\u220b&#x22;)">\u220b</a></td></tr><tr><td><code>&#x26;prod;</code></td><td>∏</td><td><code>&#x26;#8719;</code></td><td>n-ary product, aka product sign</td><td>u+220F ISOamsb</td><td>\220F</td><td><a href="javascript:alert(&#x22;\u03a0&#x22;)">\u03a0</a></td></tr><tr><td><code>&#x26;sum;</code></td><td>∑</td><td><code>&#x26;#8721;</code></td><td>n-ary sumation</td><td>u+2211 ISOamsb</td><td>\2211</td><td><a href="javascript:alert(&#x22;\u03a3&#x22;)">\u03a3</a></td></tr><tr><td><code>&#x26;minus;</code></td><td>−</td><td><code>&#x26;#8722;</code></td><td>minus sign</td><td>u+2212 ISOtech</td><td>\2212</td><td><a href="javascript:alert(&#x22;\u2212&#x22;)">\u2212</a></td></tr><tr><td><code>&#x26;lowast;</code></td><td>∗</td><td><code>&#x26;#8727;</code></td><td>asterisk operator</td><td>u+2217 ISOtech</td><td>\2217</td><td><a href="javascript:alert(&#x22;\u2217&#x22;)">\u2217</a></td></tr><tr><td><code>&#x26;radic;</code></td><td>√</td><td><code>&#x26;#8730;</code></td><td>square root, aka radical sign</td><td>u+221A ISOtech</td><td>\221A</td><td><a href="javascript:alert(&#x22;\u221a&#x22;)">\u221a</a></td></tr><tr><td><code>&#x26;prop;</code></td><td>∝</td><td><code>&#x26;#8733;</code></td><td>proportional to</td><td>u+221D ISOtech</td><td>\221D</td><td><a href="javascript:alert(&#x22;\u221d&#x22;)">\u221d</a></td></tr><tr><td><code>&#x26;infin;</code></td><td>∞</td><td><code>&#x26;#8734;</code></td><td>infinity</td><td>u+221E ISOtech</td><td>\221E</td><td><a href="javascript:alert(&#x22;\u221e&#x22;)">\u221e</a></td></tr><tr><td><code>&#x26;ang;</code></td><td>∠</td><td><code>&#x26;#8736;</code></td><td>angle</td><td>u+2220 ISOamso</td><td>\2220</td><td><a href="javascript:alert(&#x22;\u2220&#x22;)">\u2220</a></td></tr><tr><td><code>&#x26;and;</code></td><td>⊥</td><td><code>&#x26;#8869;</code></td><td>logical and, aka wedge</td><td>u+2227 ISOtech</td><td>\2227</td><td><a href="javascript:alert(&#x22;\u2227&#x22;)">\u2227</a></td></tr><tr><td><code>&#x26;or;</code></td><td>⊦</td><td><code>&#x26;#8870;</code></td><td>logical or, aka vee</td><td>u+2228 ISOtech</td><td>\2228</td><td><a href="javascript:alert(&#x22;\u2228&#x22;)">\u2228</a></td></tr><tr><td><code>&#x26;cap;</code></td><td>∩</td><td><code>&#x26;#8745;</code></td><td>intersection, aka cap</td><td>u+2229 ISOtech</td><td>\2229</td><td><a href="javascript:alert(&#x22;\u2229&#x22;)">\u2229</a></td></tr><tr><td><code>&#x26;cup;</code></td><td>∪</td><td><code>&#x26;#8746;</code></td><td>union, aka cup</td><td>u+222A ISOtech</td><td>\222A</td><td><a href="javascript:alert(&#x22;\u222a&#x22;)">\u222a</a></td></tr><tr><td><code>&#x26;int;</code></td><td>∫</td><td><code>&#x26;#8747;</code></td><td>integral</td><td>u+222B ISOtech</td><td>\222B</td><td><a href="javascript:alert(&#x22;\u222b&#x22;)">\u222b</a></td></tr><tr><td><code>&#x26;there4;</code></td><td>∴</td><td><code>&#x26;#8756;</code></td><td>therefore</td><td>u+2234 ISOtech</td><td>\2234</td><td><a href="javascript:alert(&#x22;\u2234&#x22;)">\u2234</a></td></tr><tr><td><code>&#x26;sim;</code></td><td>∼</td><td><code>&#x26;#8764;</code></td><td>tilde</td><td>u+223C ISOtech</td><td>\223C</td><td><a href="javascript:alert(&#x22;\u223c&#x22;)">\u223c</a></td></tr><tr><td><code>&#x26;cong;</code></td><td>≅</td><td><code>&#x26;#8773;</code></td><td>approximately equal to</td><td>u+2245 ISOtech</td><td>\2245</td><td><a href="javascript:alert(&#x22;\u2245&#x22;)">\u2245</a></td></tr><tr><td><code>&#x26;asymp;</code></td><td>≈</td><td><code>&#x26;#8776;</code></td><td>almost equal to, aka asymptotic to</td><td>u+2248 ISOamsr</td><td>\2248</td><td><a href="javascript:alert(&#x22;\u2248&#x22;)">\u2248</a></td></tr><tr><td><code>&#x26;ne;</code></td><td>≠</td><td><code>&#x26;#8800;</code></td><td>not equal to</td><td>u+2260 ISOtech</td><td>\2260</td><td><a href="javascript:alert(&#x22;\u2260&#x22;)">\u2260</a></td></tr><tr><td><code>&#x26;equiv;</code></td><td>≡</td><td><code>&#x26;#8801;</code></td><td>identical to</td><td>u+2261 ISOtech</td><td>\2261</td><td><a href="javascript:alert(&#x22;\u2261&#x22;)">\u2261</a></td></tr><tr><td><code>&#x26;le;</code></td><td>≤</td><td><code>&#x26;#8804;</code></td><td>less-than or equal to</td><td>u+2264 ISOtech</td><td>\2264</td><td><a href="javascript:alert(&#x22;\u2264&#x22;)">\u2264</a></td></tr><tr><td><code>&#x26;ge;</code></td><td>≥</td><td><code>&#x26;#8805;</code></td><td>greater-than or equal to</td><td>u+2265 ISOtech</td><td>\2265</td><td><a href="javascript:alert(&#x22;\u2265&#x22;)">\u2265</a></td></tr><tr><td><code>&#x26;sub;</code></td><td>⊂</td><td><code>&#x26;#8834;</code></td><td>subset of</td><td>u+2282 ISOtech</td><td>\2282</td><td><a href="javascript:alert(&#x22;\u2282&#x22;)">\u2282</a></td></tr><tr><td><code>&#x26;sup;</code></td><td>⊃</td><td><code>&#x26;#8835;</code></td><td>superset of</td><td>u+2283 ISOtech</td><td>\2283</td><td><a href="javascript:alert(&#x22;\u2283&#x22;)">\u2283</a></td></tr><tr><td><code>&#x26;nsub;</code></td><td>⊄</td><td><code>&#x26;#8836;</code></td><td>not a subset of</td><td>u+2284 ISOamsn</td><td>\2284</td><td><a href="javascript:alert(&#x22;\u2284&#x22;)">\u2284</a></td></tr><tr><td><code>&#x26;sube;</code></td><td>⊆</td><td><code>&#x26;#8838;</code></td><td>subset of or equal to</td><td>u+2286 ISOtech</td><td>\2286</td><td><a href="javascript:alert(&#x22;\u2286&#x22;)">\u2286</a></td></tr><tr><td><code>&#x26;supe;</code></td><td>⊇</td><td><code>&#x26;#8839;</code></td><td>superset of or equal to</td><td>u+2287 ISOtech</td><td>\2287</td><td><a href="javascript:alert(&#x22;\u2287&#x22;)">\u2287</a></td></tr><tr><td><code>&#x26;oplus;</code></td><td>⊕</td><td><code>&#x26;#8853;</code></td><td>circled plus, aka direct sum</td><td>u+2295 ISOamsb</td><td>\2295</td><td><a href="javascript:alert(&#x22;\u2295&#x22;)">\u2295</a></td></tr><tr><td><code>&#x26;otimes;</code></td><td>⊗</td><td><code>&#x26;#8855;</code></td><td>circled times, aka vector product</td><td>u+2297 ISOamsb</td><td>\2297</td><td><a href="javascript:alert(&#x22;\u2297&#x22;)">\u2297</a></td></tr><tr><td><code>&#x26;perp;</code></td><td>⊥</td><td><code>&#x26;#8869;</code></td><td>up tack</td><td>u+22A5 ISOtech</td><td>\22A5</td><td><a href="javascript:alert(&#x22;\u22a5&#x22;)">\u22a5</a></td></tr><tr><td><code>&#x26;sdot;</code></td><td>⋅</td><td><code>&#x26;#8901;</code></td><td>dot operator</td><td>u+22C5 ISOamsb</td><td>\22C5</td><td><a href="javascript:alert(&#x22;\u22c5&#x22;)">\u22c5</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-技术"><a aria-hidden="true" tabindex="-1" href="#html-技术"><span class="icon icon-link"></span></a>HTML 技术</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;lceil;</code></td><td>⌈</td><td><code>&#x26;#8968;</code></td><td>left ceiling, aka apl upstile</td><td>u+2308 ISOamsc</td><td>\2308</td><td><a href="javascript:alert(&#x22;\u2308&#x22;)">\u2308</a></td></tr><tr><td><code>&#x26;rceil;</code></td><td>⌉</td><td><code>&#x26;#8969;</code></td><td>right ceiling</td><td>u+2309 ISOamsc</td><td>\2309</td><td><a href="javascript:alert(&#x22;\u2309&#x22;)">\u2309</a></td></tr><tr><td><code>&#x26;lfloor;</code></td><td>⌊</td><td><code>&#x26;#8970;</code></td><td>left floor, aka apl downstile</td><td>u+230A ISOamsc</td><td>\230A</td><td><a href="javascript:alert(&#x22;\u230a&#x22;)">\u230a</a></td></tr><tr><td><code>&#x26;rfloor;</code></td><td>⌋</td><td><code>&#x26;#8971;</code></td><td>right floor</td><td>u+230B ISOamsc</td><td>\230B</td><td><a href="javascript:alert(&#x22;\u230b&#x22;)">\u230b</a></td></tr><tr><td><code>&#x26;lang;</code></td><td>〈</td><td><code>&#x26;#9001;</code></td><td>left-pointing angle bracket</td><td>u+2329 ISOtech</td><td>\2329</td><td><a href="javascript:alert(&#x22;\u2329&#x22;)">\u2329</a></td></tr><tr><td><code>&#x26;rang;</code></td><td>〉</td><td><code>&#x26;#9002;</code></td><td>right-pointing angle bracket</td><td>u+232A ISOtech</td><td>\232A</td><td><a href="javascript:alert(&#x22;\u232a&#x22;)">\u232a</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="html-杂项"><a aria-hidden="true" tabindex="-1" href="#html-杂项"><span class="icon icon-link"></span></a>HTML 杂项</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th>HTML</th><th>Symbol</th><th>Numeric</th><th>描述</th><th>Hex</th><th>CSS (ISO)</th><th>JS (Octal)</th></tr></thead><tbody><tr><td><code>&#x26;loz;</code></td><td>◊</td><td><code>&#x26;#9674;</code></td><td>菱形</td><td>u+25CA ISOpub</td><td>\25CA</td><td><a href="javascript:alert(&#x22;\u25ca&#x22;)">\u25ca</a></td></tr><tr><td><code>&#x26;spades;</code></td><td>♠</td><td><code>&#x26;#9824;</code></td><td>黑桃</td><td>u+2660 ISOpub</td><td>\2660</td><td><a href="javascript:alert(&#x22;\u2660&#x22;)">\u2660</a></td></tr><tr><td><code>&#x26;clubs;</code></td><td>♣</td><td><code>&#x26;#9827;</code></td><td>梅花</td><td>u+2663 ISOpub</td><td>\2663</td><td><a href="javascript:alert(&#x22;\u2663&#x22;)">\u2663</a></td></tr><tr><td><code>&#x26;hearts;</code></td><td>♥</td><td><code>&#x26;#9829;</code></td><td>黑心套装，又名情人节</td><td>u+2665 ISOpub</td><td>\2665</td><td><a href="javascript:alert(&#x22;\u2665&#x22;)">\u2665</a></td></tr><tr><td><code>&#x26;diams;</code></td><td>♦</td><td><code>&#x26;#9830;</code></td><td>方块</td><td>u+2666 ISOpub</td><td>\2666</td><td><a href="javascript:alert(&#x22;\u2666&#x22;)">\u2666</a></td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div></div></div><div class="wrap h2body-not-exist"><div class="wrap-header h2wrap"><h2 id="另见"><a aria-hidden="true" tabindex="-1" href="#另见"><span class="icon icon-link"></span></a>另见</h2><div class="wrap-body">
+<ul>
+<li><a target="_blank" rel="noopener" href="https://jaywcjlove.github.io/html-tutorial/reference/charactersets_entities.html">HTML 字符集实体</a></li>
+</ul>
+</div></div><div class="h2wrap-body"></div></div></div></div><footer class="footer-wrap"><footer class="max-container">© 2022 Kenny Wang.</footer></footer><script src="../data.js?v=1.4.1" defer></script><script src="../js/fuse.min.js?v=1.4.1" defer></script><script src="../js/main.js?v=1.4.1" defer></script><div id="mysearch"><div class="mysearch-box"><div class="mysearch-input"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><input id="mysearch-input" type="search" placeholder="搜索" autocomplete="off"><div class="mysearch-clear"></div></div><button id="mysearch-close" type="button">搜索</button></div><div class="mysearch-result"><div id="mysearch-menu"></div><div id="mysearch-content"></div></div></div></div></body>
+</html>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><a class="avatar-img" href="/about"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></a><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">tongtong</h1><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">今天<b style="color:#00f">你</b>学习<b style="color:#00f">了</b><b style="color:#00f">吗？</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">那你还在<b style="color:#00f">等</b>什么<b style="color:#00f">呢？</b>。</div></div><div class="banner-button-group"><a class="banner-button" onclick="pjax.loadUrl(&quot;/about/&quot;)"><span class="banner-button-text">了解更多</span><i class="anzhiyufont anzhiyu-icon-arrow-circle-right" style="font-size: 1.5rem"></i></a></div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/panshen123" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=619796817@qq.com" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1919269250" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="tencent://Message/?Uin=619796817&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content"><div id="welcome-info"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN2.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN1.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">21</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-14T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">21.5k</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-hourglass-start"></i><div class="item-name">最后更新 :</div></div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-28T12:47:53.656Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:anzhiyu-c@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6378063631" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100092208016287&amp;sk=about" title="facebook"><i class="anzhiyufont anzhiyu-icon-facebook1"></i></a><img class="footer_mini_logo" title="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/zpp-800" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/484096189" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/self" title="抖音"><i class="anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" href="/docs/">文档</a><a class="footer-item" title="源码" target="_blank" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" target="_blank" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" target="_blank" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" target="_blank" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" target="_blank" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" target="_blank" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" target="_blank" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" target="_blank" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/svg/桐桐上班.svg" alt="距离月入25k也就还差两瓶二锅头" title="距离月入25k也就还差两瓶二锅头"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://www.dogecloud.com/" style="margin-inline:5px" data-title="本站使用多吉云为静态资源提供CDN加速" title="本站使用多吉云为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg" alt="本站使用多吉云为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px" data-title="本站已在陇进行备案" title="本站已在陇进行备案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/%E9%99%87ICP%E5%A4%87-2023001103%E5%8F%B7.svg" alt="本站已在陇进行备案"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2022 - 2023 By <a class="footer-bar-link" href="http://example.com" title="tongtong" target="_blank">tongtong</a></div></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="湘ICP备-xxxxxxx号">湘ICP备-xxxxxxx号</a></div></div></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2867147548" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/2867147548&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/15/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By 安知鱼 1.4.2",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 tongtong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("05/15/2023 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      img.src = "https://tu.hanxi.fun/svg/桐桐下班.svg";
+      img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+      img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoos.hanxi.fun/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "visitor@hanxi.com";</script><script>//动态标题
+let leaveTitle = '此去一别，便是经年';
+let backTitle = '正是江南好风景，落花时节又逢君';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script data-pjax="true">if (document.querySelector(".comment-barrage")){
+  var commentBarrageConfig = {
+    maxBarrage: 1,
+    barrageTime: 4000,
+    twikooUrl: "https://twikoos.hanxi.fun/",
+    accessToken: "",
+    mailMd5: "",
+    pageUrl: window.location.pathname,
+    barrageTimer: [],
+    barrageList: [],
+    barrageIndex: 0,
+    dom: document.querySelector(".comment-barrage"),
+  };
+  var commentInterval = null;
+  var hoverOnCommentBarrage = false;
+  
+  document.querySelector(".comment-barrage").addEventListener("mouseenter", function() {
+    hoverOnCommentBarrage = true;
+  });
+  document.querySelector(".comment-barrage").addEventListener("mouseleave", function() {
+    hoverOnCommentBarrage = false;
+  });
+
+  function initCommentBarrage() {
+    if (!commentBarrageConfig.dom) return;
+
+    var data = JSON.stringify({
+      event: "COMMENT_GET",
+      "commentBarrageConfig.accessToken": commentBarrageConfig.accessToken,
+      url: commentBarrageConfig.pageUrl,
+    });
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4 && this.responseText) {
+        commentBarrageConfig.barrageList = commentLinkFilter(JSON.parse(this.responseText).data);
+        commentBarrageConfig.dom.innerHTML = "";
+      }
+    });
+    xhr.open("POST", commentBarrageConfig.twikooUrl);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
+
+    clearInterval(commentInterval);
+    commentInterval = null;
+
+    commentInterval = setInterval(() => {
+      if (commentBarrageConfig.barrageList.length && !hoverOnCommentBarrage) {
+        popCommentBarrage(commentBarrageConfig.barrageList[commentBarrageConfig.barrageIndex]);
+        commentBarrageConfig.barrageIndex += 1;
+        commentBarrageConfig.barrageIndex %= commentBarrageConfig.barrageList.length;
+      }
+      if (
+        commentBarrageConfig.barrageTimer.length >
+          (commentBarrageConfig.barrageList.length > commentBarrageConfig.maxBarrage
+            ? commentBarrageConfig.maxBarrage
+            : commentBarrageConfig.barrageList.length) &&
+        !hoverOnCommentBarrage
+      ) {
+        removeCommentBarrage(commentBarrageConfig.barrageTimer.shift());
+      }
+    }, commentBarrageConfig.barrageTime);
+  }
+
+  function commentLinkFilter(data) {
+    data.sort((a, b) => {
+      return a.created - b.created;
+    });
+    let newData = [];
+    data.forEach(item => {
+      newData.push(...getCommentReplies(item));
+    });
+    return newData;
+  }
+
+  function getCommentReplies(item) {
+    if (item.replies) {
+      let replies = [item];
+      item.replies.forEach(item => {
+        replies.push(...getCommentReplies(item));
+      });
+      return replies;
+    } else {
+      return [];
+    }
+  }
+
+  function popCommentBarrage(data) {
+    let barrage = document.createElement("div");
+    barrage.className = "comment-barrage-item";
+    barrage.innerHTML = `
+        <div class="barrageHead">
+          <a class="barrageTitle ${
+            data.mailMd5 === commentBarrageConfig.mailMd5 ? "barrageBloggerTitle" : ""
+          }" href="javascript:anzhiyu.scrollTo('#post-comment')"">
+            ${data.mailMd5 === commentBarrageConfig.mailMd5 ? "博主" : "热评"}
+          </a>
+          <div class="barrageNick">${data.nick}</div>
+          <img class="nolazyload barrageAvatar" src="https://cravatar.cn/avatar/${data.mailMd5}"/>
+          <a class="comment-barrage-close" href="javascript:anzhiyu.switchCommentBarrage()"><i class="anzhiyufont anzhiyu-icon-xmark"></i></a>
+        </div>
+        <a class="barrageContent" href="#${data.id}">
+          <object>${data.comment}</object>
+        </a>
+      `;
+    commentBarrageConfig.barrageTimer.push(barrage);
+    commentBarrageConfig.dom.append(barrage);
+  }
+
+  function removeCommentBarrage(barrage) {
+    barrage.className = "comment-barrage-item out";
+
+    setTimeout(() => {
+      if (commentBarrageConfig.dom && commentBarrageConfig.dom.contains(barrage)) {
+        commentBarrageConfig.dom.removeChild(barrage);
+      }
+      }, 1000);
+    }
+
+    // 自动隐藏
+    const commentEntryCallback = (entries) => {
+      const commentBarrage = document.querySelector(".comment-barrage");
+      const postComment = document.getElementById("post-comment");
+
+      entries.forEach(entry => {
+        if (postComment && commentBarrage && document.body.clientWidth > 768) {
+          commentBarrage.style.bottom = entry.isIntersecting ? "-200px" : "0";
+        }
+      });
+    };
+    // 创建IntersectionObserver实例
+    const observer = new IntersectionObserver(commentEntryCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0
+    });
+    // 监视目标元素
+    const postCommentTarget = document.getElementById("post-comment");
+    if (postCommentTarget) {
+      observer.observe(postCommentTarget);
+    }
+
+    initCommentBarrage();
+
+    if (localStorage.getItem("commentBarrageSwitch") !== "false") {
+      document.querySelector(".comment-barrage").style.display = "flex";
+      document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+    } else {
+      document.querySelector(".comment-barrage").style.display = "none";
+      document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+    }
+
+    document.addEventListener("pjax:send", function () {
+      clearInterval(commentInterval);
+    });
+
+  }</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | tongtong-blog")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+anzhiyu.switchRightClickMenuHotReview();
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {
+  if (typeof addFriendLinksInFooter === "function") {
+    addFriendLinksInFooter();
+  }
+}, 200)</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.8/icon/ali_iconfont_css.css"><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><script defer="true" src="/js/welcome.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>

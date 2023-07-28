@@ -1,0 +1,1844 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>tongtong-blog | tongtong-blog</title><meta name="author" content="tongtong"><meta name="copyright" content="tongtong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="tongtong-blog"><meta name="application-name" content="tongtong-blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="tongtong-blog"><meta property="og:url" content="http://example.com/reference-gh-pages/docs/gdb.html"><meta property="og:site_name" content="tongtong-blog"><meta property="og:description" content="GDB 备忘清单  &amp;amp;#x26;  gdb cheatsheet &amp;amp;#x26;  Quick Reference                   Quick Reference    搜索⌘K编辑"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://tu.hanxi.fun/images/t01e5f4cd6b26a2fa1b.jpg"><meta property="article:author" content="tongtong"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://tu.hanxi.fun/images/t01e5f4cd6b26a2fa1b.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/reference-gh-pages/docs/gdb"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  friends_vue_info: {"apiurl":"https://friend.hanxi.fun/"},
+  navMusic: true,
+  changeMainColorPost: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tongtong-blog',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-23 22:06:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/about-tag.css"><link rel="stylesheet" href="/css/welcome.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://tu.hanxi.fun/images/thumb-174881.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+    Pace.restart()
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://zhang-tongtong123.gitee.io/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" href="https://account.aliyun.com/" title="阿里云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E9%98%BF%E9%87%8C%E4%BA%91.ico" alt="阿里云"/><span class="back-menu-item-text">阿里云</span></a><a class="back-menu-item" href="https://chat.hanxi.fun/" title="ChatAI" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/chat.svg" alt="ChatAI"/><span class="back-menu-item-text">ChatAI</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">常用</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qiniu.com/" title="七牛云图床" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E4%B8%83%E7%89%9B%E4%BA%91.ico" alt="七牛云图床"/><span class="back-menu-item-text">七牛云图床</span></a><a class="back-menu-item" href="https://smms.app/" title="smms" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E8%AF%84%E8%AE%BA.ico" alt="smms"/><span class="back-menu-item-text">smms</span></a><a class="back-menu-item" href="https://webconverters.net/cn/" title="免费图片转换" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2.ico" alt="免费图片转换"/><span class="back-menu-item-text">免费图片转换</span></a><a class="back-menu-item" href="https://www.iconfont.cn/" title="阿里矢量图标" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/iconfont%E5%9B%BE%E6%A0%87_%E6%AD%A3%E5%B0%84%E5%9B%BE.ico" alt="阿里矢量图标"/><span class="back-menu-item-text">阿里矢量图标</span></a><a class="back-menu-item" href="https://vercel.com/" title="vercel" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/logo-vercel.ico" alt="vercel"/><span class="back-menu-item-text">vercel</span></a><a class="back-menu-item" href="https://www.dogecloud.com/" title="多吉云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%A4%9A%E5%90%89%E4%BA%91.ico" alt="多吉云"/><span class="back-menu-item-text">多吉云</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">tongtong-blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://tu.hanxi.fun/images/weixin123456.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/weixin123456.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://tu.hanxi.fun/images/chitu_301.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/chitu_301.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="page-site-info"><h1 id="site-title">tongtong-blog</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><!doctype html>
+<html lang="en" data-color-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>GDB 备忘清单
+ &#x26;  gdb cheatsheet &#x26;  Quick Reference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta description="本清单提供了对 GDB 的入门简要概述，以及 GDB 常用示例，完整文档参阅 Debugging with gdb，该文档最后有 GDB index，可以快速查找命令。
+
+入门，为开发人员分享快速参考备忘单。">
+<meta keywords="gdb,reference,Quick,Reference,cheatsheet,cheat,sheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%221em%22%20width%3D%221em%22%3E%20%3Cpath%20d%3D%22m21.66%2010.44-.98%204.18c-.84%203.61-2.5%205.07-5.62%204.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2%201.17-2.42%203.16-3.07%206.5-2.28l1.67.39c4.19.98%205.47%203.05%204.49%207.23Z%22%20fill%3D%22%23c9d1d9%22%2F%3E%20%3Cpath%20d%3D%22M15.06%2019.39c-.62.42-1.4.77-2.35%201.08l-1.58.52c-3.97%201.28-6.06.21-7.35-3.76L2.5%2013.28c-1.28-3.97-.22-6.07%203.75-7.35l1.58-.52c.41-.13.8-.24%201.17-.31-.3.61-.54%201.35-.74%202.2l-.98%204.19c-.98%204.18.31%206.24%204.48%207.23l1.68.4c.58.14%201.12.23%201.62.27Zm2.43-8.88c-.06%200-.12-.01-.19-.02l-4.85-1.23a.75.75%200%200%201%20.37-1.45l4.85%201.23a.748.748%200%200%201-.18%201.47Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3Cpath%20d%3D%22M14.56%2013.89c-.06%200-.12-.01-.19-.02l-2.91-.74a.75.75%200%200%201%20.37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3C%2Fsvg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/katex.css">
+</head>
+<body><nav class="header-nav"><div class="max-container"><a href="../index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+  <path d="m21.66 10.44-.98 4.18c-.84 3.61-2.5 5.07-5.62 4.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2 1.17-2.42 3.16-3.07 6.5-2.28l1.67.39c4.19.98 5.47 3.05 4.49 7.23Z" fill="#c9d1d9"></path>
+  <path d="M15.06 19.39c-.62.42-1.4.77-2.35 1.08l-1.58.52c-3.97 1.28-6.06.21-7.35-3.76L2.5 13.28c-1.28-3.97-.22-6.07 3.75-7.35l1.58-.52c.41-.13.8-.24 1.17-.31-.3.61-.54 1.35-.74 2.2l-.98 4.19c-.98 4.18.31 6.24 4.48 7.23l1.68.4c.58.14 1.12.23 1.62.27Zm2.43-8.88c-.06 0-.12-.01-.19-.02l-4.85-1.23a.75.75 0 0 1 .37-1.45l4.85 1.23a.748.748 0 0 1-.18 1.47Z" fill="#228e6c"></path>
+  <path d="M14.56 13.89c-.06 0-.12-.01-.19-.02l-2.91-.74a.75.75 0 0 1 .37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z" fill="#228e6c"></path>
+</svg>
+<span class="title">Quick Reference</span></a><div class="menu"><a href="javascript:void(0);" class="searchbtn" id="searchbtn"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><span>搜索</span><span>⌘K</span></a><a href="https://github.com/jaywcjlove/reference/blob/main/docs/gdb.md" class="" target="__blank"><svg viewBox="0 0 36 36" fill="currentColor" height="1em" width="1em"><path d="m33 6.4-3.7-3.7a1.71 1.71 0 0 0-2.36 0L23.65 6H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V11.76l3-3a1.67 1.67 0 0 0 0-2.36ZM18.83 20.13l-4.19.93 1-4.15 9.55-9.57 3.23 3.23ZM29.5 9.43 26.27 6.2l1.85-1.85 3.23 3.23Z"></path><path fill="none" d="M0 0h36v36H0z"></path></svg><span>编辑</span></a><button id="darkMode" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="light" height="1em" width="1em">
+  <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="dark" height="1em" width="1em">
+  <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
+</svg>
+</button><script src="../js/dark.js?v=1.4.1"></script><a href="https://github.com/jaywcjlove/reference" class="" target="__blank"><svg viewBox="0 0 16 16" fill="currentColor" height="1em" width="1em"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></div></nav><div class="wrap h1body-exist max-container"><header class="wrap-header h1wrap"><h1 id="gdb-备忘清单"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="48" height="48" version="1.1" id="svg73" sodipodi:docname="gdb.svg" viewBox="0 0 177.6 177.6" inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs77"></defs>
+  <sodipodi:namedview id="namedview75" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" showgrid="false" scale-x="1.7" fit-margin-top="0" lock-margins="false" width="48px" showguides="true" inkscape:lockguides="false" inkscape:zoom="8.0963726" inkscape:cx="22.479202" inkscape:cy="24.764176" inkscape:window-width="1920" inkscape:window-height="1016" inkscape:window-x="0" inkscape:window-y="27" inkscape:window-maximized="1" inkscape:current-layer="svg73" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0">
+    <inkscape:grid type="xygrid" id="grid79" enabled="true" originx="-44.448043" originy="-114.98022"></inkscape:grid>
+  </sodipodi:namedview>
+  <g id="layer3" transform="translate(-2.0504627,51.662829)">
+    <path fill="#ffffff" d="m 109.57,9.5312 c -1.9412,0.04727 -3.4885,0.53843 -4.3125,1.5312 -0.71106,0.85678 -2.7937,2.1723 -4.625,2.9375 -1.8313,0.76516 -3.3125,1.8156 -3.3125,2.3125 0,0.49687 -7.2292,1.2056 -16.062,1.5938 -14.146,0.62168 -17.352,1.0953 -26.812,4 -3.8968,1.1964 -7.6144,2.1062 -10.281,2.5625 -0.53338,0.09127 -1.0263,0.16574 -1.4688,0.21875 -0.44249,0.05301 -0.81855,0.11312 -1.1562,0.125 -0.3377,0.01188 -0.62474,8.94e-4 -0.84375,-0.03125 -2.4836,-0.36451 -3.5805,0.16451 -6.125,3.0625 -1.7008,1.9371 -4.7955,4.4392 -6.9062,5.5625 -4.7091,2.5061 -8.3438,5.5607 -8.3438,7 0,0.59244 1.9125,2.2694 4.25,3.75 l 4.25,2.6875 -3.125,0.84375 c -3.1083,0.81237 -6.7052,3.8125 -4.5625,3.8125 0.59092,0 2.4089,1.9125 4.0312,4.25 7.7587,11.179 23.521,24.75 28.75,24.75 0.76494,0 1.4062,0.38401 1.4062,0.84375 0,0.45974 1.6264,2.9347 3.625,5.5 3.8001,4.8776 5.375,5.7508 5.375,3.0312 0,-1.1646 0.59901,-1.4385 2.1562,-1.0312 0.57881,0.15136 1.1329,0.20172 1.6562,0.1875 0.17446,-0.005 0.33271,-0.009 0.5,-0.0313 2.0075,-0.26946 3.4998,-1.8116 4,-4.3125 l 0.5625,-2.875 11.312,-0.625 c 3.1092,-0.17589 6.282,-0.44825 8.875,-0.71875 1.2965,-0.13525 2.4423,-0.27183 3.375,-0.40625 0.93274,-0.13442 1.65,-0.25774 2.0625,-0.375 2.2572,-0.64166 3.9191,-0.38382 6.7187,1.0625 0.32015,0.16539 0.6309,0.30103 0.9375,0.4375 2.1462,0.9553 3.9639,1.2116 5.7812,0.8125 0.17239,-0.03786 0.37135,-0.08849 0.5625,-0.15625 0.19115,-0.06776 0.38539,-0.15405 0.59375,-0.25 6.2509,-2.8784 19.906,-18.051 19.906,-22.562 0,-0.29267 -1.5864,-0.53125 -3.5312,-0.53125 h -3.5625 l 2.5625,-3.7188 c 1.3948,-2.0527 2.5312,-4.258 2.5312,-4.875 0,-1.9559 3.2302,-4.9706 6.0312,-6.0312 0.21546,-0.08159 0.44772,-0.13037 0.65625,-0.1875 0.41706,-0.11426 0.81833,-0.1875 1.1875,-0.1875 1.6304,0 2.788,0.54287 3.0938,0.875 0.54709,0.59438 4.53,4.1693 9.4375,8.5 8.2199,7.2537 9.039,7.7186 10.25,6.0625 0.72267,-0.9883 1.2431,-2.2044 1.5938,-3.5938 0.0701,-0.27788 0.13244,-0.55231 0.1875,-0.84375 0.55064,-2.9144 0.36729,-6.4971 -0.625,-10.312 -1.3463,-5.1766 -1.3583,-6.2805 0,-10.406 1.2457,-3.7839 1.3385,-5.771 0.4375,-11.031 -0.6052,-3.5331 -1.338,-6.6817 -1.625,-6.9688 -0.28704,-0.28704 -3.8313,2.159 -7.875,5.4375 -7.1647,5.8088 -11.211,8.6894 -14.375,9.4375 -0.35155,0.08312 -0.69836,0.1557 -1.0312,0.1875 -1.9973,0.1908 -3.713,-0.53063 -5.8125,-1.9062 l -2.8438,-1.875 3.1562,-0.8125 c 1.7319,-0.44879 3.1562,-1.3334 3.1562,-1.9688 0,-0.63538 -2.1772,-3.2423 -4.8438,-5.8125 -5.5277,-5.328 -15.083,-9.0793 -20.906,-8.9375 z" id="path2"></path>
+  </g>
+  <g id="layer2" transform="translate(-10.531092,51.662829)">
+    <path style="color:#000000;text-indent:0;text-align:start;text-transform:none;direction:ltr;enable-background:accumulate" fill="#cdcdcd" d="m 168.83,17.542 c 3.2116,6.6995 1.0885,14.747 -0.71502,20.704 1.7716,5.6252 3.3701,12.721 1.1984,18.38 -3.158,3.8073 -8.026,-3.4254 -11.491,-6.116 -4.359,-3.0025 -8.2655,-9.8908 -13.949,-7.5548 -5.7973,2.4652 -6.2545,8.3291 -9.5776,13.066 -3.1337,4.5736 -3.9754,9.9752 -8.9402,13.605 -9.26,6.737 -20.57,10.018 -31.994,10.538 -10.659,0.274 -21.997,0.47 -32.486,-0.801 -8.285,-1.41 -13.876,-9.256 -19.519,-14.705 -3.993,-3.952 -8.733,-9.089 -10.76,-14.248 8.7583,-5.2545 9.6006,-0.61617 14.089,4.5251 -2.2539,-2.9539 -4.6506,-5.5854 -7.1432,-8.2098 -4.7436,-3.5764 -11.505,-6.59 -4.5948,-10.152 2.7915,-1.3777 8.5943,-8.0151 7.8683,0.53939 0.6593,6.2751 1.9975,12.538 8.7765,12.96 6.6797,-0.2958 8.2041,-8.1528 8.2974,-12.03 -0.11803,-4.2618 -3.8652,-8.6321 -5.3879,-11.669 4.9252,-2.0308 11.77,-4.1818 16.896,-5.6884 9.9741,-2.2067 20.285,-1.6907 30.436,-2.0469 5.5452,-0.13073 11.728,-0.24041 17.195,0.22497 6.8433,0.40879 9.5843,1.3516 13.76,4.5446 5.6241,3.2144 8.574,7.9237 15.741,9.0381 6.8917,-3.4017 11.706,-7.9796 17.743,-11.962 1.0657,-0.88115 3.4604,-2.5925 4.558,-2.9425 z" id="path5"></path>
+    <path style="color:#000000;text-indent:0;text-align:start;text-transform:none;direction:ltr;enable-background:accumulate" fill="#ffffff" d="m 167.41,21.123 c -7.1454,4.5607 -9.8052,13.623 -21.331,13.802 -8.1221,0.12658 -16.235,-13.48 -27.779,-12.48 -15.136,-0.03015 -31.28,-0.58236 -47.062,1.7812 -7.7635,1.3244 -11.484,4.0788 -16.874,4.3709 5.6043,6.3701 8.9135,20.481 0.23929,22.923 -2.3427,-0.92079 -11.657,2.2448 -13.877,-9.6892 -0.76593,-2.0557 -0.74953,-4.535 -1.3614,-5.8591 -1.7522,1.7921 -6.0689,3.0574 -7.092,5.0743 1.9486,2.3928 4.1119,2.4356 6.3084,4.5466 1.1998,1.6842 2.5987,3.267 3.9045,4.8125 3.8666,4.6262 4.5798,5.7594 4.4982,7.0006 -1.296,0.44935 -3.3851,-1.5939 -5.638,-4.7392 -1.4919,-2.609 -5.7272,-3.7119 -8.7022,-2.2461 5.9415,8.5077 14.353,17.139 22.241,22.938 6.9755,4.88 19.212,3.1333 29.729,2.9614 18.778,-0.81912 29.493,0.132 40.814,-10.92 5.5651,-5.72 8.8088,-13.559 13.71,-20.165 4.0765,-5.4944 11.239,-5.2711 16.416,-0.41512 4.9314,4.6247 6.064,7.1033 11.475,10.339 3.6003,-7.1681 -1.4041,-8.6762 -2.7872,-14.451 0.9217,-5.8185 6.2116,-13.578 3.1704,-19.584 z" id="path7"></path>
+  </g>
+  <g id="layer1" transform="translate(-56.077483,125.62449)">
+    <path fill="#000000" d="m 88.399,-12.648 c -3.3088,-3.4025 -5.7972,-6.4052 -5.5297,-6.6727 0.2675,-0.2675 3.4451,2.5164 7.0614,6.1864 3.6163,3.67 6.1046,6.6727 5.5297,6.6727 -0.57493,0 -3.7526,-2.7839 -7.0614,-6.1864 z" id="path10"></path>
+    <path fill="#000000" d="m 133.91,-29.694 c -1.901,-2.3009 -0.72604,-3.3335 -1.76,-5.5651 -0.20667,-0.44609 -2.7828,1.0655 -4.8632,2.2553 -2.3542,1.3463 -3.7572,2.1178 -3.218,3.0778 0.52762,0.93944 1.2614,0.67901 3.3429,-0.35686 1.1957,-0.59508 3.533,-1.7525 3.7389,-1.3832 0.24375,0.43702 -1.8607,1.4985 -3.2342,2.2444 -2.0233,1.0987 -3.2987,1.2266 -3.0186,2.1722 0.36577,1.2348 1.119,0.64349 3.4431,0.65713 2.1681,0.01272 3.6126,-0.12135 3.6099,0.24766 -0.003,0.47722 -1.1573,0.55088 -3.7695,0.76255 -1.6862,0.13663 -2.8843,0.22479 -3.1759,1.141 -0.36132,1.135 0.12362,1.4327 2.5871,1.9657 3.439,0.74409 3.1994,1.6494 -0.37915,0.80908 -4.3354,-1.018 -4.2299,0.33346 0.37993,3.0384 3.7022,2.1723 3.8188,2.4875 5.3623,0.25758 0.87227,-1.2602 1.9743,-4.2694 1.8562,-6.8933 -0.0839,-1.8637 0.1244,-3.1882 -0.90175,-4.4302 h 4e-5 z m -12.577,8.5687 c 3.1154,-2.3654 3.6153,-6.2562 0.22707,-9.459 2.1799,-1.8319 5.6855,-4.9727 11.447,-6.6627 1.1399,-0.33435 0.42182,4.5027 2.5839,7.1415 1.8859,2.3017 0.69081,8.6512 -0.30857,10.822 -0.6737,1.4634 -1.2501,2.8179 -3.4977,4.8022 -3.114,-1.3313 -9.6321,-4.8065 -10.452,-6.6439 z" id="path12"></path>
+    <path fill="#000000" d="m 107.64,-18.863 c 4.3811,-4.0603 8.1914,-14.834 6.5498,-19.476 -0.59156,-1.6728 -0.19759,-2.6218 0.40225,-1.8775 4.6631,5.786 -3.1641,23.663 -8.0719,23.756 -0.98459,0.01866 -0.61425,-0.79467 1.1198,-2.4018 z" id="path14"></path>
+    <path fill="#000000" d="m 140.77,-23.882 c 0.61288,-1.931 0.20693,-5.6532 -0.85519,-7.2684 -1.3572,-2.0639 -1.155,-3.7432 0.34175,-2.2995 2.315,2.233 2.6587,10.092 0.88117,12.505 -1.3295,1.8042 -0.96068,-1.0685 -0.36773,-2.9367 z" id="path16"></path>
+    <path fill="#000000" d="m 202.74,-28.288 c -3.7565,-3.253 -4.4249,-4.9895 -1.6479,-3.2581 3.4948,2.1789 7.7477,6.0127 6.25,6.008 -0.825,-0.003 -2.8146,-1.2197 -4.6021,-2.7499 z" id="path18"></path>
+    <path fill="#000000" d="m 206.16,-30.644 c -3.5119,-1.8549 -5.7533,-3.8173 -4.2117,-3.8173 0.9762,0 9.3969,4.9664 9.3969,5.5422 0,0.83485 -1.459,0.24326 -5.1852,-1.7249 z" id="path20"></path>
+    <path fill="#000000" d="m 80.983,-34.156 c -0.95302,-0.95302 -0.77256,-3.3061 0.25353,-3.3061 1.2268,0 2.2116,2.8173 1.2028,3.4408 -0.44926,0.27766 -1.1046,0.21707 -1.4563,-0.13464 z" id="path22"></path>
+    <path fill="#000000" d="m 193.84,-37.462 c 0.33992,-0.55 4.0853,-0.6912 6.2853,-0.6912 2.412,0 4.0134,0.1991 3.8256,0.6912 -0.23057,0.60406 -2.7138,0.98695 -4.9138,0.98695 -2.412,0 -5.5698,-0.38394 -5.1971,-0.98695 z" id="path24"></path>
+    <path fill="#000000" d="m 202.34,-41.135 c 0,-0.91134 9.0974,-4.4516 9.7534,-3.7956 0.52063,0.52064 -7.2024,4.506 -8.7136,4.506 -0.57191,0 -1.0398,-0.279 -1.0398,-0.71036 z" id="path26"></path>
+    <path fill="#000000" d="m 201.32,-43.804 c 2.3166,-2.2795 9.0085,-7.0082 9.6126,-6.404 0.30273,0.30273 -1.5701,2.1696 -4.1619,4.1486 -4.7479,3.6253 -7.7673,4.535 -5.4507,2.2555 z" id="path28"></path>
+    <path d="m 109.56,31.125 c -1.9412,0.04727 -3.4573,0.53843 -4.2812,1.5312 -0.71106,0.85678 -2.7937,2.1723 -4.625,2.9375 -1.8313,0.76516 -3.3438,1.8156 -3.3438,2.3125 0,0.49687 -7.2292,1.2056 -16.062,1.5938 -14.146,0.62168 -17.32,1.0953 -26.781,4 -6.2349,1.9143 -12.029,3.1322 -13.781,2.875 -2.4836,-0.36451 -3.5493,0.16451 -6.0938,3.0625 -1.7008,1.9371 -5.1895,3.8839 -7.1961,5.184 -2.4358,1.5781 -4.9251,3.728 -6.7862,4.3262 -1.4903,0.47895 -1.3157,1.2954 -1.3494,3.1406 -0.01081,0.59234 1.963,2.2124 4.3005,3.693 l 4.25,2.6875 -3.125,0.8125 c -3.1083,0.81237 -6.6739,3.8125 -4.5312,3.8125 0.59092,0 2.3776,1.9125 4,4.25 7.7587,11.179 21.602,24.262 28.781,24.75 0.76318,0.0518 1.375,0.38401 1.375,0.84375 0,0.45974 1.6264,2.9347 3.625,5.5 3.8001,4.8776 5.375,5.7508 5.375,3.0312 0,-1.1646 0.59901,-1.4385 2.1562,-1.0312 3.087,0.80726 5.4893,-0.82168 6.1562,-4.1562 l 0.59375,-2.875 11.281,-0.625 c 6.2184,-0.35178 12.662,-1.031 14.312,-1.5 2.2572,-0.64166 3.9191,-0.38382 6.7188,1.0625 2.5612,1.3231 4.6731,1.7062 6.75,1.25 5.5164,-1.2116 21.031,-18.156 21.031,-22.969 0,-0.29267 -1.5864,-0.53125 -3.5312,-0.53125 h -3.5312 l 2.5312,-3.7188 c 1.3948,-2.0527 2.5312,-4.258 2.5312,-4.875 0,-2.4073 4.9216,-6.4062 7.875,-6.4062 1.6304,0 2.8193,0.54287 3.125,0.875 0.54709,0.59438 4.53,4.1693 9.4375,8.5 8.2199,7.2537 9.0078,7.7498 10.219,6.0938 2.3125,-3.1626 2.7439,-8.6454 1.1562,-14.75 -1.3463,-5.1766 -1.327,-6.3117 0.0312,-10.438 1.2457,-3.7839 1.3073,-5.771 0.40625,-11.031 -0.6052,-3.5331 -1.338,-6.6505 -1.625,-6.9375 -0.28704,-0.28704 -3.8313,2.159 -7.875,5.4375 -12.737,10.327 -15.62,11.356 -21.219,7.6875 l -2.8125,-1.8438 3.125,-0.84375 c 1.7319,-0.44879 3.1562,-1.3334 3.1562,-1.9688 0,-0.63538 -2.1772,-3.2423 -4.8438,-5.8125 -5.5277,-5.328 -15.083,-9.0793 -20.906,-8.9375 h 5e-5 z m 2.9072,2.0287 c -2.2162,0.9946 -4.0752,1.4808 -8.5404,5.0402 -1.3523,-0.10911 -2.327,-0.07187 -3.9293,-0.03948 0.0273,-0.77941 5.5797,-2.8021 8.031,-5.3618 1.8008,-0.15747 2.9423,-0.13741 4.4387,0.36106 z m 2.1761,0.63147 c 1.0262,0.19835 1.6418,0.38959 2.3706,0.72165 -1.5125,0.82054 -3.8994,2.4823 -4.9913,4.6526 -1.5865,-0.32577 -3.2263,-0.53237 -5.6092,-0.76289 2.7851,-2.0028 4.6599,-3.2323 8.23,-4.6114 z m 3.9947,1.4948 c 1.3034,0.40458 3.7725,1.4023 4.9455,2.3514 -2.1028,0.43184 -4.1698,1.7318 -5.545,2.8435 -0.99878,-0.30208 -2.1717,-0.7868 -3.9611,-1.1192 0.546,-1.6133 2.7662,-3.0634 4.5606,-4.0757 z m 6.3447,3.2502 c 2.3191,1.2374 3.1754,2.0694 4.0782,3.0729 -1.7278,0.72649 -3.8103,1.4137 -5.264,2.1433 -1.7879,-1.0066 -2.8609,-1.6821 -4.0919,-2.5572 1.0481,-1.0814 4.1246,-2.3608 5.2776,-2.6591 z m 34.827,1.8136 c 0.0469,-0.0082 0.0772,-0.01653 0.0937,0 1.5045,1.5046 1.5431,11.067 0.0625,15.594 -1.4456,4.4195 -1.4779,5.2784 -0.15625,7.8125 1.8206,3.4907 1.944,11.359 0.21875,13.719 -1.1545,1.5789 -2.1147,0.99074 -10.531,-6.3125 -5.1017,-4.4269 -10.119,-8.0625 -11.156,-8.0625 -3.9526,0 -6.8078,1.9854 -8.9062,6.1875 -1.1895,2.3821 -3.7496,7.0125 -5.6875,10.312 -1.9379,3.3 -3.7554,6.7677 -4.0625,7.6875 -0.92578,2.773 -10.604,8.5002 -18.469,10.938 -6.5444,2.0281 -9.8182,2.3159 -28.406,2.5625 -24.937,0.33083 -24.545,0.46825 -36.875,-12.438 -9.6063,-10.055 -14.149,-16.148 -12.406,-16.688 5.837,-1.8061 6.5781,-1.6174 10.188,2.6875 1.9592,2.3367 3.7816,4.2702 3.7924,3.6422 0.048,-1.764 -9.258,-11.482 -12.368,-13.484 -3.8332,-2.4677 -3.7909,-3.8899 0.9375,-6.4062 1.784,-0.9494 3.8064,-2.2065 4.5,-2.7812 0.9867,-0.81763 1.273,0.11555 1.3125,4.25 0.12087,12.661 11.245,17.708 16.469,7.4688 2.6386,-5.1721 2.473,-9.2045 -0.59375,-14.438 l -2.561,-4.375 3.812,-1.063 c 5.4516,-1.5139 5.9314,-1.3752 8.3125,1.9688 2.4965,3.506 3.4968,3.2348 4.375,-1.1562 1.4163,-7.0814 4.4054,-7.6036 7.625,-1.3438 3.0055,5.8436 4.5272,7.106 6.5,5.4688 0.825,-0.68469 1.5,-2.0182 1.5,-2.9688 0,-0.95058 0.48994,-3.1429 1.0938,-4.875 0.87643,-2.5141 1.6549,-3.1562 3.875,-3.1562 2.1732,0 3.0796,0.67668 4.0938,3.125 1.4214,3.4316 5.6525,8.875 6.9062,8.875 0.72448,0 1.2758,-1.2138 4.25,-9.25 0.85753,-2.317 1.62,-2.75 4.7188,-2.75 3.2523,0 3.7895,0.39691 4.8438,3.3125 0.65571,1.8134 1.8235,4.1341 2.5938,5.1875 1.8705,2.5581 4.1677,0.73847 5.0625,-4.0312 0.35745,-1.9054 0.84386,-3.4688 1.0625,-3.4688 1.0107,0 8.3504,4.6806 11.281,7.1875 4.878,4.1723 9.092,6.0813 11.906,5.375 1.3584,-0.34092 6.5025,-3.8259 11.438,-7.7188 4.6266,-3.6496 8.6716,-6.4712 9.375,-6.5938 z m -29.668,2.6254 c 0.97744,0.75361 2.2862,2.1438 2.8136,2.5815 -1.0364,0.63132 -3.1519,1.1351 -4.7622,1.6024 -0.76583,-0.62267 -1.5101,-1.0777 -2.717,-2.263 1.0344,-0.75017 3.094,-1.4721 4.6656,-1.921 z m -90.515,5.187 c 1.7061,0.0048 3.447,1.0694 5.0625,3.1875 4.2764,5.6067 4.9627,8.575 3.0938,13.469 -0.90333,2.3654 -2.484,4.7688 -3.5,5.3125 -3.1203,1.6699 -5.7282,1.0899 -7.9375,-1.7188 l -2.094,-2.688 3.25,-1.063 c 6.4952,-2.1211 5.7644,-12.562 -0.875,-12.562 -2.5686,0 -2.5789,-0.04813 -0.8125,-2 1.1795,-1.3033 2.4855,-1.9412 3.8125,-1.9375 z m -5.344,8.094 c 0.22162,-0.0409 0.6606,-0.02786 0.96756,0.03125 0.9625,0.18536 1.6212,0.71522 1.6786,1.9274 0.03836,0.80903 -0.90244,1.5122 -1.8649,1.6976 -1.2278,0.23646 -1.75,-0.30635 -1.75,-1.8125 0,-1.1296 0.3039,-1.721 0.96875,-1.8438 z m 96.198,25.61 c 0.17164,0.10776 -0.0498,0.63556 -0.69756,1.6713 -2.0099,0.15248 -3.7878,0.17713 -5.6875,-0.03125 0.59751,-1.0405 0.76063,-1.7703 0.93643,-1.8226 1.7339,-0.01171 3.7346,0.06989 5.4486,0.18247 z m -7.2693,3.3715 c 1.8475,0.30531 3.4087,0.30301 5.228,0.23729 -0.69501,0.97112 -1.4388,2.0064 -2.2812,3.0312 -1.5749,-0.0472 -3.1639,-0.13341 -4.625,-0.59375 0.54718,-0.87643 1.1496,-1.7428 1.6782,-2.6748 z m -2.96,4.518 c 1.3147,0.56411 2.7131,0.67466 4.1875,0.75 -1.0456,1.17 -2.1238,2.3106 -3.2188,3.4375 -1.7574,0.04486 -2.9386,-0.49204 -3.7812,-1.5 0.99044,-0.75016 1.9597,-1.6314 2.8125,-2.6875 z m -5.0938,4.1875 c 1.3144,1.224 2.6217,1.7034 3.9688,2.0625 -1.0792,1.3773 -2.4267,2.3063 -3.7812,3.0625 -1.7085,-0.56737 -4.0784,-0.89108 -4.7188,-2.5 0.69332,-0.31871 1.3088,-0.6106 1.6875,-0.875 0.66574,-0.46479 1.6828,-1.0432 2.8438,-1.75 z m -7.6562,4 c 0.98465,1.319 3.8554,1.9692 5.8125,2.5312 -1.4856,0.97345 -2.8604,1.7601 -3.4062,1.7188 -2.0472,-0.15498 -6.2728,-1.5508 -5.8125,-2.2812 0.17289,-0.51305 1.6969,-1.2273 3.4062,-1.9688 z m -44.425,6.4164 c 0.9938,0.97796 1.7109,1.0298 2.2688,-0.26016 0.58937,-1.3628 0.95535,-1.2814 0.96875,0.0937 0.0084,0.86662 -1.0724,2.5575 -2.375,3.7812 l -2.3438,2.2188 -2.6875,-3.2712 c -1.5481,-1.8843 -2.7669,-3.6129 -2.0726,-3.6248 1.2036,-0.0206 1.3539,-0.13682 2.8726,1.5057 2.8319,3.0626 4.6595,2.6183 2.0504,0.33723 -2.307,-2.0169 -1.5505,-2.0407 -0.63162,-2.0406 1.3223,1.1e-4 1.3132,0.63357 1.95,1.2602 z m 6.6438,-1.2602 c 1.0536,0 1.2357,0.70014 0.6875,2.75 -0.40449,1.5125 -1.5314,2.9071 -2.5,3.0938 -1.5615,0.30086 -1.6174,0.0742 -0.46875,-2 0.71248,-1.2866 1.2106,-2.6812 1.0938,-3.0938 -0.11685,-0.4125 0.41006,-0.75 1.1875,-0.75 z" transform="translate(54.02702,-95.56099)" fill="#000000" id="path30"></path>
+    <path fill="#000000" d="m 228,-14.212 c 0.41261,-2.0625 0.7502,-4.65 0.7502,-5.75 0,-1.1 -0.33759,-3.6875 -0.7502,-5.75 -0.44642,-2.2315 -0.36492,-3.75 0.20127,-3.75 0.52331,0 1.2539,2.199 1.6236,4.8867 0.76111,5.5339 -0.23782,14.113 -1.6433,14.113 -0.54341,0 -0.61909,-1.563 -0.18156,-3.75 z" id="path32"></path>
+    <path fill="#000000" d="m 220.35,-12.153 c 0.006,-0.44496 0.60085,-2.834 1.322,-5.309 1.2812,-4.3973 1.3356,-7.4257 0.24242,-13.5 -0.50794,-2.8224 -0.45215,-2.8851 0.94244,-1.0589 2.5222,3.3028 1.3628,18.279 -1.5547,20.082 -0.52963,0.32734 -0.9581,0.2311 -0.95215,-0.21386 z" id="path34"></path>
+    <path fill="#000000" d="m 222.53,-45.841 c 0.30658,-4.2384 -0.45523,-7.3807 -1.7088,-10.022 -0.95777,-2.0184 -1.5298,-4.0319 -1.1226,-4.2885 0.48336,-0.30457 2.6714,3.0776 3.2636,5.9142 1.2066,5.7804 1.6463,12.975 -0.18591,13.469 -0.71558,0.19308 -0.52762,-1.1816 -0.24617,-5.0726 z" id="path36"></path>
+    <path fill="#000000" d="m 228.51,-49.875 c 0.1293,-2.0984 -0.97777,-6.6569 -2.3005,-9.5484 -2.948,-6.4442 -1.6982,-6.7536 1.042,-0.77885 2.9113,6.3477 3.6679,14.279 2.2083,13.741 -0.71064,-0.26184 -1.0792,-1.313 -0.94981,-3.4136 z" id="path38"></path>
+    <path d="m 92.188,-57.781 c -0.41812,0.0167 -0.80767,0.05115 -1.0938,0.125 -0.14304,0.03693 -0.28046,0.0682 -0.375,0.15625 -0.04727,0.04402 -0.08177,0.1139 -0.09375,0.1875 -0.01198,0.0736 -0.0025,0.15779 0.03125,0.21875 0.2022,0.36531 0.63765,0.49833 1.1562,0.5625 0.5186,0.06417 1.1496,0.04416 1.875,0 1.0756,-0.06548 1.6347,0.30524 2.1562,0.78125 0.24261,0.22142 0.59104,0.67633 0.96875,1.0625 0.18885,0.19308 0.40237,0.37851 0.625,0.5 0.22263,0.12149 0.46094,0.17489 0.71875,0.125 0.05699,-0.01103 0.1201,-0.04836 0.15625,-0.09375 0.03615,-0.04539 0.05441,-0.07785 0.0625,-0.125 0.01618,-0.09431 -0.0074,-0.20745 -0.03125,-0.3125 -0.04766,-0.2101 -0.14402,-0.44359 -0.28125,-0.71875 -0.27446,-0.55032 -0.69541,-1.1814 -1.0938,-1.5312 -0.97152,-0.85332 -1.5719,-0.85671 -2.625,-0.90625 -0.38593,-0.01816 -1.3187,-0.06471 -2.1562,-0.03125 z" fill="#000000" id="path40"></path>
+    <path d="m 21.692,3.693 c 0,1.7332 -1.479,3.1382 -3.3034,3.1382 -1.8244,0 -3.3034,-1.405 -3.3034,-3.1382 0,-1.7332 1.479,-3.1382 3.3034,-3.1382 1.8244,0 3.3034,1.405 3.3034,3.1382 z" transform="translate(62.351062,-85.961663)" stroke="#000000" fill="#ffffff" id="path42"></path>
+    <path style="stroke-dasharray:none" d="m 11.121,17.512 c 0,2.7974 -2.2678,5.0652 -5.0652,5.0652 -2.7974,0 -5.0652,-2.2678 -5.0652,-5.0652 0,-2.7974 2.2678,-5.0652 5.0652,-5.0652 2.7974,0 5.0652,2.2678 5.0652,5.0652 z" transform="translate(62.351062,-85.961663)" stroke="#000000" stroke-miterlimit="4" stroke-width="1.125" fill="#ffffff" id="path44"></path>
+    <path style="stroke-dasharray:none" d="m 19.49,23.954 c 0,1.0642 -0.86274,1.927 -1.927,1.927 -1.0642,0 -1.927,-0.86274 -1.927,-1.927 0,-1.0642 0.86274,-1.927 1.927,-1.927 1.0642,0 1.927,0.86274 1.927,1.927 z" transform="translate(62.351062,-85.961663)" stroke="#000000" stroke-miterlimit="4" stroke-width="1.125" fill="#ffffff" id="path46"></path>
+    <path fill="#000000" d="m 158.66,-39.407 c 0.63271,-0.89656 0.39099,-2.751 -0.67113,-3.5124 -1.3572,-0.97288 -1.155,-1.7645 0.34175,-1.0839 2.315,1.0526 2.8202,4.6362 0.88117,5.8944 -1.324,0.85906 -1.1447,-0.45786 -0.55179,-1.2981 z" id="path48"></path>
+    <path fill="#000000" d="m 160.69,-40.198 c -1.5047,-0.81182 -1.3126,-1.6401 0.30136,-1.3263 2.9208,0.56794 2.4314,5.1636 0.47731,5.8944 -1.6851,0.63027 -0.87652,-0.42951 -0.16504,-1.4705 0.84731,-1.2397 0.60338,-2.4411 -0.61363,-3.0977 z" id="path50"></path>
+    <path fill="#000000" d="m 158.02,-32.571 c 0.49888,-0.97738 0.50672,-2.5033 -0.43424,-3.4262 -1.1922,-1.1693 -0.94394,-1.9348 0.46291,-1.0839 2.2746,1.3757 1.9721,4.4343 0.59846,5.8944 -1.0814,1.1495 -1.1797,-0.30175 -0.62713,-1.3843 z" id="path52"></path>
+    <path fill="#000000" d="m 165.12,-28.754 c -1.1333,-1.2896 -0.636,-2.3003 0.74722,-1.4115 2.1394,1.3747 1.7734,6.1183 0.0239,5.9599 -1.4321,-0.12972 1.0955,-2.4244 -0.77112,-4.5483 z" id="path54"></path>
+    <path fill="#000000" d="m 167.58,-26.827 c -1.7324,-0.26725 -1.445,-1.5247 0.1895,-1.3468 2.958,0.32194 2.9592,4.7402 1.2549,6.087 -0.94832,0.74939 -0.95356,-0.5447 -0.67019,-1.1969 0.35739,-0.82256 1.6193,-2.1864 -0.77422,-3.5433 z" id="path56"></path>
+    <path fill="#000000" d="m 164.54,-19.558 c 0.91705,-0.60263 1.766,-1.5198 1.0745,-2.6419 -0.77349,-1.255 -0.19661,-2.5871 0.95606,-1.0464 1.5924,2.1285 -0.30418,4.5837 -2.2202,5.1731 -1.5085,0.46406 -0.82603,-0.81738 0.18969,-1.4849 z" id="path58"></path>
+    <path fill="#000000" d="m 146.33,-13.551 c 1.0714,-0.84393 0.77678,-2.679 -0.56585,-3.5826 -1.2444,-0.83744 -0.89177,-1.6943 0.53475,-1.0839 2.338,1.0003 3.0132,4.9345 0.68817,5.8944 -1.4588,0.60227 -1.4649,-0.59155 -0.65707,-1.2279 z" id="path60"></path>
+    <path fill="#000000" d="m 148.73,-15.184 c -1.463,-0.88487 -1.23,-1.9247 0.30136,-1.3263 2.7102,1.0592 2.4314,5.1636 0.47731,5.8944 -1.6851,0.63027 -1.2615,-0.76984 -0.39313,-1.2424 0.87639,-0.47694 1.0771,-2.4411 -0.38554,-3.3258 z" id="path62"></path>
+    <path fill="#000000" d="m 146.53,-8.8563 c 0.78176,-0.23546 0.80812,-1.7206 -0.22369,-2.1278 -1.2092,-0.4772 -0.99248,-1.8788 0.46291,-1.0839 2.3292,1.2721 1.589,4.0336 0.12473,4.2978 -1.5125,0.27284 -1.3413,-0.79165 -0.36395,-1.086 z" id="path64"></path>
+    <path fill="#000000" d="m 117.61,-8.4643 c 0.63271,-0.89656 0.39099,-2.751 -0.67113,-3.5124 -1.3572,-0.97288 -1.155,-1.7645 0.34175,-1.0839 2.315,1.0526 2.8202,4.6362 0.88117,5.8944 -1.324,0.85906 -1.1447,-0.45786 -0.55179,-1.2981 z" id="path66"></path>
+    <path fill="#000000" d="m 119.33,-9.2601 c -1.538,-0.74684 -1.3814,-1.5826 0.24447,-1.3379 2.9424,0.44274 2.6496,5.0551 0.72851,5.8687 -1.6567,0.70164 -0.89406,-0.3917 -0.22767,-1.4621 0.79362,-1.2748 0.49862,-2.4646 -0.74531,-3.0686 z" id="path68"></path>
+    <path fill="#000000" d="m 116.6,-2.279 c 0.69575,-0.84857 1.0287,-2.3377 0.30605,-3.44 -0.91553,-1.3965 -0.50982,-2.0916 0.68332,-0.96036 1.9291,1.8289 0.98157,4.7528 -0.67172,5.8865 -1.3016,0.89258 -1.0883,-0.54627 -0.31765,-1.4862 z" id="path70"></path>
+  </g>
+</svg>
+<a aria-hidden="true" tabindex="-1" href="#gdb-备忘清单"><span class="icon icon-link"></span></a>GDB 备忘清单</h1><div class="wrap-body">
+<p>本清单提供了对 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/GNU_Debugger">GDB</a> 的入门简要概述，以及 <code>GDB</code> 常用示例，完整文档参阅 <a target="_blank" rel="noopener" href="https://www.eecs.umich.edu/courses/eecs373/readings/Debugger.pdf">Debugging with gdb</a>，该文档最后有 <code>GDB index</code>，可以快速查找命令。</p>
+</div></header><div class="menu-tocs"><div class="menu-btn"><svg aria-hidden="true" fill="currentColor" height="1em" width="1em" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+  <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+</svg></div><div class="menu-modal"><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#入门">入门</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#常用命令">常用命令</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#启动调试">启动调试</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#core-dump-文件">core dump 文件</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#查看源码">查看源码</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#流程控制">流程控制</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#断点命令">断点命令</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#watch-命令">watch 命令</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#查看变量">查看变量</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#frame-栈帧">frame 栈帧</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#函数调用">函数调用</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#信号">信号</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#线程">线程</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#另见">另见</a></div></div><div class="h1wrap-body"><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="入门"><a aria-hidden="true" tabindex="-1" href="#入门"><span class="icon icon-link"></span></a>入门</h2><div class="wrap-body">
+<!--rehype:body-class=cols-2-->
+</div></div><div class="h2wrap-body cols-2"><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="常用命令"><a aria-hidden="true" tabindex="-1" href="#常用命令"><span class="icon icon-link"></span></a>常用命令</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<p><code>[]</code> 内为命令缩写</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="left-align"><thead><tr><th align="left">命令 <code>[缩写]</code></th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>help[h]</code></td><td align="left"><strong>查看命令帮助</strong>。如 <code>help run</code></td></tr><tr><td align="left"><code>run[r]</code></td><td align="left"><strong>运行程序</strong>。可搭配参数使用</td></tr><tr><td align="left"><code>start</code></td><td align="left"><strong>运行程序，停在第一条执行语句</strong>。可搭配参数使用</td></tr><tr><td align="left"><code>list[l]</code></td><td align="left"><strong>查看程序源码</strong></td></tr><tr><td align="left"><code>break[b]</code></td><td align="left"><strong>设置断点</strong>。可指定文件名、函数名和行号等参数来设置断点</td></tr><tr><td align="left"><code>watch</code></td><td align="left"><strong>设置监视点</strong>。当监视的变量发生更改时，程序会被中断</td></tr><tr><td align="left"><code>delete</code></td><td align="left"><strong>删除断点等</strong>。可用于删除断点、监视点、<code>display</code> 等</td></tr><tr><td align="left"><code>continue[c]</code></td><td align="left"><strong>继续执行程序</strong>。让程序继续执行，到下一个断点或程序结束</td></tr><tr><td align="left"><code>next[n]</code></td><td align="left"><strong>单步执行程序，跳过函数调用</strong></td></tr><tr><td align="left"><code>step[s]</code></td><td align="left"><strong>单步执行程序，进入函数调用</strong></td></tr><tr><td align="left"><code>finish</code></td><td align="left"><strong>结束当前函数</strong>。返回到函数调用点</td></tr><tr><td align="left"><code>kill</code></td><td align="left"><strong>杀死当前的调试进程</strong></td></tr><tr><td align="left"><code>backtrace[bt]</code></td><td align="left"><strong>查看函数调用栈</strong>。它会打印出当前的函数调用栈</td></tr><tr><td align="left"><code>frame[fr]</code></td><td align="left"><strong>切换栈帧</strong>。以查看该栈帧中的局部变量和参数等</td></tr><tr><td align="left"><code>info</code></td><td align="left"><strong>查看程序状态信息</strong>。例如断点、寄存器、线程、局部变量等</td></tr><tr><td align="left"><code>show</code></td><td align="left"><strong>查看 <code>gdb</code> 配置信息</strong>。与 <code>info</code> 不同， <code>show</code> 查看 <code>GDB</code> 本身的配置信息</td></tr><tr><td align="left"><code>set</code></td><td align="left"><strong>设置变量值</strong>。有时指定变量类型才能设置，如 <code>set *(int*)(&#x26;a) = 3</code></td></tr><tr><td align="left"><code>whatis</code></td><td align="left"><strong>查看变量、函数类型</strong>。例如，<code>whatis a</code> 可以显示变量 <code>a</code> 的类型</td></tr><tr><td align="left"><code>ptype</code></td><td align="left"><strong>查看变量、函数类型</strong>。会显示完整的结构体类型</td></tr><tr><td align="left"><code>print[p]</code></td><td align="left"><strong>打印变量的值</strong>。例如，<code>print x</code> 可以显示变量 <code>x</code> 的当前值</td></tr><tr><td align="left"><code>display</code></td><td align="left"><strong>持续打印变量的值</strong>。与 <code>print</code> 类似，但它会在每次停下时自动输出值</td></tr><tr><td align="left"><code>thread</code></td><td align="left"><strong>切换线程</strong>。例如，<code>thread 2</code> 切换到编号为 <code>2</code> 的线程</td></tr><tr><td align="left"><code>signal</code></td><td align="left"><strong>向进程发送信号</strong>。例如，<code>signal 9</code> 发送编号为 <code>9</code> 的信号</td></tr></tbody></table>
+<!--rehype:className=left-align-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="启动调试"><a aria-hidden="true" tabindex="-1" href="#启动调试"><span class="icon icon-link"></span></a>启动调试</h3><div class="wrap-body">
+<p>启动进程，不带参数</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># gdb &#x3C;program></span>
+</span><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> run
+</span></code></pre>
+<p>启动进程，带参数 <code>&#x3C;args></code></p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># gdb &#x3C;program></span>
+</span><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> run <span class="token operator">&#x3C;</span>args<span class="token operator">></span>
+</span></code></pre>
+<p>启动 <code>gdb</code> 时传入参数，<code>run</code> 就不用传入了</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># gdb --args &#x3C;program> 1 2 3</span>
+</span><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> run
+</span></code></pre>
+<p>通过 <code>set</code> 设置参数</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># gdb &#x3C;program></span>
+</span><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> <span class="token builtin class-name">set</span> args <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span>
+</span><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> run
+</span></code></pre>
+<p>显示运行时将要或已经传递给程序的参数</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> show args
+</span></code></pre>
+<p>在启动进程前，添加环境变量</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> <span class="token builtin class-name">set</span> <span class="token function">env</span> DEBUG <span class="token number">1</span>
+</span></code></pre>
+<p>在启动进程前，清除环境变量</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> <span class="token builtin class-name">unset</span> <span class="token function">env</span> DEBUG
+</span></code></pre>
+<p>通过进程号 <code>123</code> 连接到正在运行的进程</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> attach <span class="token number">123</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="core-dump-文件"><a aria-hidden="true" tabindex="-1" href="#core-dump-文件"><span class="icon icon-link"></span></a>core dump 文件</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<p>默认情况下，<code>linux</code> 系统中程序崩溃时也不会生成 <code>core dump</code> 文件，需要先启用</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token builtin class-name">ulimit</span> <span class="token parameter variable">-c</span> unlimited
+</span><span class="code-line"><span class="token builtin class-name">echo</span> <span class="token string">"/tmp/core-%e-%p-%t"</span> <span class="token operator">></span> /proc/sys/kernel/core_pattern
+</span></code></pre>
+<p>调试 <code>core</code> 文件</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">gdb program /tmp/core-file
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="查看源码"><a aria-hidden="true" tabindex="-1" href="#查看源码"><span class="icon icon-link"></span></a>查看源码</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) list 30</code></td><td align="left">查看第 <code>30</code> 行为中心的上下 <code>5</code> 行源码</td></tr><tr><td align="left"><code>(gdb) list main</code></td><td align="left">查看 <code>main</code> 函数为中心的上下 <code>5</code> 行源码</td></tr><tr><td align="left"><code>(gdb) list file.c:30</code></td><td align="left">查看 <code>file.c</code> 文件中 <code>30</code> 行的源码</td></tr><tr><td align="left"><code>(gdb) list file.c:main</code></td><td align="left">查看 <code>file.c</code> 文件中 <code>main</code> 函数</td></tr><tr><td align="left"><code>(gdb) disassemble</code></td><td align="left">查看当前可执行文件的汇编源码</td></tr><tr><td align="left"><code>(gdb) disassemble myfun</code></td><td align="left">查看指定函数的汇编源码</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="流程控制"><a aria-hidden="true" tabindex="-1" href="#流程控制"><span class="icon icon-link"></span></a>流程控制</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) step[s]</code></td><td align="left">执行源码级别的单步进入操作</td></tr><tr><td align="left"><code>(gdb) stepi[si]</code></td><td align="left">执行指令级别的单步进入操作</td></tr><tr><td align="left"><code>(gdb) next[n]</code></td><td align="left">执行源码级别的单步跳过操作</td></tr><tr><td align="left"><code>(gdb) nexti[ni]</code></td><td align="left">执行指令级别的单步跳过操作</td></tr><tr><td align="left"><code>(gdb) continue[c]</code></td><td align="left">继续执行，到下一个断点或程序结束</td></tr><tr><td align="left"><code>(gdb) finish</code></td><td align="left">运行完当前函数，并返回到函数调用点</td></tr><tr><td align="left"><code>(gdb) return</code></td><td align="left">直接退出当前函数，不执行剩下代码块</td></tr><tr><td align="left"><code>(gdb) return expression</code></td><td align="left">可以指定返回值的内容</td></tr><tr><td align="left"><code>(gdb) until</code></td><td align="left">结束当前循环</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="断点命令"><a aria-hidden="true" tabindex="-1" href="#断点命令"><span class="icon icon-link"></span></a>断点命令</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) break main</code></td><td align="left">在所有名为 <code>main</code> 的函数处设置一个断点</td></tr><tr><td align="left"><code>(gdb) break test.c:12</code></td><td align="left">在文件 <code>test.c</code> 的第 <code>12</code> 行设置断点</td></tr><tr><td align="left"><code>(gdb) break test.c:func</code></td><td align="left">在文件 <code>test.c</code> 的 <code>func</code> 函数处设置断点</td></tr><tr><td align="left"><code>(gdb) rbreak regular-expression</code></td><td align="left">在正则表达式匹配的函数名上设置断点</td></tr><tr><td align="left"><code>(gdb) break foo if a &#x3C; 100</code></td><td align="left">设置<strong>条件断点</strong>，条件满足才停止</td></tr><tr><td align="left"><code>(gdb) info break</code></td><td align="left">列出所有断点位置、编号</td></tr><tr><td align="left"><code>(gdb) delete 2</code></td><td align="left">删除指定编号的断点</td></tr><tr><td align="left"><code>(gdb) clear</code></td><td align="left">删除刚才停止处的断点</td></tr><tr><td align="left"><code>(gdb) disable 1</code></td><td align="left"><code>disable</code> 指定编号的断点</td></tr><tr><td align="left"><code>(gdb) enable 1</code></td><td align="left"><code>enable</code> 指定编号的断点</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="watch-命令"><a aria-hidden="true" tabindex="-1" href="#watch-命令"><span class="icon icon-link"></span></a>watch 命令</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) watch var</code></td><td align="left">监视变量，当值变化时会输出新、旧值</td></tr><tr><td align="left"><code>(gdb) info break</code></td><td align="left">列出断点，也包括 <code>watchpoint</code></td></tr><tr><td align="left"><code>(gdb) i watch</code></td><td align="left">只列出 <code>watchpoint</code></td></tr><tr><td align="left"><code>(gdb) delete 1</code></td><td align="left">删除指定的 <code>watchpoint</code></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="查看变量"><a aria-hidden="true" tabindex="-1" href="#查看变量"><span class="icon icon-link"></span></a>查看变量</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) info args</code></td><td align="left">查看传入参数信息</td></tr><tr><td align="left"><code>(gdb) info local</code></td><td align="left">查看当前栈帧（函数）的本地变量</td></tr><tr><td align="left"><code>(gdb) print var</code></td><td align="left">查看指定变量的值</td></tr><tr><td align="left"><code>(gdb) print/x var</code></td><td align="left">以十六进制输出变量的值</td></tr><tr><td align="left"><code>(gdb) print ptr</code></td><td align="left">假设 <code>int *ptr=&#x26;a</code>，输出变量 <code>a</code> 的地址</td></tr><tr><td align="left"><code>(gdb) print *ptr</code></td><td align="left">假设 <code>int *ptr=&#x26;a</code>，输出变量 <code>a</code> 的值</td></tr><tr><td align="left"><code>(gdb) print *ptr@5</code></td><td align="left">假设 <code>int ptr[5]</code>，输出数组的值</td></tr><tr><td align="left"><code>(gdb) display var</code></td><td align="left">与 <code>print</code> 作用相同，但每次停下来都自动输出变量的值</td></tr><tr><td align="left"><code>(gdb) info display</code></td><td align="left">列出所有设置了 <code>display</code> 的变量</td></tr><tr><td align="left"><code>(gdb) undisplay 1</code></td><td align="left">与 <code>display</code> 相反，不能指定变量名，只能是编号</td></tr><tr><td align="left"><code>(gdb) delete display 1</code></td><td align="left">与 <code>undisplay</code> 类似，通过编号取消显示</td></tr><tr><td align="left"><code>(gdb) whatis var</code></td><td align="left">查看变量类型</td></tr><tr><td align="left"><code>(gdb) ptype var</code></td><td align="left">比 <code>type</code> 更详细，会给出结构体的定义</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="frame-栈帧"><a aria-hidden="true" tabindex="-1" href="#frame-栈帧"><span class="icon icon-link"></span></a>frame 栈帧</h3><div class="wrap-body">
+<p>每当一个函数被调用时，一个新的栈帧 <code>frame</code> 就会被压入栈中，栈帧包含了该函数的局部变量、参数、返回地址和其他信息，当函数执行完毕后，这个栈帧会被弹出栈并销毁。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) frame</code></td><td align="left">显示当前栈帧和源代码行</td></tr><tr><td align="left"><code>(gdb) backtrace</code></td><td align="left">打印出当前正在执行的所有栈帧</td></tr><tr><td align="left"><code>(gdb) backtrace 5</code></td><td align="left">只显示最近调用的 <code>5</code> 个栈帧</td></tr><tr><td align="left"><code>(gdb) frame 2</code></td><td align="left">切换到第 <code>2</code> 个栈帧，以查看信息</td></tr><tr><td align="left"><code>(gdb) up</code></td><td align="left">切换到上一级调用栈帧</td></tr><tr><td align="left"><code>(gdb) down</code></td><td align="left">切换到下一级调用栈帧</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="函数调用"><a aria-hidden="true" tabindex="-1" href="#函数调用"><span class="icon icon-link"></span></a>函数调用</h3><div class="wrap-body">
+<p><code>call</code> 和 <code>print</code> 调用的函数如果存在全局变量、静态变量的修改，在函数返回后会恢复到调用之前的值，这两个调用不会影响程序的状态</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) call func(a, b)</code></td><td align="left">调用指定的函数，不影响主线程变量</td></tr><tr><td align="left"><code>(gdb) print func(a, b)</code></td><td align="left">与 <code>call</code> 类似</td></tr><tr><td align="left"><code>(gdb) finish</code></td><td align="left">结束当前运行的函数</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="信号"><a aria-hidden="true" tabindex="-1" href="#信号"><span class="icon icon-link"></span></a>信号</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<p><code>linux</code> 下使用 <code>kill -l</code> 查看信号编号与信号名，使用 <code>info signal</code> 查看信号的处理方式、描述等：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> info signal
+</span><span class="code-line">Signal        Stop  Print   Pass to program Description
+</span><span class="code-line">
+</span><span class="code-line">SIGHUP        Yes   Yes     Yes             Hangup
+</span><span class="code-line">SIGINT        Yes   Yes     No              Interrupt
+</span><span class="code-line">SIGQUIT       Yes   Yes     Yes             Quit
+</span><span class="code-line">SIGILL        Yes   Yes     Yes             Illegal instruction
+</span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) signal SIGKILL</code></td><td align="left">向进程发送信号，用信号名或编号表示</td></tr><tr><td align="left"><code>(gdb) signal 9</code></td><td align="left">向进程发送信号，用信号名或编号表示</td></tr><tr><td align="left"><code>(gdb) handle &#x3C;signal> actions</code></td><td align="left">指定信号的处理方式，选择如下，可以组合</td></tr><tr><td align="left"><code>stop/nostop</code></td><td align="left">收到信号是否停止进程，类似断点</td></tr><tr><td align="left"><code>print/noprint</code></td><td align="left">收到信号是否输出消息</td></tr><tr><td align="left"><code>pass/nopass</code></td><td align="left">是否将信号传递给程序</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="线程"><a aria-hidden="true" tabindex="-1" href="#线程"><span class="icon icon-link"></span></a>线程</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">命令</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>(gdb) info threads</code></td><td align="left">列出所有线程，标识当前所在线程</td></tr><tr><td align="left"><code>(gdb) thread 2</code></td><td align="left">切换到编号为 <code>2</code> 的线程</td></tr><tr><td align="left"><code>(gdb) break file.c:23 thread all</code></td><td align="left">在所有线程中相应的行上设置断点</td></tr><tr><td align="left"><code>(gdb) thread apply all command</code></td><td align="left">让所有线程执行 <code>gdb</code> 命令</td></tr><tr><td align="left"><code>(gdb) thread apply ID1 ID2 command</code></td><td align="left">让指定线程执行 <code>gdb</code> 命令</td></tr><tr><td align="left"><code>(gdb) set scheduler-locking off</code></td><td align="left">所有线程都执行，这是默认值</td></tr><tr><td align="left"><code>(gdb) set scheduler-locking on</code></td><td align="left">只让当前线程执行</td></tr></tbody></table>
+</div></div></div></div></div><div class="wrap h2body-not-exist"><div class="wrap-header h2wrap"><h2 id="另见"><a aria-hidden="true" tabindex="-1" href="#另见"><span class="icon icon-link"></span></a>另见</h2><div class="wrap-body">
+<ul>
+<li><a target="_blank" rel="noopener" href="https://carlyleliu.github.io/2022/%E5%BA%94%E7%94%A8%E5%B4%A9%E6%BA%83%E8%B0%83%E8%AF%95%E5%88%86%E6%9E%90">应用崩溃调试分析</a></li>
+</ul>
+</div></div><div class="h2wrap-body"></div></div></div></div><footer class="footer-wrap"><footer class="max-container">© 2022 Kenny Wang.</footer></footer><script src="../data.js?v=1.4.1" defer></script><script src="../js/fuse.min.js?v=1.4.1" defer></script><script src="../js/main.js?v=1.4.1" defer></script><div id="mysearch"><div class="mysearch-box"><div class="mysearch-input"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><input id="mysearch-input" type="search" placeholder="搜索" autocomplete="off"><div class="mysearch-clear"></div></div><button id="mysearch-close" type="button">搜索</button></div><div class="mysearch-result"><div id="mysearch-menu"></div><div id="mysearch-content"></div></div></div></div></body>
+</html>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><a class="avatar-img" href="/about"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></a><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">tongtong</h1><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">今天<b style="color:#00f">你</b>学习<b style="color:#00f">了</b><b style="color:#00f">吗？</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">那你还在<b style="color:#00f">等</b>什么<b style="color:#00f">呢？</b>。</div></div><div class="banner-button-group"><a class="banner-button" onclick="pjax.loadUrl(&quot;/about/&quot;)"><span class="banner-button-text">了解更多</span><i class="anzhiyufont anzhiyu-icon-arrow-circle-right" style="font-size: 1.5rem"></i></a></div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/panshen123" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=619796817@qq.com" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1919269250" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="tencent://Message/?Uin=619796817&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content"><div id="welcome-info"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN2.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN1.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">21</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-14T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">21.5k</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-hourglass-start"></i><div class="item-name">最后更新 :</div></div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-28T12:47:53.656Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:anzhiyu-c@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6378063631" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100092208016287&amp;sk=about" title="facebook"><i class="anzhiyufont anzhiyu-icon-facebook1"></i></a><img class="footer_mini_logo" title="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/zpp-800" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/484096189" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/self" title="抖音"><i class="anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" href="/docs/">文档</a><a class="footer-item" title="源码" target="_blank" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" target="_blank" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" target="_blank" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" target="_blank" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" target="_blank" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" target="_blank" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" target="_blank" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" target="_blank" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/svg/桐桐上班.svg" alt="距离月入25k也就还差两瓶二锅头" title="距离月入25k也就还差两瓶二锅头"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://www.dogecloud.com/" style="margin-inline:5px" data-title="本站使用多吉云为静态资源提供CDN加速" title="本站使用多吉云为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg" alt="本站使用多吉云为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px" data-title="本站已在陇进行备案" title="本站已在陇进行备案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/%E9%99%87ICP%E5%A4%87-2023001103%E5%8F%B7.svg" alt="本站已在陇进行备案"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2022 - 2023 By <a class="footer-bar-link" href="http://example.com" title="tongtong" target="_blank">tongtong</a></div></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="湘ICP备-xxxxxxx号">湘ICP备-xxxxxxx号</a></div></div></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2867147548" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/2867147548&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/15/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By 安知鱼 1.4.2",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 tongtong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("05/15/2023 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      img.src = "https://tu.hanxi.fun/svg/桐桐下班.svg";
+      img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+      img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoos.hanxi.fun/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "visitor@hanxi.com";</script><script>//动态标题
+let leaveTitle = '此去一别，便是经年';
+let backTitle = '正是江南好风景，落花时节又逢君';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script data-pjax="true">if (document.querySelector(".comment-barrage")){
+  var commentBarrageConfig = {
+    maxBarrage: 1,
+    barrageTime: 4000,
+    twikooUrl: "https://twikoos.hanxi.fun/",
+    accessToken: "",
+    mailMd5: "",
+    pageUrl: window.location.pathname,
+    barrageTimer: [],
+    barrageList: [],
+    barrageIndex: 0,
+    dom: document.querySelector(".comment-barrage"),
+  };
+  var commentInterval = null;
+  var hoverOnCommentBarrage = false;
+  
+  document.querySelector(".comment-barrage").addEventListener("mouseenter", function() {
+    hoverOnCommentBarrage = true;
+  });
+  document.querySelector(".comment-barrage").addEventListener("mouseleave", function() {
+    hoverOnCommentBarrage = false;
+  });
+
+  function initCommentBarrage() {
+    if (!commentBarrageConfig.dom) return;
+
+    var data = JSON.stringify({
+      event: "COMMENT_GET",
+      "commentBarrageConfig.accessToken": commentBarrageConfig.accessToken,
+      url: commentBarrageConfig.pageUrl,
+    });
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4 && this.responseText) {
+        commentBarrageConfig.barrageList = commentLinkFilter(JSON.parse(this.responseText).data);
+        commentBarrageConfig.dom.innerHTML = "";
+      }
+    });
+    xhr.open("POST", commentBarrageConfig.twikooUrl);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
+
+    clearInterval(commentInterval);
+    commentInterval = null;
+
+    commentInterval = setInterval(() => {
+      if (commentBarrageConfig.barrageList.length && !hoverOnCommentBarrage) {
+        popCommentBarrage(commentBarrageConfig.barrageList[commentBarrageConfig.barrageIndex]);
+        commentBarrageConfig.barrageIndex += 1;
+        commentBarrageConfig.barrageIndex %= commentBarrageConfig.barrageList.length;
+      }
+      if (
+        commentBarrageConfig.barrageTimer.length >
+          (commentBarrageConfig.barrageList.length > commentBarrageConfig.maxBarrage
+            ? commentBarrageConfig.maxBarrage
+            : commentBarrageConfig.barrageList.length) &&
+        !hoverOnCommentBarrage
+      ) {
+        removeCommentBarrage(commentBarrageConfig.barrageTimer.shift());
+      }
+    }, commentBarrageConfig.barrageTime);
+  }
+
+  function commentLinkFilter(data) {
+    data.sort((a, b) => {
+      return a.created - b.created;
+    });
+    let newData = [];
+    data.forEach(item => {
+      newData.push(...getCommentReplies(item));
+    });
+    return newData;
+  }
+
+  function getCommentReplies(item) {
+    if (item.replies) {
+      let replies = [item];
+      item.replies.forEach(item => {
+        replies.push(...getCommentReplies(item));
+      });
+      return replies;
+    } else {
+      return [];
+    }
+  }
+
+  function popCommentBarrage(data) {
+    let barrage = document.createElement("div");
+    barrage.className = "comment-barrage-item";
+    barrage.innerHTML = `
+        <div class="barrageHead">
+          <a class="barrageTitle ${
+            data.mailMd5 === commentBarrageConfig.mailMd5 ? "barrageBloggerTitle" : ""
+          }" href="javascript:anzhiyu.scrollTo('#post-comment')"">
+            ${data.mailMd5 === commentBarrageConfig.mailMd5 ? "博主" : "热评"}
+          </a>
+          <div class="barrageNick">${data.nick}</div>
+          <img class="nolazyload barrageAvatar" src="https://cravatar.cn/avatar/${data.mailMd5}"/>
+          <a class="comment-barrage-close" href="javascript:anzhiyu.switchCommentBarrage()"><i class="anzhiyufont anzhiyu-icon-xmark"></i></a>
+        </div>
+        <a class="barrageContent" href="#${data.id}">
+          <object>${data.comment}</object>
+        </a>
+      `;
+    commentBarrageConfig.barrageTimer.push(barrage);
+    commentBarrageConfig.dom.append(barrage);
+  }
+
+  function removeCommentBarrage(barrage) {
+    barrage.className = "comment-barrage-item out";
+
+    setTimeout(() => {
+      if (commentBarrageConfig.dom && commentBarrageConfig.dom.contains(barrage)) {
+        commentBarrageConfig.dom.removeChild(barrage);
+      }
+      }, 1000);
+    }
+
+    // 自动隐藏
+    const commentEntryCallback = (entries) => {
+      const commentBarrage = document.querySelector(".comment-barrage");
+      const postComment = document.getElementById("post-comment");
+
+      entries.forEach(entry => {
+        if (postComment && commentBarrage && document.body.clientWidth > 768) {
+          commentBarrage.style.bottom = entry.isIntersecting ? "-200px" : "0";
+        }
+      });
+    };
+    // 创建IntersectionObserver实例
+    const observer = new IntersectionObserver(commentEntryCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0
+    });
+    // 监视目标元素
+    const postCommentTarget = document.getElementById("post-comment");
+    if (postCommentTarget) {
+      observer.observe(postCommentTarget);
+    }
+
+    initCommentBarrage();
+
+    if (localStorage.getItem("commentBarrageSwitch") !== "false") {
+      document.querySelector(".comment-barrage").style.display = "flex";
+      document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+    } else {
+      document.querySelector(".comment-barrage").style.display = "none";
+      document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+    }
+
+    document.addEventListener("pjax:send", function () {
+      clearInterval(commentInterval);
+    });
+
+  }</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | tongtong-blog")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+anzhiyu.switchRightClickMenuHotReview();
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {
+  if (typeof addFriendLinksInFooter === "function") {
+    addFriendLinksInFooter();
+  }
+}, 200)</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.8/icon/ali_iconfont_css.css"><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><script defer="true" src="/js/welcome.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>

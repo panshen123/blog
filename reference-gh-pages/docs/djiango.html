@@ -1,0 +1,2224 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>tongtong-blog | tongtong-blog</title><meta name="author" content="tongtong"><meta name="copyright" content="tongtong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="tongtong-blog"><meta name="application-name" content="tongtong-blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="tongtong-blog"><meta property="og:url" content="http://example.com/reference-gh-pages/docs/djiango.html"><meta property="og:site_name" content="tongtong-blog"><meta property="og:description" content="Django 备忘清单  &amp;amp;#x26;  djiango cheatsheet &amp;amp;#x26;  Quick Reference                   Quick Reference    搜索⌘K编辑              Django 备忘清单 Django 是 Pyth"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://tu.hanxi.fun/images/t01cc44146214047d1e.jpg"><meta property="article:author" content="tongtong"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://tu.hanxi.fun/images/t01cc44146214047d1e.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/reference-gh-pages/docs/djiango"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  friends_vue_info: {"apiurl":"https://friend.hanxi.fun/"},
+  navMusic: true,
+  changeMainColorPost: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tongtong-blog',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-23 22:06:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/about-tag.css"><link rel="stylesheet" href="/css/welcome.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://tu.hanxi.fun/images/thumb-174881.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+    Pace.restart()
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://zhang-tongtong123.gitee.io/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" href="https://account.aliyun.com/" title="阿里云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E9%98%BF%E9%87%8C%E4%BA%91.ico" alt="阿里云"/><span class="back-menu-item-text">阿里云</span></a><a class="back-menu-item" href="https://chat.hanxi.fun/" title="ChatAI" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/chat.svg" alt="ChatAI"/><span class="back-menu-item-text">ChatAI</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">常用</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qiniu.com/" title="七牛云图床" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E4%B8%83%E7%89%9B%E4%BA%91.ico" alt="七牛云图床"/><span class="back-menu-item-text">七牛云图床</span></a><a class="back-menu-item" href="https://smms.app/" title="smms" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E8%AF%84%E8%AE%BA.ico" alt="smms"/><span class="back-menu-item-text">smms</span></a><a class="back-menu-item" href="https://webconverters.net/cn/" title="免费图片转换" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2.ico" alt="免费图片转换"/><span class="back-menu-item-text">免费图片转换</span></a><a class="back-menu-item" href="https://www.iconfont.cn/" title="阿里矢量图标" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/iconfont%E5%9B%BE%E6%A0%87_%E6%AD%A3%E5%B0%84%E5%9B%BE.ico" alt="阿里矢量图标"/><span class="back-menu-item-text">阿里矢量图标</span></a><a class="back-menu-item" href="https://vercel.com/" title="vercel" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/logo-vercel.ico" alt="vercel"/><span class="back-menu-item-text">vercel</span></a><a class="back-menu-item" href="https://www.dogecloud.com/" title="多吉云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%A4%9A%E5%90%89%E4%BA%91.ico" alt="多吉云"/><span class="back-menu-item-text">多吉云</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">tongtong-blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://tu.hanxi.fun/images/weixin123456.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/weixin123456.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://tu.hanxi.fun/images/chitu_301.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/chitu_301.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="page-site-info"><h1 id="site-title">tongtong-blog</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><!doctype html>
+<html lang="en" data-color-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>Django 备忘清单
+ &#x26;  djiango cheatsheet &#x26;  Quick Reference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta description="Django 是 Python 的一款 Web 框架，本备忘单旨在快速理解 Django 所涉及的主要概念，提供了最常用的 API 示例参考
+
+入门，为开发人员分享快速参考备忘单。">
+<meta keywords="djiango,reference,Quick,Reference,cheatsheet,cheat,sheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%221em%22%20width%3D%221em%22%3E%20%3Cpath%20d%3D%22m21.66%2010.44-.98%204.18c-.84%203.61-2.5%205.07-5.62%204.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2%201.17-2.42%203.16-3.07%206.5-2.28l1.67.39c4.19.98%205.47%203.05%204.49%207.23Z%22%20fill%3D%22%23c9d1d9%22%2F%3E%20%3Cpath%20d%3D%22M15.06%2019.39c-.62.42-1.4.77-2.35%201.08l-1.58.52c-3.97%201.28-6.06.21-7.35-3.76L2.5%2013.28c-1.28-3.97-.22-6.07%203.75-7.35l1.58-.52c.41-.13.8-.24%201.17-.31-.3.61-.54%201.35-.74%202.2l-.98%204.19c-.98%204.18.31%206.24%204.48%207.23l1.68.4c.58.14%201.12.23%201.62.27Zm2.43-8.88c-.06%200-.12-.01-.19-.02l-4.85-1.23a.75.75%200%200%201%20.37-1.45l4.85%201.23a.748.748%200%200%201-.18%201.47Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3Cpath%20d%3D%22M14.56%2013.89c-.06%200-.12-.01-.19-.02l-2.91-.74a.75.75%200%200%201%20.37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3C%2Fsvg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/katex.css">
+</head>
+<body><nav class="header-nav"><div class="max-container"><a href="../index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+  <path d="m21.66 10.44-.98 4.18c-.84 3.61-2.5 5.07-5.62 4.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2 1.17-2.42 3.16-3.07 6.5-2.28l1.67.39c4.19.98 5.47 3.05 4.49 7.23Z" fill="#c9d1d9"></path>
+  <path d="M15.06 19.39c-.62.42-1.4.77-2.35 1.08l-1.58.52c-3.97 1.28-6.06.21-7.35-3.76L2.5 13.28c-1.28-3.97-.22-6.07 3.75-7.35l1.58-.52c.41-.13.8-.24 1.17-.31-.3.61-.54 1.35-.74 2.2l-.98 4.19c-.98 4.18.31 6.24 4.48 7.23l1.68.4c.58.14 1.12.23 1.62.27Zm2.43-8.88c-.06 0-.12-.01-.19-.02l-4.85-1.23a.75.75 0 0 1 .37-1.45l4.85 1.23a.748.748 0 0 1-.18 1.47Z" fill="#228e6c"></path>
+  <path d="M14.56 13.89c-.06 0-.12-.01-.19-.02l-2.91-.74a.75.75 0 0 1 .37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z" fill="#228e6c"></path>
+</svg>
+<span class="title">Quick Reference</span></a><div class="menu"><a href="javascript:void(0);" class="searchbtn" id="searchbtn"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><span>搜索</span><span>⌘K</span></a><a href="https://github.com/jaywcjlove/reference/blob/main/docs/djiango.md" class="" target="__blank"><svg viewBox="0 0 36 36" fill="currentColor" height="1em" width="1em"><path d="m33 6.4-3.7-3.7a1.71 1.71 0 0 0-2.36 0L23.65 6H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V11.76l3-3a1.67 1.67 0 0 0 0-2.36ZM18.83 20.13l-4.19.93 1-4.15 9.55-9.57 3.23 3.23ZM29.5 9.43 26.27 6.2l1.85-1.85 3.23 3.23Z"></path><path fill="none" d="M0 0h36v36H0z"></path></svg><span>编辑</span></a><button id="darkMode" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="light" height="1em" width="1em">
+  <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="dark" height="1em" width="1em">
+  <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
+</svg>
+</button><script src="../js/dark.js?v=1.4.1"></script><a href="https://github.com/jaywcjlove/reference" class="" target="__blank"><svg viewBox="0 0 16 16" fill="currentColor" height="1em" width="1em"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></div></nav><div class="wrap h1body-exist max-container"><header class="wrap-header h1wrap"><h1 id="django-备忘清单"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="1em" height="1em" viewBox="0 0 230 230">
+  <path fill="currentColor" d="M200,0 C216.568542,-3.04359188e-15 230,13.4314575 230,30 L230,200 C230,216.568542 216.568542,230 200,230 L30,230 C13.4314575,230 9.13448861e-15,216.568542 0,200 L0,30 C-2.02906125e-15,13.4314575 13.4314575,1.01490192e-14 30,0 L200,0 Z M167.109375,83.5546875 L141.953125,83.5546875 L141.953125,132.96875 C141.953125,154.980469 140.605469,163.066406 137.011719,170.253906 C133.867188,176.992188 128.476562,181.933594 117.246094,186.875 L140.605469,198.105469 C151.835938,192.265625 157.226562,187.324219 161.269531,179.238281 C165.761719,171.152344 167.109375,161.71875 167.109375,141.503906 L167.109375,83.5546875 Z M127.128906,45.3710938 L101.972656,45.3710938 L101.972656,83.1054688 C97.9296875,82.2070312 94.7851562,82.2070312 90.7421875,82.2070312 C64.2382812,82.2070312 47.6171875,98.3789062 47.6171875,123.984375 C47.6171875,150.488281 63.3398438,164.414062 94.3359375,164.414062 C104.667969,164.414062 114.101562,163.066406 127.128906,160.820312 L127.128906,45.3710938 Z M93.4375,101.972656 C96.5820312,101.972656 98.828125,102.421875 101.972656,103.320312 L101.972656,143.300781 C97.9296875,144.199219 95.6835938,144.199219 92.9882812,144.199219 C79.9609375,144.199219 73.2226562,137.011719 73.2226562,123.535156 C73.2226562,110.058594 80.4101562,101.972656 93.4375,101.972656 Z M167.109375,45.3710938 L141.953125,45.3710938 L141.953125,70.9765625 L167.109375,70.9765625 L167.109375,45.3710938 Z"></path>
+</svg><a aria-hidden="true" tabindex="-1" href="#django-备忘清单"><span class="icon icon-link"></span></a>Django 备忘清单</h1><div class="wrap-body">
+<p>Django 是 Python 的一款 Web 框架，本备忘单旨在快速理解 <a target="_blank" rel="noopener" href="https://www.djangoproject.com/">Django</a> 所涉及的主要概念，提供了最常用的 API 示例参考</p>
+</div></header><div class="menu-tocs"><div class="menu-btn"><svg aria-hidden="true" fill="currentColor" height="1em" width="1em" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+  <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+</svg></div><div class="menu-modal"><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#入门">入门</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#准备环境">准备环境</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#入门-1">入门</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#创建项目">创建项目</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#检查-django-版本">检查 Django 版本</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#创建应用">创建应用</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#应用目录介绍">应用目录介绍</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#视图">视图</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#urls">URLs</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#模板">模板</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#更改设置">更改设置</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#创建表模型">创建表（模型）</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#django-模板">Django 模板</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#模板变量">模板变量</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#模板中创建变量">模板中创建变量</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#数组循环">数组循环</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#模板标签参考">模板标签参考</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#if-语句">If 语句</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#for-循环">For 循环</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#循环变量">循环变量</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#过滤值">过滤值</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#注释">注释</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#注释描述">注释描述</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#双过滤值">双过滤值</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#过滤器标签">过滤器标签</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#cycle">cycle</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#每一行添加行号">每一行添加行号</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#导入模板">导入模板</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#导入模板传入变量">导入模板传入变量</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#过滤器参考">过滤器参考</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#字段查询参考">字段查询参考</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#添加静态文件">添加静态文件</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#添加-css-文件">添加 CSS 文件</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#添加-js-文件">添加 JS 文件</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#添加图片文件">添加图片文件</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#另见">另见</a></div></div><div class="h1wrap-body"><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="入门"><a aria-hidden="true" tabindex="-1" href="#入门"><span class="icon icon-link"></span></a>入门</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist row-span-1"><div class="wrap-header h3wrap"><h3 id="准备环境"><a aria-hidden="true" tabindex="-1" href="#准备环境"><span class="icon icon-link"></span></a>准备环境</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-1-->
+<pre class="wrap-text "><code class="language-bash code-highlight"><span class="code-line">$ python <span class="token parameter variable">--version</span>
+</span><span class="code-line"><span class="token comment"># Python 3.9.2</span>
+</span><span class="code-line">$ pip <span class="token parameter variable">--version</span>
+</span><span class="code-line"><span class="token comment"># pip 20.2.3 from c:\python39\lib\site-packages\pip (python 3.9)</span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+<p>如果你没有安装 PIP，你可以从这个页面下载并安装它：<a target="_blank" rel="noopener" href="https://pypi.org/project/pip/">https://pypi.org/project/pip/</a></p>
+</div></div></div><div class="wrap h3body-not-exist row-span-4"><div class="wrap-header h3wrap"><h3 id="入门-1"><a aria-hidden="true" tabindex="-1" href="#入门-1"><span class="icon icon-link"></span></a>入门</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-4-->
+<ul class="style-timeline">
+<li>
+<p>创建虚拟环境</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py <span class="token parameter variable">-m</span> venv myproject <span class="token comment"># Windows</span>
+</span><span class="code-line">$ python <span class="token parameter variable">-m</span> venv myproject <span class="token comment"># Unix/MacOS</span>
+</span></code></pre>
+</li>
+<li>
+<p>其中包含子文件夹和文件，如下所示</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">myproject
+</span><span class="code-line"> ├┈Include
+</span><span class="code-line"> ├┈Lib
+</span><span class="code-line"> ├┈Scripts
+</span><span class="code-line"> ╰┈pyvenv.cfg
+</span></code></pre>
+</li>
+<li>
+<p>以下命令来激活环境</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># Windows:</span>
+</span><span class="code-line">myproject<span class="token punctuation">\</span>Scripts<span class="token punctuation">\</span>activate.bat
+</span><span class="code-line"><span class="token comment"># Unix/MacOS:</span>
+</span><span class="code-line"><span class="token builtin class-name">source</span> myproject/bin/activate
+</span></code></pre>
+</li>
+<li>
+<p>提示符中看到以下结果：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># Windows:</span>
+</span><span class="code-line"><span class="token punctuation">(</span>myproject<span class="token punctuation">)</span> C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>Your Name<span class="token operator">></span>
+</span><span class="code-line"><span class="token comment"># Unix/MacOS:</span>
+</span><span class="code-line"><span class="token punctuation">(</span>myproject<span class="token punctuation">)</span> <span class="token punctuation">..</span>. $
+</span></code></pre>
+</li>
+<li>
+<p>安装 Django</p>
+<pre class="wrap-text "><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># Windows:</span>
+</span><span class="code-line"><span class="token punctuation">(</span>myproject<span class="token punctuation">)</span> C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>Name<span class="token operator">></span>py <span class="token parameter variable">-m</span> pip <span class="token function">install</span> Django
+</span><span class="code-line"><span class="token comment"># Unix/MacOS:</span>
+</span><span class="code-line"><span class="token punctuation">(</span>myproject<span class="token punctuation">)</span> <span class="token punctuation">..</span>. $ python <span class="token parameter variable">-m</span> pip <span class="token function">install</span> Django
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</li>
+</ul>
+<!--rehype:className=style-timeline-->
+</div></div></div><div class="wrap h3body-not-exist row-span-3"><div class="wrap-header h3wrap"><h3 id="创建项目"><a aria-hidden="true" tabindex="-1" href="#创建项目"><span class="icon icon-link"></span></a>创建项目</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-3-->
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ django-admin startproject myworld
+</span></code></pre>
+<p>创建了一个 <code>myworld</code> 文件夹，内容如下：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">myworld
+</span><span class="code-line">  ├┈ manage.py
+</span><span class="code-line">  ╰┈ myworld/
+</span><span class="code-line">     ├┈ __init__.py
+</span><span class="code-line">     ├┈ asgi.py
+</span><span class="code-line">     ├┈ settings.py
+</span><span class="code-line">     ├┈ urls.py
+</span><span class="code-line">     ╰┈ wsgi.py
+</span></code></pre>
+<p>运行 Django 项目</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py manage.py runserver     <span class="token comment"># Windows</span>
+</span><span class="code-line">$ python manage.py runserver <span class="token comment"># Unix/MacOS</span>
+</span></code></pre>
+<p>打开一个新的浏览器窗口并在地址栏中输入 127.0.0.1:8000</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="检查-django-版本"><a aria-hidden="true" tabindex="-1" href="#检查-django-版本"><span class="icon icon-link"></span></a>检查 Django 版本</h3><div class="wrap-body">
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line"><span class="token punctuation">(</span>myproject<span class="token punctuation">)</span> C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>Your Name<span class="token operator">></span>django-admin <span class="token parameter variable">--version</span>
+</span><span class="code-line"><span class="token comment"># 4.0.3</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="创建应用"><a aria-hidden="true" tabindex="-1" href="#创建应用"><span class="icon icon-link"></span></a>创建应用</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py manage.py startapp members
+</span></code></pre>
+<p>项目中创建了一个名为 <code>members</code> 的文件夹，内容如下：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">myworld
+</span><span class="code-line">  ├┈ manage.py
+</span><span class="code-line">  ├┈ myworld/
+</span><span class="code-line">  ╰┈ members/
+</span><span class="code-line">     ├┈ migrations/
+</span><span class="code-line">     ┆  ╰┈ __init__.py
+</span><span class="code-line">     ├┈ __init__.py
+</span><span class="code-line">     ├┈ admin.py
+</span><span class="code-line">     ├┈ apps.py
+</span><span class="code-line">     ├┈ models.py
+</span><span class="code-line">     ├┈ tests.py
+</span><span class="code-line">     ╰┈ views.py
+</span></code></pre>
+<p>首先，看一下名为 <code>views.py</code> 的文件。这是我们收集发送回正确响应所需的信息的地方。</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="应用目录介绍"><a aria-hidden="true" tabindex="-1" href="#应用目录介绍"><span class="icon icon-link"></span></a>应用目录介绍</h3><div class="wrap-body">
+<ul>
+<li><code>Django</code> 接收 URL，检查 <code>urls.py</code> 文件，并调用与 URL 匹配的视图。</li>
+<li>位于 <code>views.py</code> 中的视图检查相关模型。</li>
+<li>模型是从 <code>models.py</code> 文件中导入的。</li>
+<li>然后视图将数据发送到模板文件夹中的指定模板。</li>
+<li>模板包含 <code>HTML</code> 和 <code>Django</code> 标记，并使用数据将完成的 <code>HTML</code> 内容返回给浏览器</li>
+</ul>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="视图"><a aria-hidden="true" tabindex="-1" href="#视图"><span class="icon icon-link"></span></a>视图</h3><div class="wrap-body">
+<p>Django 视图是接受 <code>http</code> 请求并返回 <code>http</code> 响应的 <code>Python</code> 函数，就像 <code>HTML</code> 文档一样。</p>
+<p>使用 <code>Django</code> 的网页充满了不同任务和任务的视图。</p>
+<p>视图通常放在一个名为 <code>views.py</code> 的文件中，该文件位于应用程序的文件夹中。</p>
+<p>您的 <code>members</code> 文件夹中有一个 <code>views.py</code>，如下所示：</p>
+<pre class="language-py"><code class="language-PY code-highlight"><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment"># Create your views here.</span>
+</span></code></pre>
+<p>找到它并打开它，并将内容替换为：</p>
+<pre class="language-py"><code class="language-PY code-highlight"><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>shortcuts <span class="token keyword">import</span> render
+</span><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</span><span class="code-line">    <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span><span class="token string">"Hello world!"</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p>这是一个关于如何将响应发送回浏览器的简单示例。</p>
+<p>但是我们如何执行视图呢？ 好吧，我们必须通过 URL 调用视图。</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="urls"><a aria-hidden="true" tabindex="-1" href="#urls"><span class="icon icon-link"></span></a>URLs</h3><div class="wrap-body">
+<p>在与 <code>views.py</code> 文件相同的文件夹中创建一个名为 <code>urls.py</code> 的文件，并在其中输入以下代码：</p>
+<pre class="language-py"><code class="language-py code-highlight"><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword">import</span> path
+</span><span class="code-line"><span class="token keyword">from</span> <span class="token punctuation">.</span> <span class="token keyword">import</span> views
+</span><span class="code-line">urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+</span><span class="code-line">    path<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> views<span class="token punctuation">.</span>index<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'index'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">]</span>
+</span></code></pre>
+<p>刚刚创建的 <code>urls.py</code> 文件是特定于成员应用程序的。我们还必须在根目录 <code>myworld</code> 中进行一些路由。</p>
+<p>在 <code>myworld</code> 文件夹中有一个名为 <code>urls.py</code> 的文件，打开该文件并在 <code>import</code> 语句中添加 <code>include</code> 模块，并在列表中添加一个 <code>path()</code> 函数。文件将如下所示：</p>
+<pre class="language-py"><code class="language-py code-highlight"><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib <span class="token keyword">import</span> admin
+</span><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>urls <span class="token keyword">import</span> include<span class="token punctuation">,</span> path
+</span><span class="code-line">
+</span><span class="code-line">urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+</span><span class="code-line">  path<span class="token punctuation">(</span><span class="token string">'members/'</span><span class="token punctuation">,</span> include<span class="token punctuation">(</span><span class="token string">'members.urls'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">  path<span class="token punctuation">(</span><span class="token string">'admin/'</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">]</span>
+</span></code></pre>
+<p>如果服务器未运行，请导航到 <code>/myworld</code> 文件夹并在命令提示符下执行此命令：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py manage.py runserver
+</span></code></pre>
+<p>在浏览器窗口的地址栏中输入 <code>127.0.0.1:8000/members/</code></p>
+</div></div></div><div class="wrap h3body-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="模板"><a aria-hidden="true" tabindex="-1" href="#模板"><span class="icon icon-link"></span></a>模板</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<p>在 <code>members</code> 文件夹中创建一个 <code>templates</code> 文件夹，并创建一个名为 <code>myfirst.html</code> 的 <code>HTML</code> 文件。文件结构应该是这样的：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">myworld
+</span><span class="code-line"> ├┈ manage.py
+</span><span class="code-line"> ├┈ myworld/
+</span><span class="code-line"> ╰┈ members/
+</span><span class="code-line">    ╰┈ templates/
+</span><span class="code-line">       ╰┈ myfirst.html
+</span></code></pre>
+<p>打开 <code>HTML</code> 文件并插入以下内容：</p>
+<pre class="language-html"><code class="language-html code-highlight"><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>欢迎来到我的第一个 Django 项目！<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p>修改视图 <code>members/views.py</code></p>
+<pre class="language-py"><code class="language-py code-highlight"><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse
+</span><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>template <span class="token keyword">import</span> loader
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</span><span class="code-line">  template <span class="token operator">=</span> loader<span class="token punctuation">.</span>get_template<span class="token punctuation">(</span><span class="token string">'myfirst.html'</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span>template<span class="token punctuation">.</span>render<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span></code></pre>
+<h4 id="更改设置"><a aria-hidden="true" tabindex="-1" href="#更改设置"><span class="icon icon-link"></span></a>更改设置</h4>
+<p>为了能够处理比“Hello World！”更复杂的东西，我们必须告诉 <code>Django</code> 一个新的应用程序已创建</p>
+<p>这是在 <code>myworld</code> 文件夹的 <code>myworld/settings.py</code> 文件中完成的。查找 <code>INSTALLED_APPS[]</code> 列表并添加成员应用程序，如下所示：</p>
+<pre class="language-py"><code class="language-py code-highlight"><span class="code-line">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>
+</span><span class="code-line">    <span class="token string">'django.contrib.admin'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'django.contrib.auth'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'django.contrib.contenttypes'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'django.contrib.sessions'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'django.contrib.messages'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'django.contrib.staticfiles'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'members.apps.MembersConfig'</span>
+</span><span class="code-line"><span class="token punctuation">]</span>
+</span></code></pre>
+<p>然后运行这个命令：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py manage.py migrate
+</span></code></pre>
+<p>通过导航到 <code>/myworld</code> 文件夹启动服务器并执行以下命令：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py manage.py runserver
+</span></code></pre>
+<p>在浏览器窗口的地址栏中输入 127.0.0.1:8000/members/</p>
+</div></div></div><div class="wrap h3body-not-exist col-span-2"><div class="wrap-header h3wrap"><h3 id="创建表模型"><a aria-hidden="true" tabindex="-1" href="#创建表模型"><span class="icon icon-link"></span></a>创建表（模型）</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2-->
+<p>在 <code>/members/</code> 文件夹中，打开 <code>models.py</code> 文件。要在我们的数据库中添加成员表，首先创建一个成员类，并描述其中的表字段：</p>
+<pre class="language-py"><code class="language-py code-highlight"><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">class</span> <span class="token class-name">Members</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</span><span class="code-line">  firstname <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">)</span>
+</span><span class="code-line">  lastname <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p>然后导航到 <code>/myworld/</code> 文件夹并运行以下命令：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py manage.py makemigrations members
+</span><span class="code-line"><span class="token comment"># Migrations for 'members':</span>
+</span><span class="code-line"><span class="token comment">#   members\migrations\0001_initial.py</span>
+</span><span class="code-line"><span class="token comment">#     - Create model Members</span>
+</span></code></pre>
+<p>创建一个包含任何新更改的文件并将该文件存储在 <code>/migrations/</code> 文件夹中。下次运行 <code>py manage.py migrate</code> 时，Django 将根据迁移文件夹中新文件的内容创建并执行一条 SQL 语句。运行迁移命令：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ py manage.py migrate
+</span></code></pre>
+<p>从模型创建的 SQL 语句是：</p>
+<pre class="language-sql"><code class="language-sql code-highlight"><span class="code-line"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token string">"members_members"</span> <span class="token punctuation">(</span>
+</span><span class="code-line">  <span class="token string">"id"</span> <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> AUTOINCREMENT<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token string">"firstname"</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token string">"lastname"</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+</span><span class="code-line"><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="django-模板"><a aria-hidden="true" tabindex="-1" href="#django-模板"><span class="icon icon-link"></span></a>Django 模板</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist col-span-2 row-span-2"><div class="wrap-header h3wrap"><h3 id="模板变量"><a aria-hidden="true" tabindex="-1" href="#模板变量"><span class="icon icon-link"></span></a>模板变量</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2 row-span-2-->
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token comment">&#x3C;!-- template.html --></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>你好 <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">firstname</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>，你好吗？<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p>在视图 (<code>views.py</code>) 中创建变量，上面示例中的变量 <code>firstname</code> 通过视图发送到模板：</p>
+<pre class="language-py"><code class="language-py code-highlight"><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>http <span class="token keyword">import</span> HttpResponse
+</span><span class="code-line"><span class="token keyword">from</span> django<span class="token punctuation">.</span>template <span class="token keyword">import</span> loader
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">def</span> <span class="token function">testing</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</span><span class="code-line">  template <span class="token operator">=</span> loader<span class="token punctuation">.</span>get_template<span class="token punctuation">(</span><span class="token string">'template.html'</span><span class="token punctuation">)</span>
+</span><span class="code-line">  context <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token string">'firstname'</span><span class="token punctuation">:</span> <span class="token string">'狂徒张三'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token keyword">return</span> HttpResponse<span class="token punctuation">(</span>template<span class="token punctuation">.</span>render<span class="token punctuation">(</span>context<span class="token punctuation">,</span> request<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="模板中创建变量"><a aria-hidden="true" tabindex="-1" href="#模板中创建变量"><span class="icon icon-link"></span></a>模板中创建变量</h3><div class="wrap-body">
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">with</span> <span class="token variable">firstname</span><span class="token operator">=</span><span class="token string">"Tobias"</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>你好 <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">firstname</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>，你好吗？<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="数组循环"><a aria-hidden="true" tabindex="-1" href="#数组循环"><span class="icon icon-link"></span></a>数组循环</h3><div class="wrap-body">
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ul</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">for</span> <span class="token variable">x</span> <span class="token keyword">in</span> <span class="token variable">mymembers</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">firstname</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfor</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ul</span><span class="token punctuation">></span></span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-5"><div class="wrap-header h3wrap"><h3 id="模板标签参考"><a aria-hidden="true" tabindex="-1" href="#模板标签参考"><span class="icon icon-link"></span></a>模板标签参考</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-5-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th align="left">标签</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>autoescape</code></td><td align="left">指定自动转义模式是打开还是关闭</td></tr><tr><td align="left"><code>block</code></td><td align="left">指定块部分</td></tr><tr><td align="left"><code>comment</code></td><td align="left">指定注释部分</td></tr><tr><td align="left"><code>csrf_token</code></td><td align="left">保护表单免受跨站点请求伪造</td></tr><tr><td align="left"><code>cycle</code></td><td align="left">指定要在循环的每个循环中使用的内容</td></tr><tr><td align="left"><code>debug</code></td><td align="left">指定调试信息</td></tr><tr><td align="left"><code>extends</code></td><td align="left">指定父模板</td></tr><tr><td align="left"><code>filter</code></td><td align="left">在返回之前过滤内容</td></tr><tr><td align="left"><code>firstof</code></td><td align="left">返回第一个非空变量</td></tr><tr><td align="left"><code>for</code></td><td align="left">指定一个 for 循环</td></tr><tr><td align="left"><code>if</code></td><td align="left">指定一个 if 语句</td></tr><tr><td align="left"><code>ifchanged</code></td><td align="left">仅当自上次迭代以来值已更改时才输出块<br> <em>(用于 for 循环)</em></td></tr><tr><td align="left"><code>include</code></td><td align="left">指定包含的内容/模板</td></tr><tr><td align="left"><code>load</code></td><td align="left">从另一个库加载模板标签</td></tr><tr><td align="left"><code>lorem</code></td><td align="left">输出随机文本</td></tr><tr><td align="left"><code>now</code></td><td align="left">输出当前日期/时间</td></tr><tr><td align="left"><code>regroup</code></td><td align="left">按组对对象进行排序</td></tr><tr><td align="left"><code>resetcycle</code></td><td align="left">循环使用，重置循环</td></tr><tr><td align="left"><code>spaceless</code></td><td align="left">删除 HTML 标签之间的空格</td></tr><tr><td align="left"><code>templatetag</code></td><td align="left">输出指定的模板标签</td></tr><tr><td align="left"><code>url</code></td><td align="left">返回 URL 的绝对 URL 部分</td></tr><tr><td align="left"><code>verbatim</code></td><td align="left">指定不应由模板引擎呈现的内容</td></tr><tr><td align="left"><code>widthratio</code></td><td align="left">给定值和最大值之间的比率计算宽度值</td></tr><tr><td align="left"><code>with</code></td><td align="left">指定要在块中使用的变量</td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="if-语句"><a aria-hidden="true" tabindex="-1" href="#if-语句"><span class="icon icon-link"></span></a>If 语句</h3><div class="wrap-body">
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token variable">greeting</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">elif</span> <span class="token variable">greeting</span> <span class="token operator">==</span> <span class="token number">2</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Welcome<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">else</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Goodbye<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span> 
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="for-循环"><a aria-hidden="true" tabindex="-1" href="#for-循环"><span class="icon icon-link"></span></a>For 循环</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">for</span> <span class="token variable">x</span> <span class="token keyword">in</span> <span class="token variable">cars</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">brand</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">model</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">year</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfor</span> <span class="token delimiter punctuation">%&#125;</span></span> 
+</span></code></pre>
+<p>数据 cars 空的展示内容：</p>
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ul</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">for</span> <span class="token variable">x</span> <span class="token keyword">in</span> <span class="token variable">cars</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">brand</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">model</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">year</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">empty</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span><span class="token punctuation">></span></span>No members<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfor</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ul</span><span class="token punctuation">></span></span> 
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="循环变量"><a aria-hidden="true" tabindex="-1" href="#循环变量"><span class="icon icon-link"></span></a>循环变量</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<ul>
+<li><code>forloop.counter</code> 当前循环，从 1 开始</li>
+<li><code>forloop.counter0</code> 当前循环，从 0 开始</li>
+<li><code>forloop.first</code> 循环是否在其第一次循环中</li>
+<li><code>forloop.last</code> 循环是否在其最后一次循环中</li>
+<li><code>forloop.parentloop</code></li>
+<li><code>forloop.revcounter</code> 如果从末尾开始并向后计数，则以 1 结束</li>
+<li><code>forloop.revcounter0</code> 如果从末尾开始并向后计数，则以 0 结束</li>
+</ul>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="过滤值"><a aria-hidden="true" tabindex="-1" href="#过滤值"><span class="icon icon-link"></span></a>过滤值</h3><div class="wrap-body">
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>你好 <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">firstname</span><span class="token operator">|</span><span class="token filter function">upper</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>，你好吗？<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p>返回带有大写字母的变量名</p>
+</div></div></div><div class="wrap h3body-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="注释"><a aria-hidden="true" tabindex="-1" href="#注释"><span class="icon icon-link"></span></a>注释</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>欢迎大家<span class="token django language-django"><span class="token comment"></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">comment</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>欢迎女士们先生们<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endcomment</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span></code></pre>
+<h4 id="注释描述"><a aria-hidden="true" tabindex="-1" href="#注释描述"><span class="icon icon-link"></span></a>注释描述</h4>
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>欢迎大家<span class="token django language-django"><span class="token comment"></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">comment</span> <span class="token string">"这是最初的欢迎信息"</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>欢迎女士们先生们<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endcomment</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span></code></pre>
+<p>注释允许您拥有应该被忽略的代码部分</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="双过滤值"><a aria-hidden="true" tabindex="-1" href="#双过滤值"><span class="icon icon-link"></span></a>双过滤值</h3><div class="wrap-body">
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>你好 <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">firstname</span><span class="token operator">|</span><span class="token filter function">first</span><span class="token operator">|</span><span class="token filter function">upper</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>，你好吗？<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p>返回变量 <code>firstname</code> 的第一个字符，小写</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="过滤器标签"><a aria-hidden="true" tabindex="-1" href="#过滤器标签"><span class="icon icon-link"></span></a>过滤器标签</h3><div class="wrap-body">
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">filter</span> <span class="token variable">upper</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Hello everyone, how are you?<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfilter</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span></code></pre>
+<p>返回内容大写</p>
+</div></div></div><div class="wrap h3body-not-exist col-span-2 row-span-3"><div class="wrap-header h3wrap"><h3 id="cycle"><a aria-hidden="true" tabindex="-1" href="#cycle"><span class="icon icon-link"></span></a>cycle</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2 row-span-3-->
+<p>如果你想为每次循环使用新的背景颜色，你可以使用 <code>cycle</code> 标签来做到这一点</p>
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ul</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">for</span> <span class="token variable">x</span> <span class="token keyword">in</span> <span class="token variable">members</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">cycle</span> <span class="token string">'lightblue'</span> <span class="token string">'pink'</span> <span class="token string">'yellow'</span> <span class="token string">'coral'</span> <span class="token string">'grey'</span> <span class="token delimiter punctuation">%&#125;</span></span></span><span class="token punctuation">'</span></span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">      <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">firstname</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfor</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ul</span><span class="token punctuation">></span></span> 
+</span></code></pre>
+<p>将参数值保存在变量中，以便以后使用：</p>
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ul</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">for</span> <span class="token variable">x</span> <span class="token keyword">in</span> <span class="token variable">members</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">cycle</span> <span class="token string">'lightblue'</span> <span class="token string">'pink'</span> <span class="token string">'yellow'</span> <span class="token string">'coral'</span> <span class="token string">'grey'</span> <span class="token keyword">as</span> <span class="token variable">bgcolor</span> <span class="token variable">silent</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">bgcolor</span> <span class="token delimiter punctuation">&#125;&#125;</span></span></span><span class="token punctuation">'</span></span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">      <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">firstname</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfor</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ul</span><span class="token punctuation">></span></span> 
+</span></code></pre>
+<p>你注意到 <code>silent</code> 关键字了吗？ 确保添加这个，否则参数值将在输出中显示两次</p>
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>ul</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">for</span> <span class="token variable">x</span> <span class="token keyword">in</span> <span class="token variable">members</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">cycle</span> <span class="token string">'lightblue'</span> <span class="token string">'pink'</span> <span class="token string">'yellow'</span> <span class="token string">'coral'</span> <span class="token string">'grey'</span> <span class="token keyword">as</span> <span class="token variable">bgcolor</span> <span class="token variable">silent</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token variable">forloop</span><span class="token punctuation">.</span><span class="token variable">counter</span> <span class="token operator">==</span> <span class="token number">3</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">      <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">resetcycle</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>li</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span><span class="token value css language-css"><span class="token property">background-color</span><span class="token punctuation">:</span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">bgcolor</span> <span class="token delimiter punctuation">&#125;&#125;</span></span></span><span class="token punctuation">'</span></span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">      <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">x</span><span class="token punctuation">.</span><span class="token variable">firstname</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>li</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfor</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>ul</span><span class="token punctuation">></span></span> 
+</span></code></pre>
+<p>您可以使用 <code>&#123;% resetcycle %&#125;</code> 标签强制循环重新开始</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="每一行添加行号"><a aria-hidden="true" tabindex="-1" href="#每一行添加行号"><span class="icon icon-link"></span></a>每一行添加行号</h3><div class="wrap-body">
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">filter</span> <span class="token variable">upper</span><span class="token operator">|</span><span class="token filter function">linenumbers</span> <span class="token delimiter punctuation">%&#125;</span></span>Hello!
+</span><span class="code-line">my name is
+</span><span class="code-line">Emil.
+</span><span class="code-line">What is your name?<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endfilter</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span></code></pre>
+<p>返回内容<code>大写</code>并在每一行添加<code>行号</code></p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="导入模板"><a aria-hidden="true" tabindex="-1" href="#导入模板"><span class="icon icon-link"></span></a>导入模板</h3><div class="wrap-body">
+<p><code>footer.html</code>:</p>
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>您已到达本页底部，感谢您抽出宝贵时间<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<p><code>template.html</code>:</p>
+<pre class="language-django"><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Hello<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>此页面包含模板中的页脚<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">include</span> <span class="token string">'footer.html'</span> <span class="token delimiter punctuation">%&#125;</span></span> 
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="导入模板传入变量"><a aria-hidden="true" tabindex="-1" href="#导入模板传入变量"><span class="icon icon-link"></span></a>导入模板传入变量</h3><div class="wrap-body">
+<p><code>mymenu.html</code>:</p>
+<pre class="wrap-text "><code class="language-django code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span><span class="token punctuation">></span></span>HOME | <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">me</span> <span class="token delimiter punctuation">&#125;&#125;</span></span> | ABOUT | FORUM | <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">sponsor</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+<p><code>template.html</code>:</p>
+<pre class="wrap-text "><code class="language-django code-highlight"><span class="code-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">include</span> <span class="token variable">mymenu</span><span class="token punctuation">.</span><span class="token variable">html</span> <span class="token keyword">with</span> <span class="token variable">me</span><span class="token operator">=</span><span class="token string">"张三"</span> <span class="token variable">sponsor</span><span class="token operator">=</span><span class="token string">"Reference"</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>h1</span><span class="token punctuation">></span></span>Welcome<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>h1</span><span class="token punctuation">></span></span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>p</span><span class="token punctuation">></span></span>This is my webpage<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>p</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</div></div></div><div class="wrap h3body-not-exist col-span-2 row-span-2"><div class="wrap-header h3wrap"><h3 id="过滤器参考"><a aria-hidden="true" tabindex="-1" href="#过滤器参考"><span class="icon icon-link"></span></a>过滤器参考</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2 row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Keyword</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>add</code></td><td align="left">添加指定的值</td></tr><tr><td align="left"><code>addslashes</code></td><td align="left">在任何引号字符之前添加一个斜杠，以转义字符串</td></tr><tr><td align="left"><code>capfirst</code></td><td align="left">返回大写的第一个字母</td></tr><tr><td align="left"><code>center</code></td><td align="left">使值在指定宽度的中间居中</td></tr><tr><td align="left"><code>cut</code></td><td align="left">删除任何指定的字符或短语</td></tr><tr><td align="left"><code>date</code></td><td align="left">以指定格式返回日期</td></tr><tr><td align="left"><code>default</code></td><td align="left">如果值为 <code>False</code>，则返回指定值</td></tr><tr><td align="left"><code>default_if_none</code></td><td align="left">如果值为 <code>None</code>，则返回指定的值</td></tr><tr><td align="left"><code>dictsort</code></td><td align="left">按给定值对字典进行排序</td></tr><tr><td align="left"><code>dictsortreversed</code></td><td align="left">按给定值对字典进行反向排序</td></tr><tr><td align="left"><code>divisibleby</code></td><td align="left">如果该值可以除以指定的数字，则返回 <code>True</code>，否则返回 <code>False</code></td></tr><tr><td align="left"><code>escape</code></td><td align="left">从字符串中转义 <code>HTML</code> 代码</td></tr><tr><td align="left"><code>escapejs</code></td><td align="left">从字符串中转义 <code>JavaScript</code> 代码</td></tr><tr><td align="left"><code>filesizeformat</code></td><td align="left">将数字返回为文件大小格式</td></tr><tr><td align="left"><code>first</code></td><td align="left">返回对象的第一项（对于字符串，返回第一个字符）</td></tr><tr><td align="left"><code>floatformat</code></td><td align="left">将浮点数四舍五入到指定的小数位数，默认为一位小数</td></tr><tr><td align="left"><code>force_escape</code></td><td align="left">从字符串中转义 <code>HTML</code> 代码</td></tr><tr><td align="left"><code>get_digit</code></td><td align="left">返回数字的特定数字</td></tr><tr><td align="left"><code>iriencode</code></td><td align="left">将 <code>IRI</code> 转换为 <code>URL</code> 友好字符串</td></tr><tr><td align="left"><code>join</code></td><td align="left">将列表中的项目返回为字符串</td></tr><tr><td align="left"><code>json_script</code></td><td align="left">将一个对象返回为由 <code>&#x3C;script>&#x3C;/script></code> 标签包围的 <code>JSON</code> 对象</td></tr><tr><td align="left"><code>last</code></td><td align="left">返回对象的最后一项（对于字符串，返回最后一个字符）</td></tr><tr><td align="left"><code>length</code></td><td align="left">返回对象中的项目数，或字符串中的字符数</td></tr><tr><td align="left"><code>length_is</code></td><td align="left">如果长度与指定的数字相同，则返回 <code>True</code></td></tr><tr><td align="left"><code>linebreaks</code></td><td align="left">返回带有 <code>&#x3C;br></code> 而不是换行符和 <code>&#x3C;p></code> 而不是多个换行符的文本</td></tr><tr><td align="left"><code>linebreaksbr</code></td><td align="left">返回带有 <code>&#x3C;br></code> 的文本，而不是换行符</td></tr><tr><td align="left"><code>linenumbers</code></td><td align="left">返回每行带有行号的文本</td></tr><tr><td align="left"><code>ljust</code></td><td align="left">根据指定的宽度左对齐值</td></tr><tr><td align="left"><code>lower</code></td><td align="left">以小写字母返回文本</td></tr><tr><td align="left"><code>make_list</code></td><td align="left">将值转换为列表对象</td></tr><tr><td align="left"><code>phone2numeric</code></td><td align="left">将带字母的电话号码转换为数字电话号码</td></tr><tr><td align="left"><code>pluralize</code></td><td align="left">如果指定的数值不是 <code>1</code>，则在值的末尾添加一个 <code>s</code></td></tr><tr><td align="left"><code>pprint</code></td><td align="left"></td></tr><tr><td align="left"><code>random</code></td><td align="left">返回对象的随机项</td></tr><tr><td align="left"><code>rjust</code></td><td align="left">根据指定的宽度右对齐值</td></tr><tr><td align="left"><code>safe</code></td><td align="left">标记此文本是安全的，不应进行 <code>HTML</code> 转义</td></tr><tr><td align="left"><code>safeseq</code></td><td align="left">将对象的每个项目标记为安全且项目不应进行 <code>HTML</code> 转义</td></tr><tr><td align="left"><code>slice</code></td><td align="left">返回文本或对象的指定切片</td></tr><tr><td align="left"><code>slugify</code></td><td align="left">将文本转换为一个长字母数字小写单词</td></tr><tr><td align="left"><code>stringformat</code></td><td align="left">将值转换为指定格式</td></tr><tr><td align="left"><code>striptags</code></td><td align="left">从文本中删除 <code>HTML</code> 标记</td></tr><tr><td align="left"><code>time</code></td><td align="left">以指定格式返回时间</td></tr><tr><td align="left"><code>timesince</code></td><td align="left">返回两个日期时间之间的差</td></tr><tr><td align="left"><code>timeuntil</code></td><td align="left">返回两个日期时间之间的差</td></tr><tr><td align="left"><code>title</code></td><td align="left">文本中每个单词的第一个字符大写，所有其他字符都转换为小写</td></tr><tr><td align="left"><code>truncatechars</code></td><td align="left">将字符串缩短为指定数量的字符</td></tr><tr><td align="left"><code>truncatechars_html</code></td><td align="left">将字符串缩短为指定数量的字符，而不考虑任何 <code>HTML</code> 标记的长度</td></tr><tr><td align="left"><code>truncatewords</code></td><td align="left">将字符串缩短为指定数量的单词</td></tr><tr><td align="left"><code>truncatewords_html</code></td><td align="left">将字符串缩短为指定数量的单词，而不考虑任何 <code>HTML</code> 标记</td></tr><tr><td align="left"><code>unordered_list</code></td><td align="left">将对象的项目返回为无序列的 <code>HTML</code> 列表</td></tr><tr><td align="left"><code>upper</code></td><td align="left">以大写字母返回文本</td></tr><tr><td align="left"><code>urlencode</code></td><td align="left"><code>URL</code> 对字符串进行编码</td></tr><tr><td align="left"><code>urlize</code></td><td align="left">将字符串中的任何 <code>URL</code> 作为 <code>HTML</code> 链接返回</td></tr><tr><td align="left"><code>urlizetrunc</code></td><td align="left">将字符串中的任何 <code>URL</code> 作为 <code>HTML</code> 链接返回，但会将链接缩短为指定的字符数</td></tr><tr><td align="left"><code>wordcount</code></td><td align="left">返回文本中的单词数</td></tr><tr><td align="left"><code>wordwrap</code></td><td align="left">以指定的字符数换行</td></tr><tr><td align="left"><code>yesno</code></td><td align="left">将布尔值转换为指定值</td></tr><tr><td align="left"><code>i18n</code></td><td align="left"></td></tr><tr><td align="left"><code>l10n</code></td><td align="left"></td></tr><tr><td align="left"><code>tz</code></td><td align="left"></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="字段查询参考"><a aria-hidden="true" tabindex="-1" href="#字段查询参考"><span class="icon icon-link"></span></a>字段查询参考</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Keyword</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>contains</code></td><td align="left">包含短语</td></tr><tr><td align="left"><code>icontains</code></td><td align="left">与包含相同，但不区分大小写</td></tr><tr><td align="left"><code>date</code></td><td align="left">匹配日期</td></tr><tr><td align="left"><code>day</code></td><td align="left">匹配日期(日期，1-31)(日期)</td></tr><tr><td align="left"><code>endswith</code></td><td align="left">以。。结束</td></tr><tr><td align="left"><code>iendswith</code></td><td align="left">与 endwidth 相同，但不区分大小写</td></tr><tr><td align="left"><code>exact</code></td><td align="left">完全匹配</td></tr><tr><td align="left"><code>iexact</code></td><td align="left">与精确相同，但不区分大小写</td></tr><tr><td align="left"><code>in</code></td><td align="left">匹配其中一个值</td></tr><tr><td align="left"><code>isnull</code></td><td align="left">匹配 NULL 值</td></tr><tr><td align="left"><code>gt</code></td><td align="left">比...更棒</td></tr><tr><td align="left"><code>gte</code></td><td align="left">大于或等于</td></tr><tr><td align="left"><code>hour</code></td><td align="left">匹配一个小时(对于日期时间)</td></tr><tr><td align="left"><code>lt</code></td><td align="left">少于</td></tr><tr><td align="left"><code>lte</code></td><td align="left">小于或等于</td></tr><tr><td align="left"><code>minute</code></td><td align="left">匹配一分钟(对于日期时间)</td></tr><tr><td align="left"><code>month</code></td><td align="left">匹配一个月(日期)</td></tr><tr><td align="left"><code>quarter</code></td><td align="left">匹配一年中的一个季度 (1-4)(用于日期)</td></tr><tr><td align="left"><code>range</code></td><td align="left">之间的匹配</td></tr><tr><td align="left"><code>regex</code></td><td align="left">匹配正则表达式</td></tr><tr><td align="left"><code>iregex</code></td><td align="left">与正则表达式相同，但不区分大小写</td></tr><tr><td align="left"><code>second</code></td><td align="left">匹配一秒(对于日期时间)</td></tr><tr><td align="left"><code>startswith</code></td><td align="left">以 ... 开始</td></tr><tr><td align="left"><code>istartswith</code></td><td align="left">与 <code>startswith</code> 相同，但不区分大小写</td></tr><tr><td align="left"><code>time</code></td><td align="left">匹配时间(用于日期时间)</td></tr><tr><td align="left"><code>week</code></td><td align="left">匹配周数 (<code>1-53</code>)(用于日期)</td></tr><tr><td align="left"><code>week_day</code></td><td align="left">匹配一周中的某一天 (1-7) 1 是星期日</td></tr><tr><td align="left"><code>iso_week_day</code></td><td align="left">匹配 ISO 8601 星期几 (1-7) 1 是星期一</td></tr><tr><td align="left"><code>year</code></td><td align="left">匹配一年(日期)</td></tr><tr><td align="left"><code>iso_year</code></td><td align="left">匹配 ISO 8601 年份(日期)</td></tr></tbody></table>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="添加静态文件"><a aria-hidden="true" tabindex="-1" href="#添加静态文件"><span class="icon icon-link"></span></a>添加静态文件</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="添加-css-文件"><a aria-hidden="true" tabindex="-1" href="#添加-css-文件"><span class="icon icon-link"></span></a>添加 CSS 文件</h3><div class="wrap-body">
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">myworld
+</span><span class="code-line">  ├┈ manage.py
+</span><span class="code-line">  ├┈ myworld/
+</span><span class="code-line">  ╰┈ members/
+</span><span class="code-line">     ├┈ templates/
+</span><span class="code-line">     ├┈ static/
+</span><span class="code-line highlight-line">        ╰┈ myfirst.css
+</span></code></pre>
+<p>打开 <code>CSS</code> 文件 (<code>members/static/myfirst.css</code>) 并插入以下内容：</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">body</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token color">lightblue</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">font-family</span><span class="token punctuation">:</span> verdana<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>修改模板 (<code>members/templates/template.html</code>) 引入 css 文件</p>
+<pre class="wrap-text "><code class="language-django code-highlight"><span class="code-line highlight-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">load</span> <span class="token variable">static</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span><span class="token punctuation">></span></span>
+</span><span class="code-line highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">static</span> <span class="token string">'myfirst.css'</span> <span class="token delimiter punctuation">%&#125;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="添加-js-文件"><a aria-hidden="true" tabindex="-1" href="#添加-js-文件"><span class="icon icon-link"></span></a>添加 JS 文件</h3><div class="wrap-body">
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">myworld
+</span><span class="code-line">  ├┈ manage.py
+</span><span class="code-line">  ├┈ myworld/
+</span><span class="code-line">  ╰┈ members/
+</span><span class="code-line">     ├┈ templates/
+</span><span class="code-line">     ├┈ static/
+</span><span class="code-line highlight-line">        ╰┈ myfirst.js
+</span></code></pre>
+<p>打开 <code>JS</code> 文件 (<code>members/static/myfirst.js</code>) 并插入以下内容：</p>
+<pre class="language-js"><code class="language-js code-highlight"><span class="code-line"><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello from a static file!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>修改模板 (<code>members/templates/template.html</code>) 引入 <code>JS</code> 文件</p>
+<pre class="wrap-text "><code class="language-django code-highlight"><span class="code-line highlight-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">load</span> <span class="token variable">static</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span><span class="token punctuation">></span></span>
+</span><span class="code-line highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">static</span> <span class="token string">'myfirst.js'</span> <span class="token delimiter punctuation">%&#125;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span> <span class="token special-attr"><span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value javascript language-javascript"><span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>Click me!<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="添加图片文件"><a aria-hidden="true" tabindex="-1" href="#添加图片文件"><span class="icon icon-link"></span></a>添加图片文件</h3><div class="wrap-body">
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">myworld
+</span><span class="code-line">  ├┈ manage.py
+</span><span class="code-line">  ├┈ myworld/
+</span><span class="code-line">  ╰┈ members/
+</span><span class="code-line">     ├┈ templates/
+</span><span class="code-line">     ├┈ static/
+</span><span class="code-line highlight-line">        ╰┈ pineapple.jpg
+</span></code></pre>
+<p>打开 <code>JS</code> 文件 (<code>members/static/pineapple.jpg</code>) 并插入以下内容：</p>
+<pre class="language-js"><code class="language-js code-highlight"><span class="code-line"><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello from a static file!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>修改模板 (<code>members/templates/template.html</code>) 引入 <code>jpg</code> 文件</p>
+<pre class="wrap-text "><code class="language-django code-highlight"><span class="code-line highlight-line"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">load</span> <span class="token variable">static</span> <span class="token delimiter punctuation">%&#125;</span></span>
+</span><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">static</span> <span class="token string">'pineapple.jpg'</span> <span class="token delimiter punctuation">%&#125;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</div></div></div></div></div><div class="wrap h2body-not-exist"><div class="wrap-header h2wrap"><h2 id="另见"><a aria-hidden="true" tabindex="-1" href="#另见"><span class="icon icon-link"></span></a>另见</h2><div class="wrap-body">
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.djangoproject.com/">Django 官网</a> <em>(djangoproject.com)</em></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/django/django-tutorial.html">Django 教程</a> <em>(runoob.com)</em></li>
+<li><a target="_blank" rel="noopener" href="http://c.biancheng.net/django/">Django 框架教程</a> <em>(biancheng.net)</em></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/django4/">Django 4 中文教程</a> <em>(w3cschool.cn)</em></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3schools.com/django/index.php">Django Tutorial</a> <em>(w3schools.com)</em></li>
+</ul>
+</div></div><div class="h2wrap-body"></div></div></div></div><footer class="footer-wrap"><footer class="max-container">© 2022 Kenny Wang.</footer></footer><script src="../data.js?v=1.4.1" defer></script><script src="../js/fuse.min.js?v=1.4.1" defer></script><script src="../js/main.js?v=1.4.1" defer></script><div id="mysearch"><div class="mysearch-box"><div class="mysearch-input"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><input id="mysearch-input" type="search" placeholder="搜索" autocomplete="off"><div class="mysearch-clear"></div></div><button id="mysearch-close" type="button">搜索</button></div><div class="mysearch-result"><div id="mysearch-menu"></div><div id="mysearch-content"></div></div></div></div></body>
+</html>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><a class="avatar-img" href="/about"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></a><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">tongtong</h1><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">今天<b style="color:#00f">你</b>学习<b style="color:#00f">了</b><b style="color:#00f">吗？</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">那你还在<b style="color:#00f">等</b>什么<b style="color:#00f">呢？</b>。</div></div><div class="banner-button-group"><a class="banner-button" onclick="pjax.loadUrl(&quot;/about/&quot;)"><span class="banner-button-text">了解更多</span><i class="anzhiyufont anzhiyu-icon-arrow-circle-right" style="font-size: 1.5rem"></i></a></div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/panshen123" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=619796817@qq.com" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1919269250" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="tencent://Message/?Uin=619796817&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content"><div id="welcome-info"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN2.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN1.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">21</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-14T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">21.5k</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-hourglass-start"></i><div class="item-name">最后更新 :</div></div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-28T12:47:53.656Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:anzhiyu-c@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6378063631" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100092208016287&amp;sk=about" title="facebook"><i class="anzhiyufont anzhiyu-icon-facebook1"></i></a><img class="footer_mini_logo" title="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/zpp-800" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/484096189" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/self" title="抖音"><i class="anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" href="/docs/">文档</a><a class="footer-item" title="源码" target="_blank" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" target="_blank" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" target="_blank" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" target="_blank" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" target="_blank" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" target="_blank" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" target="_blank" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" target="_blank" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/svg/桐桐上班.svg" alt="距离月入25k也就还差两瓶二锅头" title="距离月入25k也就还差两瓶二锅头"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://www.dogecloud.com/" style="margin-inline:5px" data-title="本站使用多吉云为静态资源提供CDN加速" title="本站使用多吉云为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg" alt="本站使用多吉云为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px" data-title="本站已在陇进行备案" title="本站已在陇进行备案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/%E9%99%87ICP%E5%A4%87-2023001103%E5%8F%B7.svg" alt="本站已在陇进行备案"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2022 - 2023 By <a class="footer-bar-link" href="http://example.com" title="tongtong" target="_blank">tongtong</a></div></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="湘ICP备-xxxxxxx号">湘ICP备-xxxxxxx号</a></div></div></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2867147548" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/2867147548&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/15/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By 安知鱼 1.4.2",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 tongtong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("05/15/2023 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      img.src = "https://tu.hanxi.fun/svg/桐桐下班.svg";
+      img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+      img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoos.hanxi.fun/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "visitor@hanxi.com";</script><script>//动态标题
+let leaveTitle = '此去一别，便是经年';
+let backTitle = '正是江南好风景，落花时节又逢君';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script data-pjax="true">if (document.querySelector(".comment-barrage")){
+  var commentBarrageConfig = {
+    maxBarrage: 1,
+    barrageTime: 4000,
+    twikooUrl: "https://twikoos.hanxi.fun/",
+    accessToken: "",
+    mailMd5: "",
+    pageUrl: window.location.pathname,
+    barrageTimer: [],
+    barrageList: [],
+    barrageIndex: 0,
+    dom: document.querySelector(".comment-barrage"),
+  };
+  var commentInterval = null;
+  var hoverOnCommentBarrage = false;
+  
+  document.querySelector(".comment-barrage").addEventListener("mouseenter", function() {
+    hoverOnCommentBarrage = true;
+  });
+  document.querySelector(".comment-barrage").addEventListener("mouseleave", function() {
+    hoverOnCommentBarrage = false;
+  });
+
+  function initCommentBarrage() {
+    if (!commentBarrageConfig.dom) return;
+
+    var data = JSON.stringify({
+      event: "COMMENT_GET",
+      "commentBarrageConfig.accessToken": commentBarrageConfig.accessToken,
+      url: commentBarrageConfig.pageUrl,
+    });
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4 && this.responseText) {
+        commentBarrageConfig.barrageList = commentLinkFilter(JSON.parse(this.responseText).data);
+        commentBarrageConfig.dom.innerHTML = "";
+      }
+    });
+    xhr.open("POST", commentBarrageConfig.twikooUrl);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
+
+    clearInterval(commentInterval);
+    commentInterval = null;
+
+    commentInterval = setInterval(() => {
+      if (commentBarrageConfig.barrageList.length && !hoverOnCommentBarrage) {
+        popCommentBarrage(commentBarrageConfig.barrageList[commentBarrageConfig.barrageIndex]);
+        commentBarrageConfig.barrageIndex += 1;
+        commentBarrageConfig.barrageIndex %= commentBarrageConfig.barrageList.length;
+      }
+      if (
+        commentBarrageConfig.barrageTimer.length >
+          (commentBarrageConfig.barrageList.length > commentBarrageConfig.maxBarrage
+            ? commentBarrageConfig.maxBarrage
+            : commentBarrageConfig.barrageList.length) &&
+        !hoverOnCommentBarrage
+      ) {
+        removeCommentBarrage(commentBarrageConfig.barrageTimer.shift());
+      }
+    }, commentBarrageConfig.barrageTime);
+  }
+
+  function commentLinkFilter(data) {
+    data.sort((a, b) => {
+      return a.created - b.created;
+    });
+    let newData = [];
+    data.forEach(item => {
+      newData.push(...getCommentReplies(item));
+    });
+    return newData;
+  }
+
+  function getCommentReplies(item) {
+    if (item.replies) {
+      let replies = [item];
+      item.replies.forEach(item => {
+        replies.push(...getCommentReplies(item));
+      });
+      return replies;
+    } else {
+      return [];
+    }
+  }
+
+  function popCommentBarrage(data) {
+    let barrage = document.createElement("div");
+    barrage.className = "comment-barrage-item";
+    barrage.innerHTML = `
+        <div class="barrageHead">
+          <a class="barrageTitle ${
+            data.mailMd5 === commentBarrageConfig.mailMd5 ? "barrageBloggerTitle" : ""
+          }" href="javascript:anzhiyu.scrollTo('#post-comment')"">
+            ${data.mailMd5 === commentBarrageConfig.mailMd5 ? "博主" : "热评"}
+          </a>
+          <div class="barrageNick">${data.nick}</div>
+          <img class="nolazyload barrageAvatar" src="https://cravatar.cn/avatar/${data.mailMd5}"/>
+          <a class="comment-barrage-close" href="javascript:anzhiyu.switchCommentBarrage()"><i class="anzhiyufont anzhiyu-icon-xmark"></i></a>
+        </div>
+        <a class="barrageContent" href="#${data.id}">
+          <object>${data.comment}</object>
+        </a>
+      `;
+    commentBarrageConfig.barrageTimer.push(barrage);
+    commentBarrageConfig.dom.append(barrage);
+  }
+
+  function removeCommentBarrage(barrage) {
+    barrage.className = "comment-barrage-item out";
+
+    setTimeout(() => {
+      if (commentBarrageConfig.dom && commentBarrageConfig.dom.contains(barrage)) {
+        commentBarrageConfig.dom.removeChild(barrage);
+      }
+      }, 1000);
+    }
+
+    // 自动隐藏
+    const commentEntryCallback = (entries) => {
+      const commentBarrage = document.querySelector(".comment-barrage");
+      const postComment = document.getElementById("post-comment");
+
+      entries.forEach(entry => {
+        if (postComment && commentBarrage && document.body.clientWidth > 768) {
+          commentBarrage.style.bottom = entry.isIntersecting ? "-200px" : "0";
+        }
+      });
+    };
+    // 创建IntersectionObserver实例
+    const observer = new IntersectionObserver(commentEntryCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0
+    });
+    // 监视目标元素
+    const postCommentTarget = document.getElementById("post-comment");
+    if (postCommentTarget) {
+      observer.observe(postCommentTarget);
+    }
+
+    initCommentBarrage();
+
+    if (localStorage.getItem("commentBarrageSwitch") !== "false") {
+      document.querySelector(".comment-barrage").style.display = "flex";
+      document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+    } else {
+      document.querySelector(".comment-barrage").style.display = "none";
+      document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+    }
+
+    document.addEventListener("pjax:send", function () {
+      clearInterval(commentInterval);
+    });
+
+  }</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | tongtong-blog")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+anzhiyu.switchRightClickMenuHotReview();
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {
+  if (typeof addFriendLinksInFooter === "function") {
+    addFriendLinksInFooter();
+  }
+}, 200)</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.8/icon/ali_iconfont_css.css"><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><script defer="true" src="/js/welcome.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>

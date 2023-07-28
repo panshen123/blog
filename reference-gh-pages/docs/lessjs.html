@@ -1,0 +1,2136 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>tongtong-blog | tongtong-blog</title><meta name="author" content="tongtong"><meta name="copyright" content="tongtong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="tongtong-blog"><meta name="application-name" content="tongtong-blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="tongtong-blog"><meta property="og:url" content="http://example.com/reference-gh-pages/docs/lessjs.html"><meta property="og:site_name" content="tongtong-blog"><meta property="og:description" content="Less 备忘清单  &amp;amp;#x26;  lessjs cheatsheet &amp;amp;#x26;  Quick Reference                   Quick Reference    搜索⌘K编辑           Less 备忘清单     本备忘单旨在快速理解 Less 所"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://tu.hanxi.fun/images/t0163cb132bb8a0a0ea.jpg"><meta property="article:author" content="tongtong"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://tu.hanxi.fun/images/t0163cb132bb8a0a0ea.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/reference-gh-pages/docs/lessjs"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  friends_vue_info: {"apiurl":"https://friend.hanxi.fun/"},
+  navMusic: true,
+  changeMainColorPost: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tongtong-blog',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-23 22:06:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/about-tag.css"><link rel="stylesheet" href="/css/welcome.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://tu.hanxi.fun/images/thumb-174881.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+    Pace.restart()
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://zhang-tongtong123.gitee.io/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" href="https://account.aliyun.com/" title="阿里云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E9%98%BF%E9%87%8C%E4%BA%91.ico" alt="阿里云"/><span class="back-menu-item-text">阿里云</span></a><a class="back-menu-item" href="https://chat.hanxi.fun/" title="ChatAI" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/chat.svg" alt="ChatAI"/><span class="back-menu-item-text">ChatAI</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">常用</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qiniu.com/" title="七牛云图床" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E4%B8%83%E7%89%9B%E4%BA%91.ico" alt="七牛云图床"/><span class="back-menu-item-text">七牛云图床</span></a><a class="back-menu-item" href="https://smms.app/" title="smms" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E8%AF%84%E8%AE%BA.ico" alt="smms"/><span class="back-menu-item-text">smms</span></a><a class="back-menu-item" href="https://webconverters.net/cn/" title="免费图片转换" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2.ico" alt="免费图片转换"/><span class="back-menu-item-text">免费图片转换</span></a><a class="back-menu-item" href="https://www.iconfont.cn/" title="阿里矢量图标" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/iconfont%E5%9B%BE%E6%A0%87_%E6%AD%A3%E5%B0%84%E5%9B%BE.ico" alt="阿里矢量图标"/><span class="back-menu-item-text">阿里矢量图标</span></a><a class="back-menu-item" href="https://vercel.com/" title="vercel" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/logo-vercel.ico" alt="vercel"/><span class="back-menu-item-text">vercel</span></a><a class="back-menu-item" href="https://www.dogecloud.com/" title="多吉云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%A4%9A%E5%90%89%E4%BA%91.ico" alt="多吉云"/><span class="back-menu-item-text">多吉云</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">tongtong-blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://tu.hanxi.fun/images/weixin123456.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/weixin123456.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://tu.hanxi.fun/images/chitu_301.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/chitu_301.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="page-site-info"><h1 id="site-title">tongtong-blog</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><!doctype html>
+<html lang="en" data-color-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>Less 备忘清单
+ &#x26;  lessjs cheatsheet &#x26;  Quick Reference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta description="本备忘单旨在快速理解 Less 所涉及的主要概念，显示了它的常用方法使用清单
+
+
+入门，为开发人员分享快速参考备忘单。">
+<meta keywords="lessjs,reference,Quick,Reference,cheatsheet,cheat,sheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%221em%22%20width%3D%221em%22%3E%20%3Cpath%20d%3D%22m21.66%2010.44-.98%204.18c-.84%203.61-2.5%205.07-5.62%204.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2%201.17-2.42%203.16-3.07%206.5-2.28l1.67.39c4.19.98%205.47%203.05%204.49%207.23Z%22%20fill%3D%22%23c9d1d9%22%2F%3E%20%3Cpath%20d%3D%22M15.06%2019.39c-.62.42-1.4.77-2.35%201.08l-1.58.52c-3.97%201.28-6.06.21-7.35-3.76L2.5%2013.28c-1.28-3.97-.22-6.07%203.75-7.35l1.58-.52c.41-.13.8-.24%201.17-.31-.3.61-.54%201.35-.74%202.2l-.98%204.19c-.98%204.18.31%206.24%204.48%207.23l1.68.4c.58.14%201.12.23%201.62.27Zm2.43-8.88c-.06%200-.12-.01-.19-.02l-4.85-1.23a.75.75%200%200%201%20.37-1.45l4.85%201.23a.748.748%200%200%201-.18%201.47Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3Cpath%20d%3D%22M14.56%2013.89c-.06%200-.12-.01-.19-.02l-2.91-.74a.75.75%200%200%201%20.37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3C%2Fsvg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/katex.css">
+</head>
+<body><nav class="header-nav"><div class="max-container"><a href="../index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+  <path d="m21.66 10.44-.98 4.18c-.84 3.61-2.5 5.07-5.62 4.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2 1.17-2.42 3.16-3.07 6.5-2.28l1.67.39c4.19.98 5.47 3.05 4.49 7.23Z" fill="#c9d1d9"></path>
+  <path d="M15.06 19.39c-.62.42-1.4.77-2.35 1.08l-1.58.52c-3.97 1.28-6.06.21-7.35-3.76L2.5 13.28c-1.28-3.97-.22-6.07 3.75-7.35l1.58-.52c.41-.13.8-.24 1.17-.31-.3.61-.54 1.35-.74 2.2l-.98 4.19c-.98 4.18.31 6.24 4.48 7.23l1.68.4c.58.14 1.12.23 1.62.27Zm2.43-8.88c-.06 0-.12-.01-.19-.02l-4.85-1.23a.75.75 0 0 1 .37-1.45l4.85 1.23a.748.748 0 0 1-.18 1.47Z" fill="#228e6c"></path>
+  <path d="M14.56 13.89c-.06 0-.12-.01-.19-.02l-2.91-.74a.75.75 0 0 1 .37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z" fill="#228e6c"></path>
+</svg>
+<span class="title">Quick Reference</span></a><div class="menu"><a href="javascript:void(0);" class="searchbtn" id="searchbtn"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><span>搜索</span><span>⌘K</span></a><a href="https://github.com/jaywcjlove/reference/blob/main/docs/lessjs.md" class="" target="__blank"><svg viewBox="0 0 36 36" fill="currentColor" height="1em" width="1em"><path d="m33 6.4-3.7-3.7a1.71 1.71 0 0 0-2.36 0L23.65 6H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V11.76l3-3a1.67 1.67 0 0 0 0-2.36ZM18.83 20.13l-4.19.93 1-4.15 9.55-9.57 3.23 3.23ZM29.5 9.43 26.27 6.2l1.85-1.85 3.23 3.23Z"></path><path fill="none" d="M0 0h36v36H0z"></path></svg><span>编辑</span></a><button id="darkMode" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="light" height="1em" width="1em">
+  <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="dark" height="1em" width="1em">
+  <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
+</svg>
+</button><script src="../js/dark.js?v=1.4.1"></script><a href="https://github.com/jaywcjlove/reference" class="" target="__blank"><svg viewBox="0 0 16 16" fill="currentColor" height="1em" width="1em"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></div></nav><div class="wrap h1body-exist max-container"><header class="wrap-header h1wrap"><h1 id="less-备忘清单"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em" viewBox="0 0 210 90">
+<path d="M201.009375,32.7796875 C201.009375,26.053125 202.059375,22.0828125 202.059375,14.8640625 C202.059375,3.6421875 197.925,0.0328125 188.770313,0.0328125 L182.04375,0.0328125 L182.04375,7.9734375 L184.110938,7.9734375 C188.770313,7.9734375 189.7875,9.515625 189.7875,15.225 C189.7875,20.5734375 189.2625,25.921875 189.2625,32.1234375 C189.2625,40.0640625 191.854687,43.1484375 197.00625,44.3625 L197.00625,44.8875 C191.821875,46.1015625 189.2625,49.1859375 189.2625,57.1265625 C189.2625,63.328125 189.7875,68.3484375 189.7875,74.025 C189.7875,79.8984375 188.573437,81.440625 184.110938,81.440625 L184.110938,81.6046875 L182.04375,81.6046875 L182.04375,89.8734375 L188.770313,89.8734375 C197.892188,89.8734375 202.059375,86.2640625 202.059375,75.0421875 C202.059375,67.6265625 201.009375,63.8203125 201.009375,57.1265625 C201.009375,53.5171875 203.240625,49.7109375 209.967187,49.3828125 L209.967187,40.425 C203.240625,40.1953125 201.009375,36.3890625 201.009375,32.7796875 Z M166.359375,43.2796875 C161.175,41.2125 156.351562,39.9984375 156.351562,36.553125 C156.351562,33.9609375 158.41875,32.41875 162.225,32.41875 C166.03125,32.41875 169.476562,33.9609375 173.25,36.7171875 L180.140625,27.5953125 C175.842187,24.3140625 169.96875,20.86875 162.028125,20.86875 C150.314063,20.86875 142.373438,27.5953125 142.373438,37.078125 C142.373438,45.5109375 149.789063,49.8421875 155.990625,52.2375 C161.339063,54.3046875 166.523438,56.04375 166.523438,59.4890625 C166.523438,62.08125 164.45625,63.7875 159.796875,63.7875 C155.498438,63.7875 151.167188,62.0484375 146.507813,58.4390625 L139.617188,68.446875 C144.801563,72.7453125 152.709375,75.6984375 159.271875,75.6984375 C173.053125,75.6984375 180.46875,68.446875 180.46875,58.9640625 C180.46875,49.48125 173.085938,45.5109375 166.359375,43.2796875 L166.359375,43.2796875 Z M48.5953125,62.7703125 C47.38125,62.7703125 45.8390625,61.7203125 45.8390625,58.471875 L45.8390625,7.10542736e-15 L21.3609375,7.10542736e-15 C12.0421875,7.10542736e-15 7.9078125,3.609375 7.9078125,14.83125 C7.9078125,22.246875 8.9578125,26.38125 8.9578125,32.746875 C8.9578125,36.35625 6.7265625,40.1625 -6.99440506e-15,40.490625 L-6.99440506e-15,49.4484375 C6.7265625,49.6125 8.9578125,53.41875 8.9578125,57.028125 C8.9578125,63.39375 7.9078125,67.2 7.9078125,74.615625 C7.9078125,85.8375 12.0421875,89.446875 21.196875,89.446875 L27.9234375,89.446875 L27.9234375,81.50625 L25.85625,81.50625 C21.5578125,81.50625 20.1796875,79.7671875 20.1796875,74.090625 C20.1796875,68.4140625 20.7046875,63.5578125 20.7046875,57.1921875 C20.7046875,49.2515625 18.1125,46.1671875 12.9609375,44.953125 L12.9609375,44.428125 C18.1453125,43.2140625 20.7046875,40.1296875 20.7046875,32.1890625 C20.7046875,25.9875 20.1796875,20.9671875 20.1796875,15.290625 C20.1796875,9.6140625 21.39375,8.0390625 25.85625,8.0390625 L30.4828125,8.0390625 L30.4828125,57.5203125 C30.4828125,68.053125 34.0921875,74.94375 44.625,74.94375 C47.90625,74.94375 50.4984375,74.41875 52.36875,73.7296875 L50.6296875,62.5078125 C49.6125,62.7703125 49.1203125,62.7703125 48.5953125,62.7703125 Z M124.621875,43.2796875 C119.273437,41.2125 114.45,39.9984375 114.45,36.553125 C114.45,33.9609375 116.517187,32.41875 120.323437,32.41875 C124.129687,32.41875 127.575,33.9609375 131.348437,36.7171875 L138.239062,27.5953125 C133.940625,24.3140625 128.067187,20.86875 120.126562,20.86875 C108.4125,20.86875 100.471875,27.5953125 100.471875,37.078125 C100.471875,45.5109375 107.8875,49.8421875 114.089062,52.2375 C119.4375,54.3046875 124.621875,56.04375 124.621875,59.4890625 C124.621875,62.08125 122.554687,63.7875 117.895312,63.7875 C113.596875,63.7875 109.265625,62.0484375 104.60625,58.4390625 L97.8796875,68.446875 C103.064062,72.7453125 110.971875,75.6984375 117.534375,75.6984375 C131.315625,75.6984375 138.731358,68.446875 138.731358,58.9640625 C138.764062,49.48125 131.348437,45.5109375 124.621875,43.2796875 Z M73.7625,20.7046875 C61.1625,20.7046875 49.1203125,31.2375 49.4484375,47.775 C49.4484375,64.8375 60.6703125,74.8453125 75.46875,74.8453125 C81.6703125,74.8453125 88.5609375,72.6140625 93.909375,68.971875 L88.725,59.85 C84.91875,62.08125 81.309375,63.13125 77.503125,63.13125 C70.6125,63.13125 65.2640625,59.85 63.8859375,51.909375 L95.1234375,51.909375 C95.2875,50.6953125 95.6484375,48.3 95.6484375,45.54375 C95.8453125,31.565625 88.2328125,20.7046875 73.7625,20.7046875 L73.7625,20.7046875 Z M63.91875,42.4265625 C64.96875,35.5359375 69.103125,32.2546875 73.9265625,32.2546875 C80.128125,32.2546875 82.55625,36.553125 82.55625,42.4265625 L63.91875,42.4265625 L63.91875,42.4265625 Z" transform="translate(.033 .08)"></path></svg><a aria-hidden="true" tabindex="-1" href="#less-备忘清单"><span class="icon icon-link"></span></a>Less 备忘清单</h1><div class="wrap-body">
+<p><a target="_blank" rel="noopener" href="https://npmjs.org/package/less"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/npm/v/less.svg?style=flat" alt="NPM version"></a>
+<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/less"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/npm/dm/less.svg?style=flat" alt="Downloads"></a>
+<a target="_blank" rel="noopener" href="https://github.com/less/less.js/network/dependents"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://badgen.net/github/dependents-repo/nestjs/nest" alt="Repo Dependents"></a>
+<a target="_blank" rel="noopener" href="https://github.com/less/less.js"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://badgen.net/badge/icon/Github?icon=github&#x26;label" alt="Github repo"></a></p>
+<p style="padding-top: 12px;">本备忘单旨在快速理解 <a target="_blank" rel="noopener" href="https://github.com/less/less.js">Less</a> 所涉及的主要概念，显示了它的常用方法使用清单</p>
+<!--rehype:style=padding-top: 12px;-->
+</div></header><div class="menu-tocs"><div class="menu-btn"><svg aria-hidden="true" fill="currentColor" height="1em" width="1em" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+  <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+</svg></div><div class="menu-modal"><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#入门">入门</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#介绍">介绍</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#变量variables">变量(Variables)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#混合mixins">混合(Mixins)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#嵌套nesting">嵌套(Nesting)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#父选择器-">父选择器 &#x26;</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#规则嵌套和冒泡">@规则嵌套和冒泡</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#运算operations">运算(Operations)</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#calc-特例">calc() 特例</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#转义escaping">转义(Escaping)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#函数functions">函数(Functions)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#命名空间和访问符">命名空间和访问符</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#映射maps">映射(Maps)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#作用域scope">作用域（Scope）</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#注释comments">注释（Comments）</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#导入importing">导入（Importing）</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#extend">Extend</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#函数">函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#逻辑函数-if--boolean">逻辑函数 if &#x26; boolean</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#字符串函数">字符串函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#替换字符串-replace">替换字符串 replace</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#length">length</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#extract">extract</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#range">range</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#each">each</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#each-1">each()</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#使用-range-和-each-创建一个-for-循环">使用 range 和 each 创建一个 for 循环</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#数学函数">数学函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#颜色定义函数">颜色定义函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#类型函数">类型函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#杂项函数">杂项函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#颜色通道函数">颜色通道函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#色彩运算函数">色彩运算函数</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#颜色混合功能">颜色混合功能</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#另见">另见</a></div></div><div class="h1wrap-body"><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="入门"><a aria-hidden="true" tabindex="-1" href="#入门"><span class="icon icon-link"></span></a>入门</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="介绍"><a aria-hidden="true" tabindex="-1" href="#介绍"><span class="icon icon-link"></span></a>介绍</h3><div class="wrap-body">
+<p>Less(Leaner Style Sheets 的缩写)是一门向后兼容的 <a href="./css.html"><code>CSS</code></a> 扩展语言</p>
+<ul>
+<li><a href="./css.html">CSS 备忘清单</a> <em>(jaywcjlove.github.io)</em></li>
+<li><a target="_blank" rel="noopener" href="http://lesscss.org/less-preview/#eyJjb2RlIjoiI2xpYigpIHtcbiAgICAuY29sb3JzKCkge1xuICAgICAgQHByaW1hcnk6IGJsdWU7XG4gICAgICBAc2Vjb25kYXJ5OiBncmVlbjtcbiAgICB9XG4gICAgLnJ1bGVzKEBzaXplKSB7XG4gICAgICBib3JkZXI6IEBzaXplIHNvbGlkIHdoaXRlO1xuICAgIH1cbiAgfVxuICBcbiAgLmJveCB3aGVuICgjbGliLmNvbG9yc1tAcHJpbWFyeV0gPSBibHVlKSB7XG4gICAgd2lkdGg6IDEwMHB4O1xuICAgIGhlaWdodDogKCR3aWR0aCAvIDIpO1xuICB9XG4gIFxuICAuYmFyOmV4dGVuZCguYm94KSB7XG4gICAgQG1lZGlhIChtaW4td2lkdGg6IDYwMHB4KSB7XG4gICAgICB3aWR0aDogMjAwcHg7XG4gICAgICAjbGliLnJ1bGVzKDFweCk7XG4gICAgfVxuICB9IiwiYWN0aXZlVmVyc2lvbiI6IjQueCJ9">在线编译预览</a> <em>(lesscss.org)</em></li>
+</ul>
+<p>在 Node.js 环境中使用 <code>Less</code></p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">$ <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> <span class="token function">less</span>
+</span><span class="code-line">$ lessc styles.less styles.css
+</span></code></pre>
+<p>在浏览器环境中使用 <code>Less</code></p>
+<pre class="wrap-text "><code class="language-html code-highlight"><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet/less<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>styles.less<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/less@4<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="变量variables"><a aria-hidden="true" tabindex="-1" href="#变量variables"><span class="icon icon-link"></span></a>变量(Variables)</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@width<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token variable">@height<span class="token punctuation">:</span></span> <span class="token variable">@width</span> <span class="token operator">+</span> 10px<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">#header</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@width</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@height</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>编译 css 为：</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token id">#header</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>另见: <a target="_blank" rel="noopener" href="https://lesscss.org/features/#variables-feature">变量的更多信息</a></p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="混合mixins"><a aria-hidden="true" tabindex="-1" href="#混合mixins"><span class="icon icon-link"></span></a>混合(Mixins)</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line highlight-line"><span class="token selector">.bordered</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">border-top</span><span class="token punctuation">:</span> dotted 1px black<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">border-bottom</span><span class="token punctuation">:</span> solid 2px black<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">#menu a</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> #111<span class="token punctuation">;</span>
+</span><span class="code-line highlight-line">  <span class="token mixin-usage function">.bordered</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">.post a</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+</span><span class="code-line highlight-line">  <span class="token mixin-usage function">.bordered</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>另见: <a target="_blank" rel="noopener" href="https://lesscss.org/features/#mixins-feature">混合(Mixin)的更多信息</a></p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="嵌套nesting"><a aria-hidden="true" tabindex="-1" href="#嵌套nesting"><span class="icon icon-link"></span></a>嵌套(Nesting)</h3><div class="wrap-body">
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token id">#header</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">black</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token id">#header</span> <span class="token class">.navigation</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token id">#header</span> <span class="token class">.logo</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">300</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>👇👇 更改为 less 的写法 ✅ 👇👇</p>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">#header</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token selector">.navigation</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token selector">.logo</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="父选择器-"><a aria-hidden="true" tabindex="-1" href="#父选择器-"><span class="icon icon-link"></span></a>父选择器 &#x26;</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">.button</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token selector">&#x26;-ok</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"ok.png"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token selector">&#x26;:hover</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>编译 css 为：</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token class">.button</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.button-ok</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"ok.png"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.button</span><span class="token pseudo-class">:hover</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">green</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="规则嵌套和冒泡"><a aria-hidden="true" tabindex="-1" href="#规则嵌套和冒泡"><span class="icon icon-link"></span></a>@规则嵌套和冒泡</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">.component</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token atrule">@media <span class="token punctuation">(</span>min-width<span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token atrule">@media  <span class="token punctuation">(</span>min-resolution<span class="token punctuation">:</span> 192dpi<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">      <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/img/icon2x.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token atrule">@media <span class="token punctuation">(</span>min-width<span class="token punctuation">:</span> 1280px<span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>编译 css 为：</p>
+<pre class="wrap-text "><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token class">.component</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">300</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector"><span class="token class">.component</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">600</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-resolution</span><span class="token punctuation">:</span> <span class="token number">192</span><span class="token unit">dpi</span><span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector"><span class="token class">.component</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/img/icon2x.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">1280</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector"><span class="token class">.component</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">800</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</div></div></div><div class="wrap h3body-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="运算operations"><a aria-hidden="true" tabindex="-1" href="#运算operations"><span class="icon icon-link"></span></a>运算(Operations)</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<p>算术运算符 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 对任何数字、颜色或变量进行运算</p>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@conversion-1<span class="token punctuation">:</span></span> 5cm <span class="token operator">+</span> 10mm<span class="token punctuation">;</span> <span class="token comment">// 结果是 6cm</span>
+</span><span class="code-line"><span class="token variable">@conversion-2<span class="token punctuation">:</span></span> 2 <span class="token operator">-</span> 3cm <span class="token operator">-</span> 5mm<span class="token punctuation">;</span> <span class="token comment">// 结果 -1.5cm</span>
+</span><span class="code-line"><span class="token variable">@incompatible-units<span class="token punctuation">:</span></span> 2 <span class="token operator">+</span> 5px <span class="token operator">-</span> 3cm<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 结果是 4px</span>
+</span><span class="code-line"><span class="token variable">@base<span class="token punctuation">:</span></span> 5%<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token variable">@filler<span class="token punctuation">:</span></span> <span class="token variable">@base</span> <span class="token operator">*</span> 2<span class="token punctuation">;</span> <span class="token comment">// 结果是 10%</span>
+</span><span class="code-line"><span class="token variable">@other<span class="token punctuation">:</span></span> <span class="token variable">@base</span> <span class="token operator">+</span> <span class="token variable">@filler</span><span class="token punctuation">;</span> <span class="token comment">// 结果是 15%</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token variable">@base<span class="token punctuation">:</span></span> 2cm <span class="token operator">*</span> 3mm<span class="token punctuation">;</span> <span class="token comment">// 结果是 6cm</span>
+</span><span class="code-line"><span class="token variable">@color<span class="token punctuation">:</span></span> <span class="token punctuation">(</span>#224488 <span class="token operator">/</span> 2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 结果是 #112244</span>
+</span><span class="code-line"><span class="token property">background-color</span><span class="token punctuation">:</span> #112244 <span class="token operator">+</span> #111<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 结果是 #223355</span>
+</span><span class="code-line"><span class="token variable">@color<span class="token punctuation">:</span></span> #222 <span class="token operator">/</span> 2<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 结果是 `#222 / 2`, not #111</span>
+</span><span class="code-line"><span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>#FFFFFF <span class="token operator">/</span> 16<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 结果是 #101010</span>
+</span></code></pre>
+<h4 id="calc-特例"><a aria-hidden="true" tabindex="-1" href="#calc-特例"><span class="icon icon-link"></span></a>calc() 特例</h4>
+<p>为了与 <code>CSS</code> 保持兼容，<code>calc()</code> 并不对数学表达式进行计算，但是在嵌套函数中会计算变量和数学公式的值</p>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@var<span class="token punctuation">:</span></span> 50vh<span class="token operator">/</span>2<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>50% <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token variable">@var</span> <span class="token operator">-</span> 20px<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 结果是 calc(50% + (25vh - 20px))</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="转义escaping"><a aria-hidden="true" tabindex="-1" href="#转义escaping"><span class="icon icon-link"></span></a>转义(Escaping)</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@min768<span class="token punctuation">:</span></span> ~<span class="token string">"(min-width: 768px)"</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token selector">.element</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token atrule">@media @min768</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.2rem<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>编译 css 为：</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> <span class="token number">768</span><span class="token unit">px</span><span class="token punctuation">)</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector"><span class="token class">.element</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">1.2</span><span class="token unit">rem</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>从 Less 3.5 开始，可以简写为</p>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@min768<span class="token punctuation">:</span></span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token selector">.element</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token atrule">@media @min768</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.2rem<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>在 Less 3.5+ 版本中，许多以前需要“引号转义”的情况就不再需要了</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="函数functions"><a aria-hidden="true" tabindex="-1" href="#函数functions"><span class="icon icon-link"></span></a>函数(Functions)</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@base<span class="token punctuation">:</span></span> #f04615<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token variable">@width<span class="token punctuation">:</span></span> 0.5<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">.class</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">percentage</span><span class="token punctuation">(</span><span class="token variable">@width</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回 `50%`</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span><span class="token variable">@base</span><span class="token punctuation">,</span> 5%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> 
+</span><span class="code-line">      <span class="token function">spin</span><span class="token punctuation">(</span><span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">@base</span><span class="token punctuation">,</span> 25%<span class="token punctuation">)</span><span class="token punctuation">,</span> 8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>Less 内置了多种函数用于转换颜色、处理字符串、算术运算等</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="命名空间和访问符"><a aria-hidden="true" tabindex="-1" href="#命名空间和访问符"><span class="icon icon-link"></span></a>命名空间和访问符</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">#bundle()</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector">.button</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token property">background-color</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token selector">&#x26;:hover</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">      <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token selector">.tab</span> <span class="token punctuation">&#123;</span> ... <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token selector">.citation</span> <span class="token punctuation">&#123;</span> ... <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>把 <code>.button</code> 类混合到 <code>#header a</code> 中，我们可以这样做</p>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">#header a</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token mixin-usage function">#bundle.button</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token comment">// 还可以书写为 #bundle > .button 形式</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="映射maps"><a aria-hidden="true" tabindex="-1" href="#映射maps"><span class="icon icon-link"></span></a>映射(Maps)</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">#colors()</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">primary</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">secondary</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">.button</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> #colors[primary]<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #colors[secondary]<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>输出符合预期(css)：</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token class">.button</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">px</span> solid <span class="token color">green</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>另见：<a target="_blank" rel="noopener" href="https://lesscss.org/features/#maps-feature">映射(Maps)</a></p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="作用域scope"><a aria-hidden="true" tabindex="-1" href="#作用域scope"><span class="icon icon-link"></span></a>作用域（Scope）</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@var<span class="token punctuation">:</span></span> red<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">#page</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token variable">@var<span class="token punctuation">:</span></span> white<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token selector">#header</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@var</span><span class="token punctuation">;</span> <span class="token comment">// white</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>和上面实例代码相同</p>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@var<span class="token punctuation">:</span></span> red<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">#page</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector">#header</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@var</span><span class="token punctuation">;</span> <span class="token comment">// white</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line">  <span class="token variable">@var<span class="token punctuation">:</span></span> white<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>另见：<a target="_blank" rel="noopener" href="https://lesscss.org/features/#variables-feature-lazy-loading">懒加载</a></p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="注释comments"><a aria-hidden="true" tabindex="-1" href="#注释comments"><span class="icon icon-link"></span></a>注释（Comments）</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token comment">/* 一个块注释
+</span></span><span class="code-line"><span class="token comment"> * style comment! */</span>
+</span><span class="code-line"><span class="token variable">@var<span class="token punctuation">:</span></span> red<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 这一行被注释掉了！</span>
+</span><span class="code-line"><span class="token variable">@var<span class="token punctuation">:</span></span> white<span class="token punctuation">;</span>
+</span></code></pre>
+<p>块注释和行注释都可以使用</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="导入importing"><a aria-hidden="true" tabindex="-1" href="#导入importing"><span class="icon icon-link"></span></a>导入（Importing）</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@import</span> <span class="token string">"library"</span><span class="token punctuation">;</span> <span class="token comment">// library.less</span>
+</span><span class="code-line"><span class="token variable">@import</span> <span class="token string">"typo.css"</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>另见：<a target="_blank" rel="noopener" href="https://lesscss.org/features/#imports-feature">导入(Importing)的知识</a></p>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="extend"><a aria-hidden="true" tabindex="-1" href="#extend"><span class="icon icon-link"></span></a>Extend</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">nav ul</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  &#x26;<span class="token punctuation">:</span><span class="token function">extend</span><span class="token punctuation">(</span>.inline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector">.inline</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>编译 css 为：</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">nav ul</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.inline</span><span class="token punctuation">,</span>
+</span></span><span class="code-line"><span class="token selector">nav ul</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="函数"><a aria-hidden="true" tabindex="-1" href="#函数"><span class="icon icon-link"></span></a>函数</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="逻辑函数-if--boolean"><a aria-hidden="true" tabindex="-1" href="#逻辑函数-if--boolean"><span class="icon icon-link"></span></a>逻辑函数 if &#x26; boolean</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@bg<span class="token punctuation">:</span></span> black<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token variable">@bg-light<span class="token punctuation">:</span></span> <span class="token function">boolean</span><span class="token punctuation">(</span><span class="token function">luma</span><span class="token punctuation">(</span><span class="token variable">@bg</span><span class="token punctuation">)</span> > 50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token variable">@bg</span><span class="token punctuation">;</span> 
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">if</span><span class="token punctuation">(</span><span class="token variable">@bg-light</span><span class="token punctuation">,</span> black<span class="token punctuation">,</span> white<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>编译 css 为：</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token color">black</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">white</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist col-span-2"><div class="wrap-header h3wrap"><h3 id="字符串函数"><a aria-hidden="true" tabindex="-1" href="#字符串函数"><span class="icon icon-link"></span></a>字符串函数</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>escape</code></td><td align="left">将 <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Percent-encoding">URL 编码</a>应用于输入字符串中的特殊字符</td></tr><tr><td align="left"><code>e</code></td><td align="left">字符串转义</td></tr><tr><td align="left"><code>%</code></td><td align="left">第一个参数是带有占位符的字符串</td></tr></tbody></table>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token function">escape</span><span class="token punctuation">(</span><span class="token string">'a=1'</span><span class="token punctuation">)</span> <span class="token comment">// 输出 a%3D1</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token variable">@mscode<span class="token punctuation">:</span></span> <span class="token string">"ms:alwaysHasItsOwnSyntax.For.Stuff()"</span> 
+</span><span class="code-line"><span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">e</span><span class="token punctuation">(</span><span class="token variable">@mscode</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 输出 filter: ms:alwaysHasItsOwnSyntax.For.Stuff();</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token property">format-a-d</span><span class="token punctuation">:</span> %<span class="token punctuation">(</span><span class="token string">"repetitions: %a file: %d"</span><span class="token punctuation">,</span> 1 <span class="token operator">+</span> 2<span class="token punctuation">,</span> <span class="token string">"directory/file.less"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 输出 format-a-d: "repetitions: 3 file: "directory/file.less"";</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist col-span-2"><div class="wrap-header h3wrap"><h3 id="替换字符串-replace"><a aria-hidden="true" tabindex="-1" href="#替换字符串-replace"><span class="icon icon-link"></span></a>替换字符串 replace</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2-->
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"Hello, Mars?"</span><span class="token punctuation">,</span> <span class="token string">"Mars\?"</span><span class="token punctuation">,</span> <span class="token string">"Earth!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"One + one = 4"</span><span class="token punctuation">,</span> <span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">,</span> <span class="token string">"gi"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'This is a string.'</span><span class="token punctuation">,</span> <span class="token string">"(string)\.$"</span><span class="token punctuation">,</span> <span class="token string">"new $1."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">replace</span><span class="token punctuation">(</span>~<span class="token string">"bar-1"</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">,</span> <span class="token string">'2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>预期输出</p>
+<pre><code class="code-highlight"><span class="code-line">"Hello, Earth!";
+</span><span class="code-line">"2 + 2 = 4";
+</span><span class="code-line">'This is a new string.';
+</span><span class="code-line">bar-2;
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="length"><a aria-hidden="true" tabindex="-1" href="#length"><span class="icon icon-link"></span></a>length</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@list<span class="token punctuation">:</span></span> <span class="token string">"banana"</span><span class="token punctuation">,</span> <span class="token string">"tomato"</span><span class="token punctuation">,</span> <span class="token string">"potato"</span><span class="token punctuation">,</span> <span class="token string">"peach"</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">n</span><span class="token punctuation">:</span> <span class="token function">length</span><span class="token punctuation">(</span><span class="token variable">@list</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>预期输出</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token property">n</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>返回值列表中的元素数</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="extract"><a aria-hidden="true" tabindex="-1" href="#extract"><span class="icon icon-link"></span></a>extract</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@list<span class="token punctuation">:</span></span> apple<span class="token punctuation">,</span> pear<span class="token punctuation">,</span> coconut<span class="token punctuation">,</span> orange<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">value</span><span class="token punctuation">:</span> <span class="token function">extract</span><span class="token punctuation">(</span><span class="token variable">@list</span><span class="token punctuation">,</span> 3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>预期输出</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token property">value</span><span class="token punctuation">:</span> coconut<span class="token punctuation">;</span>
+</span></code></pre>
+<p>返回列表中指定位置的值</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="range"><a aria-hidden="true" tabindex="-1" href="#range"><span class="icon icon-link"></span></a>range</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token property">value</span><span class="token punctuation">:</span> <span class="token function">range</span><span class="token punctuation">(</span>4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 输出 value: 1 2 3 4;</span>
+</span><span class="code-line"><span class="token property">value</span><span class="token punctuation">:</span> <span class="token function">range</span><span class="token punctuation">(</span>10px<span class="token punctuation">,</span> 30px<span class="token punctuation">,</span> 10<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// 输出 value: 10px 20px 30px;</span>
+</span></code></pre>
+<p>生成跨越一系列值的列表</p>
+</div></div></div><div class="wrap h3body-not-exist row-span-3"><div class="wrap-header h3wrap"><h3 id="each"><a aria-hidden="true" tabindex="-1" href="#each"><span class="icon icon-link"></span></a>each</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-3-->
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token variable">@selectors<span class="token punctuation">:</span></span> blue<span class="token punctuation">,</span> green<span class="token punctuation">,</span> red<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">each</span><span class="token punctuation">(</span><span class="token atrule">@selectors,</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector">.sel-@&#123;value&#125;</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">a</span><span class="token punctuation">:</span> b<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>预期输出</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token class">.sel-blue</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">a</span><span class="token punctuation">:</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.sel-green</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">a</span><span class="token punctuation">:</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.sel-red</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">a</span><span class="token punctuation">:</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>每个列表成员的每个规则集都绑定到 <code>@value</code>、<code>@key</code> 和 <code>@index</code> 变量</p>
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token atrule">@set<span class="token punctuation">:</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">one</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">two</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">three</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector">.set</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token function">each</span><span class="token punctuation">(</span><span class="token atrule">@set,</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">@&#123;key&#125;-@&#123;index&#125;</span><span class="token punctuation">:</span> <span class="token variable">@value</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>预期输出</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token class">.set</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">one-1</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">two-2</span><span class="token punctuation">:</span> <span class="token color">green</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">three-3</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>将规则集的评估绑定到列表的每个成员</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="each-1"><a aria-hidden="true" tabindex="-1" href="#each-1"><span class="icon icon-link"></span></a>each()</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line"><span class="token selector">set-2()</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">one</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">two</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">three</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector">.set-2</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token comment">// 调用 mixin 并迭代每个规则</span>
+</span><span class="code-line">  each<span class="token selector">(.set-2(), .(<span class="token variable">@v</span>, <span class="token variable">@k</span>, <span class="token variable">@i</span>)</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">@&#123;k&#125;-@&#123;i&#125;</span><span class="token punctuation">:</span> <span class="token variable">@v</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+<p>预期输出</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token class">.set-2</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">one-1</span><span class="token punctuation">:</span> <span class="token color">blue</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">two-2</span><span class="token punctuation">:</span> <span class="token color">green</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token property">three-3</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="使用-range-和-each-创建一个-for-循环"><a aria-hidden="true" tabindex="-1" href="#使用-range-和-each-创建一个-for-循环"><span class="icon icon-link"></span></a>使用 <code>range</code> 和 <code>each</code> 创建一个 <code>for</code> 循环</h3><div class="wrap-body">
+<pre class="language-less"><code class="language-less code-highlight"><span class="code-line">each<span class="token selector">(range(4),</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token selector">.col-@&#123;value&#125;</span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token variable">@value</span> <span class="token operator">*</span> 50px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<p>预期输出</p>
+<pre class="language-css"><code class="language-css code-highlight"><span class="code-line"><span class="token selector"><span class="token class">.col-1</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.col-2</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.col-3</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">150</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span><span class="code-line"><span class="token selector"><span class="token class">.col-4</span></span> <span class="token punctuation">&#123;</span>
+</span><span class="code-line">  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">&#125;</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-3"><div class="wrap-header h3wrap"><h3 id="数学函数"><a aria-hidden="true" tabindex="-1" href="#数学函数"><span class="icon icon-link"></span></a>数学函数</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-3-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="style-list-arrow"><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>ceil(2.4)</code> <em>(输出 3)</em></td><td align="left">向上舍入到下一个最大整数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-ceil">#</a></td></tr><tr><td align="left"><code>floor(2.6)</code> <em>(输出 2)</em></td><td align="left">向下舍入到下一个最小整数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-floor">#</a></td></tr><tr><td align="left"><code>percentage(0.5)</code> <em>(输出 50%)</em></td><td align="left">将浮点数转换为百分比字符串 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-floor">#</a></td></tr><tr><td align="left"><code>round(1.67)</code> <em>(输出 2)</em></td><td align="left">应用舍入 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-round">#</a></td></tr><tr><td align="left"><code>sqrt(25cm)</code> <em>(输出 5cm)</em></td><td align="left">计算数字的平方根。保持单位不变 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-sqrt">#</a></td></tr><tr><td align="left"><code>abs(25cm)</code> <em>(输出 25cm)</em></td><td align="left">计算数字的绝对值。 保持单位不变 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-abs">#</a></td></tr><tr><td align="left"><code>sin(1deg)</code> <em>(输出 0.01745240643728351)</em></td><td align="left">计算正弦函数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-sin">#</a></td></tr><tr><td align="left"><code>asin(-0.8414709848078965)</code> <em>(输出 -1rad)</em></td><td align="left">计算反正弦（正弦的倒数）函数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-asin">#</a></td></tr><tr><td align="left"><code>cos(1deg)</code> <em>(输出 0.9998476951563913)</em></td><td align="left">计算余弦函数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-cos">#</a></td></tr><tr><td align="left"><code>acos(0.5403023058681398)</code> <em>(输出 1rad)</em></td><td align="left">计算反余弦（余弦的倒数）函数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-acos">#</a></td></tr><tr><td align="left"><code>tan(1deg)</code> <em>(输出 0.017455064928217585)</em></td><td align="left">计算正切函数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-tan">#</a></td></tr><tr><td align="left"><code>atan(-1.5574077246549023)</code> <em>(输出 -1rad)</em></td><td align="left">计算反正切（正切的倒数）函数 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-atan">#</a></td></tr><tr><td align="left"><code>pi()</code> <em>(输出 3.141592653589793)</em></td><td align="left">π (pi) <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-pi">#</a></td></tr><tr><td align="left"><code>pow(0cm, 0px)</code> <em>(输出 1cm)</em></td><td align="left">返回第一个参数的第二个参数次幂的值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-pow">#</a></td></tr><tr><td align="left"><code>mod(11cm, 6px)</code> <em>(输出 5cm)</em></td><td align="left">返回第一个参数模数第二个参数的值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-mod">#</a></td></tr><tr><td align="left"><code>min(5, 10)</code> <em>(输出 5)</em></td><td align="left">返回一个或多个值中的最小值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-min">#</a></td></tr><tr><td align="left"><code>max(5, 10)</code> <em>(输出 10)</em></td><td align="left">返回一个或多个值中的最大值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#math-functions-min">#</a></td></tr></tbody></table>
+<!--rehype:className=style-list-arrow-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="颜色定义函数"><a aria-hidden="true" tabindex="-1" href="#颜色定义函数"><span class="icon icon-link"></span></a>颜色定义函数</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>rgb</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-definition-rgb">#</a></td></tr><tr><td align="left"><code>rgba</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-definition-rgba">#</a></td></tr><tr><td align="left"><code>argb</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-definition-argb">#</a></td></tr><tr><td align="left"><code>hsl</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-definition-hsl">#</a></td></tr><tr><td align="left"><code>hsla</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-definition-hsla">#</a></td></tr><tr><td align="left"><code>hsv</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-definition-hsv">#</a></td></tr><tr><td align="left"><code>hsva</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-definition-hsva">#</a></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="类型函数"><a aria-hidden="true" tabindex="-1" href="#类型函数"><span class="icon icon-link"></span></a>类型函数</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>isnumber</code></td><td align="left">值是否为数字 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-isnumber">#</a></td></tr><tr><td align="left"><code>isstring</code></td><td align="left">值是否为字符串 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-isstring">#</a></td></tr><tr><td align="left"><code>iscolor</code></td><td align="left">值是否为颜色值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-iscolor">#</a></td></tr><tr><td align="left"><code>iskeyword</code></td><td align="left">值是否为 keyword <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-iskeyword">#</a></td></tr><tr><td align="left"><code>isurl</code></td><td align="left">值是否为 url 值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-isurl">#</a></td></tr><tr><td align="left"><code>ispixel</code></td><td align="left">值是否为像素值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-ispixel">#</a></td></tr><tr><td align="left"><code>isem</code></td><td align="left">值是否为 em 值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-isem">#</a></td></tr><tr><td align="left"><code>ispercentage</code></td><td align="left">值是否为 百分百 值 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-ispercentage">#</a></td></tr><tr><td align="left"><code>isunit</code></td><td align="left">值是是否为指定单位的数字 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-isunit">#</a></td></tr><tr><td align="left"><code>isruleset</code></td><td align="left">值是否为规则集 <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-isruleset">#</a></td></tr><tr><td align="left"><code>isdefined</code></td><td align="left">值是否为 defined <a target="_blank" rel="noopener" href="https://lesscss.org/functions/#type-functions-isdefined">#</a></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="杂项函数"><a aria-hidden="true" tabindex="-1" href="#杂项函数"><span class="icon icon-link"></span></a>杂项函数</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>color</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-color">#</a></td></tr><tr><td align="left"><code>image-size</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-image-size">#</a></td></tr><tr><td align="left"><code>image-width</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-image-width">#</a></td></tr><tr><td align="left"><code>image-height</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-image-height">#</a></td></tr><tr><td align="left"><code>convert</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-convert">#</a></td></tr><tr><td align="left"><code>data-uri</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-data-uri">#</a></td></tr><tr><td align="left"><code>default</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-default">#</a></td></tr><tr><td align="left"><code>unit</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-unit">#</a></td></tr><tr><td align="left"><code>get-unit</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-get-unit">#</a></td></tr><tr><td align="left"><code>svg-gradient</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#misc-functions-svg-gradient">#</a></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="颜色通道函数"><a aria-hidden="true" tabindex="-1" href="#颜色通道函数"><span class="icon icon-link"></span></a>颜色通道函数</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>hue</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-hue">#</a></td></tr><tr><td align="left"><code>saturation</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-saturation">#</a></td></tr><tr><td align="left"><code>lightness</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-lightness">#</a></td></tr><tr><td align="left"><code>hsvhue</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-hsvhue">#</a></td></tr><tr><td align="left"><code>hsvsaturation</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-hsvsaturation">#</a></td></tr><tr><td align="left"><code>hsvvalue</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-hsvvalue">#</a></td></tr><tr><td align="left"><code>red</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-red">#</a></td></tr><tr><td align="left"><code>green</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-green">#</a></td></tr><tr><td align="left"><code>blue</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-blue">#</a></td></tr><tr><td align="left"><code>alpha</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-alpha">#</a></td></tr><tr><td align="left"><code>luma</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-luma">#</a></td></tr><tr><td align="left"><code>luminance</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-channel-luminance">#</a></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="色彩运算函数"><a aria-hidden="true" tabindex="-1" href="#色彩运算函数"><span class="icon icon-link"></span></a>色彩运算函数</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>saturate</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-saturate">#</a></td></tr><tr><td align="left"><code>desaturate</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-desaturate">#</a></td></tr><tr><td align="left"><code>lighten</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-lighten">#</a></td></tr><tr><td align="left"><code>darken</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-darken">#</a></td></tr><tr><td align="left"><code>fadein</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-fadein">#</a></td></tr><tr><td align="left"><code>fadeout</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-fadeout">#</a></td></tr><tr><td align="left"><code>fade</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-fade">#</a></td></tr><tr><td align="left"><code>spin</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-spin">#</a></td></tr><tr><td align="left"><code>mix</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-mix">#</a></td></tr><tr><td align="left"><code>tint</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-tint">#</a></td></tr><tr><td align="left"><code>shade</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-shade">#</a></td></tr><tr><td align="left"><code>greyscale</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-greyscale">#</a></td></tr><tr><td align="left"><code>contrast</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-operations-contrast">#</a></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="颜色混合功能"><a aria-hidden="true" tabindex="-1" href="#颜色混合功能"><span class="icon icon-link"></span></a>颜色混合功能</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th align="left">:-</th></tr></thead><tbody><tr><td align="left"><code>multiply</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-multiply">#</a></td></tr><tr><td align="left"><code>screen</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-screen">#</a></td></tr><tr><td align="left"><code>overlay</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-overlay">#</a></td></tr><tr><td align="left"><code>softlight</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-softlight">#</a></td></tr><tr><td align="left"><code>hardlight</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-hardlight">#</a></td></tr><tr><td align="left"><code>difference</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-difference">#</a></td></tr><tr><td align="left"><code>exclusion</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-exclusion">#</a></td></tr><tr><td align="left"><code>average</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-average">#</a></td></tr><tr><td align="left"><code>negation</code></td><td align="left"><a target="_blank" rel="noopener" href="https://lesscss.org/functions/#color-blending-negation">#</a></td></tr></tbody></table>
+</div></div></div></div></div><div class="wrap h2body-not-exist"><div class="wrap-header h2wrap"><h2 id="另见"><a aria-hidden="true" tabindex="-1" href="#另见"><span class="icon icon-link"></span></a>另见</h2><div class="wrap-body">
+<ul>
+<li><a target="_blank" rel="noopener" href="http://lesscss.org">Less.js 官网</a> <em>(lesscss.org)</em></li>
+<li><a href="./css.html">CSS 备忘清单</a> <em>(jaywcjlove.github.io)</em></li>
+<li><a href="./stylus.html">Stylus 备忘清单</a> <em>(jaywcjlove.github.io)</em></li>
+<li><a target="_blank" rel="noopener" href="http://lesscss.org/less-preview/#eyJjb2RlIjoiI2xpYigpIHtcbiAgICAuY29sb3JzKCkge1xuICAgICAgQHByaW1hcnk6IGJsdWU7XG4gICAgICBAc2Vjb25kYXJ5OiBncmVlbjtcbiAgICB9XG4gICAgLnJ1bGVzKEBzaXplKSB7XG4gICAgICBib3JkZXI6IEBzaXplIHNvbGlkIHdoaXRlO1xuICAgIH1cbiAgfVxuICBcbiAgLmJveCB3aGVuICgjbGliLmNvbG9yc1tAcHJpbWFyeV0gPSBibHVlKSB7XG4gICAgd2lkdGg6IDEwMHB4O1xuICAgIGhlaWdodDogKCR3aWR0aCAvIDIpO1xuICB9XG4gIFxuICAuYmFyOmV4dGVuZCguYm94KSB7XG4gICAgQG1lZGlhIChtaW4td2lkdGg6IDYwMHB4KSB7XG4gICAgICB3aWR0aDogMjAwcHg7XG4gICAgICAjbGliLnJ1bGVzKDFweCk7XG4gICAgfVxuICB9IiwiYWN0aXZlVmVyc2lvbiI6IjQueCJ9">在线编译预览</a> <em>(lesscss.org)</em></li>
+</ul>
+</div></div><div class="h2wrap-body"></div></div></div></div><footer class="footer-wrap"><footer class="max-container">© 2022 Kenny Wang.</footer></footer><script src="../data.js?v=1.4.1" defer></script><script src="../js/fuse.min.js?v=1.4.1" defer></script><script src="../js/main.js?v=1.4.1" defer></script><div id="mysearch"><div class="mysearch-box"><div class="mysearch-input"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><input id="mysearch-input" type="search" placeholder="搜索" autocomplete="off"><div class="mysearch-clear"></div></div><button id="mysearch-close" type="button">搜索</button></div><div class="mysearch-result"><div id="mysearch-menu"></div><div id="mysearch-content"></div></div></div></div></body>
+</html>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><a class="avatar-img" href="/about"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></a><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">tongtong</h1><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">今天<b style="color:#00f">你</b>学习<b style="color:#00f">了</b><b style="color:#00f">吗？</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">那你还在<b style="color:#00f">等</b>什么<b style="color:#00f">呢？</b>。</div></div><div class="banner-button-group"><a class="banner-button" onclick="pjax.loadUrl(&quot;/about/&quot;)"><span class="banner-button-text">了解更多</span><i class="anzhiyufont anzhiyu-icon-arrow-circle-right" style="font-size: 1.5rem"></i></a></div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/panshen123" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=619796817@qq.com" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1919269250" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="tencent://Message/?Uin=619796817&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content"><div id="welcome-info"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN2.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN1.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">21</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-14T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">21.5k</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-hourglass-start"></i><div class="item-name">最后更新 :</div></div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-28T12:47:53.656Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:anzhiyu-c@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6378063631" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100092208016287&amp;sk=about" title="facebook"><i class="anzhiyufont anzhiyu-icon-facebook1"></i></a><img class="footer_mini_logo" title="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/zpp-800" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/484096189" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/self" title="抖音"><i class="anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" href="/docs/">文档</a><a class="footer-item" title="源码" target="_blank" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" target="_blank" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" target="_blank" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" target="_blank" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" target="_blank" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" target="_blank" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" target="_blank" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" target="_blank" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/svg/桐桐上班.svg" alt="距离月入25k也就还差两瓶二锅头" title="距离月入25k也就还差两瓶二锅头"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://www.dogecloud.com/" style="margin-inline:5px" data-title="本站使用多吉云为静态资源提供CDN加速" title="本站使用多吉云为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg" alt="本站使用多吉云为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px" data-title="本站已在陇进行备案" title="本站已在陇进行备案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/%E9%99%87ICP%E5%A4%87-2023001103%E5%8F%B7.svg" alt="本站已在陇进行备案"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2022 - 2023 By <a class="footer-bar-link" href="http://example.com" title="tongtong" target="_blank">tongtong</a></div></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="湘ICP备-xxxxxxx号">湘ICP备-xxxxxxx号</a></div></div></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2867147548" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/2867147548&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/15/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By 安知鱼 1.4.2",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 tongtong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("05/15/2023 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      img.src = "https://tu.hanxi.fun/svg/桐桐下班.svg";
+      img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+      img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoos.hanxi.fun/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "visitor@hanxi.com";</script><script>//动态标题
+let leaveTitle = '此去一别，便是经年';
+let backTitle = '正是江南好风景，落花时节又逢君';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script data-pjax="true">if (document.querySelector(".comment-barrage")){
+  var commentBarrageConfig = {
+    maxBarrage: 1,
+    barrageTime: 4000,
+    twikooUrl: "https://twikoos.hanxi.fun/",
+    accessToken: "",
+    mailMd5: "",
+    pageUrl: window.location.pathname,
+    barrageTimer: [],
+    barrageList: [],
+    barrageIndex: 0,
+    dom: document.querySelector(".comment-barrage"),
+  };
+  var commentInterval = null;
+  var hoverOnCommentBarrage = false;
+  
+  document.querySelector(".comment-barrage").addEventListener("mouseenter", function() {
+    hoverOnCommentBarrage = true;
+  });
+  document.querySelector(".comment-barrage").addEventListener("mouseleave", function() {
+    hoverOnCommentBarrage = false;
+  });
+
+  function initCommentBarrage() {
+    if (!commentBarrageConfig.dom) return;
+
+    var data = JSON.stringify({
+      event: "COMMENT_GET",
+      "commentBarrageConfig.accessToken": commentBarrageConfig.accessToken,
+      url: commentBarrageConfig.pageUrl,
+    });
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4 && this.responseText) {
+        commentBarrageConfig.barrageList = commentLinkFilter(JSON.parse(this.responseText).data);
+        commentBarrageConfig.dom.innerHTML = "";
+      }
+    });
+    xhr.open("POST", commentBarrageConfig.twikooUrl);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
+
+    clearInterval(commentInterval);
+    commentInterval = null;
+
+    commentInterval = setInterval(() => {
+      if (commentBarrageConfig.barrageList.length && !hoverOnCommentBarrage) {
+        popCommentBarrage(commentBarrageConfig.barrageList[commentBarrageConfig.barrageIndex]);
+        commentBarrageConfig.barrageIndex += 1;
+        commentBarrageConfig.barrageIndex %= commentBarrageConfig.barrageList.length;
+      }
+      if (
+        commentBarrageConfig.barrageTimer.length >
+          (commentBarrageConfig.barrageList.length > commentBarrageConfig.maxBarrage
+            ? commentBarrageConfig.maxBarrage
+            : commentBarrageConfig.barrageList.length) &&
+        !hoverOnCommentBarrage
+      ) {
+        removeCommentBarrage(commentBarrageConfig.barrageTimer.shift());
+      }
+    }, commentBarrageConfig.barrageTime);
+  }
+
+  function commentLinkFilter(data) {
+    data.sort((a, b) => {
+      return a.created - b.created;
+    });
+    let newData = [];
+    data.forEach(item => {
+      newData.push(...getCommentReplies(item));
+    });
+    return newData;
+  }
+
+  function getCommentReplies(item) {
+    if (item.replies) {
+      let replies = [item];
+      item.replies.forEach(item => {
+        replies.push(...getCommentReplies(item));
+      });
+      return replies;
+    } else {
+      return [];
+    }
+  }
+
+  function popCommentBarrage(data) {
+    let barrage = document.createElement("div");
+    barrage.className = "comment-barrage-item";
+    barrage.innerHTML = `
+        <div class="barrageHead">
+          <a class="barrageTitle ${
+            data.mailMd5 === commentBarrageConfig.mailMd5 ? "barrageBloggerTitle" : ""
+          }" href="javascript:anzhiyu.scrollTo('#post-comment')"">
+            ${data.mailMd5 === commentBarrageConfig.mailMd5 ? "博主" : "热评"}
+          </a>
+          <div class="barrageNick">${data.nick}</div>
+          <img class="nolazyload barrageAvatar" src="https://cravatar.cn/avatar/${data.mailMd5}"/>
+          <a class="comment-barrage-close" href="javascript:anzhiyu.switchCommentBarrage()"><i class="anzhiyufont anzhiyu-icon-xmark"></i></a>
+        </div>
+        <a class="barrageContent" href="#${data.id}">
+          <object>${data.comment}</object>
+        </a>
+      `;
+    commentBarrageConfig.barrageTimer.push(barrage);
+    commentBarrageConfig.dom.append(barrage);
+  }
+
+  function removeCommentBarrage(barrage) {
+    barrage.className = "comment-barrage-item out";
+
+    setTimeout(() => {
+      if (commentBarrageConfig.dom && commentBarrageConfig.dom.contains(barrage)) {
+        commentBarrageConfig.dom.removeChild(barrage);
+      }
+      }, 1000);
+    }
+
+    // 自动隐藏
+    const commentEntryCallback = (entries) => {
+      const commentBarrage = document.querySelector(".comment-barrage");
+      const postComment = document.getElementById("post-comment");
+
+      entries.forEach(entry => {
+        if (postComment && commentBarrage && document.body.clientWidth > 768) {
+          commentBarrage.style.bottom = entry.isIntersecting ? "-200px" : "0";
+        }
+      });
+    };
+    // 创建IntersectionObserver实例
+    const observer = new IntersectionObserver(commentEntryCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0
+    });
+    // 监视目标元素
+    const postCommentTarget = document.getElementById("post-comment");
+    if (postCommentTarget) {
+      observer.observe(postCommentTarget);
+    }
+
+    initCommentBarrage();
+
+    if (localStorage.getItem("commentBarrageSwitch") !== "false") {
+      document.querySelector(".comment-barrage").style.display = "flex";
+      document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+    } else {
+      document.querySelector(".comment-barrage").style.display = "none";
+      document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+    }
+
+    document.addEventListener("pjax:send", function () {
+      clearInterval(commentInterval);
+    });
+
+  }</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | tongtong-blog")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+anzhiyu.switchRightClickMenuHotReview();
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {
+  if (typeof addFriendLinksInFooter === "function") {
+    addFriendLinksInFooter();
+  }
+}, 200)</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.8/icon/ali_iconfont_css.css"><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><script defer="true" src="/js/welcome.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>

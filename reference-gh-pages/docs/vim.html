@@ -1,0 +1,3226 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>tongtong-blog | tongtong-blog</title><meta name="author" content="tongtong"><meta name="copyright" content="tongtong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="tongtong-blog"><meta name="application-name" content="tongtong-blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="tongtong-blog"><meta property="og:url" content="http://example.com/reference-gh-pages/docs/vim.html"><meta property="og:site_name" content="tongtong-blog"><meta property="og:description" content="Vim 备忘清单  &amp;amp;#x26;  vim cheatsheet &amp;amp;#x26;  Quick Reference                   Quick Reference    搜索⌘K编辑               Vim 备忘清单 Vim 8.2 快速参考备忘单的有用集合，可"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://tu.hanxi.fun/images/t01e5f4cd6b26a2fa1b.jpg"><meta property="article:author" content="tongtong"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://tu.hanxi.fun/images/t01e5f4cd6b26a2fa1b.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/reference-gh-pages/docs/vim"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  friends_vue_info: {"apiurl":"https://friend.hanxi.fun/"},
+  navMusic: true,
+  changeMainColorPost: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tongtong-blog',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-07-23 22:06:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/about-tag.css"><link rel="stylesheet" href="/css/welcome.css?1"><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://tu.hanxi.fun/images/thumb-174881.png"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+    Pace.restart()
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://zhang-tongtong123.gitee.io/" title="博客" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" href="https://account.aliyun.com/" title="阿里云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E9%98%BF%E9%87%8C%E4%BA%91.ico" alt="阿里云"/><span class="back-menu-item-text">阿里云</span></a><a class="back-menu-item" href="https://chat.hanxi.fun/" title="ChatAI" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/chat.svg" alt="ChatAI"/><span class="back-menu-item-text">ChatAI</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">常用</div><div class="back-menu-list"><a class="back-menu-item" href="https://www.qiniu.com/" title="七牛云图床" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E4%B8%83%E7%89%9B%E4%BA%91.ico" alt="七牛云图床"/><span class="back-menu-item-text">七牛云图床</span></a><a class="back-menu-item" href="https://smms.app/" title="smms" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E8%AF%84%E8%AE%BA.ico" alt="smms"/><span class="back-menu-item-text">smms</span></a><a class="back-menu-item" href="https://webconverters.net/cn/" title="免费图片转换" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%85%8D%E8%B4%B9%E5%9B%BE%E7%89%87%E8%BD%AC%E6%8D%A2.ico" alt="免费图片转换"/><span class="back-menu-item-text">免费图片转换</span></a><a class="back-menu-item" href="https://www.iconfont.cn/" title="阿里矢量图标" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/iconfont%E5%9B%BE%E6%A0%87_%E6%AD%A3%E5%B0%84%E5%9B%BE.ico" alt="阿里矢量图标"/><span class="back-menu-item-text">阿里矢量图标</span></a><a class="back-menu-item" href="https://vercel.com/" title="vercel" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/logo-vercel.ico" alt="vercel"/><span class="back-menu-item-text">vercel</span></a><a class="back-menu-item" href="https://www.dogecloud.com/" title="多吉云" target="_blank"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/ico/%E5%A4%9A%E5%90%89%E4%BA%91.ico" alt="多吉云"/><span class="back-menu-item-text">多吉云</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">tongtong-blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://tu.hanxi.fun/images/weixin123456.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/weixin123456.png"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://tu.hanxi.fun/images/chitu_301.png" target="_blank"><img class="post-qr-code-img" alt="alipay" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/chitu_301.png"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="page-site-info"><h1 id="site-title">tongtong-blog</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><!doctype html>
+<html lang="en" data-color-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>Vim 备忘清单
+ &#x26;  vim cheatsheet &#x26;  Quick Reference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta description="Vim 8.2 快速参考备忘单的有用集合，可帮助您更快地学习 vim 编辑器。
+
+入门，为开发人员分享快速参考备忘单。">
+<meta keywords="vim,reference,Quick,Reference,cheatsheet,cheat,sheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%221em%22%20width%3D%221em%22%3E%20%3Cpath%20d%3D%22m21.66%2010.44-.98%204.18c-.84%203.61-2.5%205.07-5.62%204.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2%201.17-2.42%203.16-3.07%206.5-2.28l1.67.39c4.19.98%205.47%203.05%204.49%207.23Z%22%20fill%3D%22%23c9d1d9%22%2F%3E%20%3Cpath%20d%3D%22M15.06%2019.39c-.62.42-1.4.77-2.35%201.08l-1.58.52c-3.97%201.28-6.06.21-7.35-3.76L2.5%2013.28c-1.28-3.97-.22-6.07%203.75-7.35l1.58-.52c.41-.13.8-.24%201.17-.31-.3.61-.54%201.35-.74%202.2l-.98%204.19c-.98%204.18.31%206.24%204.48%207.23l1.68.4c.58.14%201.12.23%201.62.27Zm2.43-8.88c-.06%200-.12-.01-.19-.02l-4.85-1.23a.75.75%200%200%201%20.37-1.45l4.85%201.23a.748.748%200%200%201-.18%201.47Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3Cpath%20d%3D%22M14.56%2013.89c-.06%200-.12-.01-.19-.02l-2.91-.74a.75.75%200%200%201%20.37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3C%2Fsvg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../style/style.css">
+<link rel="stylesheet" href="../style/katex.css">
+</head>
+<body><nav class="header-nav"><div class="max-container"><a href="../index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1em" width="1em">
+  <path d="m21.66 10.44-.98 4.18c-.84 3.61-2.5 5.07-5.62 4.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2 1.17-2.42 3.16-3.07 6.5-2.28l1.67.39c4.19.98 5.47 3.05 4.49 7.23Z" fill="#c9d1d9"></path>
+  <path d="M15.06 19.39c-.62.42-1.4.77-2.35 1.08l-1.58.52c-3.97 1.28-6.06.21-7.35-3.76L2.5 13.28c-1.28-3.97-.22-6.07 3.75-7.35l1.58-.52c.41-.13.8-.24 1.17-.31-.3.61-.54 1.35-.74 2.2l-.98 4.19c-.98 4.18.31 6.24 4.48 7.23l1.68.4c.58.14 1.12.23 1.62.27Zm2.43-8.88c-.06 0-.12-.01-.19-.02l-4.85-1.23a.75.75 0 0 1 .37-1.45l4.85 1.23a.748.748 0 0 1-.18 1.47Z" fill="#228e6c"></path>
+  <path d="M14.56 13.89c-.06 0-.12-.01-.19-.02l-2.91-.74a.75.75 0 0 1 .37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z" fill="#228e6c"></path>
+</svg>
+<span class="title">Quick Reference</span></a><div class="menu"><a href="javascript:void(0);" class="searchbtn" id="searchbtn"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><span>搜索</span><span>⌘K</span></a><a href="https://github.com/jaywcjlove/reference/blob/main/docs/vim.md" class="" target="__blank"><svg viewBox="0 0 36 36" fill="currentColor" height="1em" width="1em"><path d="m33 6.4-3.7-3.7a1.71 1.71 0 0 0-2.36 0L23.65 6H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2V11.76l3-3a1.67 1.67 0 0 0 0-2.36ZM18.83 20.13l-4.19.93 1-4.15 9.55-9.57 3.23 3.23ZM29.5 9.43 26.27 6.2l1.85-1.85 3.23 3.23Z"></path><path fill="none" d="M0 0h36v36H0z"></path></svg><span>编辑</span></a><button id="darkMode" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="light" height="1em" width="1em">
+  <path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="dark" height="1em" width="1em">
+  <path d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"></path>
+</svg>
+</button><script src="../js/dark.js?v=1.4.1"></script><a href="https://github.com/jaywcjlove/reference" class="" target="__blank"><svg viewBox="0 0 16 16" fill="currentColor" height="1em" width="1em"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></div></nav><div class="wrap h1body-exist max-container"><header class="wrap-header h1wrap"><h1 id="vim-备忘清单"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" height="1em" width="1em">
+  <path d="M32 15.979h-.036l-5.755-5.755 5.734-5.885V1.948l-.865-.865H20.146l-.88.807v1.396L16.021.036V0L16 .021 15.979 0v.036L14.26 1.755l-.719-.719H2.713l-.849.927v2.51l.818.823h.964v7.078L.037 15.983H.001l.021.016-.021.021h.036l3.609 3.604v8.625l1.208.698h3.094l2.479-2.542 5.552 5.557v.036l.021-.021.021.021v-.036l3.344-3.344h.646a.352.352 0 0 0 .333-.24l.198-.568a.356.356 0 0 0-.052-.323l1.948-1.948-.813 2.615a.352.352 0 0 0 .234.443.242.242 0 0 0 .104.021h2.432a.365.365 0 0 0 .323-.219l.219-.526a.333.333 0 0 0-.005-.271.313.313 0 0 0-.193-.188.45.45 0 0 0-.13-.031h-.099l1.12-3.521h1.641l-1.354 4.292a.359.359 0 0 0 .343.459h2.667a.362.362 0 0 0 .333-.224l.219-.573a.355.355 0 0 0-.334-.474h-.193l1.505-4.901a.347.347 0 0 0-.052-.318l-.5-.672v-.005a.355.355 0 0 0-.281-.141h-1.917a.348.348 0 0 0-.25.109l-.536.589h-.828l-.057-.063 5.927-5.927h.036l-.021-.016zM13.12 28.188l2.104-6.016h-.672l.401-.406h2.208l-2.083 6.078h.833l-.109.344zm4.922-10.027.203.203-.359 1.229-.302.302h-1.292l-.24-.24.417-1.161.38-.333zm-10.589 9.61H5.172l-.354-.198V4.12H3.172l-.135-.13V2.422l.193-.208h9.828l.286.286v1.479l-.193.229h-1.438v11.583L23.458 4.208h-2.781l-.234-.25V2.406l.161-.146h9.984l.177.177v1.427L17.307 17.666h-.557l-.026.005a.41.41 0 0 0-.156.078l-.458.396-.005.005a.407.407 0 0 0-.099.146l-.391 1.109zm19.693-5.266.63-.693h1.776l.417.552-1.688 5.474h.656l-.109.281h-2.375l1.5-4.755h-2.688l-1.438 4.521h.568l-.099.234h-2.141l1.479-4.729h-2.797l-1.417 4.453h.583l-.099.276H17.69l2.021-5.948h-.781l.12-.359h2.198l.693.714h1.208l.656-.734h1.411l.656.714z"></path>
+</svg>
+<a aria-hidden="true" tabindex="-1" href="#vim-备忘清单"><span class="icon icon-link"></span></a>Vim 备忘清单</h1><div class="wrap-body">
+<p><a target="_blank" rel="noopener" href="http://www.vim.org/">Vim</a> 8.2 快速参考备忘单的有用集合，可帮助您更快地学习 vim 编辑器。</p>
+</div></header><div class="menu-tocs"><div class="menu-btn"><svg aria-hidden="true" fill="currentColor" height="1em" width="1em" viewBox="0 0 16 16" version="1.1" data-view-component="true">
+  <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+</svg></div><div class="menu-modal"><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#入门">入门</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#运动图">运动图</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#左右动作">左右动作</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#上下动作">上下动作</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#动作">动作</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#字词">字(词)</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#行">行</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#字符串">字符串</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#文档">文档</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#窗口">窗口</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#插入模式">插入模式</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#保存和退出">保存和退出</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#正常模式">正常模式</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#剪切和粘贴">剪切和粘贴</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#在可视化模式下">在可视化模式下</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#重复">重复</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#可视化模式">可视化模式</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#宏">宏</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#vim-运算符">Vim 运算符</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#用法">用法</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#可用运算符">可用运算符</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#例子">例子</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#计数">计数</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#vim-文本对象">Vim 文本对象</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#用法-1">用法</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#文本对象">文本对象</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#删除">删除</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#选择">选择</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#杂项">杂项</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#vim-多个文件">Vim 多个文件</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#buffers-缓冲器">Buffers (缓冲器)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#窗口-1">窗口</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#选项卡">选项卡</a><a aria-hidden="true" class="leve4 tocs-link" data-num="4" href="#正常模式-1">正常模式</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#vim-搜索和替换">Vim 搜索和替换</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#搜索">搜索</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#更换行">更换行</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#替换文件">替换文件</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#范围">范围</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#全局命令">全局命令</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#inverse逆-g">Inverse(逆) :g</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#flags标志">Flags(标志)</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#替换表达式魔术">替换表达式（魔术）</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#例子-1">例子</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#vimdiff">Vimdiff</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#用法-2">用法</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#编辑">编辑</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#折叠">折叠</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#跳跃">跳跃</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#各种各样的">各种各样的</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#case">Case</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#跳跃-1">跳跃</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#其他命令行">其他命令行</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#导航">导航</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#计数器">计数器</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#选项卡-1">选项卡</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#格式化">格式化</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#标记">标记</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#计算器">计算器</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#shell">Shell</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#命令行">命令行</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#技巧">技巧</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#理解-vim">理解 Vim</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#动词理解">动词理解</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#名词理解">名词理解</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#介词理解">介词理解</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#数词理解">数词理解</a><a aria-hidden="true" class="leve3 tocs-link" data-num="3" href="#组词为句理解">组词为句理解</a><a aria-hidden="true" class="leve2 tocs-link" data-num="2" href="#另见">另见</a></div></div><div class="h1wrap-body"><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="入门"><a aria-hidden="true" tabindex="-1" href="#入门"><span class="icon icon-link"></span></a>入门</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="运动图"><a aria-hidden="true" tabindex="-1" href="#运动图"><span class="icon icon-link"></span></a>运动图</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">▼/▶ 光标   ▽/▷ 目标
+</span></code></pre>
+<h4 id="左右动作"><a aria-hidden="true" tabindex="-1" href="#左右动作"><span class="icon icon-link"></span></a>左右动作</h4>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">╭┈┈┈┈┈┈┈┈┈┈┈┈┈ <span class="token operator">|</span>      
+</span><span class="code-line">├┈┈┈┈┈┈┈┈┈┈┈┈┈ <span class="token number">0</span>      $ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮
+</span><span class="code-line">┆  ╭┈┈┈┈┈┈┈┈┈┈ ^      fe ┈┈┈┈┈┈┈┈╮       ┆
+</span><span class="code-line">┆  ┆  ╭┈┈┈┈┈┈┈ Fo     te ┈┈┈┈┈┈┈╮┆       ┆
+</span><span class="code-line">┆  ┆  ┆╭┈┈┈┈┈┈ To     <span class="token number">30</span><span class="token operator">|</span> ┈┈┈╮  ┆┆       ┆
+</span><span class="code-line">┆  ┆  ┆┆ ╭┈┈┈┈ ge     w ┈┈┈╮ ┆  ┆┆       ┆
+</span><span class="code-line">┆  ┆  ┆┆ ┆ ╭┈┈ b      e ┈╮ ┆ ┆  ┆┆       ┆
+</span><span class="code-line">┆  ┆  ┆┆ ┆ ┆  ╭h      l╮ ┆ ┆ ┆  ┆┆       ┆
+</span><span class="code-line">▽  ▽  ▽▽ ▽ ▽  ▽▼      ▼▽ ▽ ▽ ▽  ▽▽       ▽
+</span><span class="code-line">   <span class="token builtin class-name">echo</span> <span class="token string">"A cheatsheet from quickReference"</span>
+</span></code></pre>
+<h4 id="上下动作"><a aria-hidden="true" tabindex="-1" href="#上下动作"><span class="icon icon-link"></span></a>上下动作</h4>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line">                  - SCREEN <span class="token number">1</span> START
+</span><span class="code-line">   ╭┈┬┈┈┈┈┈┈┈┈┈▷  <span class="token comment">#!/usr/bin/python</span>
+</span><span class="code-line">   ┆ ┆     ╭┈┈┈▷      
+</span><span class="code-line">   ┆ ┆     ┆      print<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span>
+</span><span class="code-line">   ┆ ┆     <span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span> ▶  print<span class="token punctuation">(</span><span class="token string">"Vim"</span><span class="token punctuation">)</span>
+</span><span class="code-line">   ┆ ┆       ┆    print<span class="token punctuation">(</span><span class="token string">"!"</span><span class="token punctuation">)</span>
+</span><span class="code-line">   ┆ ┆       └┈▷     
+</span><span class="code-line">   ┆ ┆ ╭┈┈┈┬┈┈┈▷  print<span class="token punctuation">(</span><span class="token string">"Welcome"</span><span class="token punctuation">)</span>
+</span><span class="code-line">G gg H M L k j ▶  print<span class="token punctuation">(</span><span class="token string">"to"</span><span class="token punctuation">)</span>
+</span><span class="code-line">┆        ┆   └┈▷  print<span class="token punctuation">(</span><span class="token string">"Quick Reference"</span><span class="token punctuation">)</span>
+</span><span class="code-line">┆        ┆        print<span class="token punctuation">(</span><span class="token string">"/vim"</span><span class="token punctuation">)</span>
+</span><span class="code-line">┆        ┆     
+</span><span class="code-line">┆        ╰┈┈┈┈┈▷ 
+</span><span class="code-line">┆                 - SCREEN <span class="token number">1</span> END
+</span><span class="code-line">╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈▷  print<span class="token punctuation">(</span><span class="token string">"SCREEN 2"</span><span class="token punctuation">)</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="动作"><a aria-hidden="true" tabindex="-1" href="#动作"><span class="icon icon-link"></span></a>动作</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>h</code> | <code>j</code> | <code>k</code> | <code>l</code></td><td>方向键</td></tr><tr><td align="left"><code>&#x3C;C-u></code> <em>/</em> <code>&#x3C;C-d></code></td><td>上/下半页</td></tr><tr><td align="left"><code>&#x3C;C-b></code> <em>/</em> <code>&#x3C;C-f></code></td><td>向上/向下翻页</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<h4 id="字词"><a aria-hidden="true" tabindex="-1" href="#字词"><span class="icon icon-link"></span></a>字(词)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>b</code> <em>/</em> <code>w</code></td><td>上一个/下一个单词</td></tr><tr><td align="left"><code>ge</code> <em>/</em> <code>e</code></td><td>上一个/下一个词尾</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<h4 id="行"><a aria-hidden="true" tabindex="-1" href="#行"><span class="icon icon-link"></span></a>行</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>0</code> <em>(zero)</em> <em>/</em> <code>$</code></td><td>行的开始/结束</td></tr><tr><td align="left"><code>^</code></td><td>行开头 <em>(非空白)</em></td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<h4 id="字符串"><a aria-hidden="true" tabindex="-1" href="#字符串"><span class="icon icon-link"></span></a>字符串</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>Fe</code> <em>/</em> <code>fe</code></td><td>移动到上一个/下一个<code>e</code></td></tr><tr><td align="left"><code>To</code> <em>/</em> <code>to</code></td><td>在上一个/下一个<code>o</code>之前/之后移动</td></tr><tr><td align="left"><code>|</code> <em>/</em> <code>n|</code></td><td>转到第一个/<code>n</code>列</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<h4 id="文档"><a aria-hidden="true" tabindex="-1" href="#文档"><span class="icon icon-link"></span></a>文档</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>gg</code> <em>/</em> <code>G</code></td><td>第一行/最后一行</td></tr><tr><td align="left"><code>:n</code> | <code>nG</code></td><td>转到第 <code>n</code> 行</td></tr><tr><td align="left"><code>&#125;</code> <em>/</em> <code>&#123;</code></td><td>下一个/上一个空行</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<h4 id="窗口"><a aria-hidden="true" tabindex="-1" href="#窗口"><span class="icon icon-link"></span></a>窗口</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>H</code> <em>/</em> <code>M</code> <em>/</em> <code>L</code></td><td>上/中/下屏幕</td></tr><tr><td align="left"><code>zt</code> <em>/</em> <code>zz</code> <em>/</em>  <code>zb</code></td><td>上/中/下这条线</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="插入模式"><a aria-hidden="true" tabindex="-1" href="#插入模式"><span class="icon icon-link"></span></a>插入模式</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>i</code> <em>/</em> <code>a</code></td><td>在光标之前/之后插入</td></tr><tr><td align="left"><code>I</code> <em>/</em> <code>A</code></td><td>插入行的开始/结束</td></tr><tr><td align="left"><code>o</code> <em>/</em> <code>O</code> <em>(letter)</em></td><td>在下方/上方插入新行</td></tr><tr><td align="left"><code>s</code> <em>/</em> <code>S</code></td><td>删除字符/行并插入</td></tr><tr><td align="left"><code>C</code> <em>/</em> <code>cc</code></td><td>更改到/当前行的结尾</td></tr><tr><td align="left"><code>gi</code></td><td>在最后一个插入点插入</td></tr><tr><td align="left"><code>Esc</code> | <code>&#x3C;C-[></code></td><td>退出插入模式</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="保存和退出"><a aria-hidden="true" tabindex="-1" href="#保存和退出"><span class="icon icon-link"></span></a>保存和退出</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>:w</code></td><td>保存</td></tr><tr><td align="left"><code>:q</code></td><td>关闭文件</td></tr><tr><td align="left"><code>:wq</code> | <code>:x</code> | <code>ZZ</code></td><td>保存并退出</td></tr><tr><td align="left"><code>:wqa</code></td><td>保存并退出所有文件</td></tr><tr><td align="left"><code>:q!</code> | <code>ZQ</code></td><td>强制退出</td></tr><tr><td align="left"><code>:qa</code></td><td>关闭所有文件</td></tr><tr><td align="left"><code>:qa!</code></td><td>强制退出所有文件</td></tr><tr><td align="left"><code>:w</code> new.txt</td><td>写入<code>new.txt</code></td></tr><tr><td align="left"><code>:sav</code> new.txt</td><td>保存并编辑<code>new.txt</code></td></tr><tr><td align="left"><code>:w</code> !sudo tee %</td><td>写入只读文件</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="正常模式"><a aria-hidden="true" tabindex="-1" href="#正常模式"><span class="icon icon-link"></span></a>正常模式</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>r</code></td><td>替换一个字符</td></tr><tr><td align="left"><code>R</code></td><td>进入替换模式</td></tr><tr><td align="left"><code>u</code> <em>/</em> <code>3u</code></td><td>撤消更改<code>1</code>/<code>3</code>次</td></tr><tr><td align="left"><code>U</code></td><td>在一行上撤消更改</td></tr><tr><td align="left"><code>J</code></td><td>加入下一行</td></tr><tr><td align="left"><code>&#x3C;C-r></code> <em>/</em> 5 <code>&#x3C;C-r></code></td><td>重做更改<code>1</code>/<code>5</code>次</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="剪切和粘贴"><a aria-hidden="true" tabindex="-1" href="#剪切和粘贴"><span class="icon icon-link"></span></a>剪切和粘贴</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>x</code></td><td>删除字符 <em>(剪切)</em></td></tr><tr><td align="left"><code>p</code> <em>/</em> <code>P</code></td><td>在之后/之前粘贴</td></tr><tr><td align="left"><code>xp</code></td><td>交换两个字符</td></tr><tr><td align="left"><code>D</code></td><td>删除到行尾 <em>(剪切)</em></td></tr><tr><td align="left"><code>dw</code></td><td>删除单词 <em>(剪切)</em></td></tr><tr><td align="left"><code>dd</code></td><td>删除线 <em>(剪切)</em></td></tr><tr><td align="left"><code>ddp</code></td><td>交换两条线</td></tr><tr><td align="left"><code>yy</code></td><td>拉线 <em>(复制)</em></td></tr><tr><td align="left"><code>"*p</code> | <code>"+p</code></td><td>从系统剪贴板粘贴</td></tr><tr><td align="left"><code>"*y</code> | <code>"+y</code></td><td>粘贴到系统剪贴板</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<h4 id="在可视化模式下"><a aria-hidden="true" tabindex="-1" href="#在可视化模式下"><span class="icon icon-link"></span></a>在可视化模式下</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>d</code> <em>|</em> <code>x</code></td><td>删除选择 <em>(剪切)</em></td></tr><tr><td align="left"><code>s</code></td><td>替换选择</td></tr><tr><td align="left"><code>y</code></td><td>Yank 选择 <em>(复制)</em></td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="重复"><a aria-hidden="true" tabindex="-1" href="#重复"><span class="icon icon-link"></span></a>重复</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>.</code></td><td>重复上一个命令</td></tr><tr><td align="left"><code>;</code></td><td>重复最新的 <code>f</code>、<code>t</code>、<code>F</code> 或 <code>T</code></td></tr><tr><td align="left"><code>,</code></td><td>重复最新的<code>f</code>、<code>t</code>、<code>F</code>或<code>T</code>颠倒</td></tr><tr><td align="left"><code>&#x26;</code></td><td>重复最后一个<code>:s</code></td></tr><tr><td align="left"><code>@:</code></td><td>重复命令行命令</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="可视化模式"><a aria-hidden="true" tabindex="-1" href="#可视化模式"><span class="icon icon-link"></span></a>可视化模式</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>v</code></td><td>进入可视化模式</td></tr><tr><td align="left"><code>V</code></td><td>进入视线模式</td></tr><tr><td align="left"><code>&#x3C;C-v></code></td><td>进入可视块模式</td></tr><tr><td align="left"><code>ggVG</code></td><td>选择所有文本</td></tr><tr><td align="left"><code>></code> <em>/</em> <code>&#x3C;</code></td><td>向右/向左移动文本</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="宏"><a aria-hidden="true" tabindex="-1" href="#宏"><span class="icon icon-link"></span></a>宏</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>qi</code></td><td>录制宏 <code>i</code></td></tr><tr><td align="left"><code>q</code></td><td>停止录制宏</td></tr><tr><td align="left"><code>@i</code></td><td>运行宏<code>i</code></td></tr><tr><td align="left"><code>7@i</code></td><td>运行宏 <code>i</code> 7 次</td></tr><tr><td align="left"><code>@@</code></td><td>重复上一个宏</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<p>您可以为任何字母保存宏，而不仅仅是 <code>i</code></p>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="vim-运算符"><a aria-hidden="true" tabindex="-1" href="#vim-运算符"><span class="icon icon-link"></span></a>Vim 运算符</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 style="background:#d7a100;" id="用法"><a aria-hidden="true" tabindex="-1" href="#用法"><span class="icon icon-link"></span></a>用法</h3><div class="wrap-body">
+<!--rehype:style=background:#d7a100;-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>d</code></td><td><yel>w</yel></td></tr><tr><td align="left">运算符</td><td>动作</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<p>将 <a href="#%E5%8F%AF%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6">可用运算符</a> 与 <a href="#%E5%8A%A8%E4%BD%9C">动作</a> 结合使用以使用它们</p>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="可用运算符"><a aria-hidden="true" tabindex="-1" href="#可用运算符"><span class="icon icon-link"></span></a>可用运算符</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>d</code></td><td>删除</td></tr><tr><td align="left"><code>y</code></td><td>Yank <em>(复制)</em></td></tr><tr><td align="left"><code>c</code></td><td>更改 <em>(删除然后插入)</em></td></tr><tr><td align="left"><code>p</code></td><td>粘贴</td></tr><tr><td align="left"><code>=</code></td><td>格式代码</td></tr><tr><td align="left"><code>g~</code></td><td>切换案例</td></tr><tr><td align="left"><code>gU</code></td><td>大写</td></tr><tr><td align="left"><code>gu</code></td><td>小写</td></tr><tr><td align="left"><code>></code></td><td>右缩进</td></tr><tr><td align="left"><code>&#x3C;</code></td><td>左缩进</td></tr><tr><td align="left"><code>!</code></td><td>通过外部程序过滤</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="例子"><a aria-hidden="true" tabindex="-1" href="#例子"><span class="icon icon-link"></span></a>例子</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="show-header"><thead><tr><th align="left">组合</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>d</code><yel>d</yel></td><td>删除当前行</td></tr><tr><td align="left"><code>d</code><yel>j</yel></td><td>删除两行</td></tr><tr><td align="left"><code>d</code><yel>w</yel></td><td>删除到下一个单词</td></tr><tr><td align="left"><code>d</code><yel>b</yel></td><td>删除到单词的开头</td></tr><tr><td align="left"><code>d</code><yel>fa</yel></td><td>删除直到 <code>a</code> 字符</td></tr><tr><td align="left"><code>d</code><yel>/hello</yel></td><td>删除直到 <code>hello</code></td></tr><tr><td align="left"><code>c</code><yel>c</yel></td><td>更改当前行，与 <code>S</code> 同义</td></tr><tr><td align="left"><code>y</code><yel>y</yel></td><td>复制当前行</td></tr><tr><td align="left"><code>></code><yel>j</yel></td><td>缩进 2 行</td></tr><tr><td align="left">gg<code>d</code><yel>G</yel></td><td>删除完整的文档</td></tr><tr><td align="left">gg<code>=</code><yel>G</yel></td><td>缩进一个完整的文档</td></tr><tr><td align="left">gg<code>y</code><yel>G</yel></td><td>复制整个文档</td></tr></tbody></table>
+<!--rehype:className=show-header-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="计数"><a aria-hidden="true" tabindex="-1" href="#计数"><span class="icon icon-link"></span></a>计数</h3><div class="wrap-body">
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line"><span class="token punctuation">[</span>数字<span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>运算符<span class="token operator">></span> <span class="token operator">&#x3C;</span>动作<span class="token operator">></span>
+</span><span class="code-line"><span class="token operator">&#x3C;</span>运算符<span class="token operator">></span> <span class="token punctuation">[</span>数字<span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>动作<span class="token operator">></span>
+</span></code></pre>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">组合</th><th>说明</th></tr></thead><tbody><tr><td align="left">2<code>d</code><yel>d</yel></td><td>删除 <code>2</code> 行</td></tr><tr><td align="left">6<code>y</code><yel>y</yel></td><td>复制 <code>6</code> 行</td></tr><tr><td align="left"><code>d</code>3<yel>w</yel></td><td>删除 <code>3</code> 字</td></tr><tr><td align="left"><code>d</code>5<yel>j</yel></td><td>向下删除 <code>5</code> 行</td></tr><tr><td align="left"><code>></code>4<yel>k</yel></td><td>向上缩进 <code>4</code> 行</td></tr></tbody></table>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="vim-文本对象"><a aria-hidden="true" tabindex="-1" href="#vim-文本对象"><span class="icon icon-link"></span></a>Vim 文本对象</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 style="background:#d7a100;" id="用法-1"><a aria-hidden="true" tabindex="-1" href="#用法-1"><span class="icon icon-link"></span></a>用法</h3><div class="wrap-body">
+<!--rehype:style=background:#d7a100;-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>v</code></td><td>        <pur>i</pur> <em>/</em> <pur>a</pur></td></tr><tr><td align="left">Operator</td><td><pur>i</pur>nner(内部) <em>/</em> <pur>a</pur>round(周围)</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<p>文本块内部或周围使用 <a href="#%E5%8F%AF%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6">operator</a> 进行操作</p>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="文本对象"><a aria-hidden="true" tabindex="-1" href="#文本对象"><span class="icon icon-link"></span></a>文本对象</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><yel>p</yel></td><td>段落</td></tr><tr><td align="left"><yel>w</yel></td><td>单词</td></tr><tr><td align="left"><yel>W</yel></td><td>WORD <br> <em>(被空格包围)</em></td></tr><tr><td align="left"><yel>s</yel></td><td>句子</td></tr><tr><td align="left"><yel>[</yel> <yel>(</yel> <yel>{</yel> <yel>&#x3C;</yel></td><td>[]、() 或 {} 块</td></tr><tr><td align="left"><yel>]</yel> <yel>)</yel> <yel>}</yel> <yel>></yel></td><td>[]、() 或 {} 块</td></tr><tr><td align="left"><yel>'</yel> <yel>"</yel> <yel>`</yel></td><td>带引号的字符串</td></tr><tr><td align="left"><yel>b</yel></td><td>一个块 [(</td></tr><tr><td align="left"><yel>B</yel></td><td>[{中的一个块</td></tr><tr><td align="left"><yel>t</yel></td><td>一个 HTML 标签块</td></tr></tbody></table>
+<p>查看 <code>:help text-objects</code></p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="删除"><a aria-hidden="true" tabindex="-1" href="#删除"><span class="icon icon-link"></span></a>删除</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>d</code><pur>i</pur><yel>w</yel></td><td>删除内词</td></tr><tr><td align="left"><code>d</code><pur>i</pur><yel>s</yel></td><td>删除内句</td></tr><tr><td align="left"><code>d</code><pur>i</pur><yel>"</yel></td><td>引号中删除</td></tr><tr><td align="left"><code>d</code><pur>a</pur><yel>"</yel></td><td>删除引号 <em>(包括引号)</em></td></tr><tr><td align="left"><code>d</code><pur>i</pur><yel>p</yel></td><td>删除段落</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="选择"><a aria-hidden="true" tabindex="-1" href="#选择"><span class="icon icon-link"></span></a>选择</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>v</code><pur>i</pur><yel>"</yel></td><td>选择内引号“<code>...</code>{.underline}”</td></tr><tr><td align="left"><code>v</code><pur>a</pur><yel>"</yel></td><td>选择引号<code>"..."</code>{.underline}</td></tr><tr><td align="left"><code>v</code><pur>i</pur><yel>[</yel></td><td>选择内括号 [<code>...</code>{.underline}]</td></tr><tr><td align="left"><code>v</code><pur>a</pur><yel>[</yel></td><td>选择括号<code>[...]</code>{.underline}</td></tr><tr><td align="left"><code>v</code><pur>i</pur><yel>w</yel></td><td>选择内词</td></tr><tr><td align="left"><code>v</code><pur>i</pur><yel>p</yel></td><td>选择内部段落</td></tr><tr><td align="left"><code>v</code><pur>i</pur><yel>p</yel><pur>i</pur><yel>p</yel></td><td>选择更多段落</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="杂项"><a aria-hidden="true" tabindex="-1" href="#杂项"><span class="icon icon-link"></span></a>杂项</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>c</code><pur>i</pur><yel>w</yel></td><td>换内字</td></tr><tr><td align="left"><code>c</code><pur>i</pur><yel>"</yel></td><td>更改内部引号</td></tr><tr><td align="left"><code>c</code><pur>i</pur><yel>t</yel></td><td>更改内部标签 (HTML)</td></tr><tr><td align="left"><code>c</code><pur>i</pur><yel>p</yel></td><td>更改内部段落</td></tr><tr><td align="left"><code>y</code><pur>i</pur><yel>p</yel></td><td>Yank 段落</td></tr><tr><td align="left"><code>y</code><pur>a</pur><yel>p</yel></td><td>Yank 段落 <em>(包括换行符)</em></td></tr></tbody></table>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="vim-多个文件"><a aria-hidden="true" tabindex="-1" href="#vim-多个文件"><span class="icon icon-link"></span></a>Vim 多个文件</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="buffers-缓冲器"><a aria-hidden="true" tabindex="-1" href="#buffers-缓冲器"><span class="icon icon-link"></span></a>Buffers (缓冲器)</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:e file</code></td><td>在新缓冲区中编辑文件</td></tr><tr><td align="left"><code>:bn</code></td><td>转到下一个缓冲区</td></tr><tr><td align="left"><code>:bp</code></td><td>转到上一个缓冲区</td></tr><tr><td align="left"><code>:bd</code></td><td>从缓冲区列表中删除文件</td></tr><tr><td align="left"><code>:b 5</code></td><td>打开缓冲区 #5</td></tr><tr><td align="left"><code>:b file</code></td><td>按文件转到缓冲区</td></tr><tr><td align="left"><code>:ls</code></td><td>列出所有打开的缓冲区</td></tr><tr><td align="left"><code>:sp file</code></td><td>打开和拆分窗口</td></tr><tr><td align="left"><code>:vs file</code></td><td>打开和垂直拆分窗口</td></tr><tr><td align="left"><code>:hid</code></td><td>隐藏此缓冲区</td></tr><tr><td align="left"><code>:wn</code></td><td>写入文件并移至下一个</td></tr><tr><td align="left"><code>:tab ba</code></td><td>将所有缓冲区编辑为选项卡</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="窗口-1"><a aria-hidden="true" tabindex="-1" href="#窗口-1"><span class="icon icon-link"></span></a>窗口</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>&#x3C;C-w></code> <code>s</code></td><td>拆分窗口</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>v</code></td><td>垂直拆分窗口</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>w</code></td><td>切换窗口</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>q</code></td><td>退出一个窗口</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>T</code></td><td>拆分成一个新标签</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>x</code></td><td>用下一个交换当前</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>-</code>  <em>/</em> <code>+</code></td><td>减少/增加高度</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>&#x3C;</code>  <em>/</em> <code>></code></td><td>减少/增加宽度</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>|</code></td><td>最大宽度</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>=</code></td><td>同样高和宽</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>h</code> <em>/</em> <code>l</code></td><td>转到左/右窗口</td></tr><tr><td align="left"><code>&#x3C;C-w></code> <code>j</code> <em>/</em> <code>k</code></td><td>转到上/下窗口</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-exist"><div class="wrap-header h3wrap"><h3 id="选项卡"><a aria-hidden="true" tabindex="-1" href="#选项卡"><span class="icon icon-link"></span></a>选项卡</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>:tabe [file]</code></td><td><yel>E</yel>在新选项卡中编辑文件</td></tr><tr><td align="left"><code>:tabf [file]</code></td><td>如果在新选项卡中存在则打开</td></tr><tr><td align="left"><code>:tabc</code></td><td><yel>C</yel>失去当前选项卡</td></tr><tr><td align="left"><code>:tabo</code></td><td>关闭<yel>o</yel>其他选项卡</td></tr><tr><td align="left"><code>:tabs</code></td><td>列出所有<yel>标签</yel></td></tr><tr><td align="left"><code>:tabr</code></td><td>转到第一个<yel>r</yel>标签</td></tr><tr><td align="left"><code>:tabl</code></td><td>转到 <yel>l</yel>ast 选项卡</td></tr><tr><td align="left"><code>:tabm 0</code></td><td><yel>我</yel>转到位置 <code>0</code></td></tr><tr><td align="left"><code>:tabn</code></td><td>转到 <yel>n</yel>ext 选项卡</td></tr><tr><td align="left"><code>:tabp</code></td><td>转到<yel>p</yel>上一个标签</td></tr></tbody></table>
+<h4 id="正常模式-1"><a aria-hidden="true" tabindex="-1" href="#正常模式-1"><span class="icon icon-link"></span></a>正常模式</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>gt</code></td><td>转到 <yel>n</yel>ext 选项卡</td></tr><tr><td align="left"><code>gT</code></td><td>转到<yel>p</yel>上一个标签</td></tr><tr><td align="left"><code>2gt</code></td><td>转到标签编号 <code>2</code></td></tr></tbody></table>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="vim-搜索和替换"><a aria-hidden="true" tabindex="-1" href="#vim-搜索和替换"><span class="icon icon-link"></span></a>Vim 搜索和替换</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="搜索"><a aria-hidden="true" tabindex="-1" href="#搜索"><span class="icon icon-link"></span></a>搜索</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>/foo</code></td><td>向前搜索</td></tr><tr><td align="left"><code>/foo\c</code></td><td>向前搜索 <em>(不区分大小写)</em></td></tr><tr><td align="left"><code>?foo</code></td><td>向后搜索</td></tr><tr><td align="left"><code>/\v\d+</code></td><td>使用 <a href="./regex.html">regex</a> 搜索</td></tr><tr><td align="left"><code>n</code></td><td>下一个匹配的搜索模式</td></tr><tr><td align="left"><code>N</code></td><td>上一个匹配的搜索</td></tr><tr><td align="left"><code>*</code></td><td>向前搜索当前单词</td></tr><tr><td align="left"><code>#</code></td><td>向后搜索当前单词</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="更换行"><a aria-hidden="true" tabindex="-1" href="#更换行"><span class="icon icon-link"></span></a>更换行</h3><div class="wrap-body">
+<pre class="language-vim"><code class="language-vim code-highlight"><span class="code-line"><span class="token punctuation">:</span><span class="token punctuation">[</span>range<span class="token punctuation">]</span>s<span class="token operator">/</span><span class="token punctuation">&#123;</span>pattern<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token punctuation">&#123;</span>str<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token punctuation">[</span>flags<span class="token punctuation">]</span>
+</span></code></pre>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:s/old/new</code></td><td>先更换</td></tr><tr><td align="left"><code>:s/old/new/g</code></td><td>全部替换</td></tr><tr><td align="left"><code>:s/\vold/new/g</code></td><td>全部替换为 <a href="./regex.html">regex</a></td></tr><tr><td align="left"><code>:s/old/new/gc</code></td><td>全部替换_(确认)_</td></tr><tr><td align="left"><code>:s/old/new/i</code></td><td>先忽略大小写替换</td></tr><tr><td align="left"><code>:2,6s/old/new/g</code></td><td>在 <code>2</code>-<code>6</code> 行之间替换</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="替换文件"><a aria-hidden="true" tabindex="-1" href="#替换文件"><span class="icon icon-link"></span></a>替换文件</h3><div class="wrap-body">
+<pre class="language-vim"><code class="language-vim code-highlight"><span class="code-line"><span class="token punctuation">:</span><span class="token operator">%</span>s<span class="token operator">/</span><span class="token punctuation">&#123;</span>pattern<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token punctuation">&#123;</span>str<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token punctuation">[</span>flags<span class="token punctuation">]</span>
+</span></code></pre>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:%s/old/new</code></td><td>先更换</td></tr><tr><td align="left"><code>:%s/old/new/g</code></td><td>全部替换</td></tr><tr><td align="left"><code>:%s/old/new/gc</code></td><td>全部替换 <em>(确认)</em></td></tr><tr><td align="left"><code>:%s/old/new/gi</code></td><td>全部替换 <em>(忽略大小写)</em></td></tr><tr><td align="left"><code>:%s/\vold/new/g</code></td><td>全部替换为 <a href="./regex.html">regex</a></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="范围"><a aria-hidden="true" tabindex="-1" href="#范围"><span class="icon icon-link"></span></a>范围</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>%</code></td><td>整个文件</td></tr><tr><td align="left"><code>’&#x3C;,’></code></td><td>当前选择</td></tr><tr><td align="left"><code>5</code></td><td>第 <code>5</code> 行</td></tr><tr><td align="left"><code>5,10</code></td><td>第 <code>5</code> 行到第 <code>10</code> 行</td></tr><tr><td align="left"><code>$</code></td><td>最后一行</td></tr><tr><td align="left"><code>2,$</code></td><td>第 <code>2</code> 行到最后</td></tr><tr><td align="left"><code>.</code></td><td>当前行</td></tr><tr><td align="left"><code>,3</code></td><td>接下来的 <code>3</code> 行</td></tr><tr><td align="left"><code>-3,</code></td><td>转发 <code>3</code> 行</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="全局命令"><a aria-hidden="true" tabindex="-1" href="#全局命令"><span class="icon icon-link"></span></a>全局命令</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre class="language-vim"><code class="language-vim code-highlight"><span class="code-line"><span class="token punctuation">:</span><span class="token punctuation">[</span>range<span class="token punctuation">]</span>g<span class="token operator">/</span><span class="token punctuation">&#123;</span>pattern<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token punctuation">[</span>command<span class="token punctuation">]</span>
+</span></code></pre>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:g/foo/d</code></td><td>删除包含 <code>foo</code> 的行</td></tr><tr><td align="left"><code>:g!/foo/d</code></td><td>删除不包含 <code>foo</code> 的行</td></tr><tr><td align="left"><code>:g/^\s*$/d</code></td><td>删除所有空行</td></tr><tr><td align="left"><code>:g/foo/t$</code></td><td>将包含 <code>foo</code> 的行复制到 EOF</td></tr><tr><td align="left"><code>:g/foo/m$</code></td><td>将包含 <code>foo</code> 的行移动到 EOF</td></tr><tr><td align="left"><code>:g/^/m0</code></td><td>反转文件</td></tr><tr><td align="left"><code>:g/^/t.</code></td><td>复制每一行</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="inverse逆-g"><a aria-hidden="true" tabindex="-1" href="#inverse逆-g"><span class="icon icon-link"></span></a>Inverse(逆) :g</h3><div class="wrap-body">
+<pre class="language-vim"><code class="language-vim code-highlight"><span class="code-line"><span class="token punctuation">:</span><span class="token punctuation">[</span>range<span class="token punctuation">]</span>v<span class="token operator">/</span><span class="token punctuation">&#123;</span>pattern<span class="token punctuation">&#125;</span><span class="token operator">/</span><span class="token punctuation">[</span>command<span class="token punctuation">]</span>
+</span></code></pre>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:v/foo/d</code></td><td>删除不包含<code>foo</code>的行 <br> <em>(还有<code>:g!/foo/d</code>)</em></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="flags标志"><a aria-hidden="true" tabindex="-1" href="#flags标志"><span class="icon icon-link"></span></a>Flags(标志)</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>g</code></td><td>替换所有出现</td></tr><tr><td align="left"><code>i</code></td><td>忽略大小写</td></tr><tr><td align="left"><code>I</code></td><td>不要忽略大小写</td></tr><tr><td align="left"><code>c</code></td><td>确认每个替换</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="替换表达式魔术"><a aria-hidden="true" tabindex="-1" href="#替换表达式魔术"><span class="icon icon-link"></span></a>替换表达式（魔术）</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>&#x26;</code> <em>|</em> <code>\0</code></td><td>替换为整个匹配的</td></tr><tr><td align="left"><code>\1</code>...<code>\9</code></td><td>替换为 0-9 组</td></tr><tr><td align="left"><code>\u</code></td><td>大写下一个字母</td></tr><tr><td align="left"><code>\U</code></td><td>后面的大写字符</td></tr><tr><td align="left"><code>\l</code></td><td>小写下一个字母</td></tr><tr><td align="left"><code>\L</code></td><td>后面的字符小写</td></tr><tr><td align="left"><code>\e</code></td><td><code>\u</code>、<code>\U</code>、<code>\l</code> 和 <code>\L</code> 的结尾</td></tr><tr><td align="left"><code>\E</code></td><td><code>\u</code>、<code>\U</code>、<code>\l</code> 和 <code>\L</code> 的结尾</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist col-span-2"><div class="wrap-header h3wrap"><h3 id="例子-1"><a aria-hidden="true" tabindex="-1" href="#例子-1"><span class="icon icon-link"></span></a>例子</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2-->
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">:s/a<span class="token punctuation">\</span><span class="token operator">|</span>b/xxx<span class="token punctuation">\</span>0xxx/g               <span class="token comment"># 将 "a b"      修改为 "xxxaxxx xxxbxxx"</span>
+</span><span class="code-line">:s/test/<span class="token punctuation">\</span>U<span class="token operator">&#x26;</span> file/                <span class="token comment"># 将 "test"     修改为 "TEST FILE"</span>
+</span><span class="code-line">:s/<span class="token punctuation">\</span><span class="token punctuation">(</span>test<span class="token punctuation">\</span><span class="token punctuation">)</span>/<span class="token punctuation">\</span>U<span class="token punctuation">\</span><span class="token number">1</span><span class="token punctuation">\</span>e file/         <span class="token comment"># 将 "test"     修改为 "TEST file"</span>
+</span><span class="code-line">:s/<span class="token punctuation">\</span>v<span class="token punctuation">(</span><span class="token punctuation">[</span>abc<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">[</span>efg<span class="token punctuation">]</span><span class="token punctuation">)</span>/<span class="token punctuation">\</span><span class="token number">2</span><span class="token punctuation">\</span><span class="token number">1</span>/g       <span class="token comment"># 将 "af fa bg" 修改为 "fa fa gb"</span>
+</span><span class="code-line">:s/<span class="token punctuation">\</span>v<span class="token punctuation">\</span>w+/<span class="token punctuation">\</span>u<span class="token punctuation">\</span><span class="token number">0</span>/g                  <span class="token comment"># 将 "bla bla"  修改为 "Bla Bla"</span>
+</span><span class="code-line">:s/<span class="token punctuation">\</span>v<span class="token punctuation">(</span><span class="token punctuation">[</span>ab<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">|</span><span class="token punctuation">(</span><span class="token punctuation">[</span>cd<span class="token punctuation">]</span><span class="token punctuation">)</span>/<span class="token punctuation">\</span>1x/g         <span class="token comment"># 将 "a b c d"  修改为 "ax bx x x"</span>
+</span><span class="code-line">:%s/.*/<span class="token punctuation">\</span>L<span class="token operator">&#x26;</span>/                      <span class="token comment"># 将 "HTML"     修改为 "html"</span>
+</span><span class="code-line">:s/<span class="token punctuation">\</span>v<span class="token operator">&#x3C;</span><span class="token punctuation">(</span><span class="token builtin class-name">.</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">\</span>w*<span class="token punctuation">)</span>/<span class="token punctuation">\</span>u<span class="token punctuation">\</span><span class="token number">1</span><span class="token punctuation">\</span>L<span class="token punctuation">\</span><span class="token number">2</span>/g        <span class="token comment"># 将单词的每个首字母大写</span>
+</span><span class="code-line">:%s/^<span class="token punctuation">\</span><span class="token punctuation">(</span>.*<span class="token punctuation">\</span><span class="token punctuation">)</span><span class="token punctuation">\</span>n<span class="token punctuation">\</span><span class="token number">1</span>/<span class="token punctuation">\</span><span class="token number">1</span>/              <span class="token comment"># 删除重复行</span>
+</span><span class="code-line">:%s/<span class="token operator">&#x3C;</span><span class="token punctuation">\</span>/<span class="token punctuation">\</span><span class="token operator">=</span><span class="token punctuation">\</span><span class="token punctuation">(</span><span class="token punctuation">\</span>w<span class="token punctuation">\</span>+<span class="token punctuation">\</span><span class="token punctuation">)</span><span class="token punctuation">\</span><span class="token operator">></span>/<span class="token punctuation">\</span>U<span class="token operator">&#x26;</span>/g        <span class="token comment"># 将 HTML 标记转换为大写</span>
+</span><span class="code-line">:g/^pattern/s/$/mytext           <span class="token comment"># 查找文本并将其附加到末尾</span>
+</span><span class="code-line">:g/pattern/norm<span class="token operator">!</span> @i              <span class="token comment"># 在匹配行上运行宏</span>
+</span><span class="code-line">/^<span class="token punctuation">\</span><span class="token punctuation">(</span>.*<span class="token punctuation">\</span><span class="token punctuation">)</span><span class="token punctuation">\</span><span class="token punctuation">(</span><span class="token punctuation">\</span>r<span class="token punctuation">\</span>?<span class="token punctuation">\</span>n<span class="token punctuation">\</span><span class="token number">1</span><span class="token punctuation">\</span><span class="token punctuation">)</span><span class="token punctuation">\</span>+$          <span class="token comment"># 查看重复行</span>
+</span><span class="code-line">/<span class="token punctuation">\</span>v^<span class="token punctuation">(</span>.*<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">\</span>r?<span class="token punctuation">\</span>n<span class="token punctuation">\</span><span class="token number">1</span><span class="token punctuation">)</span>+$              <span class="token comment"># 查看重复行（非常神奇）</span>
+</span><span class="code-line">:v/./,/./-j                      <span class="token comment"># 将空行压缩成空行</span>
+</span><span class="code-line">:g/<span class="token operator">&#x3C;</span>p<span class="token operator"><span class="token file-descriptor important">1</span>></span>/,/<span class="token operator">&#x3C;</span>p<span class="token operator"><span class="token file-descriptor important">2</span>></span>/d                 <span class="token comment"># 从 &#x3C;p1> 到 &#x3C;p2> 包含删除</span>
+</span></code></pre>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="vimdiff"><a aria-hidden="true" tabindex="-1" href="#vimdiff"><span class="icon icon-link"></span></a>Vimdiff</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 style="background:#d7a100;" id="用法-2"><a aria-hidden="true" tabindex="-1" href="#用法-2"><span class="icon icon-link"></span></a>用法</h3><div class="wrap-body">
+<!--rehype:style=background:#d7a100;-->
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">$ vimdiff file1 file2 <span class="token punctuation">[</span>file3<span class="token punctuation">]</span>
+</span><span class="code-line">$ <span class="token function">vim</span> <span class="token parameter variable">-d</span> file1 file2 <span class="token punctuation">[</span>file3<span class="token punctuation">]</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="编辑"><a aria-hidden="true" tabindex="-1" href="#编辑"><span class="icon icon-link"></span></a>编辑</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+<pre><code class="code-highlight"><span class="code-line">:[range]diffget [bufspec]
+</span><span class="code-line">:[range]diffput [bufspec]
+</span></code></pre>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>do</code> <em>/</em> <code>:diffget</code></td><td>获取（get）差异</td></tr><tr><td align="left"><code>dp</code> <em>/</em> <code>:diffput</code></td><td>放差价</td></tr><tr><td align="left"><code>:dif</code></td><td>重新扫描差异</td></tr><tr><td align="left"><code>:diffo</code></td><td>关闭差异模式</td></tr><tr><td align="left"><code>:1,$+1diffget</code></td><td>获取所有差异</td></tr><tr><td align="left"><code>ZQ</code></td><td>不做改动就退出</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<p>请参阅：<a href="#%E8%8C%83%E5%9B%B4">范围</a></p>
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="折叠"><a aria-hidden="true" tabindex="-1" href="#折叠"><span class="icon icon-link"></span></a>折叠</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>zo</code> <em>/</em> <code>zO</code></td><td>打开</td></tr><tr><td align="left"><code>zc</code> <em>/</em> <code>zC</code></td><td>关</td></tr><tr><td align="left"><code>za</code> <em>/</em> <code>zA</code></td><td>切换</td></tr><tr><td align="left"><code>zv</code></td><td>这条线的打开折叠</td></tr><tr><td align="left"><code>zM</code></td><td>关闭所有</td></tr><tr><td align="left"><code>zR</code></td><td>打开所有</td></tr><tr><td align="left"><code>zm</code></td><td>折叠更多 <em>(折叠级别 += 1)</em></td></tr><tr><td align="left"><code>zr</code></td><td>少折叠 <em>(折叠级别 -= 1)</em></td></tr><tr><td align="left"><code>zx</code></td><td>更新折叠</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="跳跃"><a aria-hidden="true" tabindex="-1" href="#跳跃"><span class="icon icon-link"></span></a>跳跃</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>]c</code></td><td>下一个区别</td></tr><tr><td align="left"><code>[c</code></td><td>以前的区别</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="各种各样的"><a aria-hidden="true" tabindex="-1" href="#各种各样的"><span class="icon icon-link"></span></a>各种各样的</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="case"><a aria-hidden="true" tabindex="-1" href="#case"><span class="icon icon-link"></span></a>Case</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>vU</code></td><td><em>大写</em> 字母</td></tr><tr><td align="left"><code>vu</code></td><td><em>小写</em> 字符</td></tr><tr><td align="left"><code>~</code></td><td><em>切换案例</em> 字符</td></tr><tr><td align="left"><code>viw</code> <code>U</code></td><td><em>大写</em> 字</td></tr><tr><td align="left"><code>viw</code> <code>u</code></td><td><em>小写</em> 字</td></tr><tr><td align="left"><code>viw</code> <code>~</code></td><td><em>切换案例</em> 字</td></tr><tr><td align="left"><code>VU</code> <em>/</em> <code>gUU</code></td><td><em>大写</em> 行</td></tr><tr><td align="left"><code>Vu</code> <em>/</em> <code>guu</code></td><td><em>小写</em> 行</td></tr><tr><td align="left"><code>V~</code> <em>/</em> <code>g~~</code></td><td><em>切换案例</em> 线</td></tr><tr><td align="left"><code>gggUG</code></td><td><em>大写</em> 所有文本</td></tr><tr><td align="left"><code>ggguG</code></td><td><em>小写</em> 所有文本</td></tr><tr><td align="left"><code>ggg~G</code></td><td><em>切换大小写</em> 所有文本</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="跳跃-1"><a aria-hidden="true" tabindex="-1" href="#跳跃-1"><span class="icon icon-link"></span></a>跳跃</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>&#x3C;C-o></code></td><td>返回上一个</td></tr><tr><td align="left"><code>&#x3C;C-i></code></td><td>向前</td></tr><tr><td align="left"><code>gf</code></td><td>转到光标中的文件</td></tr><tr><td align="left"><code>ga</code></td><td>显示十六进制、ASCII值</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist row-span-2"><div class="wrap-header h3wrap"><h3 id="其他命令行"><a aria-hidden="true" tabindex="-1" href="#其他命令行"><span class="icon icon-link"></span></a>其他命令行</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:h</code></td><td>帮助打开帮助视图</td></tr><tr><td align="left"><code>:edit!</code></td><td>重新加载当前文件</td></tr><tr><td align="left"><code>:2,8m0</code></td><td>将行 <code>2</code>-<code>8</code> 移动到 <code>0</code></td></tr><tr><td align="left"><code>:noh</code></td><td>清除搜索亮点</td></tr><tr><td align="left"><code>:sort</code></td><td>排序行</td></tr><tr><td align="left"><code>:ter</code></td><td>打开终端窗口</td></tr><tr><td align="left"><code>:set paste</code></td><td>启用插入粘贴子模式</td></tr><tr><td align="left"><code>:set nopaste</code></td><td>禁用插入粘贴子模式</td></tr><tr><td align="left"><code>:cq</code></td><td>退出并出现错误<br> <em>(正在中止 Git)</em></td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="导航"><a aria-hidden="true" tabindex="-1" href="#导航"><span class="icon icon-link"></span></a>导航</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>%</code></td><td>最近/匹配的<code>&#123;[()]&#125;</code></td></tr><tr><td align="left"><code>[(</code> <em>|</em> <code>[&#123;</code></td><td>上一个 <code>(</code> 或 <code>&#123;</code></td></tr><tr><td align="left"><code>])</code> <em>|</em> <code>]&#123;</code></td><td>下一个<code>)</code>或<code>&#125;</code></td></tr><tr><td align="left"><code>[m</code></td><td>上一个方法开始</td></tr><tr><td align="left"><code>[M</code></td><td>上一个方法结束</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="计数器"><a aria-hidden="true" tabindex="-1" href="#计数器"><span class="icon icon-link"></span></a>计数器</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>&#x3C;C-a></code></td><td>增加数量</td></tr><tr><td align="left"><code>&#x3C;C-x></code></td><td>减少数量</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist row-span-2 col-span-2"><div class="wrap-header h3wrap"><h3 id="选项卡-1"><a aria-hidden="true" tabindex="-1" href="#选项卡-1"><span class="icon icon-link"></span></a>选项卡</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-2 col-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>:tag Classname</code></td><td>跳转到 Classname 的第一个定义</td></tr><tr><td align="left"><code>&#x3C;C-]></code></td><td>跳转到定义</td></tr><tr><td align="left"><code>g]</code></td><td>查看所有定义</td></tr><tr><td align="left"><code>&#x3C;C-t></code></td><td>回到最后一个标签</td></tr><tr><td align="left"><code>&#x3C;C-o> &#x3C;C-i></code></td><td>后退前进</td></tr><tr><td align="left"><code>:tselect Classname</code></td><td>查找类名的定义</td></tr><tr><td align="left"><code>:tjump Classname</code></td><td>查找类名的定义 <em>(自动选择第一个)</em></td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="格式化"><a aria-hidden="true" tabindex="-1" href="#格式化"><span class="icon icon-link"></span></a>格式化</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:ce 8</code></td><td><code>8</code> 列之间的中心线</td></tr><tr><td align="left"><code>:ri 4</code></td><td>在 <code>4</code> 列右对齐行</td></tr><tr><td align="left"><code>:le</code></td><td>左对齐线</td></tr></tbody></table>
+<p>查看 <code>:help formatting</code></p>
+</div></div></div><div class="wrap h3body-not-exist row-span-4 col-span-2"><div class="wrap-header h3wrap"><h3 id="标记"><a aria-hidden="true" tabindex="-1" href="#标记"><span class="icon icon-link"></span></a>标记</h3><div class="wrap-body">
+<!--rehype:wrap-class=row-span-4 col-span-2-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>`^</code></td><td>插入模式下光标的最后位置</td></tr><tr><td align="left"><code>`.</code></td><td>当前缓冲区的最后更改</td></tr><tr><td align="left"><code>`"</code></td><td>最后退出的当前缓冲区</td></tr><tr><td align="left"><code>`0</code></td><td>在上次编辑的文件中</td></tr><tr><td align="left"><code>''</code></td><td>返回当前缓冲区中跳出的行</td></tr><tr><td align="left"><code>``</code></td><td>返回当前缓冲区中跳转的位置</td></tr><tr><td align="left"><code>`[</code></td><td>到先前更改或拉出的文本的开头</td></tr><tr><td align="left"><code>`]</code></td><td>到之前更改或拉出的文本的结尾</td></tr><tr><td align="left"><code>`&#x3C;</code></td><td>到最后一个可视化选择的开始</td></tr><tr><td align="left"><code>`></code></td><td>到最后一个可视化选择的结尾</td></tr><tr><td align="left"><code>ma</code></td><td>将此光标位置标记为<code>a</code></td></tr><tr><td align="left"><code>`a</code></td><td>跳转到光标位置<code>a</code></td></tr><tr><td align="left"><code>'a</code></td><td>跳转到位置为 <code>a</code> 的行首</td></tr><tr><td align="left"><code>d'a</code></td><td>从当前行删除到标记 <code>a</code> 的行</td></tr><tr><td align="left"><code>d`a</code></td><td>从当前位置删除到标记 <code>a</code> 的位置</td></tr><tr><td align="left"><code>c'a</code></td><td>将文本从当前行更改为 <code>a</code> 行</td></tr><tr><td align="left"><code>y`a</code></td><td>将文本从当前位置拉到 <code>a</code> 的位置</td></tr><tr><td align="left"><code>:marks</code></td><td>列出所有当前标记</td></tr><tr><td align="left"><code>:delm a</code></td><td>删除标记<code>a</code></td></tr><tr><td align="left"><code>:delm a-d</code></td><td>删除标记<code>a</code>、<code>b</code>、<code>c</code>、<code>d</code></td></tr><tr><td align="left"><code>:delm abc</code></td><td>删除标记<code>a</code>、<code>b</code>、<code>c</code></td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="计算器"><a aria-hidden="true" tabindex="-1" href="#计算器"><span class="icon icon-link"></span></a>计算器</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>&#x3C;C-r></code> <code>=</code> 7*7</td><td>显示结果</td></tr><tr><td align="left"><code>&#x3C;C-r></code> <code>=</code> 10/2</td><td>显示结果</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+<p>在 INSERT 模式下执行此操作</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="shell"><a aria-hidden="true" tabindex="-1" href="#shell"><span class="icon icon-link"></span></a>Shell</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">:-</th><th>-</th></tr></thead><tbody><tr><td align="left"><code>:!&#x3C;shell></code></td><td>解释 Shell 命令</td></tr><tr><td align="left"><code>:r!&#x3C;shell></code></td><td>读入shell的输出</td></tr><tr><td align="left"><code>:r!date</code></td><td>插入日期</td></tr><tr><td align="left"><code>:!!date</code></td><td>用日期替换当前行</td></tr></tbody></table>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="命令行"><a aria-hidden="true" tabindex="-1" href="#命令行"><span class="icon icon-link"></span></a>命令行</h3><div class="wrap-body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="shortcuts"><thead><tr><th align="left">快捷方式</th><th>说明</th></tr></thead><tbody><tr><td align="left"><code>&#x3C;C-r>&#x3C;C-w></code></td><td>将当前单词插入命令行</td></tr><tr><td align="left"><code>&#x3C;C-r>"</code></td><td>从 <code>注册</code> 粘贴</td></tr><tr><td align="left"><code>&#x3C;C-x>&#x3C;C-f></code></td><td>在插入模式下自动完成路径</td></tr></tbody></table>
+<!--rehype:className=shortcuts-->
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="技巧"><a aria-hidden="true" tabindex="-1" href="#技巧"><span class="icon icon-link"></span></a>技巧</h3><div class="wrap-body">
+<p>删除重复行</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">:sort <span class="token operator">|</span> %<span class="token operator">!</span>uniq <span class="token parameter variable">-u</span>
+</span></code></pre>
+<p>对文件中的行进行编号</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">:%<span class="token operator">!</span>cat <span class="token parameter variable">-n</span>
+</span></code></pre>
+<p>将整个文档复制到剪贴板</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">:%w <span class="token operator">!</span>pbcopy            <span class="token comment"># Mac OS X</span>
+</span><span class="code-line">:%w <span class="token operator">!</span>xclip <span class="token parameter variable">-i</span> <span class="token parameter variable">-sel</span> c   <span class="token comment"># GNU/Linux</span>
+</span><span class="code-line">:%w <span class="token operator">!</span>xsel <span class="token parameter variable">-i</span> <span class="token parameter variable">-b</span>        <span class="token comment"># GNU/Linux</span>
+</span></code></pre>
+</div></div></div></div></div><div class="wrap h2body-exist"><div class="wrap-header h2wrap"><h2 id="理解-vim"><a aria-hidden="true" tabindex="-1" href="#理解-vim"><span class="icon icon-link"></span></a>理解 Vim</h2><div class="wrap-body">
+</div></div><div class="h2wrap-body"><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="动词理解"><a aria-hidden="true" tabindex="-1" href="#动词理解"><span class="icon icon-link"></span></a>动词理解</h3><div class="wrap-body">
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">d  <span class="token comment"># 表示删除delete</span>
+</span><span class="code-line">r  <span class="token comment"># 表示替换replace</span>
+</span><span class="code-line">c  <span class="token comment"># 表示修改change</span>
+</span><span class="code-line">y  <span class="token comment"># 表示复制yank</span>
+</span><span class="code-line"><span class="token function">v</span>  <span class="token comment"># 表示选取visual select</span>
+</span></code></pre>
+<p>动词代表了我们打算对文本进行什么样的操作</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="名词理解"><a aria-hidden="true" tabindex="-1" href="#名词理解"><span class="icon icon-link"></span></a>名词理解</h3><div class="wrap-body">
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">w  <span class="token comment"># 表示一个单词word</span>
+</span><span class="code-line">s  <span class="token comment"># 表示一个句子sentence</span>
+</span><span class="code-line">p  <span class="token comment"># 表示一个段落paragraph</span>
+</span><span class="code-line">t  <span class="token comment"># 表示一个 HTML 标签tag</span>
+</span></code></pre>
+<p>名词代表了我们即将处理的文本。引号或者各种括号所包含的文本称作一个文本块。</p>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="介词理解"><a aria-hidden="true" tabindex="-1" href="#介词理解"><span class="icon icon-link"></span></a>介词理解</h3><div class="wrap-body">
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">i  <span class="token comment"># 表示在...之内 inside</span>
+</span><span class="code-line">a  <span class="token comment"># 表示环绕... around</span>
+</span><span class="code-line">t  <span class="token comment"># 表示到...位置前 to</span>
+</span><span class="code-line">f  <span class="token comment"># 表示到...位置上 forward</span>
+</span></code></pre>
+<p>介词界定了待编辑文本的范围或者位置。</p>
+</div></div></div><div class="wrap h3body-not-exist col-span-2"><div class="wrap-header h3wrap"><h3 id="数词理解"><a aria-hidden="true" tabindex="-1" href="#数词理解"><span class="icon icon-link"></span></a>数词理解</h3><div class="wrap-body">
+<!--rehype:wrap-class=col-span-2-->
+<p>数词指定了待编辑文本对象的数量，从这个角度而言，数词也可以看作是一种介词。引入数词之后，文本编辑命令的语法就升级成了下面这样：</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">动词 介词/数词 名词
+</span></code></pre>
+<p>下面是几个例子：</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">c3w  <span class="token comment"># 修改三个单词：change three words</span>
+</span><span class="code-line">d2w  <span class="token comment"># 删除两个单词：delete two words</span>
+</span></code></pre>
+<p>另外，数词也可以修饰动词，表示将操作执行 <code>n</code> 次。于是，我们又有了下面的语法：</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">数词 动词 名词
+</span></code></pre>
+<p>示例</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">2dw <span class="token comment"># 两次删除单词(等价于删除两个单词): twice delete word</span>
+</span><span class="code-line">3x  <span class="token comment"># 三次删除字符(等价于删除三个字符): three times delete character</span>
+</span></code></pre>
+</div></div></div><div class="wrap h3body-not-exist"><div class="wrap-header h3wrap"><h3 id="组词为句理解"><a aria-hidden="true" tabindex="-1" href="#组词为句理解"><span class="icon icon-link"></span></a>组词为句理解</h3><div class="wrap-body">
+<p>有了这些基本的语言元素，我们就可以着手构造一些简单的命令了。文本编辑命令的基本语法如下：</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line">动词 介词 名词
+</span></code></pre>
+<p>下面是一些例子</p>
+<pre class="wrap-text "><code class="language-shell code-highlight"><span class="code-line">dip <span class="token comment"># 删除一个段落: delete inside paragraph</span>
+</span><span class="code-line">vis <span class="token comment"># 选取一个句子: visual select inside sentence</span>
+</span><span class="code-line">ciw <span class="token comment"># 修改一个单词: change inside word</span>
+</span><span class="code-line">caw <span class="token comment"># 修改一个单词: change around word</span>
+</span><span class="code-line">dtx <span class="token comment"># 删除文本直到字符“x”(不包括字符“x”): delete to x</span>
+</span><span class="code-line">dfx <span class="token comment"># 删除文本直到字符“x”(包括字符“x”): delete forward x</span>
+</span></code></pre>
+<!--rehype:className=wrap-text -->
+</div></div></div></div></div><div class="wrap h2body-not-exist"><div class="wrap-header h2wrap"><h2 id="另见"><a aria-hidden="true" tabindex="-1" href="#另见"><span class="icon icon-link"></span></a>另见</h2><div class="wrap-body">
+<ul>
+<li><a target="_blank" rel="noopener" href="https://jaywcjlove.github.io/vim-web">搞得像IDE一样的 Vim</a> <em>(github.io)</em></li>
+<li><a target="_blank" rel="noopener" href="http://www.vim.org/">Vim 官方网站</a> <em>(vim.org)</em></li>
+<li><a target="_blank" rel="noopener" href="https://devhints.io/vim">Devhints</a> <em>(devhints.io)</em></li>
+<li><a target="_blank" rel="noopener" href="https://vim.rtorr.com/lang/zh_cn/">Vim cheatsheet</a> <em>(vim.rotrr.com)</em></li>
+<li><a target="_blank" rel="noopener" href="http://vimdoc.sourceforge.net/htmldoc/">Vim documentation</a> <em>(vimdoc.sourceforge.net)</em></li>
+<li><a target="_blank" rel="noopener" href="http://openvim.com/">Interactive Vim tutorial</a> <em>(openvim.com)</em></li>
+</ul>
+</div></div><div class="h2wrap-body"></div></div></div></div><footer class="footer-wrap"><footer class="max-container">© 2022 Kenny Wang.</footer></footer><script src="../data.js?v=1.4.1" defer></script><script src="../js/fuse.min.js?v=1.4.1" defer></script><script src="../js/main.js?v=1.4.1" defer></script><div id="mysearch"><div class="mysearch-box"><div class="mysearch-input"><div><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 18 18">
+  <path fill="currentColor" d="M17.71,16.29 L14.31,12.9 C15.4069846,11.5024547 16.0022094,9.77665502 16,8 C16,3.581722 12.418278,0 8,0 C3.581722,0 0,3.581722 0,8 C0,12.418278 3.581722,16 8,16 C9.77665502,16.0022094 11.5024547,15.4069846 12.9,14.31 L16.29,17.71 C16.4777666,17.8993127 16.7333625,18.0057983 17,18.0057983 C17.2666375,18.0057983 17.5222334,17.8993127 17.71,17.71 C17.8993127,17.5222334 18.0057983,17.2666375 18.0057983,17 C18.0057983,16.7333625 17.8993127,16.4777666 17.71,16.29 Z M2,8 C2,4.6862915 4.6862915,2 8,2 C11.3137085,2 14,4.6862915 14,8 C14,11.3137085 11.3137085,14 8,14 C4.6862915,14 2,11.3137085 2,8 Z"></path>
+</svg><input id="mysearch-input" type="search" placeholder="搜索" autocomplete="off"><div class="mysearch-clear"></div></div><button id="mysearch-close" type="button">搜索</button></div><div class="mysearch-result"><div id="mysearch-menu"></div><div id="mysearch-content"></div></div></div></div></body>
+</html>
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><a class="avatar-img" href="/about"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></a><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">tongtong</h1><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">今天<b style="color:#00f">你</b>学习<b style="color:#00f">了</b><b style="color:#00f">吗？</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(0, 0, 255, 0.8);">那你还在<b style="color:#00f">等</b>什么<b style="color:#00f">呢？</b>。</div></div><div class="banner-button-group"><a class="banner-button" onclick="pjax.loadUrl(&quot;/about/&quot;)"><span class="banner-button-text">了解更多</span><i class="anzhiyufont anzhiyu-icon-arrow-circle-right" style="font-size: 1.5rem"></i></a></div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/panshen123" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=619796817@qq.com" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/1919269250" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="social-icon faa-parent animated-hover" href="tencent://Message/?Uin=619796817&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content"><div id="welcome-info"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN2.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://tu.hanxi.fun/images/%5DZ7$29@D5G1IZWV4%7D5UQSMN1.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" style="font-size: 1.05rem; color: rgb(92, 52, 132);">java基础学习<sup>11</sup></a><a href="/tags/jdk%E7%89%88%E6%9C%AC%E7%89%B9%E6%80%A7/" style="font-size: 1.05rem; color: rgb(80, 175, 30);">jdk版本特性<sup>1</sup></a><a href="/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 1.05rem; color: rgb(0, 20, 75);">从零开始搭建博客<sup>1</sup></a><a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E5%BA%94%E7%94%A8-%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 1.05rem; color: rgb(56, 36, 30);">分布式应用-微服务<sup>1</sup></a><a href="/tags/%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 1.05rem; color: rgb(56, 36, 181);">基础面试题<sup>6</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/" style="font-size: 1.05rem; color: rgb(78, 108, 60);">安全框架<sup>1</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">21</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-14T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">21.5k</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-hourglass-start"></i><div class="item-name">最后更新 :</div></div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-28T12:47:53.656Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:anzhiyu-c@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/6378063631" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100092208016287&amp;sk=about" title="facebook"><i class="anzhiyufont anzhiyu-icon-facebook1"></i></a><img class="footer_mini_logo" title="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/zpp-800" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/484096189" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/self" title="抖音"><i class="anzhiyufont anzhiyu-icon-tiktok"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" href="/docs/">文档</a><a class="footer-item" title="源码" target="_blank" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu">源码</a><a class="footer-item" title="更新日志" target="_blank" href="/update/">更新日志</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" target="_blank" href="/essay/">即刻短文</a><a class="footer-item" title="友链文章" target="_blank" href="/fcircle/">友链文章</a><a class="footer-item" title="留言板" target="_blank" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私协议" target="_blank" href="/privacy/">隐私协议</a><a class="footer-item" title="Cookies" target="_blank" href="/cookies/">Cookies</a><a class="footer-item" title="版权协议" target="_blank" href="/copyright/">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/svg/桐桐上班.svg" alt="距离月入25k也就还差两瓶二锅头" title="距离月入25k也就还差两瓶二锅头"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://www.dogecloud.com/" style="margin-inline:5px" data-title="本站使用多吉云为静态资源提供CDN加速" title="本站使用多吉云为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg" alt="本站使用多吉云为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://beian.miit.gov.cn/" style="margin-inline:5px" data-title="本站已在陇进行备案" title="本站已在陇进行备案"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://qny.hanxi.fun/svg/%E9%99%87ICP%E5%A4%87-2023001103%E5%8F%B7.svg" alt="本站已在陇进行备案"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2022 - 2023 By <a class="footer-bar-link" href="http://example.com" title="tongtong" target="_blank">tongtong</a></div></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/" title="湘ICP备-xxxxxxx号">湘ICP备-xxxxxxx号</a></div></div></div></footer></div></div></div><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tu.hanxi.fun/images/thumb-174881.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child" style="left:-31px;"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/reference-gh-pages/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 知识速查</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child" style="left:-127px;"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=2867147548&amp;server=tencent"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child" style="left:-175px;"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/websites/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 常用网站</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch_commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="2867147548" server="tencent" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/2867147548&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/15/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2022 By 安知鱼 1.4.2",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 tongtong 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("05/15/2023 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      img.src = "https://tu.hanxi.fun/svg/桐桐下班.svg";
+      img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+      img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.4.2/source/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      onCommentLoaded: function () {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoos.hanxi.fun/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init();
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runFn)
+  }
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoos.hanxi.fun/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://npm.elemecdn.com/twikoo@1.6.16/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick}</span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "visitor@hanxi.com";</script><script>//动态标题
+let leaveTitle = '此去一别，便是经年';
+let backTitle = '正是江南好风景，落花时节又逢君';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script data-pjax="true">if (document.querySelector(".comment-barrage")){
+  var commentBarrageConfig = {
+    maxBarrage: 1,
+    barrageTime: 4000,
+    twikooUrl: "https://twikoos.hanxi.fun/",
+    accessToken: "",
+    mailMd5: "",
+    pageUrl: window.location.pathname,
+    barrageTimer: [],
+    barrageList: [],
+    barrageIndex: 0,
+    dom: document.querySelector(".comment-barrage"),
+  };
+  var commentInterval = null;
+  var hoverOnCommentBarrage = false;
+  
+  document.querySelector(".comment-barrage").addEventListener("mouseenter", function() {
+    hoverOnCommentBarrage = true;
+  });
+  document.querySelector(".comment-barrage").addEventListener("mouseleave", function() {
+    hoverOnCommentBarrage = false;
+  });
+
+  function initCommentBarrage() {
+    if (!commentBarrageConfig.dom) return;
+
+    var data = JSON.stringify({
+      event: "COMMENT_GET",
+      "commentBarrageConfig.accessToken": commentBarrageConfig.accessToken,
+      url: commentBarrageConfig.pageUrl,
+    });
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4 && this.responseText) {
+        commentBarrageConfig.barrageList = commentLinkFilter(JSON.parse(this.responseText).data);
+        commentBarrageConfig.dom.innerHTML = "";
+      }
+    });
+    xhr.open("POST", commentBarrageConfig.twikooUrl);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(data);
+
+    clearInterval(commentInterval);
+    commentInterval = null;
+
+    commentInterval = setInterval(() => {
+      if (commentBarrageConfig.barrageList.length && !hoverOnCommentBarrage) {
+        popCommentBarrage(commentBarrageConfig.barrageList[commentBarrageConfig.barrageIndex]);
+        commentBarrageConfig.barrageIndex += 1;
+        commentBarrageConfig.barrageIndex %= commentBarrageConfig.barrageList.length;
+      }
+      if (
+        commentBarrageConfig.barrageTimer.length >
+          (commentBarrageConfig.barrageList.length > commentBarrageConfig.maxBarrage
+            ? commentBarrageConfig.maxBarrage
+            : commentBarrageConfig.barrageList.length) &&
+        !hoverOnCommentBarrage
+      ) {
+        removeCommentBarrage(commentBarrageConfig.barrageTimer.shift());
+      }
+    }, commentBarrageConfig.barrageTime);
+  }
+
+  function commentLinkFilter(data) {
+    data.sort((a, b) => {
+      return a.created - b.created;
+    });
+    let newData = [];
+    data.forEach(item => {
+      newData.push(...getCommentReplies(item));
+    });
+    return newData;
+  }
+
+  function getCommentReplies(item) {
+    if (item.replies) {
+      let replies = [item];
+      item.replies.forEach(item => {
+        replies.push(...getCommentReplies(item));
+      });
+      return replies;
+    } else {
+      return [];
+    }
+  }
+
+  function popCommentBarrage(data) {
+    let barrage = document.createElement("div");
+    barrage.className = "comment-barrage-item";
+    barrage.innerHTML = `
+        <div class="barrageHead">
+          <a class="barrageTitle ${
+            data.mailMd5 === commentBarrageConfig.mailMd5 ? "barrageBloggerTitle" : ""
+          }" href="javascript:anzhiyu.scrollTo('#post-comment')"">
+            ${data.mailMd5 === commentBarrageConfig.mailMd5 ? "博主" : "热评"}
+          </a>
+          <div class="barrageNick">${data.nick}</div>
+          <img class="nolazyload barrageAvatar" src="https://cravatar.cn/avatar/${data.mailMd5}"/>
+          <a class="comment-barrage-close" href="javascript:anzhiyu.switchCommentBarrage()"><i class="anzhiyufont anzhiyu-icon-xmark"></i></a>
+        </div>
+        <a class="barrageContent" href="#${data.id}">
+          <object>${data.comment}</object>
+        </a>
+      `;
+    commentBarrageConfig.barrageTimer.push(barrage);
+    commentBarrageConfig.dom.append(barrage);
+  }
+
+  function removeCommentBarrage(barrage) {
+    barrage.className = "comment-barrage-item out";
+
+    setTimeout(() => {
+      if (commentBarrageConfig.dom && commentBarrageConfig.dom.contains(barrage)) {
+        commentBarrageConfig.dom.removeChild(barrage);
+      }
+      }, 1000);
+    }
+
+    // 自动隐藏
+    const commentEntryCallback = (entries) => {
+      const commentBarrage = document.querySelector(".comment-barrage");
+      const postComment = document.getElementById("post-comment");
+
+      entries.forEach(entry => {
+        if (postComment && commentBarrage && document.body.clientWidth > 768) {
+          commentBarrage.style.bottom = entry.isIntersecting ? "-200px" : "0";
+        }
+      });
+    };
+    // 创建IntersectionObserver实例
+    const observer = new IntersectionObserver(commentEntryCallback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0
+    });
+    // 监视目标元素
+    const postCommentTarget = document.getElementById("post-comment");
+    if (postCommentTarget) {
+      observer.observe(postCommentTarget);
+    }
+
+    initCommentBarrage();
+
+    if (localStorage.getItem("commentBarrageSwitch") !== "false") {
+      document.querySelector(".comment-barrage").style.display = "flex";
+      document.querySelector(".menu-commentBarrage-text").textContent = "关闭热评";
+    } else {
+      document.querySelector(".comment-barrage").style.display = "none";
+      document.querySelector(".menu-commentBarrage-text").textContent = "显示热评";
+    }
+
+    document.addEventListener("pjax:send", function () {
+      clearInterval(commentInterval);
+    });
+
+  }</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      { passive: true }
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function (url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc, "_blank");
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | tongtong-blog")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+anzhiyu.switchRightClickMenuHotReview();
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {
+  if (typeof addFriendLinksInFooter === "function") {
+    addFriendLinksInFooter();
+  }
+}, 200)</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.8/icon/ali_iconfont_css.css"><script type="text/javascript" src="https://unpkg.zhimg.com/jquery@latest/dist/jquery.min.js"></script><script defer="true" src="/js/welcome.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div></body></html>
