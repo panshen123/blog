@@ -67,35 +67,36 @@
       </tags>
   </entry>
   <entry>
-    <title>Java基础之接口与抽象类的区别</title>
-    <url>/2023/05/31/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h3 id="1、基本语法区别"><a href="#1、基本语法区别" class="headerlink" title="1、基本语法区别"></a>1、基本语法区别</h3><p>Java中接口和抽象类的定义语法分别为interface与abstract关键字。</p>
-<p><strong>抽象类</strong>：在Java中被abstract关键字修饰的类称为抽象类，被abstract关键字修饰的方法称为抽象方法，抽象方法只有方法的声明，没有方法体。抽象类的特点：</p>
-<p>a、抽象类不能被实例化只能被继承；</p>
-<p>b、包含抽象方法的一定是抽象类，但是抽象类不一定含有抽象方法；</p>
-<p>c、抽象类中的抽象方法的修饰符只能为public或者protected，默认为public；</p>
-<p>d、一个子类继承一个抽象类，则子类必须实现父类抽象方法，否则子类也必须定义为抽象类；</p>
-<p>e、抽象类可以包含属性、方法、构造方法，但是构造方法不能用于实例化，主要用途是被子类调用。</p>
-<p><strong>接口：</strong>Java中接口使用interface关键字修饰，特点为:</p>
-<p>a、接口可以包含变量、方法；变量被隐士指定为public static final，方法被隐士指定为public abstract（JDK1.8之前）；</p>
-<p>b、接口支持多继承，即一个接口可以extends多个接口，间接的解决了Java中类的单继承问题；</p>
-<p>c、一个类可以实现多个接口；</p>
-<p>d、JDK1.8中对接口增加了新的特性：（1）、默认方法（default method）：JDK 1.8允许给接口添加非抽象的方法实现，但必须使用default关键字修饰；定义了default的方法可以不被实现子类所实现，但只能被实现子类的对象调用；如果子类实现了多个接口，并且这些接口包含一样的默认方法，则子类必须重写默认方法；（2）、静态方法（static method）：JDK 1.8中允许使用static关键字修饰一个方法，并提供实现，称为接口静态方法。接口静态方法只能通过接口调用（接口名.静态方法名）。</p>
-<p><strong>如下例子所示：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> a=<span class="number">10</span>;</span><br><span class="line">  <span class="comment">//JDK1.8</span></span><br><span class="line">    <span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">sayHello</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Spring-security框架学习day01</title>
+    <url>/2023/06/05/Spring-security%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%AC1%E5%A4%A9/</url>
+    <content><![CDATA[<h3 id="1-整体架构"><a href="#1-整体架构" class="headerlink" title="1.整体架构"></a>1.整体架构</h3><h4 id="1-认证authentication"><a href="#1-认证authentication" class="headerlink" title="(1)认证	authentication"></a>(1)认证	authentication</h4><h4 id="2-授权authorization"><a href="#2-授权authorization" class="headerlink" title="(2)授权	authorization"></a>(2)授权	authorization</h4><h3 id="2-认证"><a href="#2-认证" class="headerlink" title="2.认证"></a>2.认证</h3><p>​	(1)AuthenticationManager</p>
+<p>​		在Spring Sercurity中认证是由AuthenticationManager接口来负责的，接口定义为</p>
+<p>源码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authenticate</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>如上述代码所示：</p>
-<p>接口只能是功能的定义，而抽象类既可以为功能的定义也可以为功能的实现。</p>
-<h3 id="2、面试题：接口与抽象类的区别"><a href="#2、面试题：接口与抽象类的区别" class="headerlink" title="2、面试题：接口与抽象类的区别"></a>2、面试题：接口与抽象类的区别</h3><p><strong>相同点</strong></p>
-<p>（1）都不能被实例化 （2）接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后才能实例化。</p>
-<p><strong>不同点</strong></p>
-<p>（1）接口只有定义，不能有方法的实现，java 1.8中可以定义default方法体，而抽象类可以有定义与实现，方法可在抽象类中实现。</p>
-<p>（2）实现接口的关键字为implements，继承抽象类的关键字为extends。一个类可以实现多个接口，但一个类只能继承一个抽象类。所以，使用接口可以间接地实现多重继承。</p>
-<p>（3）接口强调特定功能的实现，而抽象类强调所属关系。</p>
-<p>（4）接口成员变量默认为public static final，必须赋初值，不能被修改；其所有的成员方法都是public、abstract的。抽象类中成员变量默认default，可在子类中被重新定义，也可被重新赋值；抽象方法被abstract修饰，不能被private、static、synchronized和native等修饰，必须以分号结尾，不带花括号。</p>
+<p>案例代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authentication</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>*返回Authentication表示认证成功</p>
+<p>*返回AuthenticationException异常，表示认证失败</p>
+<p>AuthenticationManager 主要实现类为ProviderManager，在ProvideManager中管理了众多的AuthenticationProvider实例。在一次完整认证流程中，Spring Sercutiry允许存在多个AuthenticationProvider，用来实现多种认证方式，这些AuthenticaitionProvider都是由ProviderManager进行统一管理的。</p>
+<p>(2)Authentication</p>
+<p>​	拿取用户信息可以使用Authentication接口</p>
+<p>​	认证以及认证成功的信息主要是由Authentication的实现类进行保存的，其接口定义为：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Authentication</span> <span class="keyword">extends</span> <span class="title class_">Principal</span>,Serizlizable&#123;</span><br><span class="line">	Collection&lt;? <span class="keyword">extends</span> <span class="title class_">GrantedAuthority</span>&gt; getAuthorities(); <span class="comment">//获取权限信息</span></span><br><span class="line">	Object <span class="title function_">getCredentials</span><span class="params">()</span>; <span class="comment">//获取密码信息</span></span><br><span class="line">	Object <span class="title function_">getDetails</span><span class="params">()</span>;	<span class="comment">//获取用户身份详细信息</span></span><br><span class="line">	Object <span class="title function_">getPrincipal</span><span class="params">()</span>;	<span class="comment">//获取用户身份</span></span><br><span class="line">	Boolean <span class="title function_">isAuthenticated</span><span class="params">()</span>; 	<span class="comment">//判断是否认证</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">setAuthenticated</span><span class="params">(<span class="type">boolean</span> isAuthenticated)</span> <span class="keyword">throws</span> IllegaArgumentException <span class="comment">//设置认证标记</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(3)SercurityContextHolder</p>
+<p>​	SercurityContextHolder用来获取登陆之后用户信息。Spring secyrity会将登陆用户数据保存在Session中。但是为了使用方便，Spring Security在此基础上还做了一些改进，其中最主要的一个变化就是线程绑定。当前用户登陆成功后，Spring Security会讲登陆成功的数据信息保存在SercurityContextHolder中。SecurityContextHolder中的数据保存默认通过ThreadLocal来实现的，是使用ThreadLocal创建的变量只能被当前线程所访问，不能被其他线程访问和修改，也就是将SecurityContextHolder中的数据拿出来保存到session中，同时将SecurityContextHolder中的数据清空。以后每当有请求来时，Spring Security就会先从session中取出用户登陆数据，保存到SecurityContextHolder中，方便在该请求的后续处理过程当中使用，同时在请求结束的时候将SecurityContextHolder中的数据拿出来保存到session中，然后将SecurityContextHolder中的数据清空。这一策略非常方便用户在Controller、Sercive层以及任何代码中获取当前登陆用户数据。</p>
+<h3 id="3-授权"><a href="#3-授权" class="headerlink" title="3.授权"></a>3.授权</h3><p>​	当完成认证后，接下来就是授权。在Spring Security的授权体系中，有两个关键接口</p>
+<p>​	(1)AccessDecisionManager</p>
+<p>​	访问决策管理器，用来决定此次访问是否被允许。</p>
+<p>​	(2)AccessDecisionVoter</p>
+<p>​	访问决定投票器，投票器会检查用户是否具备应有的角色，进而投出赞成、反对或者弃权票。</p>
+<p>​	(3)ConfigAttribute</p>
+<p>​	用来保存授权时的角色信息</p>
 ]]></content>
       <tags>
-        <tag>基础面试题</tag>
+        <tag>安全框架</tag>
       </tags>
   </entry>
   <entry>
@@ -231,6 +232,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Java基础之接口与抽象类的区别</title>
+    <url>/2023/05/31/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h3 id="1、基本语法区别"><a href="#1、基本语法区别" class="headerlink" title="1、基本语法区别"></a>1、基本语法区别</h3><p>Java中接口和抽象类的定义语法分别为interface与abstract关键字。</p>
+<p><strong>抽象类</strong>：在Java中被abstract关键字修饰的类称为抽象类，被abstract关键字修饰的方法称为抽象方法，抽象方法只有方法的声明，没有方法体。抽象类的特点：</p>
+<p>a、抽象类不能被实例化只能被继承；</p>
+<p>b、包含抽象方法的一定是抽象类，但是抽象类不一定含有抽象方法；</p>
+<p>c、抽象类中的抽象方法的修饰符只能为public或者protected，默认为public；</p>
+<p>d、一个子类继承一个抽象类，则子类必须实现父类抽象方法，否则子类也必须定义为抽象类；</p>
+<p>e、抽象类可以包含属性、方法、构造方法，但是构造方法不能用于实例化，主要用途是被子类调用。</p>
+<p><strong>接口：</strong>Java中接口使用interface关键字修饰，特点为:</p>
+<p>a、接口可以包含变量、方法；变量被隐士指定为public static final，方法被隐士指定为public abstract（JDK1.8之前）；</p>
+<p>b、接口支持多继承，即一个接口可以extends多个接口，间接的解决了Java中类的单继承问题；</p>
+<p>c、一个类可以实现多个接口；</p>
+<p>d、JDK1.8中对接口增加了新的特性：（1）、默认方法（default method）：JDK 1.8允许给接口添加非抽象的方法实现，但必须使用default关键字修饰；定义了default的方法可以不被实现子类所实现，但只能被实现子类的对象调用；如果子类实现了多个接口，并且这些接口包含一样的默认方法，则子类必须重写默认方法；（2）、静态方法（static method）：JDK 1.8中允许使用static关键字修饰一个方法，并提供实现，称为接口静态方法。接口静态方法只能通过接口调用（接口名.静态方法名）。</p>
+<p><strong>如下例子所示：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> a=<span class="number">10</span>;</span><br><span class="line">  <span class="comment">//JDK1.8</span></span><br><span class="line">    <span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">sayHello</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如上述代码所示：</p>
+<p>接口只能是功能的定义，而抽象类既可以为功能的定义也可以为功能的实现。</p>
+<h3 id="2、面试题：接口与抽象类的区别"><a href="#2、面试题：接口与抽象类的区别" class="headerlink" title="2、面试题：接口与抽象类的区别"></a>2、面试题：接口与抽象类的区别</h3><p><strong>相同点</strong></p>
+<p>（1）都不能被实例化 （2）接口的实现类或抽象类的子类都只有实现了接口或抽象类中的方法后才能实例化。</p>
+<p><strong>不同点</strong></p>
+<p>（1）接口只有定义，不能有方法的实现，java 1.8中可以定义default方法体，而抽象类可以有定义与实现，方法可在抽象类中实现。</p>
+<p>（2）实现接口的关键字为implements，继承抽象类的关键字为extends。一个类可以实现多个接口，但一个类只能继承一个抽象类。所以，使用接口可以间接地实现多重继承。</p>
+<p>（3）接口强调特定功能的实现，而抽象类强调所属关系。</p>
+<p>（4）接口成员变量默认为public static final，必须赋初值，不能被修改；其所有的成员方法都是public、abstract的。抽象类中成员变量默认default，可在子类中被重新定义，也可被重新赋值；抽象方法被abstract修饰，不能被private、static、synchronized和native等修饰，必须以分号结尾，不带花括号。</p>
+]]></content>
+      <tags>
+        <tag>基础面试题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Centos7搭建自己的博客</title>
     <url>/2023/05/03/Service/</url>
     <content><![CDATA[<blockquote>
@@ -324,39 +357,6 @@
 ]]></content>
       <tags>
         <tag>从零开始搭建博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring-security框架学习day01</title>
-    <url>/2023/06/05/Spring-security%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%AC1%E5%A4%A9/</url>
-    <content><![CDATA[<h3 id="1-整体架构"><a href="#1-整体架构" class="headerlink" title="1.整体架构"></a>1.整体架构</h3><h4 id="1-认证authentication"><a href="#1-认证authentication" class="headerlink" title="(1)认证	authentication"></a>(1)认证	authentication</h4><h4 id="2-授权authorization"><a href="#2-授权authorization" class="headerlink" title="(2)授权	authorization"></a>(2)授权	authorization</h4><h3 id="2-认证"><a href="#2-认证" class="headerlink" title="2.认证"></a>2.认证</h3><p>​	(1)AuthenticationManager</p>
-<p>​		在Spring Sercurity中认证是由AuthenticationManager接口来负责的，接口定义为</p>
-<p>源码</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authenticate</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>案例代码</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authentication</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>*返回Authentication表示认证成功</p>
-<p>*返回AuthenticationException异常，表示认证失败</p>
-<p>AuthenticationManager 主要实现类为ProviderManager，在ProvideManager中管理了众多的AuthenticationProvider实例。在一次完整认证流程中，Spring Sercutiry允许存在多个AuthenticationProvider，用来实现多种认证方式，这些AuthenticaitionProvider都是由ProviderManager进行统一管理的。</p>
-<p>(2)Authentication</p>
-<p>​	拿取用户信息可以使用Authentication接口</p>
-<p>​	认证以及认证成功的信息主要是由Authentication的实现类进行保存的，其接口定义为：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Authentication</span> <span class="keyword">extends</span> <span class="title class_">Principal</span>,Serizlizable&#123;</span><br><span class="line">	Collection&lt;? <span class="keyword">extends</span> <span class="title class_">GrantedAuthority</span>&gt; getAuthorities(); <span class="comment">//获取权限信息</span></span><br><span class="line">	Object <span class="title function_">getCredentials</span><span class="params">()</span>; <span class="comment">//获取密码信息</span></span><br><span class="line">	Object <span class="title function_">getDetails</span><span class="params">()</span>;	<span class="comment">//获取用户身份详细信息</span></span><br><span class="line">	Object <span class="title function_">getPrincipal</span><span class="params">()</span>;	<span class="comment">//获取用户身份</span></span><br><span class="line">	Boolean <span class="title function_">isAuthenticated</span><span class="params">()</span>; 	<span class="comment">//判断是否认证</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">setAuthenticated</span><span class="params">(<span class="type">boolean</span> isAuthenticated)</span> <span class="keyword">throws</span> IllegaArgumentException <span class="comment">//设置认证标记</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>(3)SercurityContextHolder</p>
-<p>​	SercurityContextHolder用来获取登陆之后用户信息。Spring secyrity会将登陆用户数据保存在Session中。但是为了使用方便，Spring Security在此基础上还做了一些改进，其中最主要的一个变化就是线程绑定。当前用户登陆成功后，Spring Security会讲登陆成功的数据信息保存在SercurityContextHolder中。SecurityContextHolder中的数据保存默认通过ThreadLocal来实现的，是使用ThreadLocal创建的变量只能被当前线程所访问，不能被其他线程访问和修改，也就是将SecurityContextHolder中的数据拿出来保存到session中，同时将SecurityContextHolder中的数据清空。以后每当有请求来时，Spring Security就会先从session中取出用户登陆数据，保存到SecurityContextHolder中，方便在该请求的后续处理过程当中使用，同时在请求结束的时候将SecurityContextHolder中的数据拿出来保存到session中，然后将SecurityContextHolder中的数据清空。这一策略非常方便用户在Controller、Sercive层以及任何代码中获取当前登陆用户数据。</p>
-<h3 id="3-授权"><a href="#3-授权" class="headerlink" title="3.授权"></a>3.授权</h3><p>​	当完成认证后，接下来就是授权。在Spring Security的授权体系中，有两个关键接口</p>
-<p>​	(1)AccessDecisionManager</p>
-<p>​	访问决策管理器，用来决定此次访问是否被允许。</p>
-<p>​	(2)AccessDecisionVoter</p>
-<p>​	访问决定投票器，投票器会检查用户是否具备应有的角色，进而投出赞成、反对或者弃权票。</p>
-<p>​	(3)ConfigAttribute</p>
-<p>​	用来保存授权时的角色信息</p>
-]]></content>
-      <tags>
-        <tag>安全框架</tag>
       </tags>
   </entry>
   <entry>
