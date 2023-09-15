@@ -73,42 +73,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring-security框架学习day01</title>
-    <url>/2023/06/05/Spring-security%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%AC1%E5%A4%A9/</url>
-    <content><![CDATA[<h3 id="1-整体架构"><a href="#1-整体架构" class="headerlink" title="1.整体架构"></a>1.整体架构</h3><h4 id="1-认证authentication"><a href="#1-认证authentication" class="headerlink" title="(1)认证	authentication"></a>(1)认证	authentication</h4><h4 id="2-授权authorization"><a href="#2-授权authorization" class="headerlink" title="(2)授权	authorization"></a>(2)授权	authorization</h4><h3 id="2-认证"><a href="#2-认证" class="headerlink" title="2.认证"></a>2.认证</h3><p>​	(1)AuthenticationManager</p>
-<p>​		在Spring Sercurity中认证是由AuthenticationManager接口来负责的，接口定义为</p>
-<p>源码</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authenticate</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>案例代码</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authentication</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>*返回Authentication表示认证成功</p>
-<p>*返回AuthenticationException异常，表示认证失败</p>
-<p>AuthenticationManager 主要实现类为ProviderManager，在ProvideManager中管理了众多的AuthenticationProvider实例。在一次完整认证流程中，Spring Sercutiry允许存在多个AuthenticationProvider，用来实现多种认证方式，这些AuthenticaitionProvider都是由ProviderManager进行统一管理的。</p>
-<p>(2)Authentication</p>
-<p>​	拿取用户信息可以使用Authentication接口</p>
-<p>​	认证以及认证成功的信息主要是由Authentication的实现类进行保存的，其接口定义为：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Authentication</span> <span class="keyword">extends</span> <span class="title class_">Principal</span>,Serizlizable&#123;</span><br><span class="line">	Collection&lt;? <span class="keyword">extends</span> <span class="title class_">GrantedAuthority</span>&gt; getAuthorities(); <span class="comment">//获取权限信息</span></span><br><span class="line">	Object <span class="title function_">getCredentials</span><span class="params">()</span>; <span class="comment">//获取密码信息</span></span><br><span class="line">	Object <span class="title function_">getDetails</span><span class="params">()</span>;	<span class="comment">//获取用户身份详细信息</span></span><br><span class="line">	Object <span class="title function_">getPrincipal</span><span class="params">()</span>;	<span class="comment">//获取用户身份</span></span><br><span class="line">	Boolean <span class="title function_">isAuthenticated</span><span class="params">()</span>; 	<span class="comment">//判断是否认证</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">setAuthenticated</span><span class="params">(<span class="type">boolean</span> isAuthenticated)</span> <span class="keyword">throws</span> IllegaArgumentException <span class="comment">//设置认证标记</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>(3)SercurityContextHolder</p>
-<p>​	SercurityContextHolder用来获取登陆之后用户信息。Spring secyrity会将登陆用户数据保存在Session中。但是为了使用方便，Spring Security在此基础上还做了一些改进，其中最主要的一个变化就是线程绑定。当前用户登陆成功后，Spring Security会讲登陆成功的数据信息保存在SercurityContextHolder中。SecurityContextHolder中的数据保存默认通过ThreadLocal来实现的，是使用ThreadLocal创建的变量只能被当前线程所访问，不能被其他线程访问和修改，也就是将SecurityContextHolder中的数据拿出来保存到session中，同时将SecurityContextHolder中的数据清空。以后每当有请求来时，Spring Security就会先从session中取出用户登陆数据，保存到SecurityContextHolder中，方便在该请求的后续处理过程当中使用，同时在请求结束的时候将SecurityContextHolder中的数据拿出来保存到session中，然后将SecurityContextHolder中的数据清空。这一策略非常方便用户在Controller、Sercive层以及任何代码中获取当前登陆用户数据。</p>
-<h3 id="3-授权"><a href="#3-授权" class="headerlink" title="3.授权"></a>3.授权</h3><p>​	当完成认证后，接下来就是授权。在Spring Security的授权体系中，有两个关键接口</p>
-<p>​	(1)AccessDecisionManager</p>
-<p>​	访问决策管理器，用来决定此次访问是否被允许。</p>
-<p>​	(2)AccessDecisionVoter</p>
-<p>​	访问决定投票器，投票器会检查用户是否具备应有的角色，进而投出赞成、反对或者弃权票。</p>
-<p>​	(3)ConfigAttribute</p>
-<p>​	用来保存授权时的角色信息</p>
-]]></content>
-      <categories>
-        <category>spring-security</category>
-      </categories>
-      <tags>
-        <tag>安全框架</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JDK1.8 新特性</title>
     <url>/2023/05/30/JDK1.8%20%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h3 id="jdk1-8新特性知识点："><a href="#jdk1-8新特性知识点：" class="headerlink" title="jdk1.8新特性知识点："></a>jdk1.8新特性知识点：</h3><ul>
@@ -279,6 +243,65 @@
       </tags>
   </entry>
   <entry>
+    <title>Spring-security框架学习day01</title>
+    <url>/2023/06/05/Spring-security%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%AC1%E5%A4%A9/</url>
+    <content><![CDATA[<h3 id="1-整体架构"><a href="#1-整体架构" class="headerlink" title="1.整体架构"></a>1.整体架构</h3><h4 id="1-认证authentication"><a href="#1-认证authentication" class="headerlink" title="(1)认证	authentication"></a>(1)认证	authentication</h4><h4 id="2-授权authorization"><a href="#2-授权authorization" class="headerlink" title="(2)授权	authorization"></a>(2)授权	authorization</h4><h3 id="2-认证"><a href="#2-认证" class="headerlink" title="2.认证"></a>2.认证</h3><p>​	(1)AuthenticationManager</p>
+<p>​		在Spring Sercurity中认证是由AuthenticationManager接口来负责的，接口定义为</p>
+<p>源码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authenticate</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>案例代码</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">AuthenticationManager</span>&#123;</span><br><span class="line">	Authentication <span class="title function_">authentication</span><span class="params">(Authentication authentication)</span> <span class="keyword">throws</span> AuthenticationException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>*返回Authentication表示认证成功</p>
+<p>*返回AuthenticationException异常，表示认证失败</p>
+<p>AuthenticationManager 主要实现类为ProviderManager，在ProvideManager中管理了众多的AuthenticationProvider实例。在一次完整认证流程中，Spring Sercutiry允许存在多个AuthenticationProvider，用来实现多种认证方式，这些AuthenticaitionProvider都是由ProviderManager进行统一管理的。</p>
+<p>(2)Authentication</p>
+<p>​	拿取用户信息可以使用Authentication接口</p>
+<p>​	认证以及认证成功的信息主要是由Authentication的实现类进行保存的，其接口定义为：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Authentication</span> <span class="keyword">extends</span> <span class="title class_">Principal</span>,Serizlizable&#123;</span><br><span class="line">	Collection&lt;? <span class="keyword">extends</span> <span class="title class_">GrantedAuthority</span>&gt; getAuthorities(); <span class="comment">//获取权限信息</span></span><br><span class="line">	Object <span class="title function_">getCredentials</span><span class="params">()</span>; <span class="comment">//获取密码信息</span></span><br><span class="line">	Object <span class="title function_">getDetails</span><span class="params">()</span>;	<span class="comment">//获取用户身份详细信息</span></span><br><span class="line">	Object <span class="title function_">getPrincipal</span><span class="params">()</span>;	<span class="comment">//获取用户身份</span></span><br><span class="line">	Boolean <span class="title function_">isAuthenticated</span><span class="params">()</span>; 	<span class="comment">//判断是否认证</span></span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">setAuthenticated</span><span class="params">(<span class="type">boolean</span> isAuthenticated)</span> <span class="keyword">throws</span> IllegaArgumentException <span class="comment">//设置认证标记</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(3)SercurityContextHolder</p>
+<p>​	SercurityContextHolder用来获取登陆之后用户信息。Spring secyrity会将登陆用户数据保存在Session中。但是为了使用方便，Spring Security在此基础上还做了一些改进，其中最主要的一个变化就是线程绑定。当前用户登陆成功后，Spring Security会讲登陆成功的数据信息保存在SercurityContextHolder中。SecurityContextHolder中的数据保存默认通过ThreadLocal来实现的，是使用ThreadLocal创建的变量只能被当前线程所访问，不能被其他线程访问和修改，也就是将SecurityContextHolder中的数据拿出来保存到session中，同时将SecurityContextHolder中的数据清空。以后每当有请求来时，Spring Security就会先从session中取出用户登陆数据，保存到SecurityContextHolder中，方便在该请求的后续处理过程当中使用，同时在请求结束的时候将SecurityContextHolder中的数据拿出来保存到session中，然后将SecurityContextHolder中的数据清空。这一策略非常方便用户在Controller、Sercive层以及任何代码中获取当前登陆用户数据。</p>
+<h3 id="3-授权"><a href="#3-授权" class="headerlink" title="3.授权"></a>3.授权</h3><p>​	当完成认证后，接下来就是授权。在Spring Security的授权体系中，有两个关键接口</p>
+<p>​	(1)AccessDecisionManager</p>
+<p>​	访问决策管理器，用来决定此次访问是否被允许。</p>
+<p>​	(2)AccessDecisionVoter</p>
+<p>​	访问决定投票器，投票器会检查用户是否具备应有的角色，进而投出赞成、反对或者弃权票。</p>
+<p>​	(3)ConfigAttribute</p>
+<p>​	用来保存授权时的角色信息</p>
+]]></content>
+      <categories>
+        <category>spring-security</category>
+      </categories>
+      <tags>
+        <tag>安全框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java反射特性</title>
+    <url>/2023/05/31/java%E5%8F%8D%E5%B0%84%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<p>每个类都有一个 Class 对象，包含了与类有关的信息。当编译一个新类时，会产生一个同名的 .class 文件，该文件内容保存着 Class 对象。</p>
+<p>类加载相当于 Class 对象的加载，类在第一次使用时才动态加载到 JVM 中。也可以使用 Class.forName(“com.mysql.jdbc.Driver”) 这种方式来控制类的加载，该方法会返回一个 Class 对象。</p>
+<p>反射可以提供运行时的类信息，并且这个类可以在运行时才加载进来，甚至在编译时期该类的 .class 不存在也可以加载进来。</p>
+<p>Class 和 java.lang.reflect 一起对反射提供了支持，java.lang.reflect 类库主要包含了以下三个类：</p>
+<p>Field ：可以使用 get() 和 set() 方法读取和修改 Field 对象关联的字段；<br>Method ：可以使用 invoke() 方法调用与 Method 对象关联的方法；<br>Constructor ：可以用 Constructor 的 newInstance() 创建新的对象。</p>
+<h3 id="反射的优点："><a href="#反射的优点：" class="headerlink" title="反射的优点："></a>反射的优点：</h3><p><strong>可扩展性 ：</strong>应用程序可以利用全限定名创建可扩展对象的实例，来使用来自外部的用户自定义类。</p>
+<p><strong>类浏览器和可视化开发环境 ：</strong>一个类浏览器需要可以枚举类的成员。可视化开发环境（如 IDE）可以从利用反射中可用的类型信息中受益，以帮助程序员编写正确的代码。</p>
+<p><strong>调试器和测试工具 ：</strong> 调试器需要能够检查一个类里的私有成员。测试工具可以利用反射来自动地调用类里定义的可被发现的 API 定义，以确保一组测试中有较高的代码覆盖率。</p>
+<h3 id="反射的缺点："><a href="#反射的缺点：" class="headerlink" title="反射的缺点："></a>反射的缺点：</h3><p>尽管反射非常强大，但也不能滥用。如果一个功能可以不用反射完成，那么最好就不用。在我们使用反射技术时，下面几条内容应该牢记于心。</p>
+<p><strong>性能开销 ：</strong>反射涉及了动态类型的解析，所以 JVM 无法对这些代码进行优化。因此，反射操作的效率要比那些非反射操作低得多。我们应该避免在经常被执行的代码或对性能要求很高的程序中使用反射。</p>
+<p><strong>安全限制 ：</strong>使用反射技术要求程序必须在一个没有安全限制的环境中运行。如果一个程序必须在有安全限制的环境中运行，如 Applet，那么这就是个问题了。</p>
+<p><strong>内部暴露 ：</strong>由于反射允许代码执行一些在正常情况下不被允许的操作（比如访问私有的属性和方法），所以使用反射可能会导致意料之外的副作用，这可能导致代码功能失调并破坏可移植性。反射代码破坏了抽象性，因此当平台发生改变的时候，代码的行为就有可能也随着变化。</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>基础面试题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java之异常（Exception）与错误（Error）的区别</title>
     <url>/2023/05/31/java%E4%B9%8B%E5%BC%82%E5%B8%B8%EF%BC%88Exception%EF%BC%89%E4%B8%8E%E9%94%99%E8%AF%AF%EF%BC%88Error%EF%BC%89%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>Error（错误）:程序无法处理，通常指程序中出现的严重问题。</p>
@@ -303,29 +326,6 @@
 <p>如果finally{}语句块中有return语句，那么会永远返回finally中的结果。</p>
 <p>如果父类方法抛出多个异常，那么子类重写父类方法时，可以选择抛出和父类相同的异常或者是父类异常的子类或者不抛出异常。</p>
 <p>如果父类方法没有抛出异常，子类重写父类该方法时也不可抛出异常。此时子类产生该异常，只能捕获处理，不能声明抛出。</p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>基础面试题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java反射特性</title>
-    <url>/2023/05/31/java%E5%8F%8D%E5%B0%84%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<p>每个类都有一个 Class 对象，包含了与类有关的信息。当编译一个新类时，会产生一个同名的 .class 文件，该文件内容保存着 Class 对象。</p>
-<p>类加载相当于 Class 对象的加载，类在第一次使用时才动态加载到 JVM 中。也可以使用 Class.forName(“com.mysql.jdbc.Driver”) 这种方式来控制类的加载，该方法会返回一个 Class 对象。</p>
-<p>反射可以提供运行时的类信息，并且这个类可以在运行时才加载进来，甚至在编译时期该类的 .class 不存在也可以加载进来。</p>
-<p>Class 和 java.lang.reflect 一起对反射提供了支持，java.lang.reflect 类库主要包含了以下三个类：</p>
-<p>Field ：可以使用 get() 和 set() 方法读取和修改 Field 对象关联的字段；<br>Method ：可以使用 invoke() 方法调用与 Method 对象关联的方法；<br>Constructor ：可以用 Constructor 的 newInstance() 创建新的对象。</p>
-<h3 id="反射的优点："><a href="#反射的优点：" class="headerlink" title="反射的优点："></a>反射的优点：</h3><p><strong>可扩展性 ：</strong>应用程序可以利用全限定名创建可扩展对象的实例，来使用来自外部的用户自定义类。</p>
-<p><strong>类浏览器和可视化开发环境 ：</strong>一个类浏览器需要可以枚举类的成员。可视化开发环境（如 IDE）可以从利用反射中可用的类型信息中受益，以帮助程序员编写正确的代码。</p>
-<p><strong>调试器和测试工具 ：</strong> 调试器需要能够检查一个类里的私有成员。测试工具可以利用反射来自动地调用类里定义的可被发现的 API 定义，以确保一组测试中有较高的代码覆盖率。</p>
-<h3 id="反射的缺点："><a href="#反射的缺点：" class="headerlink" title="反射的缺点："></a>反射的缺点：</h3><p>尽管反射非常强大，但也不能滥用。如果一个功能可以不用反射完成，那么最好就不用。在我们使用反射技术时，下面几条内容应该牢记于心。</p>
-<p><strong>性能开销 ：</strong>反射涉及了动态类型的解析，所以 JVM 无法对这些代码进行优化。因此，反射操作的效率要比那些非反射操作低得多。我们应该避免在经常被执行的代码或对性能要求很高的程序中使用反射。</p>
-<p><strong>安全限制 ：</strong>使用反射技术要求程序必须在一个没有安全限制的环境中运行。如果一个程序必须在有安全限制的环境中运行，如 Applet，那么这就是个问题了。</p>
-<p><strong>内部暴露 ：</strong>由于反射允许代码执行一些在正常情况下不被允许的操作（比如访问私有的属性和方法），所以使用反射可能会导致意料之外的副作用，这可能导致代码功能失调并破坏可移植性。反射代码破坏了抽象性，因此当平台发生改变的时候，代码的行为就有可能也随着变化。</p>
 ]]></content>
       <categories>
         <category>java</category>
@@ -587,6 +587,25 @@
       </tags>
   </entry>
   <entry>
+    <title>public class和class的区别</title>
+    <url>/2023/09/08/public%20class%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="public-class和class的区别："><a href="#public-class和class的区别：" class="headerlink" title="public class和class的区别："></a>public class和class的区别：</h2><ul>
+<li>一个java源文件当中可以定义多个class</li>
+<li>一个java源文件当中public的class不是必须的</li>
+<li>一个class会定义生成一个xxx.class字节码文件</li>
+<li>一个java源文件当中定义公开的类的话，公开类只能有一个，并且该类名称必须和java源文件名称一致。</li>
+<li>每一个class当中都可以编写main方法，都可以设定程序的入口，想执行B.class的main方法：java B，想执行X.class当中的main方法：java X</li>
+<li>注意：当在命令窗口中执行java Hello，那么要求Hello.class当中必须有主方法。没有主方法会出现运行阶段的错误。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java进阶--深入理解Java自动装箱拆箱机制</title>
     <url>/2023/05/30/java%E8%BF%9B%E9%98%B6--%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E6%8B%86%E7%AE%B1%E6%9C%BA%E5%88%B6%EF%BC%88Autoboxing%20and%20unboxing%EF%BC%89/</url>
     <content><![CDATA[<h3 id="一、自动装箱与拆箱的定义"><a href="#一、自动装箱与拆箱的定义" class="headerlink" title="一、自动装箱与拆箱的定义"></a>一、自动装箱与拆箱的定义</h3><p>ava中的基本数据类型有八种分别是：int（4字节） byte（1字节） short（2字节） long（8字节） float （4字节） double（8字节） char（2字节） boolean（1byte）基本数据类型不是对象，不能使用对象的方法。将基本数据类型转换为对象就是自动装箱的过程。下面是基本数据类型与封装器类之间对应的关系。</p>
@@ -663,25 +682,6 @@
       </categories>
       <tags>
         <tag>基础面试题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>public class和class的区别</title>
-    <url>/2023/09/08/public%20class%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="public-class和class的区别："><a href="#public-class和class的区别：" class="headerlink" title="public class和class的区别："></a>public class和class的区别：</h2><ul>
-<li>一个java源文件当中可以定义多个class</li>
-<li>一个java源文件当中public的class不是必须的</li>
-<li>一个class会定义生成一个xxx.class字节码文件</li>
-<li>一个java源文件当中定义公开的类的话，公开类只能有一个，并且该类名称必须和java源文件名称一致。</li>
-<li>每一个class当中都可以编写main方法，都可以设定程序的入口，想执行B.class的main方法：java B，想执行X.class当中的main方法：java X</li>
-<li>注意：当在命令窗口中执行java Hello，那么要求Hello.class当中必须有主方法。没有主方法会出现运行阶段的错误。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java基础知识</tag>
       </tags>
   </entry>
   <entry>
