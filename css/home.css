@@ -1,4 +1,4 @@
-#recent-posts > .recent-post-item:not(a)::before {
+/* #recent-posts > .recent-post-item:not(a)::before {
     content: "";
     position: absolute;
     top: 0;
@@ -12,4 +12,4 @@
   }
   #recent-posts > .recent-post-item:not(a):hover::before {
     transform: translateX(100%) skewX(-60deg);
-  }
+  } */
