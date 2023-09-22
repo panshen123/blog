@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java中的String，StringBuilder，StringBuffer三者的区别</title>
-    <url>/2023/05/30/Java%E4%B8%AD%E7%9A%84String%EF%BC%8CStringBuilder%EF%BC%8CStringBuffer%E4%B8%89%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<p>最近在学习Java的时候，遇到了这样一个问题，就是String,StringBuilder以及StringBuffer这三个类之间有什么区别呢，自己从网上搜索了一些资料，有所了解了之后在这里整理一下，便于大家观看，也便于加深自己学习过程中对这些知识点的记忆，如果哪里有误，恳请指正。</p>
-<h4 id="这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。"><a href="#这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。" class="headerlink" title="这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。"></a>这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。</h4><h4 id="一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder-gt-StringBuffer-gt-String"><a href="#一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder-gt-StringBuffer-gt-String" class="headerlink" title="一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder &gt; StringBuffer &gt; String"></a>一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder &gt; StringBuffer &gt; String</h4><p>　　String最慢的原因：</p>
-<p>​		String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。以下面一段代码为例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str=<span class="string">&quot;abc&quot;</span>;</span><br><span class="line">System.out.println(str);</span><br><span class="line">str=str+<span class="string">&quot;de&quot;</span>;</span><br><span class="line">System.out.println(str);</span><br></pre></td></tr></table></figure>
-
-<p>　　如果运行这段代码会发现先输出“abc”，然后又输出“abcde”，好像是str这个对象被更改了，其实，这只是一种假象罢了，JVM对于这几行代码是这样处理的，首先创建一个String对象str，并把“abc”赋值给str，然后在第三行中，其实JVM又创建了一个新的对象也名为str，然后再把原来的str的值和“de”加起来再赋值给新的str，而原来的str就会被JVM的垃圾回收机制（GC）给回收掉了，所以，str实际上并没有被更改，也就是前面说的String对象一旦创建之后就不可更改了。所以，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。</p>
-<p>　　而StringBuilder和StringBuffer的对象是变量，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
-<p>　　另外，有时候我们会这样对字符串进行赋值</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str=<span class="string">&quot;abc&quot;</span>+<span class="string">&quot;de&quot;</span>;</span><br><span class="line">StringBuilder stringBuilder=<span class="keyword">new</span> <span class="title class_">StringBuilder</span>().append(<span class="string">&quot;abc&quot;</span>).append(<span class="string">&quot;de&quot;</span>);</span><br><span class="line">System.out.println(str);</span><br><span class="line">System.out.println(stringBuilder.toString());</span><br></pre></td></tr></table></figure>
-
-<p>　　这样输出结果也是“abcde”和“abcde”，但是String的速度却比StringBuilder的反应速度要快很多，这是因为第1行中的操作和</p>
-<p>　　String str&#x3D;”abcde”;</p>
-<p>　　是完全一样的，所以会很快，而如果写成下面这种形式</p>
-<p>1 String str1&#x3D;”abc”;<br>2 String str2&#x3D;”de”;<br>3 String str&#x3D;str1+str2;<br>　　那么JVM就会像上面说的那样，不断的创建、回收对象来进行这个操作了。速度就会很慢。</p>
-<h4 id="二、再来说线程安全"><a href="#二、再来说线程安全" class="headerlink" title="二、再来说线程安全"></a>二、再来说线程安全</h4><p>　　在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</p>
-<p>　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。</p>
-<h4 id="三、总结一下"><a href="#三、总结一下" class="headerlink" title="三、总结一下"></a>三、总结一下</h4><p>String：适用于少量的字符串操作的情况</p>
-<p>　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
-<p>　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>基础面试题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>==和equals的区别</title>
     <url>/2023/05/30/==%E5%92%8Cequals%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h3 id="基本概念区分"><a href="#基本概念区分" class="headerlink" title="基本概念区分"></a>基本概念区分</h3><h4 id="1-对于-x3D-x3D-，比较的是值是否相等"><a href="#1-对于-x3D-x3D-，比较的是值是否相等" class="headerlink" title="1.对于&#x3D;&#x3D;，比较的是值是否相等"></a>1.对于&#x3D;&#x3D;，比较的是值是否相等</h4><p>如果作用于基本数据类型的变量，则直接比较其存储的 值是否相等，</p>
@@ -67,6 +37,36 @@
 ]]></content>
       <categories>
         <category>大学</category>
+      </categories>
+      <tags>
+        <tag>基础面试题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java中的String，StringBuilder，StringBuffer三者的区别</title>
+    <url>/2023/05/30/Java%E4%B8%AD%E7%9A%84String%EF%BC%8CStringBuilder%EF%BC%8CStringBuffer%E4%B8%89%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p>最近在学习Java的时候，遇到了这样一个问题，就是String,StringBuilder以及StringBuffer这三个类之间有什么区别呢，自己从网上搜索了一些资料，有所了解了之后在这里整理一下，便于大家观看，也便于加深自己学习过程中对这些知识点的记忆，如果哪里有误，恳请指正。</p>
+<h4 id="这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。"><a href="#这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。" class="headerlink" title="这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。"></a>这三个类之间的区别主要是在两个方面，即运行速度和线程安全这两方面。</h4><h4 id="一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder-gt-StringBuffer-gt-String"><a href="#一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder-gt-StringBuffer-gt-String" class="headerlink" title="一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder &gt; StringBuffer &gt; String"></a>一、首先说运行速度，或者说是执行速度，在这方面运行速度快慢为：StringBuilder &gt; StringBuffer &gt; String</h4><p>　　String最慢的原因：</p>
+<p>​		String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。以下面一段代码为例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str=<span class="string">&quot;abc&quot;</span>;</span><br><span class="line">System.out.println(str);</span><br><span class="line">str=str+<span class="string">&quot;de&quot;</span>;</span><br><span class="line">System.out.println(str);</span><br></pre></td></tr></table></figure>
+
+<p>　　如果运行这段代码会发现先输出“abc”，然后又输出“abcde”，好像是str这个对象被更改了，其实，这只是一种假象罢了，JVM对于这几行代码是这样处理的，首先创建一个String对象str，并把“abc”赋值给str，然后在第三行中，其实JVM又创建了一个新的对象也名为str，然后再把原来的str的值和“de”加起来再赋值给新的str，而原来的str就会被JVM的垃圾回收机制（GC）给回收掉了，所以，str实际上并没有被更改，也就是前面说的String对象一旦创建之后就不可更改了。所以，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。</p>
+<p>　　而StringBuilder和StringBuffer的对象是变量，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
+<p>　　另外，有时候我们会这样对字符串进行赋值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str=<span class="string">&quot;abc&quot;</span>+<span class="string">&quot;de&quot;</span>;</span><br><span class="line">StringBuilder stringBuilder=<span class="keyword">new</span> <span class="title class_">StringBuilder</span>().append(<span class="string">&quot;abc&quot;</span>).append(<span class="string">&quot;de&quot;</span>);</span><br><span class="line">System.out.println(str);</span><br><span class="line">System.out.println(stringBuilder.toString());</span><br></pre></td></tr></table></figure>
+
+<p>　　这样输出结果也是“abcde”和“abcde”，但是String的速度却比StringBuilder的反应速度要快很多，这是因为第1行中的操作和</p>
+<p>　　String str&#x3D;”abcde”;</p>
+<p>　　是完全一样的，所以会很快，而如果写成下面这种形式</p>
+<p>1 String str1&#x3D;”abc”;<br>2 String str2&#x3D;”de”;<br>3 String str&#x3D;str1+str2;<br>　　那么JVM就会像上面说的那样，不断的创建、回收对象来进行这个操作了。速度就会很慢。</p>
+<h4 id="二、再来说线程安全"><a href="#二、再来说线程安全" class="headerlink" title="二、再来说线程安全"></a>二、再来说线程安全</h4><p>　　在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</p>
+<p>　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。</p>
+<h4 id="三、总结一下"><a href="#三、总结一下" class="headerlink" title="三、总结一下"></a>三、总结一下</h4><p>String：适用于少量的字符串操作的情况</p>
+<p>　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
+<p>　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
+]]></content>
+      <categories>
+        <category>java</category>
       </categories>
       <tags>
         <tag>基础面试题</tag>
@@ -243,6 +243,198 @@
       </tags>
   </entry>
   <entry>
+    <title>java反射特性</title>
+    <url>/2023/05/31/java%E5%8F%8D%E5%B0%84%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<p>每个类都有一个 Class 对象，包含了与类有关的信息。当编译一个新类时，会产生一个同名的 .class 文件，该文件内容保存着 Class 对象。</p>
+<p>类加载相当于 Class 对象的加载，类在第一次使用时才动态加载到 JVM 中。也可以使用 Class.forName(“com.mysql.jdbc.Driver”) 这种方式来控制类的加载，该方法会返回一个 Class 对象。</p>
+<p>反射可以提供运行时的类信息，并且这个类可以在运行时才加载进来，甚至在编译时期该类的 .class 不存在也可以加载进来。</p>
+<p>Class 和 java.lang.reflect 一起对反射提供了支持，java.lang.reflect 类库主要包含了以下三个类：</p>
+<p>Field ：可以使用 get() 和 set() 方法读取和修改 Field 对象关联的字段；<br>Method ：可以使用 invoke() 方法调用与 Method 对象关联的方法；<br>Constructor ：可以用 Constructor 的 newInstance() 创建新的对象。</p>
+<h3 id="反射的优点："><a href="#反射的优点：" class="headerlink" title="反射的优点："></a>反射的优点：</h3><p><strong>可扩展性 ：</strong>应用程序可以利用全限定名创建可扩展对象的实例，来使用来自外部的用户自定义类。</p>
+<p><strong>类浏览器和可视化开发环境 ：</strong>一个类浏览器需要可以枚举类的成员。可视化开发环境（如 IDE）可以从利用反射中可用的类型信息中受益，以帮助程序员编写正确的代码。</p>
+<p><strong>调试器和测试工具 ：</strong> 调试器需要能够检查一个类里的私有成员。测试工具可以利用反射来自动地调用类里定义的可被发现的 API 定义，以确保一组测试中有较高的代码覆盖率。</p>
+<h3 id="反射的缺点："><a href="#反射的缺点：" class="headerlink" title="反射的缺点："></a>反射的缺点：</h3><p>尽管反射非常强大，但也不能滥用。如果一个功能可以不用反射完成，那么最好就不用。在我们使用反射技术时，下面几条内容应该牢记于心。</p>
+<p><strong>性能开销 ：</strong>反射涉及了动态类型的解析，所以 JVM 无法对这些代码进行优化。因此，反射操作的效率要比那些非反射操作低得多。我们应该避免在经常被执行的代码或对性能要求很高的程序中使用反射。</p>
+<p><strong>安全限制 ：</strong>使用反射技术要求程序必须在一个没有安全限制的环境中运行。如果一个程序必须在有安全限制的环境中运行，如 Applet，那么这就是个问题了。</p>
+<p><strong>内部暴露 ：</strong>由于反射允许代码执行一些在正常情况下不被允许的操作（比如访问私有的属性和方法），所以使用反射可能会导致意料之外的副作用，这可能导致代码功能失调并破坏可移植性。反射代码破坏了抽象性，因此当平台发生改变的时候，代码的行为就有可能也随着变化。</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>基础面试题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring6框架学习</title>
+    <url>/2023/09/22/Spring%E6%A1%86%E6%9E%B6/</url>
+    <content><![CDATA[<h2 id="1-OCP"><a href="#1-OCP" class="headerlink" title="1.OCP"></a>1.OCP</h2><ul>
+<li><p>什么是OCP</p>
+<p>​	OCP是软件七大开发原则当中最基本的一个原则：开闭原则</p>
+<p>​	对什么开？对扩展开放。</p>
+<p>​	对什么闭？对修改关闭。</p>
+</li>
+<li><p>OCP原则是最核心的，最基本的，其他六个原则都是为这个原则服务的。</p>
+</li>
+<li><p>OCP开闭原则的核心是什么？</p>
+<p>​	只要你在扩展系统功能的时候，没有修改以前写好的代码，那么你就是符合OCP原则的。</p>
+<p>​	反之，如果在扩展系统功能的时候，你修改了之前的代码，那么这个设计就是失败的，违背OCP原则。</p>
+</li>
+<li><p>当进行系统功能扩展的时候，如果动了之前稳定的程序，修改了之前的程序，之前所有的程序都需要进行重新测试，这不是想看到的，非常麻烦。</p>
+</li>
+</ul>
+<h2 id="2-依赖倒置原则（DIP原则）"><a href="#2-依赖倒置原则（DIP原则）" class="headerlink" title="2.依赖倒置原则（DIP原则）"></a>2.依赖倒置原则（DIP原则）</h2><ul>
+<li>凡是上依赖下的，都违背了依赖倒置原则。</li>
+</ul>
+<p>​		什么叫做符合依赖倒置原则？</p>
+<p>​		上不在依赖下了，表示符合DIP原则</p>
+<ul>
+<li>依赖倒置原则核心是什么？</li>
+</ul>
+<p>​		倡导面向接口编程，面向抽象编程，不要面向具体编程。</p>
+<ul>
+<li>依赖倒置原则的目的？</li>
+</ul>
+<p>​		降低程序耦合度，提高扩展力。</p>
+<h2 id="3-当前程序设计及违背OCP原则又违背DIP原则，怎么办？"><a href="#3-当前程序设计及违背OCP原则又违背DIP原则，怎么办？" class="headerlink" title="3.当前程序设计及违背OCP原则又违背DIP原则，怎么办？"></a>3.当前程序设计及违背OCP原则又违背DIP原则，怎么办？</h2><ul>
+<li>可以采用“控制反转”这种编程思想来解决这个问题。</li>
+</ul>
+<h2 id="4-什么是控制反转？"><a href="#4-什么是控制反转？" class="headerlink" title="4.什么是控制反转？"></a>4.什么是控制反转？</h2><ul>
+<li>控制反转：Ioc（Inversion of Control）</li>
+</ul>
+<p>​		反转的是什么呢？</p>
+<p>​		反转两件事:</p>
+<p>​							第一件事：不在程序中采用硬编码的方式来new对象。</p>
+<p>​							第二件事：不在程序中采用硬编码的方式来维护对象的关系了</p>
+<h2 id="5-Spring框架"><a href="#5-Spring框架" class="headerlink" title="5.Spring框架"></a>5.Spring框架</h2><ul>
+<li>Spring框架实现了控制反转IoC这种思想</li>
+</ul>
+<p>​		Spring框架可以帮你new对象。</p>
+<p>​		Spring框架可以维护对象和对象之间的关系。</p>
+<ul>
+<li><p>Spring是一个实现了Ioc思想容器</p>
+</li>
+<li><p>控制反转的实现方式有很多种，其中比较重要的叫做依赖注入（Dependency Injection，简称DI）。</p>
+</li>
+<li><p>控制反转是思想，依赖注入是这种思想的具体实现。</p>
+</li>
+<li><p>依赖注入DI，又包括常见的两种方式：</p>
+</li>
+</ul>
+<p>​			第一种：set注入（set方法给属性赋值）</p>
+<p>​			第二种：构造方法注入（构造方法给属性赋值）</p>
+<ul>
+<li>依赖注入中“依赖”是什么意思？“注入”是什么意思？</li>
+</ul>
+<p>​			依赖：A对象和B对象的关系。</p>
+<p>​			注入：是一种手段，通过这种手段可以让A对象和B对象产生关系。</p>
+<p>​			依赖注入：对象A和对象B之间的关系，靠注入的手段来维护。而注入包括：set注入和构造注入。</p>
+<h2 id="6-注意术语："><a href="#6-注意术语：" class="headerlink" title="6.注意术语："></a>6.注意术语：</h2><p>​		OCP：开闭原则</p>
+<p>​		IOC：控制反转</p>
+<p>​		DIP：依赖倒置原则</p>
+<p>​		DI：依赖注入</p>
+<h2 id="7-设计模式之：简单工厂模式-Simple-Factory-Pattern"><a href="#7-设计模式之：简单工厂模式-Simple-Factory-Pattern" class="headerlink" title="7.设计模式之：简单工厂模式 Simple Factory Pattern"></a>7.设计模式之：简单工厂模式 Simple Factory Pattern</h2><p>（1）简单工厂模式是工厂方法模式的一种特殊实现，又被称为：静态工厂方法模式。</p>
+<p>（2）简单工厂模式解决什么问题你呢？</p>
+<p>（3）简单工厂模式中的角色：</p>
+<ul>
+<li><p>抽象产品角色</p>
+</li>
+<li><p>具体产品角色</p>
+</li>
+<li><p>工厂类角色</p>
+</li>
+</ul>
+<p>（4）简单工程模式的缺点？</p>
+<p>缺点一：假设现在需要扩展一个新的产品，WeaponFactory工厂类的代码是需要改动的，显然违背了OCP原则</p>
+<p>缺点二：工厂类的责任比较重大，不能出现任何问题，因为这个工产类负责所有产品的生产，称为全能类，或者有人把它叫做上帝类，这个工厂类一旦出问题，整个系统必然全部瘫痪。（不要把所有鸡蛋放到一个篮子里）</p>
+<h2 id="8-设计模式之：工厂方法模式Factory-Method-Patter"><a href="#8-设计模式之：工厂方法模式Factory-Method-Patter" class="headerlink" title="8.设计模式之：工厂方法模式Factory Method Patter"></a>8.设计模式之：工厂方法模式Factory Method Patter</h2><p>(1)工厂方法模式可以解决简单工程模式中的OCP问题</p>
+<p>​	怎么解决的?一个工厂对应生产一种产品</p>
+<p>​	这样工厂就不是全能类了，不是上帝类了</p>
+<p>​	另外，也可以符合OCP原则</p>
+<p> (2)工厂方法模式中的角色：</p>
+<ul>
+<li>抽象产品角色 Weapon</li>
+<li>具体产品角色 Dagger GUN</li>
+<li>抽象工厂角色 WeaponFactory</li>
+<li>具体工厂角色 DaggerFactory GunFactory</li>
+</ul>
+<p>(3)工厂方法模式的优点：</p>
+<p>​	当你扩展一个产品的时候，符合OCP原则，因为只需要添加两个类，一个是具体产品类，一个是具体工厂类。都是添加类，没有修改之前的代码，所以符合OCP。</p>
+<p>(4)工厂方法模式的缺点：</p>
+<p>​	每次增加一个产品时，都需要增加一个具体类和对象实现工厂，使的系统中类的个数成倍增加。	</p>
+<p>​	在一定程度上增加了系统的复杂度，同时也增加了系统具体类的依赖，这并不是什么好事。</p>
+<h2 id="9-Bean的实例化方式"><a href="#9-Bean的实例化方式" class="headerlink" title="9.Bean的实例化方式"></a>9.Bean的实例化方式</h2><ul>
+<li><p>第一种：通过构造方法实例化</p>
+</li>
+<li><p>第二种：通过简单工厂模式实例化</p>
+</li>
+<li><p>第三种：通过factory-bean实例化</p>
+</li>
+<li><p>第四种：FactoryBean接口实例化</p>
+</li>
+</ul>
+<h2 id="10-Bean的生命周期五步："><a href="#10-Bean的生命周期五步：" class="headerlink" title="10.Bean的生命周期五步："></a>10.Bean的生命周期五步：</h2><ul>
+<li><p>第一步：实例化Bean</p>
+</li>
+<li><p>第二步：Bean属性赋值</p>
+</li>
+<li><p>第三步：初始化Bean</p>
+</li>
+<li><p>第四步：使用Bean</p>
+</li>
+<li><p>第五步：销毁Bean</p>
+</li>
+</ul>
+<h2 id="11-Bean的生命周期七步：比五步添加的两步在哪里？在初始化Bean的前后。"><a href="#11-Bean的生命周期七步：比五步添加的两步在哪里？在初始化Bean的前后。" class="headerlink" title="11.Bean的生命周期七步：比五步添加的两步在哪里？在初始化Bean的前后。"></a>11.Bean的生命周期七步：比五步添加的两步在哪里？在初始化Bean的前后。</h2><ul>
+<li><p>第一步：实例化Bean</p>
+</li>
+<li><p>第二步：Bean属性赋值</p>
+</li>
+<li><p>第三步：执行”Bean后处理器“的before方法。</p>
+</li>
+<li><p>第四步：初始化Bean</p>
+</li>
+<li><p>第五步：执行”Bean后处理器“的after方法</p>
+</li>
+<li><p>第六步：使用Bean</p>
+</li>
+<li><p>第七步：销毁Bean</p>
+</li>
+</ul>
+<h2 id="12-Bean生命周期十步：比七步添加的那三步在哪里？"><a href="#12-Bean生命周期十步：比七步添加的那三步在哪里？" class="headerlink" title="12.Bean生命周期十步：比七步添加的那三步在哪里？"></a>12.Bean生命周期十步：比七步添加的那三步在哪里？</h2><ul>
+<li>点位1：在Bean后处理器before方法之前</li>
+</ul>
+<p>​	干了什么事？</p>
+<p>​		检查Bean是否实现了Aware相关的接口，如果实现了接口则调用这些接口中的方法。然后调用这些方法的目的是为了给你传递一些数据，让你更加方便使用。</p>
+<ul>
+<li>点位2：在Bean后处理器before方法之后</li>
+</ul>
+<p>​	干了什么事？</p>
+<p>​		检查这个Bean是否实现了InitializingBean接口，如果实现了就调用接口中的方法</p>
+<ul>
+<li>点位3：使用Bean之后，或者说使用Bean之前</li>
+</ul>
+<p>​	干了什么事？</p>
+<p>​		检查Bean是否实现了DisposableBean接口，如果实现了则调用接口中的方法</p>
+<p>​	添加这三个点位的特点：都是在检查你这个Bean是否实现了某些特定的接口，如果实现了这些接口，则Spring容器会调用这个接口中的方法。</p>
+<h2 id="13-源码分析（缓存）"><a href="#13-源码分析（缓存）" class="headerlink" title="13.源码分析（缓存）"></a>13.源码分析（缓存）</h2><p>​	<strong>DefaultSingletonBeanRegistry类中有三个比较重要的缓存</strong></p>
+<p>​		<strong>private final Map&lt;String, Object&gt; singletonObjects								一级缓存</strong></p>
+<p>​		<strong>private final Map&lt;String, Object&gt; earlySingletonObjects						二级缓存</strong></p>
+<p>​		<strong>private final Map&lt;String, ObjectFactory&lt;?&gt;&gt; singletonFactories			三级缓存</strong></p>
+<p>​	这三个缓存都是Map集合。</p>
+<p>​	Map集合的key存储的都是Bean的name（bean id）。</p>
+<p>​	一级缓存存储的是：单例Bean对象，完整的单例Bean对象，也就是说这个缓存中的Bean对象的属性已经赋值了，是一个完整的Bean对象。</p>
+<p>​	二级缓存存储的是：早期单例Bean对象。这个缓存中的单例Bean对象的属性没有赋值，只是一个早期的实例对象。</p>
+<p>​	三级缓存存储的是：单例工厂对象，这个里面存储了大量的工厂对象，每一个单例Bean对象都会对应一个单例工厂对象。这个集合中存储的是，创建该单例对象时对应的那个单例工厂对象。</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java框架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring-security框架学习day01</title>
     <url>/2023/06/05/Spring-security%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%AC1%E5%A4%A9/</url>
     <content><![CDATA[<h3 id="1-整体架构"><a href="#1-整体架构" class="headerlink" title="1.整体架构"></a>1.整体架构</h3><h4 id="1-认证authentication"><a href="#1-认证authentication" class="headerlink" title="(1)认证	authentication"></a>(1)认证	authentication</h4><h4 id="2-授权authorization"><a href="#2-授权authorization" class="headerlink" title="(2)授权	authorization"></a>(2)授权	authorization</h4><h3 id="2-认证"><a href="#2-认证" class="headerlink" title="2.认证"></a>2.认证</h3><p>​	(1)AuthenticationManager</p>
@@ -279,29 +471,6 @@
       </tags>
   </entry>
   <entry>
-    <title>java反射特性</title>
-    <url>/2023/05/31/java%E5%8F%8D%E5%B0%84%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<p>每个类都有一个 Class 对象，包含了与类有关的信息。当编译一个新类时，会产生一个同名的 .class 文件，该文件内容保存着 Class 对象。</p>
-<p>类加载相当于 Class 对象的加载，类在第一次使用时才动态加载到 JVM 中。也可以使用 Class.forName(“com.mysql.jdbc.Driver”) 这种方式来控制类的加载，该方法会返回一个 Class 对象。</p>
-<p>反射可以提供运行时的类信息，并且这个类可以在运行时才加载进来，甚至在编译时期该类的 .class 不存在也可以加载进来。</p>
-<p>Class 和 java.lang.reflect 一起对反射提供了支持，java.lang.reflect 类库主要包含了以下三个类：</p>
-<p>Field ：可以使用 get() 和 set() 方法读取和修改 Field 对象关联的字段；<br>Method ：可以使用 invoke() 方法调用与 Method 对象关联的方法；<br>Constructor ：可以用 Constructor 的 newInstance() 创建新的对象。</p>
-<h3 id="反射的优点："><a href="#反射的优点：" class="headerlink" title="反射的优点："></a>反射的优点：</h3><p><strong>可扩展性 ：</strong>应用程序可以利用全限定名创建可扩展对象的实例，来使用来自外部的用户自定义类。</p>
-<p><strong>类浏览器和可视化开发环境 ：</strong>一个类浏览器需要可以枚举类的成员。可视化开发环境（如 IDE）可以从利用反射中可用的类型信息中受益，以帮助程序员编写正确的代码。</p>
-<p><strong>调试器和测试工具 ：</strong> 调试器需要能够检查一个类里的私有成员。测试工具可以利用反射来自动地调用类里定义的可被发现的 API 定义，以确保一组测试中有较高的代码覆盖率。</p>
-<h3 id="反射的缺点："><a href="#反射的缺点：" class="headerlink" title="反射的缺点："></a>反射的缺点：</h3><p>尽管反射非常强大，但也不能滥用。如果一个功能可以不用反射完成，那么最好就不用。在我们使用反射技术时，下面几条内容应该牢记于心。</p>
-<p><strong>性能开销 ：</strong>反射涉及了动态类型的解析，所以 JVM 无法对这些代码进行优化。因此，反射操作的效率要比那些非反射操作低得多。我们应该避免在经常被执行的代码或对性能要求很高的程序中使用反射。</p>
-<p><strong>安全限制 ：</strong>使用反射技术要求程序必须在一个没有安全限制的环境中运行。如果一个程序必须在有安全限制的环境中运行，如 Applet，那么这就是个问题了。</p>
-<p><strong>内部暴露 ：</strong>由于反射允许代码执行一些在正常情况下不被允许的操作（比如访问私有的属性和方法），所以使用反射可能会导致意料之外的副作用，这可能导致代码功能失调并破坏可移植性。反射代码破坏了抽象性，因此当平台发生改变的时候，代码的行为就有可能也随着变化。</p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>基础面试题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java基础学习day10</title>
     <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC10%E5%A4%A9/</url>
     <content><![CDATA[<h4 id="1-线程的创建方式（第一种用继承类方式实现多线程）"><a href="#1-线程的创建方式（第一种用继承类方式实现多线程）" class="headerlink" title="1.线程的创建方式（第一种用继承类方式实现多线程）"></a>1.线程的创建方式（第一种用继承类方式实现多线程）</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    多线程</span></span><br><span class="line"><span class="comment">        1.什么是进程，什么是线程？</span></span><br><span class="line"><span class="comment">        进程是一个应用程序（1个进程是一个软件）</span></span><br><span class="line"><span class="comment">        线程是一个进程中的执行场景\执行单元。</span></span><br><span class="line"><span class="comment">        一个进程可以启动多个线程</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        2.对于java程序来说，当在Dos命令窗口中输入：</span></span><br><span class="line"><span class="comment">        java HelloWorld回车之后</span></span><br><span class="line"><span class="comment">        会先启动JVM，而JVM就是一个进程。</span></span><br><span class="line"><span class="comment">        JVM再启动一个主线程调用main方法</span></span><br><span class="line"><span class="comment">        同时在启动一个垃圾回收线程负责看护回收垃圾。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        注意：进程A和进程B的内存独立不共享。</span></span><br><span class="line"><span class="comment">            线程A和线程B</span></span><br><span class="line"><span class="comment">                在java语言中:</span></span><br><span class="line"><span class="comment">                线程A和线程B，堆内存和方法区内存共享</span></span><br><span class="line"><span class="comment">                但是栈内存独立，一个线程一个栈</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    java语言中，实现线程有两种方式</span></span><br><span class="line"><span class="comment">        第一种方式：编写一个类，直接继承java.lang.Thread,重写run方法</span></span><br><span class="line"><span class="comment">        创建线程对象</span></span><br><span class="line"><span class="comment">        启动线程</span></span><br><span class="line"><span class="comment">        第二种方式:编写一个类，实现java.lang.Runnable接口,实现run方法</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//这里是main方法，这里的代码属于主线程，在主栈中运行。</span></span><br><span class="line">        <span class="comment">//新建一个分支线程对象</span></span><br><span class="line">        <span class="type">MyThread</span> <span class="variable">myThread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyThread</span>();</span><br><span class="line">        <span class="comment">//启动线程</span></span><br><span class="line">        myThread.start();<span class="comment">//start()方法的作用是：启动一个分支线程，在JVM中开辟一个新的栈空间，这段代码任务完成之后，瞬间结束了</span></span><br><span class="line">        <span class="comment">//  这段代码的任务只是为了开启一个新的栈空间，只要新的栈空间开出来，start()方法就结束了，线程就启动成功了。</span></span><br><span class="line">        <span class="comment">//启动成功的线程会自动调用run方法，并且run方法在分支栈的栈底部(压栈)</span></span><br><span class="line">        <span class="comment">//run方法在分支栈的底部，main方法在主栈的底部，run和main是平级的。</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;主线程-----&gt;&quot;</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//编写一个类，直接继承java.lang.Thread,重写run方法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//编写程序，这段程序运行在分支线程中（分支栈）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span> ; i&lt;<span class="number">1000</span>;i++)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;分支线程------&gt;&quot;</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -309,23 +478,6 @@
 <h4 id="2-用接口的方式实现多线程（推荐）"><a href="#2-用接口的方式实现多线程（推荐）" class="headerlink" title="2.用接口的方式实现多线程（推荐）"></a>2.用接口的方式实现多线程（推荐）</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">实现线程的第二种方法，编写一个类实现java.lang.Runnable接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建一个可运行的对象</span></span><br><span class="line"><span class="comment">//        MyRunnable myRunnable = new MyRunnable();</span></span><br><span class="line">        <span class="comment">//将可运行的对象封装成一个线程对象</span></span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">MyRunnable</span>());<span class="comment">//代码合并</span></span><br><span class="line">        <span class="comment">//启动线程对象</span></span><br><span class="line">        thread.start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;主线程-------&gt;&quot;</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyRunnable</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;分支线程输出----&gt;&quot;</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java基础学习day11</title>
-    <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC11%E5%A4%A9/</url>
-    <content><![CDATA[<h4 id="1-线程的Sleep方法"><a href="#1-线程的Sleep方法" class="headerlink" title="1.线程的Sleep方法"></a>1.线程的Sleep方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;&quot;</span>+i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.getMessage();</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-如何终止线程睡眠"><a href="#2-如何终止线程睡眠" class="headerlink" title="2.如何终止线程睡眠"></a>2.如何终止线程睡眠</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    终止正在睡眠的线程</span></span><br><span class="line"><span class="comment">    不是终止线程，是终止线程的睡眠</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">MyThread</span>());</span><br><span class="line">        thread.start();</span><br><span class="line">        thread.setName(<span class="string">&quot;t&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">5</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//终断睡眠，唤醒线程</span></span><br><span class="line">        thread.interrupt();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;start&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>*<span class="number">365</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;end&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-如何强制终止线程（第一种方式）"><a href="#3-如何强制终止线程（第一种方式）" class="headerlink" title="3.如何强制终止线程（第一种方式）"></a>3.如何强制终止线程（第一种方式）</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.plaf.TableHeaderUI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo3</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    强行终止一个线程</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">MyThread1</span>());</span><br><span class="line">        thread.setName(<span class="string">&quot;t&quot;</span>);</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">5</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//强行终止线程t</span></span><br><span class="line">        thread.stop();<span class="comment">//已过时，不建议使用</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread1</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;&quot;</span>+i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-如何强制终止线程（第二种方式）【推荐使用第二种】"><a href="#3-如何强制终止线程（第二种方式）【推荐使用第二种】" class="headerlink" title="3.如何强制终止线程（第二种方式）【推荐使用第二种】"></a>3.如何强制终止线程（第二种方式）【推荐使用第二种】</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.plaf.TableHeaderUI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo4</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    怎么合理的终止一个线程的执行</span></span><br><span class="line"><span class="comment">    常用方式</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MyThread2</span> <span class="variable">myThread2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyThread2</span>();</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(myThread2);</span><br><span class="line">        thread.setName(<span class="string">&quot;t&quot;</span>);</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">5</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//终止线程，什么时候想结束线程，把标记改为false</span></span><br><span class="line">        myThread2.run =<span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread2</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">run</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (run)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;---&gt;&quot;</span>+i);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//需要保存的数据在这里保存即可</span></span><br><span class="line">                <span class="comment">//终止当前线程</span></span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>java</category>
       </categories>
@@ -407,35 +559,6 @@
       </tags>
   </entry>
   <entry>
-    <title>java基础学习day03</title>
-    <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC3%E5%A4%A9/</url>
-    <content><![CDATA[<h4 id="1-匿名内部类："><a href="#1-匿名内部类：" class="headerlink" title="1.匿名内部类："></a>1.匿名内部类：</h4><p><strong>可以直接实现接口，但没有名字复用性差，代码可读性差，不建议这样写</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MyMath</span> <span class="variable">m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyMath</span>();</span><br><span class="line">        m.mySum(<span class="keyword">new</span> <span class="title class_">Compute</span>() &#123; <span class="comment">//匿名内部类     </span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> x+y;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="number">200</span>,<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">interface</span> <span class="title class_">Compute</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">MyMath</span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">mySum</span><span class="params">(Compute c,<span class="type">int</span> x,<span class="type">int</span> y)</span>&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">retValue</span> <span class="operator">=</span> c.sum(x,y);</span><br><span class="line">            System.out.println(x+<span class="string">&quot;+&quot;</span>+y+<span class="string">&quot;=&quot;</span>+retValue);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-数组扩容"><a href="#2-数组扩容" class="headerlink" title="2.数组扩容"></a>2.数组扩容</h4><p><strong>java中的数组扩容，要先创建一个大数组，在将原数组的数据拷贝过去</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="comment">//数组扩容，先创建一个大数组，在将原数组的数据拷贝过去</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//数组拷贝</span></span><br><span class="line"><span class="comment">//        System.arraycopy(5个参数);</span></span><br><span class="line">        <span class="comment">//拷贝源（从这个数组中进行拷贝）</span></span><br><span class="line">        <span class="type">int</span> [] src = &#123;<span class="number">1</span>,<span class="number">11</span>,<span class="number">22</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//拷贝目标数组</span></span><br><span class="line">        <span class="type">int</span> [] dest = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">20</span>];<span class="comment">//动态初始化长度为20的数组</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用jdk中System.arraycopy()的方法</span></span><br><span class="line">        System.arraycopy(src,<span class="number">0</span>,dest,<span class="number">0</span>,<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;dest.length ; i++) &#123;</span><br><span class="line">            System.out.print(dest[i]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-Arrays工具类"><a href="#3-Arrays工具类" class="headerlink" title="3.Arrays工具类"></a>3.Arrays工具类</h4><p><strong>Arrays是一个工具类。</strong></p>
-<p><strong>在java.util.Arrays包下</strong></p>
-<p><strong>其中有一个sort方法，可以排序。静态方法，直接使用类名调用就行</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//java.util.Arrays</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Arrays是一个工具类。</span></span><br><span class="line"><span class="comment">         * 其中有一个sort方法，可以排序。静态方法，直接使用类名调用就行</span></span><br><span class="line"><span class="comment">         * 工具类当中的方法，大部分都是静态的</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">int</span> [] arr = &#123;<span class="number">5</span>,<span class="number">65</span>,<span class="number">26</span>,<span class="number">35</span>,<span class="number">15</span>,<span class="number">355</span>,<span class="number">662</span>,<span class="number">51</span>,<span class="number">121</span>,<span class="number">0</span>,<span class="number">23</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;arr.length ; i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-Arrays-binarySearch方法"><a href="#4-Arrays-binarySearch方法" class="headerlink" title="4.Arrays.binarySearch方法"></a>4.Arrays.binarySearch方法</h4><p><strong>此方法是在数组中判断是否有相同的值，有则返回该元素下标，没有则返回-1</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo4</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//java.util.Arrays     工具类中有哪些方法，参考帮助文档</span></span><br><span class="line">        <span class="type">int</span> [] arr = &#123;<span class="number">3</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">12</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">32</span>,<span class="number">5</span>,<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//排序</span></span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> Arrays.binarySearch(arr, <span class="number">32</span>);</span><br><span class="line">        System.out.println(index==-<span class="number">1</span> ? <span class="string">&quot;该元素不存在&quot;</span>:<span class="string">&quot;该元素下标是:&quot;</span>+index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-了解java的异常"><a href="#5-了解java的异常" class="headerlink" title="5.了解java的异常"></a>5.了解java的异常</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo5</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    1.什么是异常，java提供异常机制有什么用处？</span></span><br><span class="line"><span class="comment">    以下程序执行过程中发生了不正常的情况,而这种不正常的情况叫做：异常</span></span><br><span class="line"><span class="comment">    java语言是很完美的语言，提供了异常处理的方式，以下程序执行过程中出现了不正常的情况</span></span><br><span class="line"><span class="comment">    java把该异常信息打印输出到控制台，供程序员参考。</span></span><br><span class="line"><span class="comment">    2.以下程序执行控制台出现了：</span></span><br><span class="line"><span class="comment">                异常</span></span><br><span class="line"><span class="comment">    这个信息我们称为异常信息，这个信息是JVM打印的。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//实际上JVM执行到此处的时候，会new异常对象：new ArithmeticException(&quot;/ by zero&quot;);</span></span><br><span class="line">        <span class="comment">//并且在JVM将new的异常对象抛出，打印输出信息到控制台了。</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> a/b;</span><br><span class="line">        System.out.println(a+<span class="string">&quot;/&quot;</span>+b+<span class="string">&quot;=&quot;</span>+c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-通过异常类去实例化异常对象"><a href="#6-通过异常类去实例化异常对象" class="headerlink" title="6.通过异常类去实例化异常对象"></a>6.通过异常类去实例化异常对象</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo6</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//通过异常类去实例化异常对象</span></span><br><span class="line">        <span class="type">NumberFormatException</span> <span class="variable">nfe</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NumberFormatException</span>(<span class="string">&quot;数字格式化异常！！！&quot;</span>);</span><br><span class="line">        System.out.println(nfe);</span><br><span class="line">        <span class="type">NullPointerException</span> <span class="variable">npe</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NullPointerException</span>(<span class="string">&quot;空指针异常发生了！！！&quot;</span>);</span><br><span class="line">        System.out.println(npe);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java基础学习day02</title>
     <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC2%E5%A4%A9/</url>
     <content><![CDATA[<h4 id="1-数组的小练习"><a href="#1-数组的小练习" class="headerlink" title="1.数组的小练习"></a>1.数组的小练习</h4><p>​	<strong>java中新建数组的语法</strong></p>
@@ -468,6 +591,35 @@
       </tags>
   </entry>
   <entry>
+    <title>java基础学习day03</title>
+    <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC3%E5%A4%A9/</url>
+    <content><![CDATA[<h4 id="1-匿名内部类："><a href="#1-匿名内部类：" class="headerlink" title="1.匿名内部类："></a>1.匿名内部类：</h4><p><strong>可以直接实现接口，但没有名字复用性差，代码可读性差，不建议这样写</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MyMath</span> <span class="variable">m</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyMath</span>();</span><br><span class="line">        m.mySum(<span class="keyword">new</span> <span class="title class_">Compute</span>() &#123; <span class="comment">//匿名内部类     </span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> x+y;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,<span class="number">200</span>,<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">interface</span> <span class="title class_">Compute</span>&#123;</span><br><span class="line">        <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">MyMath</span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">mySum</span><span class="params">(Compute c,<span class="type">int</span> x,<span class="type">int</span> y)</span>&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">retValue</span> <span class="operator">=</span> c.sum(x,y);</span><br><span class="line">            System.out.println(x+<span class="string">&quot;+&quot;</span>+y+<span class="string">&quot;=&quot;</span>+retValue);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-数组扩容"><a href="#2-数组扩容" class="headerlink" title="2.数组扩容"></a>2.数组扩容</h4><p><strong>java中的数组扩容，要先创建一个大数组，在将原数组的数据拷贝过去</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="comment">//数组扩容，先创建一个大数组，在将原数组的数据拷贝过去</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//数组拷贝</span></span><br><span class="line"><span class="comment">//        System.arraycopy(5个参数);</span></span><br><span class="line">        <span class="comment">//拷贝源（从这个数组中进行拷贝）</span></span><br><span class="line">        <span class="type">int</span> [] src = &#123;<span class="number">1</span>,<span class="number">11</span>,<span class="number">22</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//拷贝目标数组</span></span><br><span class="line">        <span class="type">int</span> [] dest = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">20</span>];<span class="comment">//动态初始化长度为20的数组</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//调用jdk中System.arraycopy()的方法</span></span><br><span class="line">        System.arraycopy(src,<span class="number">0</span>,dest,<span class="number">0</span>,<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;dest.length ; i++) &#123;</span><br><span class="line">            System.out.print(dest[i]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Arrays工具类"><a href="#3-Arrays工具类" class="headerlink" title="3.Arrays工具类"></a>3.Arrays工具类</h4><p><strong>Arrays是一个工具类。</strong></p>
+<p><strong>在java.util.Arrays包下</strong></p>
+<p><strong>其中有一个sort方法，可以排序。静态方法，直接使用类名调用就行</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//java.util.Arrays</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Arrays是一个工具类。</span></span><br><span class="line"><span class="comment">         * 其中有一个sort方法，可以排序。静态方法，直接使用类名调用就行</span></span><br><span class="line"><span class="comment">         * 工具类当中的方法，大部分都是静态的</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">int</span> [] arr = &#123;<span class="number">5</span>,<span class="number">65</span>,<span class="number">26</span>,<span class="number">35</span>,<span class="number">15</span>,<span class="number">355</span>,<span class="number">662</span>,<span class="number">51</span>,<span class="number">121</span>,<span class="number">0</span>,<span class="number">23</span>,<span class="number">5</span>&#125;;</span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;arr.length ; i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Arrays-binarySearch方法"><a href="#4-Arrays-binarySearch方法" class="headerlink" title="4.Arrays.binarySearch方法"></a>4.Arrays.binarySearch方法</h4><p><strong>此方法是在数组中判断是否有相同的值，有则返回该元素下标，没有则返回-1</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo4</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//java.util.Arrays     工具类中有哪些方法，参考帮助文档</span></span><br><span class="line">        <span class="type">int</span> [] arr = &#123;<span class="number">3</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">12</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">32</span>,<span class="number">5</span>,<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//排序</span></span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> Arrays.binarySearch(arr, <span class="number">32</span>);</span><br><span class="line">        System.out.println(index==-<span class="number">1</span> ? <span class="string">&quot;该元素不存在&quot;</span>:<span class="string">&quot;该元素下标是:&quot;</span>+index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-了解java的异常"><a href="#5-了解java的异常" class="headerlink" title="5.了解java的异常"></a>5.了解java的异常</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo5</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    1.什么是异常，java提供异常机制有什么用处？</span></span><br><span class="line"><span class="comment">    以下程序执行过程中发生了不正常的情况,而这种不正常的情况叫做：异常</span></span><br><span class="line"><span class="comment">    java语言是很完美的语言，提供了异常处理的方式，以下程序执行过程中出现了不正常的情况</span></span><br><span class="line"><span class="comment">    java把该异常信息打印输出到控制台，供程序员参考。</span></span><br><span class="line"><span class="comment">    2.以下程序执行控制台出现了：</span></span><br><span class="line"><span class="comment">                异常</span></span><br><span class="line"><span class="comment">    这个信息我们称为异常信息，这个信息是JVM打印的。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//实际上JVM执行到此处的时候，会new异常对象：new ArithmeticException(&quot;/ by zero&quot;);</span></span><br><span class="line">        <span class="comment">//并且在JVM将new的异常对象抛出，打印输出信息到控制台了。</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> a/b;</span><br><span class="line">        System.out.println(a+<span class="string">&quot;/&quot;</span>+b+<span class="string">&quot;=&quot;</span>+c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-通过异常类去实例化异常对象"><a href="#6-通过异常类去实例化异常对象" class="headerlink" title="6.通过异常类去实例化异常对象"></a>6.通过异常类去实例化异常对象</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo6</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//通过异常类去实例化异常对象</span></span><br><span class="line">        <span class="type">NumberFormatException</span> <span class="variable">nfe</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NumberFormatException</span>(<span class="string">&quot;数字格式化异常！！！&quot;</span>);</span><br><span class="line">        System.out.println(nfe);</span><br><span class="line">        <span class="type">NullPointerException</span> <span class="variable">npe</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NullPointerException</span>(<span class="string">&quot;空指针异常发生了！！！&quot;</span>);</span><br><span class="line">        System.out.println(npe);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java基础学习day04</title>
     <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC4%E5%A4%A9/</url>
     <content><![CDATA[<h4 id="1-try…catch异常处理"><a href="#1-try…catch异常处理" class="headerlink" title="1.try…catch异常处理"></a>1.try…catch异常处理</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    try....catch</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">FileInputStream</span> <span class="variable">fileInputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;D:\\20计科2班\\数据结构实验\\排序实验\\sort.c&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;以上出现异常，这里无法执行。。。&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;文件已损坏或文件丢失&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -492,23 +644,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java基础学习day06</title>
-    <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC6%E5%A4%A9/</url>
-    <content><![CDATA[<h4 id="1-关于java-util-Collection接口中常用的方法"><a href="#1-关于java-util-Collection接口中常用的方法" class="headerlink" title="1.关于java.util.Collection接口中常用的方法"></a>1.关于java.util.Collection接口中常用的方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    关于java.util.Collection接口中常用的方法</span></span><br><span class="line"><span class="comment">    boolean add(Object e)   添加元素</span></span><br><span class="line"><span class="comment">    int size()      获取元素个数</span></span><br><span class="line"><span class="comment">    void clear()    清空集合</span></span><br><span class="line"><span class="comment">    boolean contains(Object o)  判断当前集合中是否包含元素o</span></span><br><span class="line"><span class="comment">    boolean remove(Object o)    删除集合中的某个元素</span></span><br><span class="line"><span class="comment">    boolean isEmpty()           判断集合是否为空</span></span><br><span class="line"><span class="comment">    Object[] toArray()  调用这个方法可以把集合转换成数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        <span class="comment">//测试方法</span></span><br><span class="line">        collection.add(<span class="number">1200</span>);<span class="comment">//自动装箱,实际上是放进去了一个对象的内存地址。</span></span><br><span class="line">        collection.add(<span class="number">3.1415926535</span>);</span><br><span class="line">        collection.add(<span class="keyword">new</span> <span class="title class_">Object</span>());</span><br><span class="line">        collection.add(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;集合中的元素个数是:&quot;</span>+collection.size());</span><br><span class="line">        collection.clear();</span><br><span class="line">        System.out.println(<span class="string">&quot;集合中的元素个数是:&quot;</span>+collection.size());</span><br><span class="line"></span><br><span class="line">        collection.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;World&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;浩克&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;绿巨人&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> collection.contains(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">remove</span> <span class="operator">=</span> collection.remove(<span class="string">&quot;绿巨人&quot;</span>);</span><br><span class="line">        System.out.println(remove);</span><br><span class="line">        System.out.println(collection.size());</span><br><span class="line">        System.out.println(collection.isEmpty());</span><br><span class="line"></span><br><span class="line">        collection.add(<span class="string">&quot;520&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;120&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;130&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;150&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//集合转成数组</span></span><br><span class="line"></span><br><span class="line">        Object[] objects = collection.toArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; objects.length; i++) &#123;</span><br><span class="line">            System.out.println(objects[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-集合的迭代器"><a href="#2-集合的迭代器" class="headerlink" title="2.集合的迭代器"></a>2.集合的迭代器</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    集合迭代器   集合遍历</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 注意以下的遍历方式、迭代方式，是所有Collection通用的一种方式。</span></span><br><span class="line">        <span class="comment">//在Map集合中不能用，在所有的Collection以及子类中使用。</span></span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        collection.add(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;132&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;580&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;a250&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;abc5656&quot;</span>);</span><br><span class="line">        collection.add(<span class="keyword">new</span> <span class="title class_">Object</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//对集合遍历、迭代</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//第一步：获取集合对象的迭代器对象</span></span><br><span class="line">        <span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> collection.iterator();</span><br><span class="line">        <span class="comment">//第二步：通过以上获取的迭代器对象开始遍历集合</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        boolean hasNext()   如果迭代具有更多元素，则返回 true 。</span></span><br><span class="line"><span class="comment">        Object next()    返回迭代中的下一个元素。</span></span><br><span class="line"><span class="comment">        default void remove()   从底层集合中删除此迭代器返回的最后一个元素（可选操作）。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-java如何获取到迭代器"><a href="#3-java如何获取到迭代器" class="headerlink" title="3.java如何获取到迭代器"></a>3.java如何获取到迭代器</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        collection.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;520llo&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;123lo&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取对象的迭代器</span></span><br><span class="line">        <span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> collection.iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">            System.out.println(iterator.next());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//HashSet 无序    并且不可重复</span></span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br><span class="line">        collection1.add(<span class="number">123</span>);</span><br><span class="line">        collection1.add(<span class="number">321</span>);</span><br><span class="line">        collection1.add(<span class="number">100</span>);</span><br><span class="line">        collection1.add(<span class="number">200</span>);</span><br><span class="line">        <span class="type">Iterator</span> <span class="variable">iterator1</span> <span class="operator">=</span> collection1.iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator1.hasNext())&#123;</span><br><span class="line">            System.out.println(iterator1.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java基础学习day05</title>
     <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC5%E5%A4%A9/</url>
     <content><![CDATA[<h4 id="1-如何自定义一个异常类"><a href="#1-如何自定义一个异常类" class="headerlink" title="1.如何自定义一个异常类"></a>1.如何自定义一个异常类</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1.sun公司提供的JDK内置的异常肯定是不够用的，在实际开发当中，有很多的业务，</span></span><br><span class="line"><span class="comment">这些业务出现异常之后，JDK中都是没有的。和业务挂钩的。那么异常类我们程序员可以自己定义吗</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">2.java中我怎么定义异常呢？</span></span><br><span class="line"><span class="comment">    两步：</span></span><br><span class="line"><span class="comment">        第一步：编写一个类继承Exception或者RuntimeException.</span></span><br><span class="line"><span class="comment">        第二步：提供两个构造方法，一个无参数的，一个带有String参数的</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">MyException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">MyException</span><span class="params">()</span>&#123;<span class="comment">//编译时异常</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">MyException</span><span class="params">(String s)</span>&#123;</span><br><span class="line">            <span class="built_in">super</span>(s);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">   <span class="comment">/* public class MyException extends RuntimeException&#123; //运行时异常</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    &#125;*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -522,6 +657,40 @@
 <h2 id="两个课后作业："><a href="#两个课后作业：" class="headerlink" title="两个课后作业："></a>两个课后作业：</h2><h4 id="第一题："><a href="#第一题：" class="headerlink" title="第一题："></a>第一题：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HomeWork</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入用户名（要求大于6位，小于14位）：&quot;</span>);</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        System.out.print(<span class="string">&quot;请输入密码：&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> scanner.next();</span><br><span class="line">        <span class="type">UserService</span> <span class="variable">userService</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UserService</span>();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            userService.register(username,password);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (HomeWork1.MyException e)&#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line"><span class="comment">//            e.printStackTrace();</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">UserService</span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">register</span><span class="params">(String username,String password)</span> <span class="keyword">throws</span> HomeWork1.MyException &#123;</span><br><span class="line">            <span class="keyword">if</span> (username.length()&gt;<span class="number">6</span>&amp;&amp;username.length()&lt;<span class="number">14</span>)&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;用户注册成功!&quot;</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (username.length()&lt;<span class="number">6</span>) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">HomeWork1</span>.MyException(<span class="string">&quot;用户名小于6位，注册失败！！！&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (username.length()&gt;<span class="number">14</span>) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">HomeWork1</span>.MyException(<span class="string">&quot;用户名大于14位，注册失败！！！&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="第二题："><a href="#第二题：" class="headerlink" title="第二题："></a>第二题：</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HomeWork1</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">MyException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span>&#123;</span><br><span class="line">        <span class="keyword">public</span>  <span class="title function_">MyException</span><span class="params">()</span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span>  <span class="title function_">MyException</span><span class="params">(String a)</span>&#123;</span><br><span class="line">            <span class="built_in">super</span>(a);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础学习day11</title>
+    <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC11%E5%A4%A9/</url>
+    <content><![CDATA[<h4 id="1-线程的Sleep方法"><a href="#1-线程的Sleep方法" class="headerlink" title="1.线程的Sleep方法"></a>1.线程的Sleep方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;&quot;</span>+i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.getMessage();</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-如何终止线程睡眠"><a href="#2-如何终止线程睡眠" class="headerlink" title="2.如何终止线程睡眠"></a>2.如何终止线程睡眠</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    终止正在睡眠的线程</span></span><br><span class="line"><span class="comment">    不是终止线程，是终止线程的睡眠</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">MyThread</span>());</span><br><span class="line">        thread.start();</span><br><span class="line">        thread.setName(<span class="string">&quot;t&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">5</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//终断睡眠，唤醒线程</span></span><br><span class="line">        thread.interrupt();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;start&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>*<span class="number">365</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;end&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-如何强制终止线程（第一种方式）"><a href="#3-如何强制终止线程（第一种方式）" class="headerlink" title="3.如何强制终止线程（第一种方式）"></a>3.如何强制终止线程（第一种方式）</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.plaf.TableHeaderUI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo3</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    强行终止一个线程</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">MyThread1</span>());</span><br><span class="line">        thread.setName(<span class="string">&quot;t&quot;</span>);</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">5</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//强行终止线程t</span></span><br><span class="line">        thread.stop();<span class="comment">//已过时，不建议使用</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread1</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;-----&gt;&quot;</span>+i);</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-如何强制终止线程（第二种方式）【推荐使用第二种】"><a href="#3-如何强制终止线程（第二种方式）【推荐使用第二种】" class="headerlink" title="3.如何强制终止线程（第二种方式）【推荐使用第二种】"></a>3.如何强制终止线程（第二种方式）【推荐使用第二种】</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.plaf.TableHeaderUI;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo4</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    怎么合理的终止一个线程的执行</span></span><br><span class="line"><span class="comment">    常用方式</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MyThread2</span> <span class="variable">myThread2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyThread2</span>();</span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(myThread2);</span><br><span class="line">        thread.setName(<span class="string">&quot;t&quot;</span>);</span><br><span class="line">        thread.start();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">5</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//终止线程，什么时候想结束线程，把标记改为false</span></span><br><span class="line">        myThread2.run =<span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread2</span> <span class="keyword">implements</span> <span class="title class_">Runnable</span>&#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">run</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (run)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;---&gt;&quot;</span>+i);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//需要保存的数据在这里保存即可</span></span><br><span class="line">                <span class="comment">//终止当前线程</span></span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java基础学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java基础学习day06</title>
+    <url>/2023/03/03/java%E5%AD%A6%E4%B9%A0%E7%AC%AC6%E5%A4%A9/</url>
+    <content><![CDATA[<h4 id="1-关于java-util-Collection接口中常用的方法"><a href="#1-关于java-util-Collection接口中常用的方法" class="headerlink" title="1.关于java.util.Collection接口中常用的方法"></a>1.关于java.util.Collection接口中常用的方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo1</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    关于java.util.Collection接口中常用的方法</span></span><br><span class="line"><span class="comment">    boolean add(Object e)   添加元素</span></span><br><span class="line"><span class="comment">    int size()      获取元素个数</span></span><br><span class="line"><span class="comment">    void clear()    清空集合</span></span><br><span class="line"><span class="comment">    boolean contains(Object o)  判断当前集合中是否包含元素o</span></span><br><span class="line"><span class="comment">    boolean remove(Object o)    删除集合中的某个元素</span></span><br><span class="line"><span class="comment">    boolean isEmpty()           判断集合是否为空</span></span><br><span class="line"><span class="comment">    Object[] toArray()  调用这个方法可以把集合转换成数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        <span class="comment">//测试方法</span></span><br><span class="line">        collection.add(<span class="number">1200</span>);<span class="comment">//自动装箱,实际上是放进去了一个对象的内存地址。</span></span><br><span class="line">        collection.add(<span class="number">3.1415926535</span>);</span><br><span class="line">        collection.add(<span class="keyword">new</span> <span class="title class_">Object</span>());</span><br><span class="line">        collection.add(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;集合中的元素个数是:&quot;</span>+collection.size());</span><br><span class="line">        collection.clear();</span><br><span class="line">        System.out.println(<span class="string">&quot;集合中的元素个数是:&quot;</span>+collection.size());</span><br><span class="line"></span><br><span class="line">        collection.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;World&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;浩克&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;绿巨人&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">b</span> <span class="operator">=</span> collection.contains(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">remove</span> <span class="operator">=</span> collection.remove(<span class="string">&quot;绿巨人&quot;</span>);</span><br><span class="line">        System.out.println(remove);</span><br><span class="line">        System.out.println(collection.size());</span><br><span class="line">        System.out.println(collection.isEmpty());</span><br><span class="line"></span><br><span class="line">        collection.add(<span class="string">&quot;520&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;120&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;130&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;150&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//集合转成数组</span></span><br><span class="line"></span><br><span class="line">        Object[] objects = collection.toArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; objects.length; i++) &#123;</span><br><span class="line">            System.out.println(objects[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-集合的迭代器"><a href="#2-集合的迭代器" class="headerlink" title="2.集合的迭代器"></a>2.集合的迭代器</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    集合迭代器   集合遍历</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 注意以下的遍历方式、迭代方式，是所有Collection通用的一种方式。</span></span><br><span class="line">        <span class="comment">//在Map集合中不能用，在所有的Collection以及子类中使用。</span></span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        collection.add(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;132&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;580&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;a250&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;abc5656&quot;</span>);</span><br><span class="line">        collection.add(<span class="keyword">new</span> <span class="title class_">Object</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//对集合遍历、迭代</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//第一步：获取集合对象的迭代器对象</span></span><br><span class="line">        <span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> collection.iterator();</span><br><span class="line">        <span class="comment">//第二步：通过以上获取的迭代器对象开始遍历集合</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        boolean hasNext()   如果迭代具有更多元素，则返回 true 。</span></span><br><span class="line"><span class="comment">        Object next()    返回迭代中的下一个元素。</span></span><br><span class="line"><span class="comment">        default void remove()   从底层集合中删除此迭代器返回的最后一个元素（可选操作）。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-java如何获取到迭代器"><a href="#3-java如何获取到迭代器" class="headerlink" title="3.java如何获取到迭代器"></a>3.java如何获取到迭代器</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        collection.add(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;520llo&quot;</span>);</span><br><span class="line">        collection.add(<span class="string">&quot;123lo&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取对象的迭代器</span></span><br><span class="line">        <span class="type">Iterator</span> <span class="variable">iterator</span> <span class="operator">=</span> collection.iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext())&#123;</span><br><span class="line">            System.out.println(iterator.next());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//HashSet 无序    并且不可重复</span></span><br><span class="line">        <span class="type">Collection</span> <span class="variable">collection1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HashSet</span>();</span><br><span class="line">        collection1.add(<span class="number">123</span>);</span><br><span class="line">        collection1.add(<span class="number">321</span>);</span><br><span class="line">        collection1.add(<span class="number">100</span>);</span><br><span class="line">        collection1.add(<span class="number">200</span>);</span><br><span class="line">        <span class="type">Iterator</span> <span class="variable">iterator1</span> <span class="operator">=</span> collection1.iterator();</span><br><span class="line">        <span class="keyword">while</span> (iterator1.hasNext())&#123;</span><br><span class="line">            System.out.println(iterator1.next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>java</category>
       </categories>
@@ -584,25 +753,6 @@
       </categories>
       <tags>
         <tag>java基础学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>public class和class的区别</title>
-    <url>/2023/09/08/public%20class%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="public-class和class的区别："><a href="#public-class和class的区别：" class="headerlink" title="public class和class的区别："></a>public class和class的区别：</h2><ul>
-<li>一个java源文件当中可以定义多个class</li>
-<li>一个java源文件当中public的class不是必须的</li>
-<li>一个class会定义生成一个xxx.class字节码文件</li>
-<li>一个java源文件当中定义公开的类的话，公开类只能有一个，并且该类名称必须和java源文件名称一致。</li>
-<li>每一个class当中都可以编写main方法，都可以设定程序的入口，想执行B.class的main方法：java B，想执行X.class当中的main方法：java X</li>
-<li>注意：当在命令窗口中执行java Hello，那么要求Hello.class当中必须有主方法。没有主方法会出现运行阶段的错误。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java基础知识</tag>
       </tags>
   </entry>
   <entry>
@@ -685,65 +835,16 @@
       </tags>
   </entry>
   <entry>
-    <title>static关键字</title>
-    <url>/2023/09/14/static%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h3 id="关于java中的static关键字："><a href="#关于java中的static关键字：" class="headerlink" title="关于java中的static关键字："></a>关于java中的static关键字：</h3><ol>
-<li>static英语单词的翻译为静态的</li>
-<li>static修饰的方法是静态方法</li>
-<li>static修饰的变量是静态变量</li>
-<li>所有static修饰的元素都称为静态的，都可以使用‘类名.’的方式访问，当然也可以使用‘引用.’的方式访问[但不建议]</li>
-<li>static修饰的所有元素都是类级别的特征，和具体的对象无关。</li>
-<li>方法什么时候定义为静态的?<ul>
-<li>方法描述的是动作，当所有的对象执行了这个动作的时候，最终产生影响的是一样的，那么这个动作已经不在属于某一个对象动作了，可以将这个动作提升为类级别的动作，模版级别的动作。</li>
+    <title>public class和class的区别</title>
+    <url>/2023/09/08/public%20class%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="public-class和class的区别："><a href="#public-class和class的区别：" class="headerlink" title="public class和class的区别："></a>public class和class的区别：</h2><ul>
+<li>一个java源文件当中可以定义多个class</li>
+<li>一个java源文件当中public的class不是必须的</li>
+<li>一个class会定义生成一个xxx.class字节码文件</li>
+<li>一个java源文件当中定义公开的类的话，公开类只能有一个，并且该类名称必须和java源文件名称一致。</li>
+<li>每一个class当中都可以编写main方法，都可以设定程序的入口，想执行B.class的main方法：java B，想执行X.class当中的main方法：java X</li>
+<li>注意：当在命令窗口中执行java Hello，那么要求Hello.class当中必须有主方法。没有主方法会出现运行阶段的错误。</li>
 </ul>
-</li>
-<li>静态方法中无法直接访问实例变量和实例方法。</li>
-<li>大多数方法都定义为实例方法，一般一个行为或者一个动作在发生的时候，都需要对象的参与。但是也有例外，例如：大多数“工具类”中的方法都是静态方法，因为工具类就是方便编程，为了方便方法的调用，自然不需要new对象是最好的。</li>
-</ol>
-<p>静态变量，静态变量在类加载的时候初始化，不需要在创建对象，内存就开辟了。</p>
-<p>静态变量存储在方法区内存中</p>
-<h3 id="什么时候成员变量声明为实例变量呢？"><a href="#什么时候成员变量声明为实例变量呢？" class="headerlink" title="什么时候成员变量声明为实例变量呢？"></a>什么时候成员变量声明为实例变量呢？</h3><ul>
-<li>所有对象都有这个属性，但是这个属性的值会随着对象的变化而变化(不同对象的这个属性具体的值不同)</li>
-</ul>
-<h3 id="什么时候成员变量声明为静态变量呢？"><a href="#什么时候成员变量声明为静态变量呢？" class="headerlink" title="什么时候成员变量声明为静态变量呢？"></a>什么时候成员变量声明为静态变量呢？</h3><ul>
-<li>所有对象都有这个属性，并且所有对象的这个属性值是一样的，建议定义为静态变量</li>
-</ul>
-<p>，节省内存的开销。</p>
-<p>静态变量在类加载的时候初始化，内存在方法区中开辟。访问的时候不需要创建对象，直接使用“类名.静态变量名”</p>
-<p>所有静态的数据都是可以采用类名.的方式，也可以采用引用.的方式，但是建议采用类名.的方式访问。</p>
-<p>采用引用.的方式访问的时候，即使引用是null，也不会出现空指针异常。因为访问静态的数据不需要对象的存在。</p>
-<h3 id="可以使用static关键字来定义“静态代码块”："><a href="#可以使用static关键字来定义“静态代码块”：" class="headerlink" title="可以使用static关键字来定义“静态代码块”："></a>可以使用static关键字来定义“静态代码块”：</h3><ol>
-<li><p>语法格式：</p>
-<p>​	static {</p>
-<p>​		java语句;</p>
-<p>}</p>
-</li>
-<li><p>静态代码块在类加载的时候执行，并且只执行一次。</p>
-</li>
-<li><p>静态代码块在一个类中可以编写多个，并且遵循自上而下的顺序依次执行。</p>
-</li>
-<li><p>静态代码块的作用是什么？怎么用？什么时候用？</p>
-<ul>
-<li>这当然和具体的需求有关，例如项目中要求类加载的时刻&#x2F;时机执行代码完成日志的记录。那么这段记录日志的代码就可以编写到静态代码块当中，完成日志记录。</li>
-<li>静态代码块是java为程序员准备一个特殊的时刻，这个特殊的时刻别称为类加载时刻，若希望在此执行一段特殊的程序，这段程序可以直接放到静态代码块当中。</li>
-</ul>
-</li>
-<li><p>通常在静态代码块当中完成预备工作，先完成数据的准备工具，例如：初始化连接池，解析XML配置文件…</p>
-</li>
-</ol>
-<h3 id="实例代码块："><a href="#实例代码块：" class="headerlink" title="实例代码块："></a>实例代码块：</h3><ol>
-<li><p>语法格式：</p>
-<p>{</p>
-<p>​		System.out.println(1)</p>
-<p>}</p>
-</li>
-<li><p>实例代码块可以编写多个，也是遵循自上而下的顺序依次执行</p>
-</li>
-<li><p>实例代码块在构造方法执行之前执行，构造方法执行一次，实例代码块对应执行一次。</p>
-</li>
-<li><p>实例代码块也是java语言为程序员准备一个特殊的时机，这个特殊的实际被称为：对象初始化时机。</p>
-</li>
-</ol>
 ]]></content>
       <categories>
         <category>java</category>
@@ -921,6 +1022,74 @@
       </tags>
   </entry>
   <entry>
+    <title>static关键字</title>
+    <url>/2023/09/14/static%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<h3 id="关于java中的static关键字："><a href="#关于java中的static关键字：" class="headerlink" title="关于java中的static关键字："></a>关于java中的static关键字：</h3><ol>
+<li>static英语单词的翻译为静态的</li>
+<li>static修饰的方法是静态方法</li>
+<li>static修饰的变量是静态变量</li>
+<li>所有static修饰的元素都称为静态的，都可以使用‘类名.’的方式访问，当然也可以使用‘引用.’的方式访问[但不建议]</li>
+<li>static修饰的所有元素都是类级别的特征，和具体的对象无关。</li>
+<li>方法什么时候定义为静态的?<ul>
+<li>方法描述的是动作，当所有的对象执行了这个动作的时候，最终产生影响的是一样的，那么这个动作已经不在属于某一个对象动作了，可以将这个动作提升为类级别的动作，模版级别的动作。</li>
+</ul>
+</li>
+<li>静态方法中无法直接访问实例变量和实例方法。</li>
+<li>大多数方法都定义为实例方法，一般一个行为或者一个动作在发生的时候，都需要对象的参与。但是也有例外，例如：大多数“工具类”中的方法都是静态方法，因为工具类就是方便编程，为了方便方法的调用，自然不需要new对象是最好的。</li>
+</ol>
+<p>静态变量，静态变量在类加载的时候初始化，不需要在创建对象，内存就开辟了。</p>
+<p>静态变量存储在方法区内存中</p>
+<h3 id="什么时候成员变量声明为实例变量呢？"><a href="#什么时候成员变量声明为实例变量呢？" class="headerlink" title="什么时候成员变量声明为实例变量呢？"></a>什么时候成员变量声明为实例变量呢？</h3><ul>
+<li>所有对象都有这个属性，但是这个属性的值会随着对象的变化而变化(不同对象的这个属性具体的值不同)</li>
+</ul>
+<h3 id="什么时候成员变量声明为静态变量呢？"><a href="#什么时候成员变量声明为静态变量呢？" class="headerlink" title="什么时候成员变量声明为静态变量呢？"></a>什么时候成员变量声明为静态变量呢？</h3><ul>
+<li>所有对象都有这个属性，并且所有对象的这个属性值是一样的，建议定义为静态变量</li>
+</ul>
+<p>，节省内存的开销。</p>
+<p>静态变量在类加载的时候初始化，内存在方法区中开辟。访问的时候不需要创建对象，直接使用“类名.静态变量名”</p>
+<p>所有静态的数据都是可以采用类名.的方式，也可以采用引用.的方式，但是建议采用类名.的方式访问。</p>
+<p>采用引用.的方式访问的时候，即使引用是null，也不会出现空指针异常。因为访问静态的数据不需要对象的存在。</p>
+<h3 id="可以使用static关键字来定义“静态代码块”："><a href="#可以使用static关键字来定义“静态代码块”：" class="headerlink" title="可以使用static关键字来定义“静态代码块”："></a>可以使用static关键字来定义“静态代码块”：</h3><ol>
+<li><p>语法格式：</p>
+<p>​	static {</p>
+<p>​		java语句;</p>
+<p>}</p>
+</li>
+<li><p>静态代码块在类加载的时候执行，并且只执行一次。</p>
+</li>
+<li><p>静态代码块在一个类中可以编写多个，并且遵循自上而下的顺序依次执行。</p>
+</li>
+<li><p>静态代码块的作用是什么？怎么用？什么时候用？</p>
+<ul>
+<li>这当然和具体的需求有关，例如项目中要求类加载的时刻&#x2F;时机执行代码完成日志的记录。那么这段记录日志的代码就可以编写到静态代码块当中，完成日志记录。</li>
+<li>静态代码块是java为程序员准备一个特殊的时刻，这个特殊的时刻别称为类加载时刻，若希望在此执行一段特殊的程序，这段程序可以直接放到静态代码块当中。</li>
+</ul>
+</li>
+<li><p>通常在静态代码块当中完成预备工作，先完成数据的准备工具，例如：初始化连接池，解析XML配置文件…</p>
+</li>
+</ol>
+<h3 id="实例代码块："><a href="#实例代码块：" class="headerlink" title="实例代码块："></a>实例代码块：</h3><ol>
+<li><p>语法格式：</p>
+<p>{</p>
+<p>​		System.out.println(1)</p>
+<p>}</p>
+</li>
+<li><p>实例代码块可以编写多个，也是遵循自上而下的顺序依次执行</p>
+</li>
+<li><p>实例代码块在构造方法执行之前执行，构造方法执行一次，实例代码块对应执行一次。</p>
+</li>
+<li><p>实例代码块也是java语言为程序员准备一个特殊的时机，这个特殊的实际被称为：对象初始化时机。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>方法覆盖</title>
     <url>/2023/09/17/%E6%96%B9%E6%B3%95%E8%A6%86%E7%9B%96/</url>
     <content><![CDATA[<h3 id="回顾java语言当中方法的重载："><a href="#回顾java语言当中方法的重载：" class="headerlink" title="回顾java语言当中方法的重载："></a>回顾java语言当中方法的重载：</h3><ol>
@@ -969,45 +1138,6 @@
       </categories>
       <tags>
         <tag>java基础知识</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>方法的重载机制</title>
-    <url>/2023/09/10/%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD%E6%9C%BA%E5%88%B6Overload/</url>
-    <content><![CDATA[<h3 id="方法的重载机制-x2F-Overload"><a href="#方法的重载机制-x2F-Overload" class="headerlink" title="方法的重载机制&#x2F;Overload"></a>方法的重载机制&#x2F;Overload</h3><p>方法的重载是两个或两个以上的方法名一样，根据参数的类型不同，对应的方法不同，此时区分方法不在依靠方法名了。</p>
-<h4 id="方法重载的优点："><a href="#方法重载的优点：" class="headerlink" title="方法重载的优点："></a>方法重载的优点：</h4><ul>
-<li>程序员调用方法的时候，比较方便，虽然调用的是不同的方法，但是就感觉在使用一个方法一样。</li>
-<li>代码美观</li>
-</ul>
-<h5 id="前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。"><a href="#前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。" class="headerlink" title="前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。"></a>前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。</h5><h4 id="1-什么时候考虑使用方法重载？"><a href="#1-什么时候考虑使用方法重载？" class="headerlink" title="1.什么时候考虑使用方法重载？"></a>1.什么时候考虑使用方法重载？</h4><ul>
-<li>功能相同的时候，尽可能的让方法名相同</li>
-</ul>
-<h4 id="2-什么条件构成了方法重载？"><a href="#2-什么条件构成了方法重载？" class="headerlink" title="2.什么条件构成了方法重载？"></a>2.什么条件构成了方法重载？</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Overload</span> &#123;</span><br><span class="line">    <span class="comment">//以下两个方法构成重载</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">(<span class="type">int</span> a)</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下两个方法构成重载</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">(<span class="type">int</span> a,<span class="type">double</span> b)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">(<span class="type">double</span> a,<span class="type">int</span> b)</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下两个方法构成重载</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">(<span class="type">int</span> x)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">(<span class="type">double</span> y)</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//编译错误：以下不是方法重载，是发生了方法重复了（错误的，编译会报错）</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m4</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m4</span><span class="params">()</span>&#123;<span class="type">int</span> a,<span class="type">int</span> b&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//编译错误：方法重载不能用返回值来区分（错误的，编译会报错）</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">x</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">x</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//编译错误：方法重载不能用修饰符列表来区分（错误的，编译会报错）</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">y</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">y</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>在同一个类中</p>
-</li>
-<li><p>方法名相同</p>
-</li>
-<li><p>参数列表不同</p>
-<p>—数量不同</p>
-<p>—类型不同</p>
-<p>—顺序不同</p>
-</li>
-</ul>
-<h4 id="3-方法重载和什么有关系和什么没有关系？"><a href="#3-方法重载和什么有关系和什么没有关系？" class="headerlink" title="3.方法重载和什么有关系和什么没有关系？"></a>3.方法重载和什么有关系和什么没有关系？</h4><ul>
-<li>方法重载和方法名，参数列表有关系</li>
-<li>方法重载和返回值类型无关</li>
-<li>方法重载和修饰符列表无关</li>
-</ul>
-<h4 id="方法重载的具体应用"><a href="#方法重载的具体应用" class="headerlink" title="方法重载的具体应用"></a>方法重载的具体应用</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OverloadTest01</span>()&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        U.p(<span class="number">10</span>);</span><br><span class="line">        U.p(<span class="number">10.0</span>);</span><br><span class="line">        U.p(<span class="number">10L</span>);</span><br><span class="line">        U.p(<span class="literal">false</span>);</span><br><span class="line">        U.p(<span class="string">&quot;10&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">U</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">byte</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">short</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">int</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">float</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">double</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">long</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(String b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">boolean</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>基础面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -1075,6 +1205,45 @@
       </categories>
       <tags>
         <tag>java基础知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>方法的重载机制</title>
+    <url>/2023/09/10/%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD%E6%9C%BA%E5%88%B6Overload/</url>
+    <content><![CDATA[<h3 id="方法的重载机制-x2F-Overload"><a href="#方法的重载机制-x2F-Overload" class="headerlink" title="方法的重载机制&#x2F;Overload"></a>方法的重载机制&#x2F;Overload</h3><p>方法的重载是两个或两个以上的方法名一样，根据参数的类型不同，对应的方法不同，此时区分方法不在依靠方法名了。</p>
+<h4 id="方法重载的优点："><a href="#方法重载的优点：" class="headerlink" title="方法重载的优点："></a>方法重载的优点：</h4><ul>
+<li>程序员调用方法的时候，比较方便，虽然调用的是不同的方法，但是就感觉在使用一个方法一样。</li>
+<li>代码美观</li>
+</ul>
+<h5 id="前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。"><a href="#前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。" class="headerlink" title="前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。"></a>前提：功能相似的时候，方法名可以相同，但是功能不同的时候，尽可能让这两个方法的名字不同。</h5><h4 id="1-什么时候考虑使用方法重载？"><a href="#1-什么时候考虑使用方法重载？" class="headerlink" title="1.什么时候考虑使用方法重载？"></a>1.什么时候考虑使用方法重载？</h4><ul>
+<li>功能相同的时候，尽可能的让方法名相同</li>
+</ul>
+<h4 id="2-什么条件构成了方法重载？"><a href="#2-什么条件构成了方法重载？" class="headerlink" title="2.什么条件构成了方法重载？"></a>2.什么条件构成了方法重载？</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Overload</span> &#123;</span><br><span class="line">    <span class="comment">//以下两个方法构成重载</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">(<span class="type">int</span> a)</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下两个方法构成重载</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">(<span class="type">int</span> a,<span class="type">double</span> b)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">(<span class="type">double</span> a,<span class="type">int</span> b)</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下两个方法构成重载</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">(<span class="type">int</span> x)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">(<span class="type">double</span> y)</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//编译错误：以下不是方法重载，是发生了方法重复了（错误的，编译会报错）</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m4</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m4</span><span class="params">()</span>&#123;<span class="type">int</span> a,<span class="type">int</span> b&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//编译错误：方法重载不能用返回值来区分（错误的，编译会报错）</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">x</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">x</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//编译错误：方法重载不能用修饰符列表来区分（错误的，编译会报错）</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">y</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">y</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在同一个类中</p>
+</li>
+<li><p>方法名相同</p>
+</li>
+<li><p>参数列表不同</p>
+<p>—数量不同</p>
+<p>—类型不同</p>
+<p>—顺序不同</p>
+</li>
+</ul>
+<h4 id="3-方法重载和什么有关系和什么没有关系？"><a href="#3-方法重载和什么有关系和什么没有关系？" class="headerlink" title="3.方法重载和什么有关系和什么没有关系？"></a>3.方法重载和什么有关系和什么没有关系？</h4><ul>
+<li>方法重载和方法名，参数列表有关系</li>
+<li>方法重载和返回值类型无关</li>
+<li>方法重载和修饰符列表无关</li>
+</ul>
+<h4 id="方法重载的具体应用"><a href="#方法重载的具体应用" class="headerlink" title="方法重载的具体应用"></a>方法重载的具体应用</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OverloadTest01</span>()&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        U.p(<span class="number">10</span>);</span><br><span class="line">        U.p(<span class="number">10.0</span>);</span><br><span class="line">        U.p(<span class="number">10L</span>);</span><br><span class="line">        U.p(<span class="literal">false</span>);</span><br><span class="line">        U.p(<span class="string">&quot;10&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">U</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">byte</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">short</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">int</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">float</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">double</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">long</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(String b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">p</span><span class="params">(<span class="type">boolean</span> b)</span>&#123;</span><br><span class="line">        system.out.println(b)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>基础面试题</tag>
       </tags>
   </entry>
   <entry>
